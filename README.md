@@ -15,7 +15,7 @@ Generated Web User Interface contains such type of pages:
 2. Crud1 edit from
 3. CrudN edit from
 4. Attach/detach 1 to N entities
-5. Attach/detach M to N entities
+5. Attach/detach M to N entities    
 
 
 
