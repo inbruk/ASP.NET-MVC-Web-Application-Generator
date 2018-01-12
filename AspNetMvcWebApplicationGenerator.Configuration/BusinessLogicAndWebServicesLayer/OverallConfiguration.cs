@@ -1,4 +1,4 @@
-﻿namespace WebAppGenerator.Configuration.BusinessLogicAndWebServicesLayer
+﻿namespace AspNetMvcWebApplicationGenerator.Configuration.BusinessLogicAndWebServicesLayer
 {
     using System;
     using System.Collections.Generic;

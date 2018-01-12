@@ -1,4 +1,4 @@
-﻿namespace WebAppGenerator.Configuration.DataLayer
+﻿namespace AspNetMvcWebApplicationGenerator.Configuration.DataLayer
 {
     public enum ComplexEntityLinkType
     {
