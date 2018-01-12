@@ -55,6 +55,7 @@
     <Compile Include="DataLayer\LanguageItem.cs" />
     <Compile Include="DataLayer\LinkType.cs" />
     <Compile Include="DataLayer\DLConfiguration.cs" />
+    <Compile Include="OverallConfiguration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="WebUserInterfaceLayer\WUIConfiguration.cs" />
     <Compile Include="WebUserInterfaceLayer\WebPage.cs" />
