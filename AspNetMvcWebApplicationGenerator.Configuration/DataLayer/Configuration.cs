@@ -5,15 +5,15 @@
 
     public static class OverallConfiguration
     {
-        public static Dictionary<String, LanguageItem>  Languages { get; } = new Dictionary<String, LanguageItem>();
+        public static Dictionary<long, LanguageItem>    Languages { get; } = new Dictionary<long, LanguageItem>();
         public static Dictionary<String, Directory>     DirectoryConfigurations { get; } = new Dictionary<String, Directory>();
         public static Dictionary<String, Entity>        EntitiesConfigurations { get; } = new Dictionary<String, Entity>();
         public static Dictionary<String, ComplexEntity> ComplexEntitiesConfigurations { get; } = new Dictionary<string, ComplexEntity>();
 
         public static void AddLanguage(LanguageItem langContent)
         {
-            String enumName = langContent.EnumName;
-            Languages.Add(enumName, langContent);
+            long id = langContent.Id;
+            Languages.Add(id, langContent);
         }
 
         public static void AddDirectory(Directory directory)

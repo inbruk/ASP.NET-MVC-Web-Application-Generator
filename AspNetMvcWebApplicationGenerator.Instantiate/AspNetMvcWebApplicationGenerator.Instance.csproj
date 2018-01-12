@@ -42,5 +42,11 @@
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\AspNetMvcWebApplicationGenerator.Configuration\AspNetMvcWebApplicationGenerator.Configuration.csproj">
+      <Project>{ee55fb45-abd2-4d68-936b-abccdbd23312}</Project>
+      <Name>AspNetMvcWebApplicationGenerator.Configuration</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
