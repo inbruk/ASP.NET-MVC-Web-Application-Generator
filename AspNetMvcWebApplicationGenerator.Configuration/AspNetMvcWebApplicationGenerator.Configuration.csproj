@@ -40,7 +40,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="BusinessLogicAndWebServicesLayer\Configuration.cs" />
+    <Compile Include="BusinessLogicAndWebServicesLayer\BLWSConfiguration.cs" />
     <Compile Include="BusinessLogicAndWebServicesLayer\ToolItem.cs" />
     <Compile Include="BusinessLogicAndWebServicesLayer\ToolType.cs" />
     <Compile Include="DataLayer\ComplexEntity.cs" />
@@ -54,9 +54,9 @@
     <Compile Include="DataLayer\EntityType.cs" />
     <Compile Include="DataLayer\LanguageItem.cs" />
     <Compile Include="DataLayer\LinkType.cs" />
-    <Compile Include="DataLayer\Configuration.cs" />
+    <Compile Include="DataLayer\DLConfiguration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="WebUserInterfaceLayer\Configuration.cs" />
+    <Compile Include="WebUserInterfaceLayer\WUIConfiguration.cs" />
     <Compile Include="WebUserInterfaceLayer\WebPage.cs" />
     <Compile Include="WebUserInterfaceLayer\WebPageType.cs" />
   </ItemGroup>

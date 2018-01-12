@@ -10,24 +10,22 @@
         public String  MainTableName { get; }
         public String  MainShortTableName { get; }
 
+        public List<ComplexEntityLink> Links { get; } 
+
         public ComplexEntity
         (
             String  name,
             Boolean isTableVeiw,
             String  mainTableName,
-            String  mainShortTableName
+            String  mainShortTableName,
+            List<ComplexEntityLink> lnks
         )
         {
             Name               = name;
             IsTableVeiw        = isTableVeiw;
             MainTableName      = mainTableName;
             MainShortTableName = mainShortTableName;
-        }
-
-        public List<ComplexEntityLink> Links { get; } = new List<ComplexEntityLink>();
-        public void AddLink(ComplexEntityLink links)
-        {
-            Links.Add(links);
+            Links              = lnks;
         }
     }
 }

@@ -7,17 +7,16 @@
     {
         public EntityType Type { set; get; }
         public String Name { set; get; }
-        public Entity()
-        {
-            Type = Type;
-            Name = Name;
-        }
 
         public Dictionary<String, EntityField> Fields { get; } = new Dictionary<string, EntityField>();
-        public void AddField(EntityField field)
+
+        public Entity(EntityType type, String name, List<EntityField> fields)
         {
-            String enumName = field.Name;
-            Fields.Add(enumName, field);
+            Type = type;
+            Name = name;
+
+            foreach (var currField in fields)
+                Fields.Add(currField.Name, currField);
         }
     }
 }
