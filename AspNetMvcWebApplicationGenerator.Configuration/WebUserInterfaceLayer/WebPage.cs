@@ -15,7 +15,7 @@
             public String LinkedEntityFieldName { get; }
         #endregion
 
-        public List<String> ReadOnlyFieldList { get; }
+        public List<String> ReadOnlyFieldList { get; } 
 
         public WebPage
         (

@@ -2,13 +2,12 @@
 {
     using System.Collections.Generic;
 
-    public class WUIConfiguration
+    public static class WUIConfiguration
     {
-        public List<WebPage> WebPages { get; } 
-
-        public WUIConfiguration( List<WebPage> webPages )
+        public static List<WebPage> WebPages { get; } = new List<WebPage>();
+        public static void AddWebPage(WebPage webPage)
         {
-            WebPages = webPages;
+            WebPages.Add(webPage);
         }
     }
 }

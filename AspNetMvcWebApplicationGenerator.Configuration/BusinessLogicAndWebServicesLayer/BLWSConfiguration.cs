@@ -2,13 +2,12 @@
 {
     using System.Collections.Generic;
 
-    public class BLWSConfiguration
+    public static class BLWSConfiguration
     {
-        public List<ToolItem> tools { get; } 
-
-        public BLWSConfiguration(List<ToolItem> toolsList)
+        public static List<ToolItem> tools { get; } = new List<ToolItem>();
+        public static void AddTool(ToolItem tool)
         {
-            tools = toolsList;
+            tools.Add(tool);
         }
     }
 }

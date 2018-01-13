@@ -3,32 +3,31 @@
     using System;
     using System.Collections.Generic;
 
-    public class DLConfiguration
+    public static class DLConfiguration
     {
-        public Dictionary<long,   LanguageItem>  Languages { get; } = new Dictionary<long, LanguageItem>();
-        public Dictionary<String, Directory>     DirectoryConfigurations { get; } = new Dictionary<String, Directory>();
-        public Dictionary<String, Entity>        EntitiesConfigurations { get; } = new Dictionary<String, Entity>();
-        public Dictionary<String, ComplexEntity> ComplexEntitiesConfigurations { get; } = new Dictionary<string, ComplexEntity>();
+        public static Dictionary<long,   LanguageItem>  Languages { get; } = new Dictionary<long, LanguageItem>();
+        public static Dictionary<String, Directory>     DirectoryConfigurations { get; } = new Dictionary<String, Directory>();
+        public static Dictionary<String, Entity>        EntitiesConfigurations { get; } = new Dictionary<String, Entity>();
+        public static Dictionary<String, ComplexEntity> ComplexEntitiesConfigurations { get; } = new Dictionary<string, ComplexEntity>();
 
-        public DLConfiguration
-        (
-            List<LanguageItem> langs,
-            List<Directory> dirCfgs,
-            List<Entity> entCfgs,
-            List<ComplexEntity> cmplxCfgs
-        )
+        public static void AddLanguage(LanguageItem lang)
         {
-            foreach(var currLang in langs)
-                Languages.Add(currLang.Id, currLang);
+            Languages.Add(lang.Id, lang);
+        }
 
-            foreach (var currDirCfg in dirCfgs)
-                DirectoryConfigurations.Add(currDirCfg.EnumName, currDirCfg);
+        public static void AddDirectory(Directory dir)
+        {
+            DirectoryConfigurations.Add(dir.EnumName, dir);
+        }
 
-            foreach (var currEntCfg in entCfgs)
-                EntitiesConfigurations.Add(currEntCfg.Name, currEntCfg);
+        public static void AddEntity(Entity ent)
+        {
+            EntitiesConfigurations.Add(ent.Name, ent);
+        }
 
-            foreach (var currCmplxCfg in cmplxCfgs)
-                ComplexEntitiesConfigurations.Add(currCmplxCfg.Name, currCmplxCfg);
+        public static void AddComplexEntity(ComplexEntity cEnt)
+        {
+            ComplexEntitiesConfigurations.Add(cEnt.Name, cEnt);
         }
     }
 }
