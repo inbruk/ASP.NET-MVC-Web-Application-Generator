@@ -40,6 +40,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Configuration\Data\CreateDirectories.cs" />
+    <Compile Include="Configuration\Data\CreateLanguages.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -47,6 +49,10 @@
       <Project>{ee55fb45-abd2-4d68-936b-abccdbd23312}</Project>
       <Name>AspNetMvcWebApplicationGenerator.Configuration</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Configuration\BusinessLogicAndWebService\" />
+    <Folder Include="Configuration\WebUserInterface\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

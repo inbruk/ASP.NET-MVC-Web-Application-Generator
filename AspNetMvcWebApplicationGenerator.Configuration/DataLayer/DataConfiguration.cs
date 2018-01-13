@@ -3,7 +3,7 @@
     using System;
     using System.Collections.Generic;
 
-    public static class DLConfiguration
+    public static class DataConfiguration
     {
         public static Dictionary<long,   LanguageItem>  Languages { get; } = new Dictionary<long, LanguageItem>();
         public static Dictionary<String, Directory>     DirectoryConfigurations { get; } = new Dictionary<String, Directory>();
