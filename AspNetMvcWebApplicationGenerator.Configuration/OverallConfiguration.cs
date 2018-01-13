@@ -1,14 +1,16 @@
 ﻿namespace AspNetMvcWebApplicationGenerator.Configuration
 {
+    using System;
+
     using AspNetMvcWebApplicationGenerator.Configuration.DataLayer;
     using AspNetMvcWebApplicationGenerator.Configuration.BusinessLogicAndWebServicesLayer;
     using AspNetMvcWebApplicationGenerator.Configuration.WebUserInterfaceLayer;
 
     public class OverallConfiguration
     {
-        public DLConfiguration   dlConfiguration { get; }
+        public DLConfiguration dlConfiguration { get; }
         public BLWSConfiguration blwsConfiguration { get; }
-        public WUIConfiguration  wuiConfiguration { get; }
+        public WUIConfiguration wuiConfiguration { get; }
 
         public OverallConfiguration
         (
