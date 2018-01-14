@@ -41,6 +41,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Configuration\Data\CreateDirectories.cs" />
+    <Compile Include="Configuration\Data\CreateEntities.cs" />
     <Compile Include="Configuration\Data\CreateLanguages.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
