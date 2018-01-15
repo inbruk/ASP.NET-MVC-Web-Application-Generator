@@ -40,6 +40,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Configuration\BusinessLogicAndWebService\CreateTools.cs" />
     <Compile Include="Configuration\Data\CreateComplexEntities.cs" />
     <Compile Include="Configuration\Data\CreateDirectories.cs" />
     <Compile Include="Configuration\Data\CreateEntities.cs" />
@@ -53,7 +54,6 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Configuration\BusinessLogicAndWebService\" />
     <Folder Include="Configuration\WebUserInterface\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

@@ -20,10 +20,6 @@
                     new List<ComplexEntityLink>()
                     {
                          new ComplexEntityLink( ComplexEntityLinkType.Inner, "Ord", "Customer", "Customer", "Cust", "Id" )
-                    },
-                    new List<ComplexEntityFieldFeatures>()
-                    {
-                        new ComplexEntityFieldFeatures("OrderStartDateTime", 100, true, true, false)
                     }
                 )
             );
@@ -38,12 +34,7 @@
                     new List<ComplexEntityLink>()
                     {
                          new ComplexEntityLink( ComplexEntityLinkType.M2MInner, "Ord", "Driver", "Driver", "Drv", "Order" )
-                    },
-                    new List<ComplexEntityFieldFeatures>()
-                    {
-                        new ComplexEntityFieldFeatures("OrderAccountBalance", 100, true, true, true)
                     }
-
                 )
             );
         }

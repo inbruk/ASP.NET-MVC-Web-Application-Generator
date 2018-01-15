@@ -5,7 +5,7 @@
 
     using AspNetMvcWebApplicationGenerator.Configuration.DataLayer;
 
-    public class CreateEntities
+    public static class CreateEntities
     {
         public static void Create()
         {
@@ -84,12 +84,12 @@
                     {
                         new EntityField( EntityFieldType.SLong,  "Id" ),
                         new EntityField( EntityFieldType.String, "Comment", 0, 4096 ),
-                        new EntityField( EntityFieldType.String, "FirstName", 0, 16 ),
-                        new EntityField( EntityFieldType.String, "Surname", 0, 16 ),
-                        new EntityField( EntityFieldType.String, "PatronymicName", 0, 16 ),
+                        new EntityField( EntityFieldType.String, "FirstName", 0, 16, null, false, null, LinkType.NoLink, "", 100, true, true, false  ),
+                        new EntityField( EntityFieldType.String, "Surname", 0, 16, null, false, null, LinkType.NoLink, "", 100, true, true, false ),
+                        new EntityField( EntityFieldType.String, "PatronymicName", 0, 16, null, false, null, LinkType.NoLink, "", 100, true, true, false ),
                         new EntityField( EntityFieldType.DirectoryItem, "Gender", 0, 0, null, false, "Gender" ),
                         new EntityField( EntityFieldType.DirectoryItem, "MaritalStatus", 0, 0, null, false, "MaritalStatus" ),
-                        new EntityField( EntityFieldType.DateTime, "BirthDate" ),
+                        new EntityField( EntityFieldType.DateTime, "BirthDate", 0, 0, null, false, null, LinkType.NoLink, "", 100, true, true, false  ),
                         new EntityField( EntityFieldType.ULong,    "AmountOfChildren" ),
                         new EntityField( EntityFieldType.String, "AddressOfCurrLivingPlace", 0, 32 ),
 
@@ -131,7 +131,7 @@
                     {
                         new EntityField( EntityFieldType.SLong,  "Id" ),
                         new EntityField( EntityFieldType.String, "Comment", 0, 4096 ),
-                        new EntityField( EntityFieldType.SLong,  "Balance" ),
+                        new EntityField( EntityFieldType.SLong,  "Balance", null, 0, null, false, null, LinkType.NoLink, "", 100, true, true, true ),
 
                         new EntityField( EntityFieldType.DirectoryItem, "AccountState", 0, 0, null, false, "AccountState" )
                     }
@@ -212,14 +212,14 @@
                         new EntityField( EntityFieldType.String, "Comment", 0, 4096 ),
 
                         new EntityField( EntityFieldType.DateTime, "StartDateTime" ),
-                        new EntityField( EntityFieldType.DateTime, "ControlDateTime" ),
+                        new EntityField( EntityFieldType.DateTime, "ControlDateTime", null, 0, null, false, null, LinkType.NoLink, "", 100, true, true, false ),
                         new EntityField( EntityFieldType.DateTime, "CloseDateTime" ),
 
                         new EntityField( EntityFieldType.Link2TableOrVirtaulPart, "Customer",
                             null, 0, null, false, null, LinkType.One2OneTablePartOfObject, "Customer" ),
 
                         new EntityField( EntityFieldType.Link2TableOrVirtaulPart, "Driver",
-                            null, 0, null, false, null, LinkType.N2OneTableOtherObject, "Driver" )
+                            null, 0, null, false, null, LinkType.N2MTableOtherObject, "Driver" )
                     }
                 )
             );

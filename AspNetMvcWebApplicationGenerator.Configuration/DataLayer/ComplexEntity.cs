@@ -12,16 +12,13 @@
 
         public List<ComplexEntityLink> Links { get; } 
 
-        public Dictionary<String, ComplexEntityFieldFeatures> FieldsFeatures { get; } = new Dictionary<string, ComplexEntityFieldFeatures>();
-
         public ComplexEntity
         (
             String  name,
             Boolean isTableVeiw,
             String  mainTableName,
             String  mainShortTableName,
-            List<ComplexEntityLink> lnks,
-            List<ComplexEntityFieldFeatures> fieldFeatures
+            List<ComplexEntityLink> lnks
         )
         {
             Name               = name;
@@ -29,9 +26,6 @@
             MainTableName      = mainTableName;
             MainShortTableName = mainShortTableName;
             Links              = lnks;
-
-            foreach (var currFf in fieldFeatures)
-                FieldsFeatures.Add(currFf.FieldFullName, currFf);
         }
     }
 }
