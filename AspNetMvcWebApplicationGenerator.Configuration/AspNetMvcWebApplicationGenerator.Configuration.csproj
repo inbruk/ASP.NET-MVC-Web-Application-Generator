@@ -44,6 +44,7 @@
     <Compile Include="BusinessLogicAndWebServicesLayer\ToolItem.cs" />
     <Compile Include="BusinessLogicAndWebServicesLayer\ToolType.cs" />
     <Compile Include="DataLayer\ComplexEntity.cs" />
+    <Compile Include="DataLayer\ComplexEntityFieldFeatures.cs" />
     <Compile Include="DataLayer\ComplexEntityLink.cs" />
     <Compile Include="DataLayer\ComplexEntityLinkType.cs" />
     <Compile Include="DataLayer\Directory.cs" />
