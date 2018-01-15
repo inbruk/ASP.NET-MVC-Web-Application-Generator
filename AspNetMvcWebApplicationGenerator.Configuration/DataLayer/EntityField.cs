@@ -15,6 +15,10 @@
         public String ValidationRegExp { get; }
         public Boolean ValidationCheckExistance { get; }
 
+        #region directory link fields   
+            public String DirectoryEnumName { get; }
+        #endregion
+
         #region link to other tables or virtual parts properties   
             public LinkType LinkType { get; }
             public String LinkedEntityName { get; }
@@ -32,12 +36,13 @@
 
         public EntityField
         (
-            EntityFieldType fieldType, 
-            String name,
-            int?     stringLengthMin = null, 
+            EntityFieldType fieldType,
+            String   name,
+            int?     stringLengthMin = null,
             int      stringLengthMax = 32,
             String   validationRegExp = null,
             Boolean  validationCheckExistance = false,
+            String   directoryEnumName = null,
             LinkType linkType = LinkType.NoLink,
             String   linkedEntityName = "",
             int      gridColumnWidth = 100, 
@@ -52,6 +57,7 @@
             StringLengthMax = stringLengthMax;
             ValidationRegExp = validationRegExp;
             ValidationCheckExistance = validationCheckExistance;
+            DirectoryEnumName = directoryEnumName;
             LinkType = linkType;
             LinkedEntityName = linkedEntityName;
             GridColumnWidth = gridColumnWidth;

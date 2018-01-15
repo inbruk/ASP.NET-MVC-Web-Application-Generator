@@ -5,8 +5,9 @@
         String = 0,
         ULong = 1,
         SLong = 2,
-        DirectoryItem = 3,
-        DateTime = 4,
-        Link2TableOrVirtaulPart = 5
+        DateTime = 3,
+        Boolean = 4,
+        DirectoryItem = 5,
+        Link2TableOrVirtaulPart = 6
     }
 }
