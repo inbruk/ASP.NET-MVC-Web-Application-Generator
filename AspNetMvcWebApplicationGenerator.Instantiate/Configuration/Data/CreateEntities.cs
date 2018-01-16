@@ -1,4 +1,4 @@
-﻿namespace AspNetMvcWebApplicationGenerator.Instantiate.Configuration.Data
+﻿namespace AspNetMvcWebApplicationGenerator.Instance.Configuration.Data
 {
     using System;
     using System.Collections.Generic;

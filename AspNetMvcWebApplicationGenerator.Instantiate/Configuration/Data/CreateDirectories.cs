@@ -1,11 +1,11 @@
-﻿namespace AspNetMvcWebApplicationGenerator.Instantiate.Configuration.Data
+﻿namespace AspNetMvcWebApplicationGenerator.Instance.Configuration.Data
 {
     using System;
     using System.Collections.Generic;
 
     using AspNetMvcWebApplicationGenerator.Configuration.DataLayer;
 
-    public static class Directories
+    public static class CreateDirectories
     {
         public static void Create()
         {

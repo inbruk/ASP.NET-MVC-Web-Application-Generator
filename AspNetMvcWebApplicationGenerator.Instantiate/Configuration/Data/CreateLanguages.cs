@@ -1,8 +1,8 @@
-﻿namespace AspNetMvcWebApplicationGenerator.Instantiate
+﻿namespace AspNetMvcWebApplicationGenerator.Instance.Configuration.Data
 {
     using AspNetMvcWebApplicationGenerator.Configuration.DataLayer;
 
-    public static class Languages
+    public static class CreateLanguages
     {
         public static void Create()
         {

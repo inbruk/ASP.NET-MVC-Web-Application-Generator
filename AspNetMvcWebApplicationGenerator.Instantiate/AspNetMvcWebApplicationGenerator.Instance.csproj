@@ -7,8 +7,8 @@
     <ProjectGuid>{75659108-D832-402D-933D-CF13B905B0AB}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>AspNetMvcWebApplicationGenerator.Instantiate</RootNamespace>
-    <AssemblyName>AspNetMvcWebApplicationGenerator.Instantiate</AssemblyName>
+    <RootNamespace>AspNetMvcWebApplicationGenerator.Instance</RootNamespace>
+    <AssemblyName>AspNetMvcWebApplicationGenerator.Instance</AssemblyName>
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
@@ -41,6 +41,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Configuration\BusinessLogicAndWebService\CreateTools.cs" />
+    <Compile Include="Configuration\CreateInstanceConfiguration.cs" />
     <Compile Include="Configuration\Data\CreateComplexEntities.cs" />
     <Compile Include="Configuration\Data\CreateDirectories.cs" />
     <Compile Include="Configuration\Data\CreateEntities.cs" />
