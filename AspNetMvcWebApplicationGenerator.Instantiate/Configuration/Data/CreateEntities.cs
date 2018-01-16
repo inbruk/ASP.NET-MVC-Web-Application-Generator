@@ -212,7 +212,8 @@
                         new EntityField( EntityFieldType.String, "Comment", 0, 4096 ),
 
                         new EntityField( EntityFieldType.DateTime, "StartDateTime" ),
-                        new EntityField( EntityFieldType.DateTime, "ControlDateTime", null, 0, null, false, null, LinkType.NoLink, "", 100, true, true, false ),
+                        new EntityField( EntityFieldType.DateTime, "ControlDateTime", 
+                            null, 0, null, false, null, LinkType.NoLink, "", 100, true, true, false ),
                         new EntityField( EntityFieldType.DateTime, "CloseDateTime" ),
 
                         new EntityField( EntityFieldType.Link2TableOrVirtaulPart, "Customer",
