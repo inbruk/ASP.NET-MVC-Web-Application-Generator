@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AspNetMvcWebApplicationGene
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AspNetMvcWebApplicationGenerator.Instance", "AspNetMvcWebApplicationGenerator.Instantiate\AspNetMvcWebApplicationGenerator.Instance.csproj", "{75659108-D832-402D-933D-CF13B905B0AB}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AspNetMvcWebApplicationGenerator.Generators", "AspNetMvcWebApplicationGenerator.Generators\AspNetMvcWebApplicationGenerator.Generators.csproj", "{BA81F411-AC4A-411C-8A38-1C506457FC0C}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{75659108-D832-402D-933D-CF13B905B0AB}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{75659108-D832-402D-933D-CF13B905B0AB}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{75659108-D832-402D-933D-CF13B905B0AB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BA81F411-AC4A-411C-8A38-1C506457FC0C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BA81F411-AC4A-411C-8A38-1C506457FC0C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BA81F411-AC4A-411C-8A38-1C506457FC0C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BA81F411-AC4A-411C-8A38-1C506457FC0C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
