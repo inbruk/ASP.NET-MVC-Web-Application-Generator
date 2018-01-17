@@ -61,7 +61,7 @@
                     new List<EntityField>()
                     {
                         new EntityField( EntityFieldType.SLong,    "Id" ),
-                        new EntityField( EntityFieldType.String,   "Comment", 0, 4096 ),
+                        new EntityField( EntityFieldType.String,   "Comment", 0, 0 ),
                         new EntityField( EntityFieldType.String,   "Series", 0, 8 ),
                         new EntityField( EntityFieldType.String,   "Number", 0, 16 ),
                         new EntityField( EntityFieldType.DateTime, "IssueDate" ),
@@ -83,7 +83,7 @@
                     new List<EntityField>()
                     {
                         new EntityField( EntityFieldType.SLong,  "Id" ),
-                        new EntityField( EntityFieldType.String, "Comment", 0, 4096 ),
+                        new EntityField( EntityFieldType.String, "Comment", 0, 0 ),
                         new EntityField( EntityFieldType.String, "FirstName", 0, 16, null, false, null, LinkType.NoLink, "", 100, true, true, false  ),
                         new EntityField( EntityFieldType.String, "Surname", 0, 16, null, false, null, LinkType.NoLink, "", 100, true, true, false ),
                         new EntityField( EntityFieldType.String, "PatronymicName", 0, 16, null, false, null, LinkType.NoLink, "", 100, true, true, false ),
@@ -111,7 +111,7 @@
                     new List<EntityField>()
                     {
                         new EntityField( EntityFieldType.SLong,  "Id" ),
-                        new EntityField( EntityFieldType.String, "Comment", 0, 4096 ),
+                        new EntityField( EntityFieldType.String, "Comment", 0, 0 ),
 
                         new EntityField( EntityFieldType.DirectoryItem, "Position", 0, 0, null, false, "Position" ),
                         
@@ -130,7 +130,7 @@
                     new List<EntityField>()
                     {
                         new EntityField( EntityFieldType.SLong,  "Id" ),
-                        new EntityField( EntityFieldType.String, "Comment", 0, 4096 ),
+                        new EntityField( EntityFieldType.String, "Comment", 0, 0 ),
                         new EntityField( EntityFieldType.SLong,  "Balance", null, 0, null, false, null, LinkType.NoLink, "", 100, true, true, true ),
 
                         new EntityField( EntityFieldType.DirectoryItem, "AccountState", 0, 0, null, false, "AccountState" )
@@ -147,7 +147,7 @@
                     new List<EntityField>()
                     {
                         new EntityField( EntityFieldType.SLong,  "Id" ),
-                        new EntityField( EntityFieldType.String, "Comment", 0, 4096 ),
+                        new EntityField( EntityFieldType.String, "Comment", 0, 0 ),
 
                         new EntityField( EntityFieldType.Link2TableOrVirtaulPart, "Person",
                             null, 0, null, false, null, LinkType.One2OneVirtualPartOfObject, "Person" ),
@@ -167,7 +167,7 @@
                     new List<EntityField>()
                     {
                         new EntityField( EntityFieldType.SLong,  "Id" ),
-                        new EntityField( EntityFieldType.String, "Comment", 0, 4096 ),
+                        new EntityField( EntityFieldType.String, "Comment", 0, 0 ),
 
                         new EntityField( EntityFieldType.Link2TableOrVirtaulPart, "BalanceAccount",
                             null, 0, null, false, null, LinkType.One2OneVirtualPartOfObject, "Account" ),
@@ -190,7 +190,7 @@
                     new List<EntityField>()
                     {
                         new EntityField( EntityFieldType.SLong,  "Id" ),
-                        new EntityField( EntityFieldType.String, "Comment", 0, 4096 ),
+                        new EntityField( EntityFieldType.String, "Comment", 0, 0 ),
                         new EntityField( EntityFieldType.DirectoryItem, "Brand", 0, 0, null, false, "VehicleBrand" ),
                         new EntityField( EntityFieldType.String, "Model", 0, 16 ),
 
@@ -209,7 +209,7 @@
                     new List<EntityField>()
                     {
                         new EntityField( EntityFieldType.SLong,  "Id" ),
-                        new EntityField( EntityFieldType.String, "Comment", 0, 4096 ),
+                        new EntityField( EntityFieldType.String, "Comment", 0, 0 ),
 
                         new EntityField( EntityFieldType.DateTime, "StartDateTime" ),
                         new EntityField( EntityFieldType.DateTime, "ControlDateTime", 

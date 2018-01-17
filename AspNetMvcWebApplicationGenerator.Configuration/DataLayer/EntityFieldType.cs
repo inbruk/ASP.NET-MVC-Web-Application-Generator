@@ -3,11 +3,12 @@
     public enum EntityFieldType
     {
         String = 0,
-        ULong = 1,
-        SLong = 2,
+        SLong = 1,
+        Float = 2,
         DateTime = 3,
         Boolean = 4,
-        DirectoryItem = 5,
-        Link2TableOrVirtaulPart = 6
+        DecimalOrMoney = 5,
+        DirectoryItem = 6,
+        Link2TableOrVirtaulPart = 7
     }
 }

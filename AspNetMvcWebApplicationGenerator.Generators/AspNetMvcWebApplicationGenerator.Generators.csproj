@@ -40,8 +40,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DataLayer\Helpers\OutputFileExtentions.cs" />
+    <Compile Include="DataLayer\Helpers\OutputFileType.cs" />
     <Compile Include="DataLayer\Helpers\TableCreator.cs" />
-    <Compile Include="DataLayer\Helpers\_BaseFileGenerator.cs" />
+    <Compile Include="DataLayer\Helpers\StringFileWriter.cs" />
     <Compile Include="DataLayer\Languages.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
