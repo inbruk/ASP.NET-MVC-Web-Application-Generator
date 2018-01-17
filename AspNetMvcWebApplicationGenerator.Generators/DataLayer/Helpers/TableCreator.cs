@@ -2,11 +2,8 @@
 {
     using System;
     using System.Collections.Generic;
-    using System.Linq;
-    using System.Text;
-    using System.Threading.Tasks;
 
-    using Dl = AspNetMvcWebApplicationGenerator.Configuration.DataLayer;
+    using AspNetMvcWebApplicationGenerator.Configuration.DataLayer;
 
     internal class TableCreator
     {
@@ -20,7 +17,7 @@
             FileWriter = new StringFileWriter(filePath, TableName, OutputFileType.SqlScript);
         }
 
-        protected String GenerateRowForStringFieldType(Dl.EntityField currField)
+        protected String GenerateRowForStringFieldType(EntityField currField)
         {
             String strLength = currField.StringLengthMax.ToString();
 
@@ -32,67 +29,67 @@
             return result;
         }
 
-        protected String GenerateRowForSLongFieldType(Dl.EntityField currField)
+        protected String GenerateRowForSLongFieldType(EntityField currField)
         {
             String result = EmptyPrefix4 + currField.Name + " BIGINT,";
             return result;
         }
 
-        protected String GenerateRowForFloatFieldType(Dl.EntityField currField)
+        protected String GenerateRowForFloatFieldType(EntityField currField)
         {
             String result = EmptyPrefix4 + currField.Name + " REAL,";
             return result;
         }
 
-        protected String GenerateRowForDateTimeFieldType(Dl.EntityField currField)
+        protected String GenerateRowForDateTimeFieldType(EntityField currField)
         {
             String result = EmptyPrefix4 + currField.Name + " DATETIMEOFFSET,";
             return result;
         }
 
-        protected String GenerateRowForBooleanFieldType(Dl.EntityField currField)
+        protected String GenerateRowForBooleanFieldType(EntityField currField)
         {
             String result = EmptyPrefix4 + currField.Name + " BIT,";
             return result;
         }
 
-        protected String GenerateRowForDecimalOrMoneyFieldType(Dl.EntityField currField)
+        protected String GenerateRowForDecimalOrMoneyFieldType(EntityField currField)
         {
             String result = EmptyPrefix4 + currField.Name + " MONEY,";
             return result;
         }
 
-        protected String GenerateRowForDirectoryItemFieldType(Dl.EntityField currField)
+        protected String GenerateRowForDirectoryItemFieldType(EntityField currField)
         {
             String result = EmptyPrefix4 + currField.Name + " BIGINT FOREIGN KEY REFERENCES tblDictionaryValues(Id),";
             return result;
         }
 
 
-        protected void WriteTableDefinitionRow(Dl.EntityField currField)
+        protected void WriteTableDefinitionRow(EntityField currField)
         {
             String str = "";
             switch (currField.FieldType)
             {
-                case Dl.EntityFieldType.String:
+                case EntityFieldType.String:
                     str = GenerateRowForStringFieldType(currField);
                     break;
-                case Dl.EntityFieldType.SLong:
+                case EntityFieldType.SLong:
                     str = GenerateRowForSLongFieldType(currField);
                     break;
-                case Dl.EntityFieldType.Float:
+                case EntityFieldType.Float:
                     str = GenerateRowForFloatFieldType(currField);
                     break;
-                case Dl.EntityFieldType.DateTime:
+                case EntityFieldType.DateTime:
                     str = GenerateRowForDateTimeFieldType(currField);
                     break;
-                case Dl.EntityFieldType.Boolean:
+                case EntityFieldType.Boolean:
                     str = GenerateRowForBooleanFieldType(currField);
                     break;
-                case Dl.EntityFieldType.DecimalOrMoney:
+                case EntityFieldType.DecimalOrMoney:
                     str = GenerateRowForDecimalOrMoneyFieldType(currField);
                     break;
-                case Dl.EntityFieldType.DirectoryItem:
+                case EntityFieldType.DirectoryItem:
                     str = GenerateRowForDirectoryItemFieldType(currField);
                     break;
                 default:
@@ -103,7 +100,7 @@
             FileWriter.WriteString(str);
         }
 
-        public void GenerateFile(List<Dl.EntityField> fields)
+        public void GenerateFile(List<EntityField> fields)
         {
             // write header
             FileWriter.WriteString("CREATE TABLE " + TableName + " ( ");
@@ -114,6 +111,7 @@
 
             // write tail
             FileWriter.WriteString(" ); ");
+            FileWriter.WriteString("GO");
 
             // close file
             FileWriter.Close();

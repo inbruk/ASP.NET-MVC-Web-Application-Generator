@@ -1,5 +1,7 @@
 ﻿namespace AspNetMvcWebApplicationGenerator.Instance.Configuration.Data
 {
+    using System;
+
     using AspNetMvcWebApplicationGenerator.Configuration.DataLayer;
 
     public static class CreateLanguages
