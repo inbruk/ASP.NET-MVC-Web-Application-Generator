@@ -3,17 +3,15 @@
     using AspNetMvcWebApplicationGenerator.Configuration.DataLayer;
     using AspNetMvcWebApplicationGenerator.Generators.DataLayer.Helpers;
 
-    public class Languages
+    internal class Languages
     {
         private void CreateTables()
         {
             StringFileWriter FileWriter = new StringFileWriter( DataConfiguration.OutputPath, "tblLanguage", OutputFileType.SqlScript );
             FileWriter.WriteString("CREATE TABLE tblLanguage (");
-
             FileWriter.WriteString("    Id BIGINT, ");
             FileWriter.WriteString("    EnumName NVARCHAR(16), ");
             FileWriter.WriteString("    UIName NVARCHAR(16) ");
-
             FileWriter.WriteString(");");
             FileWriter.WriteString("GO");
             FileWriter.Close();
