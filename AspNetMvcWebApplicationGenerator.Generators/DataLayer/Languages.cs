@@ -9,7 +9,7 @@
         {
             StringFileWriter FileWriter = new StringFileWriter( DataConfiguration.OutputPath, "tblLanguage", OutputFileType.SqlScript );
             FileWriter.WriteString("CREATE TABLE tblLanguage (");
-            FileWriter.WriteString("    Id BIGINT, ");
+            FileWriter.WriteString("    Id BIGINT IDENTITY (1,1) NOT NULL PRIMARY KEY, ");
             FileWriter.WriteString("    EnumName NVARCHAR(16), ");
             FileWriter.WriteString("    UIName NVARCHAR(16) ");
             FileWriter.WriteString(");");

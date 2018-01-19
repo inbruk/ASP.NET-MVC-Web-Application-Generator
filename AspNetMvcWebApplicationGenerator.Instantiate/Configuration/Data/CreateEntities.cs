@@ -90,7 +90,7 @@
                         new EntityField( EntityFieldType.DirectoryItem, "Gender", 0, 0, null, false, "Gender" ),
                         new EntityField( EntityFieldType.DirectoryItem, "MaritalStatus", 0, 0, null, false, "MaritalStatus" ),
                         new EntityField( EntityFieldType.DateTime, "BirthDate", 0, 0, null, false, null, LinkType.NoLink, "", 100, true, true, false  ),
-                        new EntityField( EntityFieldType.ULong,    "AmountOfChildren" ),
+                        new EntityField( EntityFieldType.SLong,    "AmountOfChildren" ),
                         new EntityField( EntityFieldType.String, "AddressOfCurrLivingPlace", 0, 32 ),
 
                         new EntityField( EntityFieldType.Link2TableOrVirtaulPart, "Contacts", 

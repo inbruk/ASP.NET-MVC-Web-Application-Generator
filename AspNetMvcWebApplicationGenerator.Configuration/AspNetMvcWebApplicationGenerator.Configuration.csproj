@@ -48,7 +48,7 @@
     <Compile Include="DataLayer\ComplexEntityLink.cs" />
     <Compile Include="DataLayer\ComplexEntityLinkType.cs" />
     <Compile Include="DataLayer\Directory.cs" />
-    <Compile Include="DataLayer\DirectoryItem.cs" />
+    <Compile Include="DataLayer\DirectoryValue.cs" />
     <Compile Include="DataLayer\Entity.cs" />
     <Compile Include="DataLayer\EntityField.cs" />
     <Compile Include="DataLayer\EntityFieldType.cs" />
@@ -56,6 +56,8 @@
     <Compile Include="DataLayer\LanguageItem.cs" />
     <Compile Include="DataLayer\LinkType.cs" />
     <Compile Include="DataLayer\DataConfiguration.cs" />
+    <Compile Include="DataLayer\TranslatedString.cs" />
+    <Compile Include="DataLayer\TranslatedStringType.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="WebUserInterfaceLayer\WUIConfiguration.cs" />
     <Compile Include="WebUserInterfaceLayer\WebPage.cs" />

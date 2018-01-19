@@ -13,34 +13,48 @@
             (
                 new Directory
                 (
+                     1,
                      "Position",
                      true,
-                     new Dictionary<long, string>() { { 1, "Должность" } },
-                     new List<DirectoryItem>()
+                     new List<TranslatedString>() { new TranslatedString( 1, TranslatedStringType.DirectoryName, 1, "Должность" ) },
+                     new List<DirectoryValue>()
                      {
-                         new DirectoryItem
+                         new DirectoryValue
                          (
                              1,
                              "Driver",
                              true,
-                             new Dictionary<long, string>() { { 1, "Водитель" } },
-                             new Dictionary<long, string>() { { 1, "Управляет машинами компании. Возит клиентов." } }
+                             1,
+                             new List<TranslatedString>() { new TranslatedString( 1, TranslatedStringType.DirectoryItemValue, 1, "Водитель" ) },
+                             new List<TranslatedString>()
+                             {
+                                 new TranslatedString( 1, TranslatedStringType.DirectoryItemComment, 1, "Управляет машинами компании. Возит клиентов." )
+                             }
                          ),
-                         new DirectoryItem
+                         new DirectoryValue
                          (
                              2,
                              "Dispatcher",
                              true,
-                             new Dictionary<long, string>() { { 1, "Диспетчер" } },
-                             new Dictionary<long, string>() { { 1, "Звонит водителям и клиентам. Сохраняет заказы в БД." } }
+                             1,
+                             new List<TranslatedString>() { new TranslatedString( 1, TranslatedStringType.DirectoryItemValue, 2, "Диспетчер") },
+                             new List<TranslatedString>()
+                             {
+                                 new TranslatedString( 1, TranslatedStringType.DirectoryItemComment, 2, "Звонит водителям и клиентам. Сохраняет заказы в БД." )
+                             }
                          ),
-                         new DirectoryItem
+                         new DirectoryValue
                          (
                              3,
                              "Superviser",
                              true,
-                             new Dictionary<long, string>() { { 1, "Супервизор" } },
-                             new Dictionary<long, string>() { { 1, "Пасет диспетчеров. Решает конфликтные ситуации с клиентами и водителями." } }
+                             1,
+                             new List<TranslatedString>() { new TranslatedString( 1, TranslatedStringType.DirectoryItemValue, 3, "Супервизор") },
+                             new List<TranslatedString>()
+                             {
+                                 new TranslatedString( 1, TranslatedStringType.DirectoryItemComment, 3, 
+                                    "Пасет диспетчеров. Решает конфликтные ситуации с клиентами и водителями." )
+                             }
                          )
                      }
                 )
@@ -50,26 +64,35 @@
             (
                 new Directory
                 (
+                     2,
                      "Gender",
                      true,
-                     new Dictionary<long, string>() { { 1, "Пол" } },
-                     new List<DirectoryItem>()
+                     new List<TranslatedString>() { new TranslatedString( 1, TranslatedStringType.DirectoryName, 2, "Пол") },
+                     new List<DirectoryValue>()
                      {
-                         new DirectoryItem
+                         new DirectoryValue
                          (
-                             1,
+                             4,
                              "Male",
                              true,
-                             new Dictionary<long, string>() { { 1, "Мужской" } },
-                             new Dictionary<long, string>() { { 1, "Мальчики, юноши, мужчины, дедушки." } }
-                         ),
-                         new DirectoryItem
-                         (
                              2,
+                             new List<TranslatedString>() { new TranslatedString( 1, TranslatedStringType.DirectoryItemValue, 4, "Мужской") },
+                             new List<TranslatedString>()
+                             {
+                                 new TranslatedString( 1, TranslatedStringType.DirectoryItemComment, 4, "Мальчики, юноши, мужчины, дедушки." )
+                             }
+                         ),
+                         new DirectoryValue
+                         (
+                             5,
                              "Female",
                              true,
-                             new Dictionary<long, string>() { { 1, "Женский" } },
-                             new Dictionary<long, string>() { { 1, "Девочки, девушки, женщины, бабушки." } }
+                             2,
+                             new List<TranslatedString>() { new TranslatedString( 1, TranslatedStringType.DirectoryItemValue, 5, "Женский") },
+                             new List<TranslatedString>()
+                             {
+                                 new TranslatedString( 1, TranslatedStringType.DirectoryItemComment, 5, "Девочки, девушки, женщины, бабушки." )
+                             }
                          )
                      }
                 )
@@ -79,26 +102,35 @@
             (
                 new Directory
                 (
+                     3, 
                      "MaritalStatus",
                      true,
-                     new Dictionary<long, string>() { { 1, "Семейное положение" } },
-                     new List<DirectoryItem>()
+                     new List<TranslatedString>() { new TranslatedString( 1, TranslatedStringType.DirectoryName, 3, "Семейное положение" ) },
+                     new List<DirectoryValue>()
                      {
-                         new DirectoryItem
+                         new DirectoryValue
                          (
-                             1,
+                             6,
                              "Single",
                              true,
-                             new Dictionary<long, string>() { { 1, "Холост" } },
-                             new Dictionary<long, string>() { { 1, "Отношения официально не оформлены." } }
+                             3,
+                             new List<TranslatedString>() { new TranslatedString( 1, TranslatedStringType.DirectoryItemValue, 6, "Холост/Не замужем") },
+                             new List<TranslatedString>()
+                             {
+                                 new TranslatedString( 1, TranslatedStringType.DirectoryItemComment, 6, "Отношения официально не оформлены." )
+                             }
                          ),
-                         new DirectoryItem
+                         new DirectoryValue
                          (
-                             2,
+                             7,
                              "Married",
                              true,
-                             new Dictionary<long, string>() { { 1, "Женат/За мужем" } },
-                             new Dictionary<long, string>() { { 1, "Отношения официально оформлены." } }
+                             3,
+                             new List<TranslatedString>() { new TranslatedString( 1, TranslatedStringType.DirectoryItemValue, 7, "Женат/За мужем") },
+                             new List<TranslatedString>()
+                             {
+                                 new TranslatedString( 1, TranslatedStringType.DirectoryItemComment, 7, "Отношения официально оформлены." )
+                             }
                          )
                      }
                 )
@@ -108,26 +140,35 @@
             (
                 new Directory
                 (
+                     4,
                      "AccountState",
                      true,
-                     new Dictionary<long, string>() { { 1, "Состояние аккаунта" } },
-                     new List<DirectoryItem>()
+                     new List<TranslatedString>() { new TranslatedString(1, TranslatedStringType.DirectoryName, 4, "Состояние аккаунта") },
+                     new List<DirectoryValue>()
                      {
-                         new DirectoryItem
+                         new DirectoryValue
                          (
-                             1,
+                             8,
                              "Working",
                              true,
-                             new Dictionary<long, string>() { { 1, "Рабочий" } },
-                             new Dictionary<long, string>() { { 1, "Аккаунт можно использовать." } }
+                             4,
+                             new List<TranslatedString>() { new TranslatedString( 1, TranslatedStringType.DirectoryItemValue, 8, "Рабочий") },
+                             new List<TranslatedString>()
+                             {
+                                 new TranslatedString( 1, TranslatedStringType.DirectoryItemComment, 8, "Аккаунт можно использовать." )
+                             }
                          ),
-                         new DirectoryItem
+                         new DirectoryValue
                          (
-                             2,
+                             9,
                              "Blocked",
                              true,
-                             new Dictionary<long, string>() { { 1, "Заблокирован" } },
-                             new Dictionary<long, string>() { { 1, "Сейчас пользоваться аккаунтом нельзя." } }
+                             4,
+                             new List<TranslatedString>() { new TranslatedString( 1, TranslatedStringType.DirectoryItemValue, 9, "Заблокирован") },
+                             new List<TranslatedString>()
+                             {
+                                 new TranslatedString( 1, TranslatedStringType.DirectoryItemComment, 9, "Сейчас пользоваться аккаунтом нельзя." )
+                             }
                          )
                      }
                 )
@@ -137,26 +178,35 @@
             (
                 new Directory
                 (
+                     5, 
                      "VehicleBrand",
                      true,
-                     new Dictionary<long, string>() { { 1, "Бренд автопроизводителя" } },
-                     new List<DirectoryItem>()
+                     new List<TranslatedString>() { new TranslatedString( 1, TranslatedStringType.DirectoryName, 5, "Бренд автопроизводителя" ) },
+                     new List<DirectoryValue>()
                      {
-                         new DirectoryItem
+                         new DirectoryValue
                          (
-                             1,
+                             10,
                              "LADA",
                              true,
-                             new Dictionary<long, string>() { { 1, "ВАЗ" } },
-                             new Dictionary<long, string>() { { 1, "Российская разбитная бричка." } }
+                             5,
+                             new List<TranslatedString>() { new TranslatedString( 1, TranslatedStringType.DirectoryItemValue, 10, "ВАЗ") },
+                             new List<TranslatedString>()
+                             {
+                                 new TranslatedString( 1, TranslatedStringType.DirectoryItemComment, 10, "Российская разбитная бричка." )
+                             }
                          ),
-                         new DirectoryItem
+                         new DirectoryValue
                          (
-                             2,
+                             11,
                              "GAZ",
                              true,
-                             new Dictionary<long, string>() { { 1, "ГАЗ" } },
-                             new Dictionary<long, string>() { { 1, "Колесница богов." } }
+                             5,
+                             new List<TranslatedString>() { new TranslatedString( 1, TranslatedStringType.DirectoryItemValue, 11, "ГАЗ") },
+                             new List<TranslatedString>()
+                             {
+                                 new TranslatedString( 1, TranslatedStringType.DirectoryItemComment, 11, "Колесница богов." )
+                             }
                          )
                      }
                 )
