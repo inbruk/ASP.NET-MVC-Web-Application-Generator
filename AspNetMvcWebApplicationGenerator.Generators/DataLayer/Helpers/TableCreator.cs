@@ -65,7 +65,6 @@
             return result;
         }
 
-
         protected void WriteTableDefinitionRow(EntityField currField)
         {
             String str = "";

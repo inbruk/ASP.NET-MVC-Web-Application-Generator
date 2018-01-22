@@ -41,6 +41,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="DataLayer\Directories.cs" />
+    <Compile Include="DataLayer\Entities.cs" />
     <Compile Include="DataLayer\Helpers\OutputFileExtentions.cs" />
     <Compile Include="DataLayer\Helpers\OutputFileType.cs" />
     <Compile Include="DataLayer\Helpers\TableCreator.cs" />

@@ -65,5 +65,29 @@
             FieldFilterIsRequired = fieldFilterIsRequired;
             FieldFilterIsMinRequired = fieldFilterIsMinRequired;
         }
+
+        public EntityField CloneWithAdditionalNamePrefix(String namePrefix)
+        {
+            String newName = namePrefix + Name;
+
+            EntityField result = new EntityField
+            (
+                FieldType,
+                newName,
+                StringLengthMin,
+                StringLengthMax,
+                ValidationRegExp,
+                ValidationCheckExistance,
+                DirectoryEnumName,
+                LinkType,
+                LinkedEntityName,
+                GridColumnWidth,
+                GridColumnIsSortingAllowed,
+                FieldFilterIsRequired,
+                FieldFilterIsMinRequired
+            );
+
+            return result;
+        }
     }
 }

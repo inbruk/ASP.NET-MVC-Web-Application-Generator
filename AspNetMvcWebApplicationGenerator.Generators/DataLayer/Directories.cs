@@ -1,11 +1,5 @@
 ﻿namespace AspNetMvcWebApplicationGenerator.Generators.DataLayer
 {
-    using System;
-    using System.Collections.Generic;
-    using System.Linq;
-    using System.Text;
-    using System.Threading.Tasks;
-
     using AspNetMvcWebApplicationGenerator.Configuration.DataLayer;
     using AspNetMvcWebApplicationGenerator.Generators.DataLayer.Helpers;
 
@@ -46,6 +40,15 @@
             FileWriter.Close();
         }
 
+        private void CreateIndexes4TblDirectory()
+        {
+            StringFileWriter FileWriter = new StringFileWriter(DataConfiguration.OutputPath, "idxDirectoryValue", OutputFileType.SqlScript);
+            FileWriter.WriteString("CREATE INDEX idxDirectoryValue_DirectoryId ");
+            FileWriter.WriteString("    ON tblDirectoryValue( DirectoryId ); ");
+            FileWriter.WriteString("GO");
+            FileWriter.Close();
+        }
+
         private void FillOneTblDirectoryValue(DirectoryValue dirValue, StringFileWriter fileWriter)
         {
             fileWriter.WriteString("");
@@ -71,6 +74,18 @@
             FileWriter.Close();
         }
 
+        private void CreateIndexes4TblTranslatedString()
+        {
+            StringFileWriter FileWriter = new StringFileWriter(DataConfiguration.OutputPath, "idxTranslatedString", OutputFileType.SqlScript);
+            FileWriter.WriteString("CREATE INDEX idxTranslatedString_Language ");
+            FileWriter.WriteString("    ON tblTranslatedString( Language ); ");
+            FileWriter.WriteString("GO");
+            FileWriter.WriteString("CREATE INDEX idxTranslatedString_TypeReferencedItemId ");
+            FileWriter.WriteString("    ON tblTranslatedString( Type, ReferencedItemId ); ");
+            FileWriter.WriteString("GO");
+            FileWriter.Close();
+        }
+
         private void FillOneTblTranslatedString(TranslatedString transStr, StringFileWriter fileWriter)
         {
             fileWriter.WriteString("");
@@ -85,9 +100,13 @@
         public void Generate()
         {
             CreateTblDirectory();
-            CreateTblDirectoryValue();
-            CreateTblTranslatedString();
 
+            CreateTblDirectoryValue();
+            CreateIndexes4TblDirectory();
+
+            CreateTblTranslatedString();
+            CreateIndexes4TblTranslatedString();
+            
             StringFileWriter FileWriter_tblDirectory = new StringFileWriter(DataConfiguration.OutputPath, "fill_tblDirectory", OutputFileType.SqlScript);
             StringFileWriter FileWriter_tblDirectoryValue = new StringFileWriter(DataConfiguration.OutputPath, "fill_tblDirectoryValue", OutputFileType.SqlScript);
             StringFileWriter FileWriter_tblTranslatedString = new StringFileWriter(DataConfiguration.OutputPath, "fill_tblTranslatedString", OutputFileType.SqlScript);
