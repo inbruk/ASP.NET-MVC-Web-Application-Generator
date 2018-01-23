@@ -80,6 +80,7 @@
             FileWriter.WriteString("CREATE INDEX idxTranslatedString_Language ");
             FileWriter.WriteString("    ON tblTranslatedString( Language ); ");
             FileWriter.WriteString("GO");
+            FileWriter.WriteString("");
             FileWriter.WriteString("CREATE INDEX idxTranslatedString_TypeReferencedItemId ");
             FileWriter.WriteString("    ON tblTranslatedString( Type, ReferencedItemId ); ");
             FileWriter.WriteString("GO");

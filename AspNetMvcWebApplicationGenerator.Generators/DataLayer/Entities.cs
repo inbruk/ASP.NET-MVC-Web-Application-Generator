@@ -20,7 +20,8 @@
             tc.GenerateFile(entity.Name, fields);
 
             // create indexes by field list
-
+            Indexes4TableCreator ic = new Indexes4TableCreator(DataConfiguration.OutputPath, entity.Name);
+            ic.GenerateFile(entity.Name, fields);
         }
     }
 }

@@ -42,7 +42,7 @@
   <ItemGroup>
     <Compile Include="DataLayer\Directories.cs" />
     <Compile Include="DataLayer\Entities.cs" />
-    <Compile Include="DataLayer\Helpers\IndexesCreator.cs" />
+    <Compile Include="DataLayer\Helpers\Indexes4TableCreator.cs" />
     <Compile Include="DataLayer\Helpers\OutputFileExtentions.cs" />
     <Compile Include="DataLayer\Helpers\OutputFileType.cs" />
     <Compile Include="DataLayer\Helpers\RecursiveFromEntityFieldsExtractor.cs" />

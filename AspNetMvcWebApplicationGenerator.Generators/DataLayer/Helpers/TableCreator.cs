@@ -91,6 +91,18 @@
             FileWriter.WriteString( "GO" );
             FileWriter.Close();
 
+            String indexFileName = "idx" + entityName + currField.LinkedEntityName;
+
+            FileWriter = new StringFileWriter(DataConfiguration.OutputPath, indexFileName, OutputFileType.SqlScript);
+            FileWriter.WriteString("CREATE INDEX " + indexFileName + "_" + entityName + " ");
+            FileWriter.WriteString(EmptyPrefix4 + "ON " + tableName + "(" + entityName + "); ");
+            FileWriter.WriteString("GO");
+            FileWriter.WriteString("");
+            FileWriter.WriteString("CREATE INDEX " + indexFileName + "_" + currField.LinkedEntityName + " ");
+            FileWriter.WriteString(EmptyPrefix4 + "ON " + tableName + "(" + currField.LinkedEntityName + "); ");
+            FileWriter.WriteString("GO");
+            FileWriter.Close();
+            
             String result = EmptyPrefix4 + "-- see N2M link table n2m" + entityName + currField.LinkedEntityName;
             return result;
         }
@@ -118,19 +130,19 @@
                 case EntityFieldType.DecimalOrMoney:
                     str = GenerateRowForDecimalOrMoneyFieldType(currField);
                     break;
-                case EntityFieldType.DirectoryItem:
+                case EntityFieldType.DirectoryItem: // indexes generated in Indexes4TableCreator
                     str = GenerateRowForDirectoryItemFieldType(currField);
                     break;
                 case EntityFieldType.Link2TableOrVirtaulPart:
                     switch (currField.LinkType)
                     {
-                        case LinkType.One2OneTablePartOfObject:
+                        case LinkType.One2OneTablePartOfObject: // indexes generated in Indexes4TableCreator
                             str = GenerateRowForLinkOne2OneTable(currField);
                             break;
-                        case LinkType.N2OneTableOtherObject:
+                        case LinkType.N2OneTableOtherObject: // indexes generated in Indexes4TableCreator
                             str = GenerateRowForLinkN2OneTable(currField);
                             break;
-                        case LinkType.N2MTableOtherObject:
+                        case LinkType.N2MTableOtherObject: // link table and indexes generated here
                             str = GenerateLinkTableForN2MLink(entityName, currField);
                             break;
                         default:
