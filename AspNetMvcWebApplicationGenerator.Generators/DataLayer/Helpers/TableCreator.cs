@@ -65,7 +65,37 @@
             return result;
         }
 
-        protected void WriteTableDefinitionRow(EntityField currField)
+        protected String GenerateRowForLinkOne2OneTable(EntityField currField)
+        {
+            String result = EmptyPrefix4 + currField.Name + 
+                " BIGINT FOREIGN KEY REFERENCES tbl" + currField.LinkedEntityName + "(" + currField.LinkedFieldName + "),";
+            return result;
+        }
+
+        protected String GenerateRowForLinkN2OneTable(EntityField currField)
+        {
+            String result = EmptyPrefix4 + currField.Name +
+                " BIGINT FOREIGN KEY REFERENCES tbl" + currField.LinkedEntityName + "(" + currField.LinkedFieldName + "),";
+            return result;
+        }
+
+        protected String  GenerateLinkTableForN2MLink(String entityName, EntityField currField)
+        {
+            String tableName = "n2m" + entityName + currField.LinkedEntityName;
+
+            StringFileWriter FileWriter = new StringFileWriter(DataConfiguration.OutputPath, tableName, OutputFileType.SqlScript);
+            FileWriter.WriteString( "CREATE TABLE " + tableName + "(" );
+            FileWriter.WriteString( EmptyPrefix4 + entityName + " BIGINT FOREIGN KEY REFERENCES tbl" + entityName + "(Id)," );
+            FileWriter.WriteString( EmptyPrefix4 + currField.LinkedEntityName + " BIGINT FOREIGN KEY REFERENCES tbl" + currField.LinkedEntityName + "(Id)," );
+            FileWriter.WriteString( ");" );
+            FileWriter.WriteString( "GO" );
+            FileWriter.Close();
+
+            String result = EmptyPrefix4 + "-- see N2M link table n2m" + entityName + currField.LinkedEntityName;
+            return result;
+        }
+
+        protected void WriteTableDefinitionRow(String entityName, EntityField currField)
         {
             String str = "";
             switch (currField.FieldType)
@@ -91,22 +121,37 @@
                 case EntityFieldType.DirectoryItem:
                     str = GenerateRowForDirectoryItemFieldType(currField);
                     break;
+                case EntityFieldType.Link2TableOrVirtaulPart:
+                    switch (currField.LinkType)
+                    {
+                        case LinkType.One2OneTablePartOfObject:
+                            str = GenerateRowForLinkOne2OneTable(currField);
+                            break;
+                        case LinkType.N2OneTableOtherObject:
+                            str = GenerateRowForLinkN2OneTable(currField);
+                            break;
+                        case LinkType.N2MTableOtherObject:
+                            str = GenerateLinkTableForN2MLink(entityName, currField);
+                            break;
+                        default:
+                            throw new Exception("Error: LinkType has unsupported value !!!");
+                    }
+                    break;
                 default:
-                    // Внимание !!! сюда должны попадать сплошные списки без вложенных частей, без Dl.EntityFieldType.Link2TableOrVirtaulPart
                     throw new Exception("Error: FieldType has unsupported value !!!");
             }            
 
             FileWriter.WriteString(str);
         }
 
-        public void GenerateFile(List<EntityField> fields)
+        public void GenerateFile(String entityName, List<EntityField> fields)
         {
             // write header
             FileWriter.WriteString("CREATE TABLE " + TableName + " ( ");
 
             // write rows corresponding to 
             foreach (var currField in fields)
-                WriteTableDefinitionRow(currField);
+                WriteTableDefinitionRow(entityName, currField);
 
             // write tail
             FileWriter.WriteString(" ); ");

@@ -22,10 +22,11 @@
         #region link to other tables or virtual parts properties   
             public LinkType LinkType { get; }
             public String LinkedEntityName { get; }
+            public String LinkedFieldName { get; }
         #endregion
 
         #region grid column configuration 
-            public int     GridColumnWidth { get; }
+        public int     GridColumnWidth { get; }
             public Boolean GridColumnIsSortingAllowed { get; }
         #endregion
 
@@ -45,6 +46,7 @@
             String   directoryEnumName = null,
             LinkType linkType = LinkType.NoLink,
             String   linkedEntityName = "",
+            String   linkedFieldName = "Id",
             int      gridColumnWidth = 100, 
             Boolean  gridColumnIsSortingAllowed = false,
             Boolean  fieldFilterIsRequired = false,
@@ -60,6 +62,7 @@
             DirectoryEnumName = directoryEnumName;
             LinkType = linkType;
             LinkedEntityName = linkedEntityName;
+            LinkedFieldName = linkedFieldName;
             GridColumnWidth = gridColumnWidth;
             GridColumnIsSortingAllowed = gridColumnIsSortingAllowed;
             FieldFilterIsRequired = fieldFilterIsRequired;
@@ -81,6 +84,7 @@
                 DirectoryEnumName,
                 LinkType,
                 LinkedEntityName,
+                LinkedFieldName,
                 GridColumnWidth,
                 GridColumnIsSortingAllowed,
                 FieldFilterIsRequired,
