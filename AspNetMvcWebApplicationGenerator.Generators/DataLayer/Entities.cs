@@ -23,5 +23,11 @@
             Indexes4TableCreator ic = new Indexes4TableCreator(DataConfiguration.OutputPath, entity.Name);
             ic.GenerateFile(entity.Name, fields);
         }
+
+        public void Generate()
+        {
+            foreach (var currEntity in DataConfiguration.EntitiesConfigurations.Values)
+                CreateOneTableForEntity(currEntity);
+        }
     }
 }
