@@ -4,7 +4,7 @@
     {
         Inner = 0,
         Left = 1,
-        Right = 2,
-        M2MInner = 3
+        Right = 2
+        // , M2MInner = 3
     }
 }

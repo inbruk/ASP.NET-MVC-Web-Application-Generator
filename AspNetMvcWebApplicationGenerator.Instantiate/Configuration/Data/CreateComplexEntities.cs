@@ -14,7 +14,6 @@
                 new ComplexEntity
                 (
                     "OrderCustomer",
-                    false,
                     "Order",
                     "Ord",
                     new List<ComplexEntityLink>()
@@ -28,12 +27,11 @@
                 new ComplexEntity
                 (
                     "OrderDriver",
-                    false,
                     "Order",
                     "Ord",
                     new List<ComplexEntityLink>()
                     {
-                         new ComplexEntityLink( ComplexEntityLinkType.M2MInner, "Ord", "Driver", "Driver", "Drv", "Order" )
+                         new ComplexEntityLink( ComplexEntityLinkType.Left, "Ord", "Driver", "Driver", "Drv", "Order" )
                     }
                 )
             );
