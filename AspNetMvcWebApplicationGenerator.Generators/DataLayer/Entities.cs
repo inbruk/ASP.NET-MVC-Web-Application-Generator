@@ -24,7 +24,8 @@
         public void Generate()
         {
             foreach (var currEntity in DataConfiguration.EntitiesConfigurations.Values)
-                CreateOneTableForEntity(currEntity);
+                if( currEntity.Type != EntityType.VirtualPartOfObject )
+                    CreateOneTableForEntity(currEntity);
         }
     }
 }

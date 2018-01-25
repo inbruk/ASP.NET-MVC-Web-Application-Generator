@@ -93,7 +93,7 @@
             fileWriter.WriteString("INSERT INTO tblTranslatedString ");
             fileWriter.WriteString("    ( Language, Type, ReferencedItemId, Value )");
             fileWriter.WriteString("VALUES");
-            fileWriter.WriteString("    ( " + transStr.Language.ToString() + ", " + transStr.Type.ToString() + ", "
+            fileWriter.WriteString("    ( " + transStr.Language.ToString() + ", " + ((int)transStr.Type).ToString() + ", "
                                             + transStr.ReferencedItemId.ToString() + ", " + transStr.Value.ToString() + " );");
             fileWriter.WriteString("GO");
         }

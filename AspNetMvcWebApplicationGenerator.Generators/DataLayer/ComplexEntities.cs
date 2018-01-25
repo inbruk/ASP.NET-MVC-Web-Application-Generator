@@ -41,7 +41,7 @@
                     break;
             }
 
-            FileWriter.WriteString( joinStr + "tbl" + link.RightTableName + " " + link.RightShortTableName +
+            FileWriter.WriteString( joinStr + " tbl" + link.RightTableName + " " + link.RightShortTableName +
                 " ON " + link.LeftShortTableName + "." + link.LeftFieldName + "=" + link.RightShortTableName + "." + link.RightFieldName );
         }
 

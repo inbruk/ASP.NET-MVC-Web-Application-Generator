@@ -12,25 +12,19 @@
 
     public static class CreateInstanceConfiguration
     {
-        public static void Create
-        (
-            String dataLayerPath,
-            String businessLayerPath,
-            String servicesLayerPath,
-            String presentationLayerPath
-        )
+        public static void Create()
         {
-            DataConfiguration.OutputPath = "//Output//DataLayer";
+            DataConfiguration.OutputPath = "c://temp//Output//DataLayer//";
             NDT.CreateLanguages.Create();
             NDT.CreateDirectories.Create();
             NDT.CreateEntities.Create();
             NDT.CreateComplexEntities.Create();
 
-            BLWSConfiguration.BusinessLogicLayerOutputPath = "//Output//BusinessLogicLayer";
-            BLWSConfiguration.ServicesLayerOutputPath = "//Output//ServicesLayer";
+            BLWSConfiguration.BusinessLogicLayerOutputPath = "c://temp//Output//BusinessLogicLayer//";
+            BLWSConfiguration.ServicesLayerOutputPath = "c://temp//Output//ServicesLayer//";
             NBL.CreateTools.Create();
 
-            WUIConfiguration.OutputPath = "//Output/PresentationLayer";
+            WUIConfiguration.OutputPath = "c://temp//Output//PresentationLayer//";
             NWUI.CreateWebPage.Create();
         }
     }

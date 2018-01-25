@@ -61,7 +61,7 @@
 
         protected String GenerateRowForDirectoryItemFieldType(EntityField currField)
         {
-            String result = EmptyPrefix4 + currField.Name + " BIGINT FOREIGN KEY REFERENCES tblDictionaryValues(Id),";
+            String result = EmptyPrefix4 + currField.Name + " BIGINT FOREIGN KEY REFERENCES tblDirectoryValue(Id),";
             return result;
         }
 

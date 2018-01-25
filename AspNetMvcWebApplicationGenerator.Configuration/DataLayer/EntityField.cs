@@ -21,12 +21,12 @@
 
         #region link to other tables or virtual parts properties   
             public LinkType LinkType { get; }
-            public String LinkedEntityName { get; }
-            public String LinkedFieldName { get; }
+            public String LinkedEntityName { get; } // также используется для индексов по сортировкам и фильтрам
+            public String LinkedFieldName { get; }  // также используется для индексов по сортировкам и фильтрам
         #endregion
 
         #region grid column configuration 
-        public int     GridColumnWidth { get; }
+            public int     GridColumnWidth { get; }
             public Boolean GridColumnIsSortingAllowed { get; }
         #endregion
 
@@ -34,6 +34,8 @@
             public Boolean FieldFilterIsRequired { get; }
             public Boolean FieldFilterIsMinRequired { get; }
         #endregion
+
+        public Boolean IsFieldOfVirtualNestedEntity { set; get; } = false; // auxiliary field used for index creation only
 
         public EntityField
         (
@@ -54,7 +56,7 @@
         )
         {
             FieldType = fieldType;
-            Name = Name;
+            Name = name;
             StringLengthMin = stringLengthMin;
             StringLengthMax = stringLengthMax;
             ValidationRegExp = validationRegExp;
@@ -69,7 +71,7 @@
             FieldFilterIsMinRequired = fieldFilterIsMinRequired;
         }
 
-        public EntityField CloneWithAdditionalNamePrefix(String namePrefix)
+        public EntityField CloneWithAdditionalNamePrefixAndVirtFlag(String namePrefix) // call only for virtual nested entity fields
         {
             String newName = namePrefix + Name;
 
@@ -90,6 +92,8 @@
                 FieldFilterIsRequired,
                 FieldFilterIsMinRequired
             );
+
+            result.IsFieldOfVirtualNestedEntity = true;
 
             return result;
         }

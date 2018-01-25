@@ -4,15 +4,16 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{BA81F411-AC4A-411C-8A38-1C506457FC0C}</ProjectGuid>
-    <OutputType>Library</OutputType>
-    <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>AspNetMvcWebApplicationGenerator.Generators</RootNamespace>
-    <AssemblyName>AspNetMvcWebApplicationGenerator.Generators</AssemblyName>
+    <ProjectGuid>{FC26514C-A7E7-4F6A-A097-BFCF8E78E14E}</ProjectGuid>
+    <OutputType>Exe</OutputType>
+    <RootNamespace>AspNetMvcWebApplicationGenerator.Program</RootNamespace>
+    <AssemblyName>AspNetMvcWebApplicationGenerator.Program</AssemblyName>
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
@@ -22,6 +23,7 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugType>pdbonly</DebugType>
     <Optimize>true</Optimize>
     <OutputPath>bin\Release\</OutputPath>
@@ -40,28 +42,20 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="DataLayer\ComplexEntities.cs" />
-    <Compile Include="DataLayer\Directories.cs" />
-    <Compile Include="DataLayer\Entities.cs" />
-    <Compile Include="DataLayer\Helpers\Indexes4TableCreator.cs" />
-    <Compile Include="DataLayer\Helpers\OutputFileExtentions.cs" />
-    <Compile Include="DataLayer\Helpers\OutputFileType.cs" />
-    <Compile Include="DataLayer\Helpers\RecursiveFromEntityFieldsExtractor.cs" />
-    <Compile Include="DataLayer\Helpers\TableCreator.cs" />
-    <Compile Include="DataLayer\Helpers\StringFileWriter.cs" />
-    <Compile Include="DataLayer\Languages.cs" />
-    <Compile Include="GeneratorsIgnitor.cs" />
+    <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="BusinessLogicLayer\" />
-    <Folder Include="PresentationLayer\" />
-    <Folder Include="ServicesLayer\" />
+    <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\AspNetMvcWebApplicationGenerator.Configuration\AspNetMvcWebApplicationGenerator.Configuration.csproj">
       <Project>{ee55fb45-abd2-4d68-936b-abccdbd23312}</Project>
       <Name>AspNetMvcWebApplicationGenerator.Configuration</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\AspNetMvcWebApplicationGenerator.Generators\AspNetMvcWebApplicationGenerator.Generators.csproj">
+      <Project>{ba81f411-ac4a-411c-8a38-1c506457fc0c}</Project>
+      <Name>AspNetMvcWebApplicationGenerator.Generators</Name>
     </ProjectReference>
     <ProjectReference Include="..\AspNetMvcWebApplicationGenerator.Instantiate\AspNetMvcWebApplicationGenerator.Instance.csproj">
       <Project>{75659108-d832-402d-933d-cf13b905b0ab}</Project>

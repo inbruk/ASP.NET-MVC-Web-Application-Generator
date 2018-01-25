@@ -19,7 +19,7 @@
                     List<EntityField> tempFields = Extract(linkedEntity);
                     foreach (var currTempField in tempFields)
                     {
-                        EntityField resultField = currTempField.CloneWithAdditionalNamePrefix(currField.Name);
+                        EntityField resultField = currTempField.CloneWithAdditionalNamePrefixAndVirtFlag(currField.Name);
                         result.Add(resultField);
                     }
                 }

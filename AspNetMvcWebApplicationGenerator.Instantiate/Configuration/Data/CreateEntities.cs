@@ -18,36 +18,36 @@
                     new List<EntityField>()
                     {
                         new EntityField( EntityFieldType.SLong, "Id" ),
-                        new EntityField( EntityFieldType.String, "ActualAddress", 0, 32, null, true, null, LinkType.NoLink, "", "", 250, false, true, false),
-                        new EntityField( EntityFieldType.String, "FormalAddress", 0, 32, null, true, null, LinkType.NoLink, "", "", 100, false, true, false),
+                        new EntityField( EntityFieldType.String, "ActualAddress", 0, 32, null, true, null, LinkType.NoLink, "Contacts", "ActualAddress", 250, false, true, false),
+                        new EntityField( EntityFieldType.String, "FormalAddress", 0, 32, null, true, null, LinkType.NoLink, "Contacts", "FormalAddress", 100, false, false, true),
 
                         new EntityField( EntityFieldType.String, "PersonalMobilePhone", 8, 11,
                             @"^(?:(?:\+?1\s*(?:[.-]\s*)?)?(?:\(\s*([2-9]1[02-9]|[2-9][02-8]1|[2-9][02-8][02-9])\s*\)|([2-9]1[02-9]|[2-9][02-8]1|[2-9][02-8][02-9]))\s*(?:[.-]\s*)?)?([2-9]1[02-9]|[2-9][02-9]1|[2-9][02-9]{2})\s*(?:[.-]\s*)?([0-9]{4})(?:\s*(?:#|x\.?|ext\.?|extension)\s*(\d+))?$",
-                            true, null, LinkType.NoLink, "", "", 100, true, true, false),
+                            true, null, LinkType.NoLink, "Contacts", "PersonalMobilePhone", 100, true, true, false),
 
                         new EntityField( EntityFieldType.String, "WorkMobilePhone", 8, 11,
                             @"^(?:(?:\+?1\s*(?:[.-]\s*)?)?(?:\(\s*([2-9]1[02-9]|[2-9][02-8]1|[2-9][02-8][02-9])\s*\)|([2-9]1[02-9]|[2-9][02-8]1|[2-9][02-8][02-9]))\s*(?:[.-]\s*)?)?([2-9]1[02-9]|[2-9][02-9]1|[2-9][02-9]{2})\s*(?:[.-]\s*)?([0-9]{4})(?:\s*(?:#|x\.?|ext\.?|extension)\s*(\d+))?$",
-                            true, null, LinkType.NoLink, "", "", 100, true, true, false),
+                            true, null, LinkType.NoLink, "Contacts", "WorkMobilePhone", 100, true, true, false),
 
                         new EntityField( EntityFieldType.String, "HomePhone", 8, 11,
                             @"^(?:(?:\+?1\s*(?:[.-]\s*)?)?(?:\(\s*([2-9]1[02-9]|[2-9][02-8]1|[2-9][02-8][02-9])\s*\)|([2-9]1[02-9]|[2-9][02-8]1|[2-9][02-8][02-9]))\s*(?:[.-]\s*)?)?([2-9]1[02-9]|[2-9][02-9]1|[2-9][02-9]{2})\s*(?:[.-]\s*)?([0-9]{4})(?:\s*(?:#|x\.?|ext\.?|extension)\s*(\d+))?$",
-                            true, null, LinkType.NoLink, "", "", 100, true, true, false),
+                            true, null, LinkType.NoLink, "Contacts", "HomePhone", 100, true, true, false),
 
                         new EntityField( EntityFieldType.String, "WorkPhone", 5, 24,
                             @"^(?:(?:\+?1\s*(?:[.-]\s*)?)?(?:\(\s*([2-9]1[02-9]|[2-9][02-8]1|[2-9][02-8][02-9])\s*\)|([2-9]1[02-9]|[2-9][02-8]1|[2-9][02-8][02-9]))\s*(?:[.-]\s*)?)?([2-9]1[02-9]|[2-9][02-9]1|[2-9][02-9]{2})\s*(?:[.-]\s*)?([0-9]{4})(?:\s*(?:#|x\.?|ext\.?|extension)\s*(\d+))?$",
-                            true, null, LinkType.NoLink, "", "", 100, true, true, false),
+                            true, null, LinkType.NoLink, "Contacts", "WorkPhone", 100, true, true, false),
 
                         new EntityField( EntityFieldType.String, "PersonalEMail", 5, 24,
                             @"^(('[\w-\s]+')|([\w-]+(?:\.[\w-]+)*)|('[\w-\s]+')([\w-]+(?:\.[\w-]+)*))(@((?:[\w-]+\.)*\w[\w-]{0,66})\.([a-z]{2,6}(?:\.[a-z]{2})?)$)|(@\[?((25[0-5]\.|2[0-4][0-9]\.|1[0-9]{2}\.|[0-9]{1,2}\.))((25[0-5]|2[0-4][0-9]|1[0-9]{2}|[0-9]{1,2})\.){2}(25[0-5]|2[0-4][0-9]|1[0-9]{2}|[0-9]{1,2})\]?$)",
-                            true, null, LinkType.NoLink, "", "", 100, true, true, false),
+                            true, null, LinkType.NoLink, "Contacts", "PersonalEMail", 100, true, true, false),
 
                         new EntityField( EntityFieldType.String, "WorkEMail", 5, 24,
                             @"^(('[\w-\s]+')|([\w-]+(?:\.[\w-]+)*)|('[\w-\s]+')([\w-]+(?:\.[\w-]+)*))(@((?:[\w-]+\.)*\w[\w-]{0,66})\.([a-z]{2,6}(?:\.[a-z]{2})?)$)|(@\[?((25[0-5]\.|2[0-4][0-9]\.|1[0-9]{2}\.|[0-9]{1,2}\.))((25[0-5]|2[0-4][0-9]|1[0-9]{2}|[0-9]{1,2})\.){2}(25[0-5]|2[0-4][0-9]|1[0-9]{2}|[0-9]{1,2})\]?$)",
-                            true, null, LinkType.NoLink, "", "", 100, true, true, false),
+                            true, null, LinkType.NoLink, "Contacts", "WorkEMail", 100, true, true, false),
 
-                        new EntityField( EntityFieldType.String, "Messenger1", 5, 16, null, true, null, LinkType.NoLink, "", "", 100, true, true, false),
-                        new EntityField( EntityFieldType.String, "Messenger2", 5, 16, null, true, null, LinkType.NoLink, "", "", 100, true, true, false),
-                        new EntityField( EntityFieldType.String, "Messenger3", 5, 16, null, true, null, LinkType.NoLink, "", "", 100, true, true, false)
+                        new EntityField( EntityFieldType.String, "Messenger1", 5, 16, null, true, null, LinkType.NoLink, "Contacts", "Messenger1", 100, true, true, false),
+                        new EntityField( EntityFieldType.String, "Messenger2", 5, 16, null, true, null, LinkType.NoLink, "Contacts", "Messenger2", 100, true, true, false),
+                        new EntityField( EntityFieldType.String, "Messenger3", 5, 16, null, true, null, LinkType.NoLink, "Contacts", "Messenger3", 100, true, true, false)
                     }
                 )
             );
@@ -84,12 +84,12 @@
                     {
                         new EntityField( EntityFieldType.SLong,  "Id" ),
                         new EntityField( EntityFieldType.String, "Comment", 0, 0 ),
-                        new EntityField( EntityFieldType.String, "FirstName", 0, 16, null, false, null, LinkType.NoLink, "", "", 100, true, true, false  ),
-                        new EntityField( EntityFieldType.String, "Surname", 0, 16, null, false, null, LinkType.NoLink, "", "", 100, true, true, false ),
-                        new EntityField( EntityFieldType.String, "PatronymicName", 0, 16, null, false, null, LinkType.NoLink, "", "", 100, true, true, false ),
+                        new EntityField( EntityFieldType.String, "FirstName", 0, 16, null, false, null, LinkType.NoLink, "Person", "FirstName", 100, true, true, false  ),
+                        new EntityField( EntityFieldType.String, "Surname", 0, 16, null, false, null, LinkType.NoLink, "Person", "Surname", 100, true, true, false ),
+                        new EntityField( EntityFieldType.String, "PatronymicName", 0, 16, null, false, null, LinkType.NoLink, "Person", "PatronymicName", 100, true, true, false ),
                         new EntityField( EntityFieldType.DirectoryItem, "Gender", 0, 0, null, false, "Gender" ),
                         new EntityField( EntityFieldType.DirectoryItem, "MaritalStatus", 0, 0, null, false, "MaritalStatus" ),
-                        new EntityField( EntityFieldType.DateTime, "BirthDate", 0, 0, null, false, null, LinkType.NoLink, "", "", 100, true, true, false  ),
+                        new EntityField( EntityFieldType.DateTime, "BirthDate", 0, 0, null, false, null, LinkType.NoLink, "Person", "BirthDate", 100, true, true, false  ),
                         new EntityField( EntityFieldType.SLong,    "AmountOfChildren" ),
                         new EntityField( EntityFieldType.String, "AddressOfCurrLivingPlace", 0, 32 ),
 
@@ -131,9 +131,11 @@
                     {
                         new EntityField( EntityFieldType.SLong,  "Id" ),
                         new EntityField( EntityFieldType.String, "Comment", 0, 0 ),
-                        new EntityField( EntityFieldType.SLong,  "Balance", null, 0, null, false, null, LinkType.NoLink, "", "", 100, true, true, true ),
+                        new EntityField( EntityFieldType.SLong,  "Balance", null, 0, null, false, null, 
+                            LinkType.NoLink, "Account", "Balance", 100, true, true, true ),
 
-                        new EntityField( EntityFieldType.DirectoryItem, "AccountState", 0, 0, null, false, "AccountState" )
+                        new EntityField( EntityFieldType.DirectoryItem, "AccountState", 0, 0, null, false, "AccountState",
+                            LinkType.NoLink, "Account", "AccountState" )
                     }
                 )
             );
@@ -213,7 +215,8 @@
 
                         new EntityField( EntityFieldType.DateTime, "StartDateTime" ),
                         new EntityField( EntityFieldType.DateTime, "ControlDateTime", 
-                            null, 0, null, false, null, LinkType.NoLink, "", "", 100, true, true, false ),
+                            null, 0, null, false, null, LinkType.NoLink, "Order", "ControlDateTime", 100, true, true, false ),
+
                         new EntityField( EntityFieldType.DateTime, "CloseDateTime" ),
 
                         new EntityField( EntityFieldType.Link2TableOrVirtaulPart, "Customer",

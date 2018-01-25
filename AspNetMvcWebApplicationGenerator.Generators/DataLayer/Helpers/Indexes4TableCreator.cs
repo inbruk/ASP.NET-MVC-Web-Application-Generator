@@ -8,13 +8,15 @@
     internal class Indexes4TableCreator
     {
         private const String EmptyPrefix4 = "    ";
-        private String IndexFileName { get; }
-        private StringFileWriter FileWriter = null;
+        private String _indexFileName = null;
+        private StringFileWriter _fileWriter = null;
+        private String _rootEntityName = null;
 
         public Indexes4TableCreator(String filePath, String entityName)
         {
-            IndexFileName = "idx" + entityName;
-            FileWriter = new StringFileWriter(filePath, IndexFileName, OutputFileType.SqlScript);
+            _rootEntityName = entityName;
+            _indexFileName = "idx" + entityName;
+            _fileWriter = new StringFileWriter(filePath, _indexFileName, OutputFileType.SqlScript);
         }
 
         public void GenerateFile(String entityName, List<EntityField> fields)
@@ -23,7 +25,11 @@
             foreach (var currField in fields)
             {
                 if (currField.FieldType == EntityFieldType.DirectoryItem ||
-                     (currField.FieldType == EntityFieldType.Link2TableOrVirtaulPart && currField.LinkType != LinkType.N2MTableOtherObject) ||
+                     (
+                        currField.FieldType == EntityFieldType.Link2TableOrVirtaulPart && 
+                        currField.LinkType != LinkType.N2MTableOtherObject && 
+                        currField.LinkType != LinkType.One2OneVirtualPartOfObject
+                     ) ||
                      currField.GridColumnIsSortingAllowed == true ||
                      currField.FieldFilterIsRequired == true
                    )
@@ -32,15 +38,28 @@
                 }
             }
 
-            FileWriter = new StringFileWriter(DataConfiguration.OutputPath, IndexFileName, OutputFileType.SqlScript);
             foreach (var currField in fieldsWithIndexes)
             {
-                FileWriter.WriteString("CREATE INDEX " + IndexFileName + "_" + currField.Name + " ");
-                FileWriter.WriteString(EmptyPrefix4 + "ON " + currField.LinkedEntityName + "(" + currField.LinkedFieldName + "); ");
-                FileWriter.WriteString("GO");
-                FileWriter.WriteString("");
+                String idxEntityName, idxFieldName;
+                if (currField.IsFieldOfVirtualNestedEntity == true ||
+                    currField.FieldType == EntityFieldType.DirectoryItem || 
+                    currField.FieldType == EntityFieldType.Link2TableOrVirtaulPart )
+                {
+                    idxEntityName = _rootEntityName;
+                    idxFieldName = currField.Name;
+                }
+                else
+                {
+                    idxEntityName = currField.LinkedEntityName;
+                    idxFieldName = currField.LinkedFieldName;
+                }
+
+                _fileWriter.WriteString("CREATE INDEX " + _indexFileName + "_" + currField.Name + " ");
+                _fileWriter.WriteString(EmptyPrefix4 + "ON tbl" + idxEntityName + "(" + idxFieldName + "); ");
+                _fileWriter.WriteString("GO");
+                _fileWriter.WriteString("");
             }
-            FileWriter.Close();
+            _fileWriter.Close();
         }
     }
 }
