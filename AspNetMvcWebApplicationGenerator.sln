@@ -11,6 +11,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AspNetMvcWebApplicationGene
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AspNetMvcWebApplicationGenerator.Program", "AspNetMvcWebApplicationGenerator.Program\AspNetMvcWebApplicationGenerator.Program.csproj", "{FC26514C-A7E7-4F6A-A097-BFCF8E78E14E}"
 EndProject
+Project("{00D1A9C2-B5F0-4AF3-8072-F6C62B433612}") = "WebAppExample.DataLayer", "WebAppExample.DataLayer\WebAppExample.DataLayer.sqlproj", "{58881E15-D701-413C-A086-93D477FE4895}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -33,6 +35,12 @@ Global
 		{FC26514C-A7E7-4F6A-A097-BFCF8E78E14E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{FC26514C-A7E7-4F6A-A097-BFCF8E78E14E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{FC26514C-A7E7-4F6A-A097-BFCF8E78E14E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{58881E15-D701-413C-A086-93D477FE4895}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{58881E15-D701-413C-A086-93D477FE4895}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{58881E15-D701-413C-A086-93D477FE4895}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{58881E15-D701-413C-A086-93D477FE4895}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{58881E15-D701-413C-A086-93D477FE4895}.Release|Any CPU.Build.0 = Release|Any CPU
+		{58881E15-D701-413C-A086-93D477FE4895}.Release|Any CPU.Deploy.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
