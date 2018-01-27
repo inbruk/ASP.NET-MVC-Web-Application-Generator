@@ -23,7 +23,7 @@
             fileWriter.WriteString("INSERT INTO tblLanguage ");
             fileWriter.WriteString("    ( Id, EnumName, UIName )");
             fileWriter.WriteString("VALUES");
-            fileWriter.WriteString("    ( " + currLangItem.Id.ToString() + ", " + currLangItem.EnumName + ", " + currLangItem.UIName + " );");
+            fileWriter.WriteString("    ( " + currLangItem.Id.ToString() + ", \'" + currLangItem.EnumName + "\', \'" + currLangItem.UIName + "\' );");
             fileWriter.WriteString("GO");
         }
 

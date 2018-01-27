@@ -64,7 +64,7 @@
     <Folder Include="Generated\Indexes" />
     <Folder Include="Generated\Tables" />
     <Folder Include="Generated\Views" />
-    <Folder Include="Generated\FillWithData" />
+    <Folder Include="Generated\PostDeploymentScripts" />
   </ItemGroup>
   <ItemGroup>
     <Build Include="Generated\Indexes\idxAccount.sql" />
@@ -89,9 +89,5 @@
     <Build Include="Generated\Views\vwOrderCustomer.sql" />
     <Build Include="Generated\Views\vwOrderDriver.sql" />
     <Build Include="Generated\Tables\n2mOrderDriver.sql" />
-    <Build Include="Generated\FillWithData\fill_tblDirectory.sql" />
-    <Build Include="Generated\FillWithData\fill_tblDirectoryValue.sql" />
-    <Build Include="Generated\FillWithData\fill_tblLanguage.sql" />
-    <Build Include="Generated\FillWithData\fill_tblTranslatedString.sql" />
   </ItemGroup>
 </Project>

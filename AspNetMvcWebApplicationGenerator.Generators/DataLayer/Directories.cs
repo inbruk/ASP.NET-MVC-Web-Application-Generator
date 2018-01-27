@@ -23,7 +23,7 @@
             fileWriter.WriteString("INSERT INTO tblDirectory ");
             fileWriter.WriteString("    ( Id, EnumName, IsReadOnly )");
             fileWriter.WriteString("VALUES");
-            fileWriter.WriteString("    ( " + dirItem.Id.ToString() + ", " + dirItem.EnumName + ", " + dirItem.IsReadOnly.ToString() + " );");
+            fileWriter.WriteString("    ( " + dirItem.Id.ToString() + ", \'" + dirItem.EnumName + "\', " + dirItem.IsReadOnly.ToString() + " );");
             fileWriter.WriteString("GO");
         }
 
@@ -55,7 +55,7 @@
             fileWriter.WriteString("INSERT INTO tblDirectoryValue ");
             fileWriter.WriteString("    ( Id, EnumName, IsReadOnly, DirectoryId )");
             fileWriter.WriteString("VALUES");
-            fileWriter.WriteString("    ( " + dirValue.Id.ToString() + ", " + dirValue.EnumName + ", " 
+            fileWriter.WriteString("    ( " + dirValue.Id.ToString() + ", \'" + dirValue.EnumName + "\', " 
                                             + dirValue.IsReadOnly.ToString() + ", " + dirValue.DirectoryId.ToString() + " );");
             fileWriter.WriteString("GO");
         }
@@ -94,7 +94,7 @@
             fileWriter.WriteString("    ( Language, Type, ReferencedItemId, Value )");
             fileWriter.WriteString("VALUES");
             fileWriter.WriteString("    ( " + transStr.Language.ToString() + ", " + ((int)transStr.Type).ToString() + ", "
-                                            + transStr.ReferencedItemId.ToString() + ", " + transStr.Value.ToString() + " );");
+                                            + transStr.ReferencedItemId.ToString() + ", \'" + transStr.Value.ToString() + "\' );");
             fileWriter.WriteString("GO");
         }
 
