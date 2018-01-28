@@ -31,7 +31,14 @@
 
         protected String GenerateRowForSLongFieldType(EntityField currField)
         {
-            String result = EmptyPrefix4 + currField.Name + " BIGINT,";
+            String result = EmptyPrefix4 + currField.Name + " BIGINT";
+
+            // если тип BIGINT и имя приводимо к id, то это главный ключ
+            String fieldNameLowcase = currField.Name.ToLower(); 
+            if ( fieldNameLowcase=="id" )
+                result += " IDENTITY(1, 1) NOT NULL PRIMARY KEY";
+
+            result += ", ";
             return result;
         }
 

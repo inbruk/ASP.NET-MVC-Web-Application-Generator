@@ -1,5 +1,5 @@
 CREATE TABLE tblOrder ( 
-    Id BIGINT,
+    Id BIGINT IDENTITY(1, 1) NOT NULL PRIMARY KEY, 
     Comment NVARCHAR(MAX),
     StartDateTime DATETIMEOFFSET,
     ControlDateTime DATETIMEOFFSET,
