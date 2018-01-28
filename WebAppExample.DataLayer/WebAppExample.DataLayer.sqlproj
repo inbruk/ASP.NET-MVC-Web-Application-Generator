@@ -89,5 +89,12 @@
     <Build Include="Generated\Views\vwOrderCustomer.sql" />
     <Build Include="Generated\Views\vwOrderDriver.sql" />
     <Build Include="Generated\Tables\n2mOrderDriver.sql" />
+    <Build Include="Generated\PostDeploymentScripts\fill_tblDirectory.sql" />
+    <Build Include="Generated\PostDeploymentScripts\fill_tblDirectoryValue.sql" />
+    <Build Include="Generated\PostDeploymentScripts\fill_tblLanguage.sql" />
+    <Build Include="Generated\PostDeploymentScripts\fill_tblTranslatedString.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <PostDeploy Include="Generated\PostDeploymentScripts\RootPostDeploymentScript.sql" />
   </ItemGroup>
 </Project>
