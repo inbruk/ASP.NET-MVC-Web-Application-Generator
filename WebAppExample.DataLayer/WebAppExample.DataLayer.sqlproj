@@ -95,6 +95,6 @@
     <Build Include="Generated\PostDeploymentScripts\fill_tblTranslatedString.sql" />
   </ItemGroup>
   <ItemGroup>
-    <PostDeploy Include="Generated\PostDeploymentScripts\RootPostDeploymentScript.sql" />
+    <None Include="Script.PostDeployment1.sql" />
   </ItemGroup>
 </Project>

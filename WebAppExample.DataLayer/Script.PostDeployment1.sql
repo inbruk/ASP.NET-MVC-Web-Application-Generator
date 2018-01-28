@@ -9,11 +9,7 @@
                SELECT * FROM [$(TableName)]					
 --------------------------------------------------------------------------------------
 */
-
 :r .\fill_tblLanguage.tsql
 :r .\fill_tblDirectory.tsql
 :r .\fill_tblDirectoryValue.tsql
 :r .\fill_tblTranslatedString.tsql
-
-
-
