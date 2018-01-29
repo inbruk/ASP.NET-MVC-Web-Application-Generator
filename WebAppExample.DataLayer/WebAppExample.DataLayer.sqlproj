@@ -61,22 +61,24 @@
   <ItemGroup>
     <Folder Include="Properties" />
     <Folder Include="Generated" />
-    <Folder Include="Generated\1Tables" />
-    <Folder Include="Generated\2TablesLinks" />
-    <Folder Include="Generated\3Views" />
-    <Folder Include="Generated\4Indexes" />
-    <Folder Include="Generated\5PostDeploymentScripts" />
+    <Folder Include="Generated\Tables" />
+    <Folder Include="Generated\Views" />
+    <Folder Include="Generated\Indexes" />
+    <Folder Include="Generated\PostDeploymentScripts" />
   </ItemGroup>
   <ItemGroup>
-    <Build Include="Generated\1Tables\tblLanguage.sql" />
-    <Build Include="Generated\1Tables\tblDirectory.sql" />
-    <Build Include="Generated\1Tables\tblDirectoryValue.sql" />
-    <Build Include="Generated\1Tables\tblTranslatedString.sql" />
-    <Build Include="Generated\1Tables\tblAccount.sql" />
-    <Build Include="Generated\1Tables\tblCustomer.sql" />
-    <Build Include="Generated\1Tables\tblDriver.sql" />
-    <Build Include="Generated\1Tables\tblEmployee.sql" />
-    <Build Include="Generated\1Tables\tblOrder.sql" />
-    <Build Include="Generated\1Tables\tblVehicle.sql" />
+    <Build Include="Generated\Tables\tblLanguage.sql" />
+    <Build Include="Generated\Tables\tblDirectory.sql" />
+    <Build Include="Generated\Tables\tblDirectoryValue.sql" />
+    <Build Include="Generated\Tables\tblTranslatedString.sql" />
+    <Build Include="Generated\Tables\tblAccount.sql" />
+    <Build Include="Generated\Tables\tblCustomer.sql" />
+    <Build Include="Generated\Tables\tblDriver.sql" />
+    <Build Include="Generated\Tables\tblEmployee.sql" />
+    <Build Include="Generated\Tables\tblOrder.sql" />
+    <Build Include="Generated\Tables\tblVehicle.sql" />
+    <Build Include="Generated\Tables\n2mOrderDriver.sql" />
+    <Build Include="Generated\Views\vwOrderCustomer.sql" />
+    <Build Include="Generated\Views\vwOrderDriver.sql" />
   </ItemGroup>
 </Project>

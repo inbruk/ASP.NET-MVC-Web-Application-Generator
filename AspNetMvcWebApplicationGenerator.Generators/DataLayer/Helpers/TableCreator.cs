@@ -92,8 +92,8 @@
 
             StringFileWriter FileWriter = new StringFileWriter(DataConfiguration.OutputPath, tableName, OutputFileType.SqlScript);
             FileWriter.WriteString( "CREATE TABLE " + tableName + "(" );
-            FileWriter.WriteString( EmptyPrefix4 + entityName + " BIGINT FOREIGN KEY REFERENCES tbl" + entityName + "(Id)," );
-            FileWriter.WriteString( EmptyPrefix4 + currField.LinkedEntityName + " BIGINT FOREIGN KEY REFERENCES tbl" + currField.LinkedEntityName + "(Id)," );
+            FileWriter.WriteString( EmptyPrefix4 + "[" + entityName + "]" + " BIGINT FOREIGN KEY REFERENCES tbl" + entityName + "(Id)," );
+            FileWriter.WriteString( EmptyPrefix4 + "[" + currField.LinkedEntityName + "]" + " BIGINT FOREIGN KEY REFERENCES tbl" + currField.LinkedEntityName + "(Id)," );
             FileWriter.WriteString( ");" );
             FileWriter.WriteString( "GO" );
             FileWriter.Close();
