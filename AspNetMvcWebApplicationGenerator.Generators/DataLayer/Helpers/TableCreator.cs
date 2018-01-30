@@ -102,11 +102,11 @@
 
             FileWriter = new StringFileWriter(DataConfiguration.OutputPath, indexFileName, OutputFileType.SqlScript);
             FileWriter.WriteString("CREATE INDEX " + indexFileName + "_" + entityName + " ");
-            FileWriter.WriteString(EmptyPrefix4 + "ON " + tableName + "(" + entityName + "); ");
+            FileWriter.WriteString(EmptyPrefix4 + "ON [" + tableName + "]([" + entityName + "]); ");
             FileWriter.WriteString("GO");
             FileWriter.WriteString("");
             FileWriter.WriteString("CREATE INDEX " + indexFileName + "_" + currField.LinkedEntityName + " ");
-            FileWriter.WriteString(EmptyPrefix4 + "ON " + tableName + "(" + currField.LinkedEntityName + "); ");
+            FileWriter.WriteString(EmptyPrefix4 + "ON [" + tableName + "]([" + currField.LinkedEntityName + "]); ");
             FileWriter.WriteString("GO");
             FileWriter.Close();
             

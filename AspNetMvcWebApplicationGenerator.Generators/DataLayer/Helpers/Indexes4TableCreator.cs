@@ -55,7 +55,7 @@
                 }
 
                 _fileWriter.WriteString("CREATE INDEX " + _indexFileName + "_" + currField.Name + " ");
-                _fileWriter.WriteString(EmptyPrefix4 + "ON tbl" + idxEntityName + "(" + idxFieldName + "); ");
+                _fileWriter.WriteString(EmptyPrefix4 + "ON [tbl" + idxEntityName + "]([" + idxFieldName + "]); ");
                 _fileWriter.WriteString("GO");
                 _fileWriter.WriteString("");
             }

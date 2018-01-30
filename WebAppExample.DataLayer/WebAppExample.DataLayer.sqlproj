@@ -80,5 +80,21 @@
     <Build Include="Generated\Tables\n2mOrderDriver.sql" />
     <Build Include="Generated\Views\vwOrderCustomer.sql" />
     <Build Include="Generated\Views\vwOrderDriver.sql" />
+    <Build Include="Generated\Indexes\idxAccount.sql" />
+    <Build Include="Generated\Indexes\idxCustomer.sql" />
+    <Build Include="Generated\Indexes\idxDirectoryValue.sql" />
+    <Build Include="Generated\Indexes\idxDriver.sql" />
+    <Build Include="Generated\Indexes\idxEmployee.sql" />
+    <Build Include="Generated\Indexes\idxOrder.sql" />
+    <Build Include="Generated\Indexes\idxOrderDriver.sql" />
+    <Build Include="Generated\Indexes\idxTranslatedString.sql" />
+    <Build Include="Generated\Indexes\idxVehicle.sql" />
+    <Build Include="Generated\PostDeploymentScripts\fill_tblDirectory.sql" />
+    <Build Include="Generated\PostDeploymentScripts\fill_tblDirectoryValue.sql" />
+    <Build Include="Generated\PostDeploymentScripts\fill_tblLanguage.sql" />
+    <Build Include="Generated\PostDeploymentScripts\fill_tblTranslatedString.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="WebAppExample.DataLayer.publish.xml" />
   </ItemGroup>
 </Project>
