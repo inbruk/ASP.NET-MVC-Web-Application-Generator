@@ -6,25 +6,25 @@
     public class ComplexEntity // соответствует View в БД
     {
         public String  Name { get; }
-        //public Boolean IsTableVeiw { get; }
-        public String  MainEntityName { get; }
-        public String  MainShortEntityName { get; }
+        public Boolean IsMainTableLink { get; }
+        public String  MainEntityTableName { get; }
+        public String  MainEntityShortName { get; }
 
         public List<ComplexEntityLink> Links { get; } 
 
         public ComplexEntity
         (
             String  name,
-            //Boolean isTableVeiw,
-            String  mainEntityName,
-            String  mainShortEntityName,
+            Boolean isMainTableLink,
+            String  mainEntityTableName,
+            String  mainEntityShortName,
             List<ComplexEntityLink> lnks
         )
         {
             Name                = name;
-            //IsTableVeiw         = isTableVeiw;
-            MainEntityName      = mainEntityName;
-            MainShortEntityName = mainShortEntityName;
+            IsMainTableLink     = isMainTableLink;
+            MainEntityTableName = mainEntityTableName;
+            MainEntityShortName = mainEntityShortName;
             Links               = lnks;
         }
     }

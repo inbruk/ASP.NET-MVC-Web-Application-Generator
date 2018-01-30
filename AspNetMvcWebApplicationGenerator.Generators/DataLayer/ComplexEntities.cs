@@ -11,18 +11,49 @@
 
     internal class ComplexEntities
     {
-        private void GenerateEntityFields(String entityName, StringFileWriter FileWriter, String prefixName, Boolean addPrefixName)
+        private Entity GetEntityByTableName(String tableName)
         {
+            String entityName = tableName.Replace("tbl", "");
             Entity entity = DataConfiguration.EntitiesConfigurations[entityName];
-            List<EntityField> fields = RecursiveFromEntityFieldsExtractor.Extract(entity);
-            foreach (var currField in fields)
-            {
-                String fieldName = currField.Name;
-                if (addPrefixName == true)
-                    fieldName = prefixName + fieldName;
+            return entity;
+        }
 
-                FileWriter.WriteString("    " + fieldName + ", ");
+        private List<String> GenerateEntityFields(String tableName, String prefixName)
+        {
+            List<String> result = new List<String>();
+            Entity entity = GetEntityByTableName(tableName);
+            List<EntityField> fields = RecursiveFromEntityFieldsExtractor.Extract(entity);
+
+            for(int i=0; i<fields.Count; i++)    
+            {
+                var currField = fields[i];
+                if (currField.FieldType != EntityFieldType.Link2TableOrVirtaulPart)
+                {
+                    String fieldName = currField.Name;                    
+                    String fieldString = prefixName + "." + fieldName + " AS " + prefixName + fieldName;
+
+                    result.Add(fieldString);
+                }
             }
+
+            return result;
+        }
+
+        private List<String> ProcessLinkFields(ComplexEntity cmpxEntity)
+        {
+            List<String> result = new List<String>();
+            List <ComplexEntityLink> linkFields = cmpxEntity.Links;
+
+            foreach(var currLink in cmpxEntity.Links)
+            {
+                if (currLink.IsRightTableLink == false)
+                {
+                    List<String> currEntityFieldList = GenerateEntityFields(currLink.RightTableName, currLink.RightShortTableName);
+                    result.AddRange(currEntityFieldList);
+                }
+            }
+
+            return result;
         }
 
         private void GenerateJoinClause(ComplexEntityLink link, StringFileWriter FileWriter)
@@ -41,8 +72,8 @@
                     break;
             }
 
-            FileWriter.WriteString( joinStr + " tbl" + link.RightTableName + " " + link.RightShortTableName +
-                " ON " + link.LeftShortTableName + "." + link.LeftFieldName + "=" + link.RightShortTableName + "." + link.RightFieldName );
+            FileWriter.WriteString( joinStr + " [" + link.RightTableName + "] [" + link.RightShortTableName +
+                "] ON [" + link.LeftShortTableName + "].[" + link.LeftFieldName + "]=[" + link.RightShortTableName + "].[" + link.RightFieldName + "]");
         }
 
         private void CreateOneViewForComplexEntity(ComplexEntity complexEntity)
@@ -54,8 +85,28 @@
             FileWriter.WriteString("AS");
 
             FileWriter.WriteString("SELECT ");
-            GenerateEntityFields(complexEntity.MainEntityName, FileWriter, "", false);
-            FileWriter.WriteString("FROM tbl" + complexEntity.MainEntityName + " " + complexEntity.MainShortEntityName );
+
+            List<String> allFields = new List<string>();
+
+            // получим все поля из основной сущности
+            if( complexEntity.IsMainTableLink==false )            
+                allFields.AddRange( GenerateEntityFields(complexEntity.MainEntityTableName, complexEntity.MainEntityShortName) );
+
+            // получим все поля из связанных сущностей
+            allFields.AddRange( ProcessLinkFields(complexEntity) );
+
+            // сегенрируем поля в скрипте с учетом отсутствия запятой после последнего 
+            for (int i = 0; i < allFields.Count; i++)
+            {
+                var currFieldStr = allFields[i];
+                FileWriter.Write("    " + currFieldStr);
+                if (i < allFields.Count - 1)
+                    FileWriter.WriteString(",");
+                else
+                    FileWriter.WriteString("");
+            }
+
+            FileWriter.WriteString("FROM [" + complexEntity.MainEntityTableName + "] [" + complexEntity.MainEntityShortName + "] ");
 
             foreach (var currLink in complexEntity.Links)
                 GenerateJoinClause(currLink, FileWriter);

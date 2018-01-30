@@ -18,6 +18,14 @@
             writer = new StreamWriter(fullPath);
         }
 
+        public void Write(String str)
+        {
+            if (writer != null)
+                writer.Write(str);
+            else
+                throw new Exception("Error: try to write, when file is closed !");
+        }
+
         public void WriteString(String str)
         {
             if (writer != null)

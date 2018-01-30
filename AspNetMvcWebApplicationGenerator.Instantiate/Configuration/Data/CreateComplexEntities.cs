@@ -14,11 +14,12 @@
                 new ComplexEntity
                 (
                     "OrderCustomer",
-                    "Order",
+                     false,
+                    "tblOrder",
                     "Ord",
                     new List<ComplexEntityLink>()
                     {
-                         new ComplexEntityLink( ComplexEntityLinkType.Inner, "Ord", "Customer", "Customer", "Cust", "Id" )
+                         new ComplexEntityLink( ComplexEntityLinkType.Inner, "Ord", "Customer", false, "tblCustomer", "Cust", "Id" )
                     }
                 )
             );
@@ -27,11 +28,13 @@
                 new ComplexEntity
                 (
                     "OrderDriver",
-                    "Order",
-                    "Ord",
+                    true,
+                    "n2mOrderDriver",
+                    "OrdDrv",
                     new List<ComplexEntityLink>()
                     {
-                         new ComplexEntityLink( ComplexEntityLinkType.Left, "Ord", "Driver", "Driver", "Drv", "Order" )
+                         new ComplexEntityLink( ComplexEntityLinkType.Left, "OrdDrv", "Order",  false, "tblOrder",  "Ord", "Id" ),
+                         new ComplexEntityLink( ComplexEntityLinkType.Left, "OrdDrv", "Driver", false, "tblDriver", "Drv", "Id" )
                     }
                 )
             );
