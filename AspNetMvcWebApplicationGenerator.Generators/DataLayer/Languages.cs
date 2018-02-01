@@ -24,7 +24,6 @@
             fileWriter.WriteString("    ( Id, EnumName, UIName )");
             fileWriter.WriteString("VALUES");
             fileWriter.WriteString("    ( " + currLangItem.Id.ToString() + ", \'" + currLangItem.EnumName + "\', \'" + currLangItem.UIName + "\' );");
-            fileWriter.WriteString("GO");
         }
 
         public void Generate()
@@ -32,8 +31,13 @@
             CreateTables();
 
             StringFileWriter FileWriter = new StringFileWriter(DataConfiguration.OutputPath, "fill_tblLanguage", OutputFileType.SqlScript);
+            FileWriter.WriteString("SET IDENTITY_INSERT tblLanguage ON;");
+
             foreach (var currLanguage in DataConfiguration.Languages.Values)
                 FillOneTableRow( currLanguage, FileWriter );
+
+            FileWriter.WriteString("SET IDENTITY_INSERT tblLanguage OFF;");
+            FileWriter.WriteString("GO");
             FileWriter.Close();
         }
     }

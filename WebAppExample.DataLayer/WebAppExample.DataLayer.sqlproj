@@ -41,7 +41,7 @@
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <OutputPath>bin\Debug\</OutputPath>
     <BuildScriptName>$(MSBuildProjectName).sql</BuildScriptName>
-    <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
+    <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
@@ -89,12 +89,15 @@
     <Build Include="Generated\Indexes\idxOrderDriver.sql" />
     <Build Include="Generated\Indexes\idxTranslatedString.sql" />
     <Build Include="Generated\Indexes\idxVehicle.sql" />
-    <Build Include="Generated\PostDeploymentScripts\fill_tblDirectory.sql" />
-    <Build Include="Generated\PostDeploymentScripts\fill_tblDirectoryValue.sql" />
-    <Build Include="Generated\PostDeploymentScripts\fill_tblLanguage.sql" />
-    <Build Include="Generated\PostDeploymentScripts\fill_tblTranslatedString.sql" />
+    <None Include="Generated\PostDeploymentScripts\fill_tblDirectory.sql" />
+    <None Include="Generated\PostDeploymentScripts\fill_tblDirectoryValue.sql" />
+    <None Include="Generated\PostDeploymentScripts\fill_tblLanguage.sql" />
+    <None Include="Generated\PostDeploymentScripts\fill_tblTranslatedString.sql" />
   </ItemGroup>
   <ItemGroup>
     <None Include="WebAppExample.DataLayer.publish.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <PostDeploy Include="Generated\PostDeploymentScripts\PostDeploymentScriptsRoot.sql" />
   </ItemGroup>
 </Project>

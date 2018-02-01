@@ -1,5 +1,7 @@
 ﻿namespace AspNetMvcWebApplicationGenerator.Generators.DataLayer
 {
+    using System;
+
     using AspNetMvcWebApplicationGenerator.Configuration.DataLayer;
     using AspNetMvcWebApplicationGenerator.Generators.DataLayer.Helpers;
 
@@ -23,8 +25,9 @@
             fileWriter.WriteString("INSERT INTO tblDirectory ");
             fileWriter.WriteString("    ( Id, EnumName, IsReadOnly )");
             fileWriter.WriteString("VALUES");
-            fileWriter.WriteString("    ( " + dirItem.Id.ToString() + ", \'" + dirItem.EnumName + "\', " + dirItem.IsReadOnly.ToString() + " );");
-            fileWriter.WriteString("GO");
+
+            String IsReadOnlyStr = dirItem.IsReadOnly==true ? "1" : "0"; 
+            fileWriter.WriteString("    ( " + dirItem.Id.ToString() + ", \'" + dirItem.EnumName + "\', " + IsReadOnlyStr + " );");
         }
 
         private void CreateTblDirectoryValue()
@@ -55,9 +58,10 @@
             fileWriter.WriteString("INSERT INTO tblDirectoryValue ");
             fileWriter.WriteString("    ( Id, EnumName, IsReadOnly, DirectoryId )");
             fileWriter.WriteString("VALUES");
+
+            String IsReadOnlyStr = dirValue.IsReadOnly == true ? "1" : "0";
             fileWriter.WriteString("    ( " + dirValue.Id.ToString() + ", \'" + dirValue.EnumName + "\', " 
-                                            + dirValue.IsReadOnly.ToString() + ", " + dirValue.DirectoryId.ToString() + " );");
-            fileWriter.WriteString("GO");
+                                            + IsReadOnlyStr + ", " + dirValue.DirectoryId.ToString() + " );");
         }
         
         private void CreateTblTranslatedString()
@@ -81,9 +85,14 @@
             FileWriter.WriteString("    ON tblTranslatedString( Language ); ");
             FileWriter.WriteString("GO");
             FileWriter.WriteString("");
-            FileWriter.WriteString("CREATE INDEX idxTranslatedString_TypeReferencedItemId ");
+            FileWriter.WriteString("CREATE INDEX idxTranslatedString_TypeRefId ");
             FileWriter.WriteString("    ON tblTranslatedString( Type, ReferencedItemId ); ");
             FileWriter.WriteString("GO");
+            FileWriter.WriteString("");
+            FileWriter.WriteString("CREATE INDEX idxTranslatedString_LangTypeRefId ");
+            FileWriter.WriteString("    ON tblTranslatedString( Language, Type, ReferencedItemId ); ");
+            FileWriter.WriteString("GO");
+            FileWriter.WriteString("");
             FileWriter.Close();
         }
 
@@ -95,7 +104,6 @@
             fileWriter.WriteString("VALUES");
             fileWriter.WriteString("    ( " + transStr.Language.ToString() + ", " + ((int)transStr.Type).ToString() + ", "
                                             + transStr.ReferencedItemId.ToString() + ", \'" + transStr.Value.ToString() + "\' );");
-            fileWriter.WriteString("GO");
         }
 
         public void Generate()
@@ -108,21 +116,46 @@
             CreateTblTranslatedString();
             CreateIndexes4TblTranslatedString();
             
+            // заполняем словарными данными tblDirectory ------------------------------------------------------------------------------------------------
             StringFileWriter FileWriter_tblDirectory = new StringFileWriter(DataConfiguration.OutputPath, "fill_tblDirectory", OutputFileType.SqlScript);
-            StringFileWriter FileWriter_tblDirectoryValue = new StringFileWriter(DataConfiguration.OutputPath, "fill_tblDirectoryValue", OutputFileType.SqlScript);
-            StringFileWriter FileWriter_tblTranslatedString = new StringFileWriter(DataConfiguration.OutputPath, "fill_tblTranslatedString", OutputFileType.SqlScript);
-
+            FileWriter_tblDirectory.WriteString("");
+            FileWriter_tblDirectory.WriteString("SET IDENTITY_INSERT tblDirectory ON;");
+            FileWriter_tblDirectory.WriteString("");
             foreach (var currDirectory in DataConfiguration.DirectoryConfigurations.Values)
             {
                 FillOneTblDirectoryRow(currDirectory, FileWriter_tblDirectory);
+            }
+            FileWriter_tblDirectory.WriteString("");
+            FileWriter_tblDirectory.WriteString("SET IDENTITY_INSERT tblDirectory OFF;");
+            FileWriter_tblDirectory.WriteString("GO");
+            FileWriter_tblDirectory.Close();
+            
+            // заполняем словарными данными tblDirectoryValue -------------------------------------------------------------------------------------------
+            StringFileWriter FileWriter_tblDirectoryValue = new StringFileWriter(DataConfiguration.OutputPath, "fill_tblDirectoryValue", OutputFileType.SqlScript);
+            FileWriter_tblDirectoryValue.WriteString("");
+            FileWriter_tblDirectoryValue.WriteString("SET IDENTITY_INSERT tblDirectoryValue ON;");
+            FileWriter_tblDirectoryValue.WriteString("");
+            foreach (var currDirectory in DataConfiguration.DirectoryConfigurations.Values)
+            {
+                foreach (var currDirectoryValue in currDirectory.Items.Values)
+                {
+                    FillOneTblDirectoryValue(currDirectoryValue, FileWriter_tblDirectoryValue);
+                }
+            }
+            FileWriter_tblDirectoryValue.WriteString("");
+            FileWriter_tblDirectoryValue.WriteString("SET IDENTITY_INSERT tblDirectoryValue OFF;");
+            FileWriter_tblDirectoryValue.WriteString("GO");
+            FileWriter_tblDirectoryValue.Close();
 
+            // заполняем словарными данными tblTranslatedString -----------------------------------------------------------------------------------------
+            StringFileWriter FileWriter_tblTranslatedString = new StringFileWriter(DataConfiguration.OutputPath, "fill_tblTranslatedString", OutputFileType.SqlScript);
+            foreach (var currDirectory in DataConfiguration.DirectoryConfigurations.Values)
+            {
                 foreach (var currTranslatedString in currDirectory.TranslatedUINames)
                     FillOneTblTranslatedString(currTranslatedString, FileWriter_tblTranslatedString);
 
                 foreach (var currDirectoryValue in currDirectory.Items.Values)
                 {
-                    FillOneTblDirectoryValue(currDirectoryValue, FileWriter_tblDirectoryValue);
-
                     foreach (var currTranslatedUIName in currDirectoryValue.TranslatedUINames)
                         FillOneTblTranslatedString(currTranslatedUIName, FileWriter_tblTranslatedString);
 
@@ -130,10 +163,8 @@
                         FillOneTblTranslatedString(currTranslatedUIComment, FileWriter_tblTranslatedString);
                 }
             }
-            
             FileWriter_tblTranslatedString.Close();
-            FileWriter_tblDirectoryValue.Close();
-            FileWriter_tblDirectory.Close();
+
         }
     }
 }
