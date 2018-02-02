@@ -13,6 +13,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AspNetMvcWebApplicationGene
 EndProject
 Project("{00D1A9C2-B5F0-4AF3-8072-F6C62B433612}") = "WebAppExample.DataLayer", "WebAppExample.DataLayer\WebAppExample.DataLayer.sqlproj", "{58881E15-D701-413C-A086-93D477FE4895}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebAppExample.DataAccessLayer", "WebAppExample.DataAccessLayer\WebAppExample.DataAccessLayer.csproj", "{A45A7C54-A4AC-47FF-8ED0-F8AE1F69901E}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -41,6 +43,10 @@ Global
 		{58881E15-D701-413C-A086-93D477FE4895}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{58881E15-D701-413C-A086-93D477FE4895}.Release|Any CPU.Build.0 = Release|Any CPU
 		{58881E15-D701-413C-A086-93D477FE4895}.Release|Any CPU.Deploy.0 = Release|Any CPU
+		{A45A7C54-A4AC-47FF-8ED0-F8AE1F69901E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A45A7C54-A4AC-47FF-8ED0-F8AE1F69901E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A45A7C54-A4AC-47FF-8ED0-F8AE1F69901E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A45A7C54-A4AC-47FF-8ED0-F8AE1F69901E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

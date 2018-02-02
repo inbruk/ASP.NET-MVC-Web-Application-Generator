@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="ed7141c9f0aa43f797b9dea63eee8b2a" Name="Diagram1">
+        <EntityTypeShape EntityType="WebAppExampleModel.tblAccount" Width="1.5" PointX="5.25" PointY="7.75" />
+        <EntityTypeShape EntityType="WebAppExampleModel.tblCustomer" Width="1.5" PointX="5.25" PointY="21.375" />
+        <EntityTypeShape EntityType="WebAppExampleModel.tblDirectory" Width="1.5" PointX="0.75" PointY="17.125" />
+        <EntityTypeShape EntityType="WebAppExampleModel.tblDirectoryValue" Width="1.875" PointX="3" PointY="15.875" />
+        <EntityTypeShape EntityType="WebAppExampleModel.tblDriver" Width="1.5" PointX="8.25" PointY="13" />
+        <EntityTypeShape EntityType="WebAppExampleModel.tblEmployee" Width="2.875" PointX="5.25" PointY="31" />
+        <EntityTypeShape EntityType="WebAppExampleModel.tblLanguage" Width="1.5" PointX="0.75" PointY="0.75" />
+        <EntityTypeShape EntityType="WebAppExampleModel.tblOrder" Width="1.5" PointX="7.5" PointY="24.625" />
+        <EntityTypeShape EntityType="WebAppExampleModel.tblTranslatedString" Width="1.875" PointX="2.75" PointY="0.75" />
+        <EntityTypeShape EntityType="WebAppExampleModel.tblVehicle" Width="1.5" PointX="10.5" PointY="16.75" />
+        <EntityTypeShape EntityType="WebAppExampleModel.vwOrderCustomer" Width="1.75" PointX="0.75" PointY="3.75" />
+        <AssociationConnector Association="WebAppExampleModel.FK__tblAccoun__Accou__398D8EEE" />
+        <AssociationConnector Association="WebAppExampleModel.FK__tblCustom__Payme__276EDEB3" />
+        <AssociationConnector Association="WebAppExampleModel.FK__tblCustom__Perso__25869641" />
+        <AssociationConnector Association="WebAppExampleModel.FK__tblCustom__Perso__267ABA7A" />
+        <AssociationConnector Association="WebAppExampleModel.FK__tblOrder__Custom__412EB0B6" />
+        <AssociationConnector Association="WebAppExampleModel.FK__tblDirect__Direc__286302EC" />
+        <AssociationConnector Association="WebAppExampleModel.FK__tblDriver__Balan__29572725" />
+        <AssociationConnector Association="WebAppExampleModel.FK__tblDriver__Emplo__2A4B4B5E" />
+        <AssociationConnector Association="WebAppExampleModel.FK__tblDriver__Emplo__2B3F6F97" />
+        <AssociationConnector Association="WebAppExampleModel.FK__tblDriver__Emplo__2C3393D0" />
+        <AssociationConnector Association="WebAppExampleModel.FK__tblEmploy__Perso__2F10007B" />
+        <AssociationConnector Association="WebAppExampleModel.FK__tblEmploy__Perso__300424B4" />
+        <AssociationConnector Association="WebAppExampleModel.FK__tblEmploy__Posit__2E1BDC42" />
+        <AssociationConnector Association="WebAppExampleModel.FK__tblVehicl__Brand__31EC6D26" />
+        <AssociationConnector Association="WebAppExampleModel.FK__tblDriver__Curre__2D27B809" />
+        <AssociationConnector Association="WebAppExampleModel.FK__tblVehicl__Drive__32E0915F" />
+        <EntityTypeShape EntityType="WebAppExampleModel.n2mOrderDriver" Width="2.125" PointX="10.5" PointY="20.125" />
+        <AssociationConnector Association="WebAppExampleModel.FK__n2mOrderD__Drive__46E78A0C" />
+        <AssociationConnector Association="WebAppExampleModel.FK__n2mOrderD__Order__45F365D3" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>
