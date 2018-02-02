@@ -1,135 +1,270 @@
 
-INSERT INTO tblTranslatedString 
-    ( Language, Type, ReferencedItemId, Value )
-VALUES
-    ( 1, 1, 1, 'Должность' );
+IF NOT EXISTS( SELECT * FROM tblTranslatedString
+    WHERE Language=1 AND Type=1 AND 
+          ReferencedItemId=1 AND Value='Должность' )
+BEGIN
+    INSERT INTO tblTranslatedString 
+        ( Language, Type, ReferencedItemId, Value )
+    VALUES
+        ( 1, 1, 1, 'Должность' );
+END
 
-INSERT INTO tblTranslatedString 
-    ( Language, Type, ReferencedItemId, Value )
-VALUES
-    ( 1, 2, 1, 'Водитель' );
+IF NOT EXISTS( SELECT * FROM tblTranslatedString
+    WHERE Language=1 AND Type=2 AND 
+          ReferencedItemId=1 AND Value='Водитель' )
+BEGIN
+    INSERT INTO tblTranslatedString 
+        ( Language, Type, ReferencedItemId, Value )
+    VALUES
+        ( 1, 2, 1, 'Водитель' );
+END
 
-INSERT INTO tblTranslatedString 
-    ( Language, Type, ReferencedItemId, Value )
-VALUES
-    ( 1, 3, 1, 'Управляет машинами компании. Возит клиентов.' );
+IF NOT EXISTS( SELECT * FROM tblTranslatedString
+    WHERE Language=1 AND Type=3 AND 
+          ReferencedItemId=1 AND Value='Управляет машинами компании. Возит клиентов.' )
+BEGIN
+    INSERT INTO tblTranslatedString 
+        ( Language, Type, ReferencedItemId, Value )
+    VALUES
+        ( 1, 3, 1, 'Управляет машинами компании. Возит клиентов.' );
+END
 
-INSERT INTO tblTranslatedString 
-    ( Language, Type, ReferencedItemId, Value )
-VALUES
-    ( 1, 2, 2, 'Диспетчер' );
+IF NOT EXISTS( SELECT * FROM tblTranslatedString
+    WHERE Language=1 AND Type=2 AND 
+          ReferencedItemId=2 AND Value='Диспетчер' )
+BEGIN
+    INSERT INTO tblTranslatedString 
+        ( Language, Type, ReferencedItemId, Value )
+    VALUES
+        ( 1, 2, 2, 'Диспетчер' );
+END
 
-INSERT INTO tblTranslatedString 
-    ( Language, Type, ReferencedItemId, Value )
-VALUES
-    ( 1, 3, 2, 'Звонит водителям и клиентам. Сохраняет заказы в БД.' );
+IF NOT EXISTS( SELECT * FROM tblTranslatedString
+    WHERE Language=1 AND Type=3 AND 
+          ReferencedItemId=2 AND Value='Звонит водителям и клиентам. Сохраняет заказы в БД.' )
+BEGIN
+    INSERT INTO tblTranslatedString 
+        ( Language, Type, ReferencedItemId, Value )
+    VALUES
+        ( 1, 3, 2, 'Звонит водителям и клиентам. Сохраняет заказы в БД.' );
+END
 
-INSERT INTO tblTranslatedString 
-    ( Language, Type, ReferencedItemId, Value )
-VALUES
-    ( 1, 2, 3, 'Супервизор' );
+IF NOT EXISTS( SELECT * FROM tblTranslatedString
+    WHERE Language=1 AND Type=2 AND 
+          ReferencedItemId=3 AND Value='Супервизор' )
+BEGIN
+    INSERT INTO tblTranslatedString 
+        ( Language, Type, ReferencedItemId, Value )
+    VALUES
+        ( 1, 2, 3, 'Супервизор' );
+END
 
-INSERT INTO tblTranslatedString 
-    ( Language, Type, ReferencedItemId, Value )
-VALUES
-    ( 1, 3, 3, 'Пасет диспетчеров. Решает конфликтные ситуации с клиентами и водителями.' );
+IF NOT EXISTS( SELECT * FROM tblTranslatedString
+    WHERE Language=1 AND Type=3 AND 
+          ReferencedItemId=3 AND Value='Пасет диспетчеров. Решает конфликтные ситуации с клиентами и водителями.' )
+BEGIN
+    INSERT INTO tblTranslatedString 
+        ( Language, Type, ReferencedItemId, Value )
+    VALUES
+        ( 1, 3, 3, 'Пасет диспетчеров. Решает конфликтные ситуации с клиентами и водителями.' );
+END
 
-INSERT INTO tblTranslatedString 
-    ( Language, Type, ReferencedItemId, Value )
-VALUES
-    ( 1, 1, 2, 'Пол' );
+IF NOT EXISTS( SELECT * FROM tblTranslatedString
+    WHERE Language=1 AND Type=1 AND 
+          ReferencedItemId=2 AND Value='Пол' )
+BEGIN
+    INSERT INTO tblTranslatedString 
+        ( Language, Type, ReferencedItemId, Value )
+    VALUES
+        ( 1, 1, 2, 'Пол' );
+END
 
-INSERT INTO tblTranslatedString 
-    ( Language, Type, ReferencedItemId, Value )
-VALUES
-    ( 1, 2, 4, 'Мужской' );
+IF NOT EXISTS( SELECT * FROM tblTranslatedString
+    WHERE Language=1 AND Type=2 AND 
+          ReferencedItemId=4 AND Value='Мужской' )
+BEGIN
+    INSERT INTO tblTranslatedString 
+        ( Language, Type, ReferencedItemId, Value )
+    VALUES
+        ( 1, 2, 4, 'Мужской' );
+END
 
-INSERT INTO tblTranslatedString 
-    ( Language, Type, ReferencedItemId, Value )
-VALUES
-    ( 1, 3, 4, 'Мальчики, юноши, мужчины, дедушки.' );
+IF NOT EXISTS( SELECT * FROM tblTranslatedString
+    WHERE Language=1 AND Type=3 AND 
+          ReferencedItemId=4 AND Value='Мальчики, юноши, мужчины, дедушки.' )
+BEGIN
+    INSERT INTO tblTranslatedString 
+        ( Language, Type, ReferencedItemId, Value )
+    VALUES
+        ( 1, 3, 4, 'Мальчики, юноши, мужчины, дедушки.' );
+END
 
-INSERT INTO tblTranslatedString 
-    ( Language, Type, ReferencedItemId, Value )
-VALUES
-    ( 1, 2, 5, 'Женский' );
+IF NOT EXISTS( SELECT * FROM tblTranslatedString
+    WHERE Language=1 AND Type=2 AND 
+          ReferencedItemId=5 AND Value='Женский' )
+BEGIN
+    INSERT INTO tblTranslatedString 
+        ( Language, Type, ReferencedItemId, Value )
+    VALUES
+        ( 1, 2, 5, 'Женский' );
+END
 
-INSERT INTO tblTranslatedString 
-    ( Language, Type, ReferencedItemId, Value )
-VALUES
-    ( 1, 3, 5, 'Девочки, девушки, женщины, бабушки.' );
+IF NOT EXISTS( SELECT * FROM tblTranslatedString
+    WHERE Language=1 AND Type=3 AND 
+          ReferencedItemId=5 AND Value='Девочки, девушки, женщины, бабушки.' )
+BEGIN
+    INSERT INTO tblTranslatedString 
+        ( Language, Type, ReferencedItemId, Value )
+    VALUES
+        ( 1, 3, 5, 'Девочки, девушки, женщины, бабушки.' );
+END
 
-INSERT INTO tblTranslatedString 
-    ( Language, Type, ReferencedItemId, Value )
-VALUES
-    ( 1, 1, 3, 'Семейное положение' );
+IF NOT EXISTS( SELECT * FROM tblTranslatedString
+    WHERE Language=1 AND Type=1 AND 
+          ReferencedItemId=3 AND Value='Семейное положение' )
+BEGIN
+    INSERT INTO tblTranslatedString 
+        ( Language, Type, ReferencedItemId, Value )
+    VALUES
+        ( 1, 1, 3, 'Семейное положение' );
+END
 
-INSERT INTO tblTranslatedString 
-    ( Language, Type, ReferencedItemId, Value )
-VALUES
-    ( 1, 2, 6, 'Холост/Не замужем' );
+IF NOT EXISTS( SELECT * FROM tblTranslatedString
+    WHERE Language=1 AND Type=2 AND 
+          ReferencedItemId=6 AND Value='Холост/Не замужем' )
+BEGIN
+    INSERT INTO tblTranslatedString 
+        ( Language, Type, ReferencedItemId, Value )
+    VALUES
+        ( 1, 2, 6, 'Холост/Не замужем' );
+END
 
-INSERT INTO tblTranslatedString 
-    ( Language, Type, ReferencedItemId, Value )
-VALUES
-    ( 1, 3, 6, 'Отношения официально не оформлены.' );
+IF NOT EXISTS( SELECT * FROM tblTranslatedString
+    WHERE Language=1 AND Type=3 AND 
+          ReferencedItemId=6 AND Value='Отношения официально не оформлены.' )
+BEGIN
+    INSERT INTO tblTranslatedString 
+        ( Language, Type, ReferencedItemId, Value )
+    VALUES
+        ( 1, 3, 6, 'Отношения официально не оформлены.' );
+END
 
-INSERT INTO tblTranslatedString 
-    ( Language, Type, ReferencedItemId, Value )
-VALUES
-    ( 1, 2, 7, 'Женат/За мужем' );
+IF NOT EXISTS( SELECT * FROM tblTranslatedString
+    WHERE Language=1 AND Type=2 AND 
+          ReferencedItemId=7 AND Value='Женат/За мужем' )
+BEGIN
+    INSERT INTO tblTranslatedString 
+        ( Language, Type, ReferencedItemId, Value )
+    VALUES
+        ( 1, 2, 7, 'Женат/За мужем' );
+END
 
-INSERT INTO tblTranslatedString 
-    ( Language, Type, ReferencedItemId, Value )
-VALUES
-    ( 1, 3, 7, 'Отношения официально оформлены.' );
+IF NOT EXISTS( SELECT * FROM tblTranslatedString
+    WHERE Language=1 AND Type=3 AND 
+          ReferencedItemId=7 AND Value='Отношения официально оформлены.' )
+BEGIN
+    INSERT INTO tblTranslatedString 
+        ( Language, Type, ReferencedItemId, Value )
+    VALUES
+        ( 1, 3, 7, 'Отношения официально оформлены.' );
+END
 
-INSERT INTO tblTranslatedString 
-    ( Language, Type, ReferencedItemId, Value )
-VALUES
-    ( 1, 1, 4, 'Состояние аккаунта' );
+IF NOT EXISTS( SELECT * FROM tblTranslatedString
+    WHERE Language=1 AND Type=1 AND 
+          ReferencedItemId=4 AND Value='Состояние аккаунта' )
+BEGIN
+    INSERT INTO tblTranslatedString 
+        ( Language, Type, ReferencedItemId, Value )
+    VALUES
+        ( 1, 1, 4, 'Состояние аккаунта' );
+END
 
-INSERT INTO tblTranslatedString 
-    ( Language, Type, ReferencedItemId, Value )
-VALUES
-    ( 1, 2, 8, 'Рабочий' );
+IF NOT EXISTS( SELECT * FROM tblTranslatedString
+    WHERE Language=1 AND Type=2 AND 
+          ReferencedItemId=8 AND Value='Рабочий' )
+BEGIN
+    INSERT INTO tblTranslatedString 
+        ( Language, Type, ReferencedItemId, Value )
+    VALUES
+        ( 1, 2, 8, 'Рабочий' );
+END
 
-INSERT INTO tblTranslatedString 
-    ( Language, Type, ReferencedItemId, Value )
-VALUES
-    ( 1, 3, 8, 'Аккаунт можно использовать.' );
+IF NOT EXISTS( SELECT * FROM tblTranslatedString
+    WHERE Language=1 AND Type=3 AND 
+          ReferencedItemId=8 AND Value='Аккаунт можно использовать.' )
+BEGIN
+    INSERT INTO tblTranslatedString 
+        ( Language, Type, ReferencedItemId, Value )
+    VALUES
+        ( 1, 3, 8, 'Аккаунт можно использовать.' );
+END
 
-INSERT INTO tblTranslatedString 
-    ( Language, Type, ReferencedItemId, Value )
-VALUES
-    ( 1, 2, 9, 'Заблокирован' );
+IF NOT EXISTS( SELECT * FROM tblTranslatedString
+    WHERE Language=1 AND Type=2 AND 
+          ReferencedItemId=9 AND Value='Заблокирован' )
+BEGIN
+    INSERT INTO tblTranslatedString 
+        ( Language, Type, ReferencedItemId, Value )
+    VALUES
+        ( 1, 2, 9, 'Заблокирован' );
+END
 
-INSERT INTO tblTranslatedString 
-    ( Language, Type, ReferencedItemId, Value )
-VALUES
-    ( 1, 3, 9, 'Сейчас пользоваться аккаунтом нельзя.' );
+IF NOT EXISTS( SELECT * FROM tblTranslatedString
+    WHERE Language=1 AND Type=3 AND 
+          ReferencedItemId=9 AND Value='Сейчас пользоваться аккаунтом нельзя.' )
+BEGIN
+    INSERT INTO tblTranslatedString 
+        ( Language, Type, ReferencedItemId, Value )
+    VALUES
+        ( 1, 3, 9, 'Сейчас пользоваться аккаунтом нельзя.' );
+END
 
-INSERT INTO tblTranslatedString 
-    ( Language, Type, ReferencedItemId, Value )
-VALUES
-    ( 1, 1, 5, 'Бренд автопроизводителя' );
+IF NOT EXISTS( SELECT * FROM tblTranslatedString
+    WHERE Language=1 AND Type=1 AND 
+          ReferencedItemId=5 AND Value='Бренд автопроизводителя' )
+BEGIN
+    INSERT INTO tblTranslatedString 
+        ( Language, Type, ReferencedItemId, Value )
+    VALUES
+        ( 1, 1, 5, 'Бренд автопроизводителя' );
+END
 
-INSERT INTO tblTranslatedString 
-    ( Language, Type, ReferencedItemId, Value )
-VALUES
-    ( 1, 2, 10, 'ВАЗ' );
+IF NOT EXISTS( SELECT * FROM tblTranslatedString
+    WHERE Language=1 AND Type=2 AND 
+          ReferencedItemId=10 AND Value='ВАЗ' )
+BEGIN
+    INSERT INTO tblTranslatedString 
+        ( Language, Type, ReferencedItemId, Value )
+    VALUES
+        ( 1, 2, 10, 'ВАЗ' );
+END
 
-INSERT INTO tblTranslatedString 
-    ( Language, Type, ReferencedItemId, Value )
-VALUES
-    ( 1, 3, 10, 'Российская разбитная бричка.' );
+IF NOT EXISTS( SELECT * FROM tblTranslatedString
+    WHERE Language=1 AND Type=3 AND 
+          ReferencedItemId=10 AND Value='Российская разбитная бричка.' )
+BEGIN
+    INSERT INTO tblTranslatedString 
+        ( Language, Type, ReferencedItemId, Value )
+    VALUES
+        ( 1, 3, 10, 'Российская разбитная бричка.' );
+END
 
-INSERT INTO tblTranslatedString 
-    ( Language, Type, ReferencedItemId, Value )
-VALUES
-    ( 1, 2, 11, 'ГАЗ' );
+IF NOT EXISTS( SELECT * FROM tblTranslatedString
+    WHERE Language=1 AND Type=2 AND 
+          ReferencedItemId=11 AND Value='ГАЗ' )
+BEGIN
+    INSERT INTO tblTranslatedString 
+        ( Language, Type, ReferencedItemId, Value )
+    VALUES
+        ( 1, 2, 11, 'ГАЗ' );
+END
 
-INSERT INTO tblTranslatedString 
-    ( Language, Type, ReferencedItemId, Value )
-VALUES
-    ( 1, 3, 11, 'Колесница богов.' );
+IF NOT EXISTS( SELECT * FROM tblTranslatedString
+    WHERE Language=1 AND Type=3 AND 
+          ReferencedItemId=11 AND Value='Колесница богов.' )
+BEGIN
+    INSERT INTO tblTranslatedString 
+        ( Language, Type, ReferencedItemId, Value )
+    VALUES
+        ( 1, 3, 11, 'Колесница богов.' );
+END

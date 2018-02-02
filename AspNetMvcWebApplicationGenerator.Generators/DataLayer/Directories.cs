@@ -22,12 +22,15 @@
         private void FillOneTblDirectoryRow(Directory dirItem, StringFileWriter fileWriter)
         {
             fileWriter.WriteString("");
-            fileWriter.WriteString("INSERT INTO tblDirectory ");
-            fileWriter.WriteString("    ( Id, EnumName, IsReadOnly )");
-            fileWriter.WriteString("VALUES");
+            fileWriter.WriteString("IF NOT EXISTS( SELECT * FROM tblDirectory WHERE Id=" + dirItem.Id.ToString() + " )");
+            fileWriter.WriteString("BEGIN");
+            fileWriter.WriteString("    INSERT INTO tblDirectory ");
+            fileWriter.WriteString("        ( Id, EnumName, IsReadOnly )");
+            fileWriter.WriteString("    VALUES");
 
             String IsReadOnlyStr = dirItem.IsReadOnly==true ? "1" : "0"; 
-            fileWriter.WriteString("    ( " + dirItem.Id.ToString() + ", \'" + dirItem.EnumName + "\', " + IsReadOnlyStr + " );");
+            fileWriter.WriteString("        ( " + dirItem.Id.ToString() + ", \'" + dirItem.EnumName + "\', " + IsReadOnlyStr + " );");
+            fileWriter.WriteString("END");
         }
 
         private void CreateTblDirectoryValue()
@@ -55,13 +58,16 @@
         private void FillOneTblDirectoryValue(DirectoryValue dirValue, StringFileWriter fileWriter)
         {
             fileWriter.WriteString("");
-            fileWriter.WriteString("INSERT INTO tblDirectoryValue ");
-            fileWriter.WriteString("    ( Id, EnumName, IsReadOnly, DirectoryId )");
-            fileWriter.WriteString("VALUES");
+            fileWriter.WriteString("IF NOT EXISTS( SELECT * FROM tblDirectoryValue WHERE Id=" + dirValue.Id.ToString() + " )");
+            fileWriter.WriteString("BEGIN");
+            fileWriter.WriteString("    INSERT INTO tblDirectoryValue ");
+            fileWriter.WriteString("        ( Id, EnumName, IsReadOnly, DirectoryId )");
+            fileWriter.WriteString("    VALUES");
 
             String IsReadOnlyStr = dirValue.IsReadOnly == true ? "1" : "0";
             fileWriter.WriteString("    ( " + dirValue.Id.ToString() + ", \'" + dirValue.EnumName + "\', " 
                                             + IsReadOnlyStr + ", " + dirValue.DirectoryId.ToString() + " );");
+            fileWriter.WriteString("END");
         }
         
         private void CreateTblTranslatedString()
@@ -99,11 +105,16 @@
         private void FillOneTblTranslatedString(TranslatedString transStr, StringFileWriter fileWriter)
         {
             fileWriter.WriteString("");
-            fileWriter.WriteString("INSERT INTO tblTranslatedString ");
-            fileWriter.WriteString("    ( Language, Type, ReferencedItemId, Value )");
-            fileWriter.WriteString("VALUES");
-            fileWriter.WriteString("    ( " + transStr.Language.ToString() + ", " + ((int)transStr.Type).ToString() + ", "
-                                            + transStr.ReferencedItemId.ToString() + ", \'" + transStr.Value.ToString() + "\' );");
+            fileWriter.WriteString("IF NOT EXISTS( SELECT * FROM tblTranslatedString");
+            fileWriter.WriteString("    WHERE Language=" + transStr.Language.ToString() + " AND Type=" + ((int)transStr.Type).ToString() + " AND ");
+            fileWriter.WriteString("          ReferencedItemId=" + transStr.ReferencedItemId.ToString() + " AND Value=\'" + transStr.Value.ToString() + "\' )");
+            fileWriter.WriteString("BEGIN");
+            fileWriter.WriteString("    INSERT INTO tblTranslatedString ");
+            fileWriter.WriteString("        ( Language, Type, ReferencedItemId, Value )");
+            fileWriter.WriteString("    VALUES");
+            fileWriter.WriteString("        ( " + transStr.Language.ToString() + ", " + ((int)transStr.Type).ToString() + ", "
+                                                + transStr.ReferencedItemId.ToString() + ", \'" + transStr.Value.ToString() + "\' );");
+            fileWriter.WriteString("END");
         }
 
         public void Generate()

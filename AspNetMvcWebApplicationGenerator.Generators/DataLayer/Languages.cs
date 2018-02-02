@@ -20,10 +20,13 @@
         private void FillOneTableRow(LanguageItem currLangItem, StringFileWriter fileWriter)
         {
             fileWriter.WriteString("");
-            fileWriter.WriteString("INSERT INTO tblLanguage ");
-            fileWriter.WriteString("    ( Id, EnumName, UIName )");
-            fileWriter.WriteString("VALUES");
-            fileWriter.WriteString("    ( " + currLangItem.Id.ToString() + ", \'" + currLangItem.EnumName + "\', \'" + currLangItem.UIName + "\' );");
+            fileWriter.WriteString("IF NOT EXISTS( SELECT * FROM tblLanguage WHERE Id=" + currLangItem.Id.ToString() + " )");
+            fileWriter.WriteString("BEGIN");
+            fileWriter.WriteString("    INSERT INTO tblLanguage ");
+            fileWriter.WriteString("        ( Id, EnumName, UIName )");
+            fileWriter.WriteString("    VALUES");
+            fileWriter.WriteString("        ( " + currLangItem.Id.ToString() + ", \'" + currLangItem.EnumName + "\', \'" + currLangItem.UIName + "\' );");
+            fileWriter.WriteString("END");
         }
 
         public void Generate()
