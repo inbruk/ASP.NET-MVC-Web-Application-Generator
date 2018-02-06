@@ -87,6 +87,7 @@
     <None Include="Generated\PostDeploymentScripts\fill_tblDirectory.sql" />
     <None Include="Generated\PostDeploymentScripts\fill_tblDirectoryValue.sql" />
     <None Include="Generated\PostDeploymentScripts\fill_tblTranslatedString.sql" />
+    <Build Include="Generated\Indexes\idxDriver.sql" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Production.publish.xml" />
