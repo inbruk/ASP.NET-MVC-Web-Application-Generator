@@ -98,34 +98,34 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>WebAppExModel.tt</DependentUpon>
     </Compile>
-    <Compile Include="ProductionModel.Designer.cs">
+    <Compile Include="CommonModel.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>ProductionModel.edmx</DependentUpon>
+      <DependentUpon>CommonModel.edmx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <EntityDeploy Include="ProductionModel.edmx">
+    <EntityDeploy Include="CommonModel.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>ProductionModel.Designer.cs</LastGenOutput>
+      <LastGenOutput>CommonModel.Designer.cs</LastGenOutput>
     </EntityDeploy>
   </ItemGroup>
   <ItemGroup>
     <None Include="App.Config" />
     <None Include="packages.config" />
-    <None Include="ProductionModel.edmx.diagram">
-      <DependentUpon>ProductionModel.edmx</DependentUpon>
+    <None Include="CommonModel.edmx.diagram">
+      <DependentUpon>CommonModel.edmx</DependentUpon>
     </None>
   </ItemGroup>
   <ItemGroup>
     <Content Include="WebAppExModel.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <LastGenOutput>WebAppExModel.Context.cs</LastGenOutput>
-      <DependentUpon>ProductionModel.edmx</DependentUpon>
+      <DependentUpon>CommonModel.edmx</DependentUpon>
     </Content>
     <Content Include="WebAppExModel.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>ProductionModel.edmx</DependentUpon>
+      <DependentUpon>CommonModel.edmx</DependentUpon>
       <LastGenOutput>WebAppExModel.cs</LastGenOutput>
     </Content>
   </ItemGroup>

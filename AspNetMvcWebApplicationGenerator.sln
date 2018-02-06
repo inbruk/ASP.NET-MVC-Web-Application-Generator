@@ -42,7 +42,7 @@ Project("{00D1A9C2-B5F0-4AF3-8072-F6C62B433612}") = "Production", "WebAppExample
 		{88826F44-F311-45B8-9105-BFA436E27FF5} = {88826F44-F311-45B8-9105-BFA436E27FF5}
 	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Production", "WebAppExample\DataAccessLayer\Production\Production.csproj", "{A45A7C54-A4AC-47FF-8ED0-F8AE1F69901E}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Common", "WebAppExample\DataAccessLayer\Production\Common.csproj", "{A45A7C54-A4AC-47FF-8ED0-F8AE1F69901E}"
 EndProject
 Project("{00D1A9C2-B5F0-4AF3-8072-F6C62B433612}") = "DirLangStrings", "WebAppExample\DataLayer\DirLangStrings\DirLangStrings.sqlproj", "{88826F44-F311-45B8-9105-BFA436E27FF5}"
 EndProject

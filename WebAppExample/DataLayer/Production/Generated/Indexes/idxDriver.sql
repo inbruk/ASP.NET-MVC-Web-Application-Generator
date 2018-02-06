@@ -2,14 +2,6 @@ CREATE INDEX idxDriver_BalanceAccountBalance
     ON [tblDriver]([BalanceAccountBalance]); 
 GO
 
-CREATE INDEX idxDriver_BalanceAccountAccountState 
-    ON [tblDriver]([BalanceAccountAccountState]); 
-GO
-
-CREATE INDEX idxDriver_EmployeePosition 
-    ON [tblDriver]([EmployeePosition]); 
-GO
-
 CREATE INDEX idxDriver_EmployeePersonFirstName 
     ON [tblDriver]([EmployeePersonFirstName]); 
 GO

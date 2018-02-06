@@ -112,8 +112,7 @@
                     {
                         new EntityField( EntityFieldType.SLong,  "Id" ),
                         new EntityField( EntityFieldType.String, "Comment", 0, 0 ),
-
-                        new EntityField( EntityFieldType.DirectoryItem, "Position", 0, 0, null, false, "Position" ),
+                        new EntityField( EntityFieldType.SLong,  "Position" ),
                         
                         new EntityField( EntityFieldType.Link2TableOrVirtaulPart, "Person",
                             null, 0, null, false, null, LinkType.One2OneVirtualPartOfObject, "Person" )
@@ -131,11 +130,10 @@
                     {
                         new EntityField( EntityFieldType.SLong,  "Id" ),
                         new EntityField( EntityFieldType.String, "Comment", 0, 0 ),
-                        new EntityField( EntityFieldType.SLong,  "Balance", null, 0, null, false, null, 
+                        new EntityField( EntityFieldType.SLong,  "Balance", null, 0, null, false, null,
                             LinkType.NoLink, "Account", "Balance", 100, true, true, true ),
 
-                        new EntityField( EntityFieldType.DirectoryItem, "AccountState", 0, 0, null, false, "AccountState",
-                            LinkType.NoLink, "Account", "AccountState" )
+                        new EntityField( EntityFieldType.SLong, "AccountState")
                     }
                 )
             );
@@ -193,7 +191,7 @@
                     {
                         new EntityField( EntityFieldType.SLong,  "Id" ),
                         new EntityField( EntityFieldType.String, "Comment", 0, 0 ),
-                        new EntityField( EntityFieldType.DirectoryItem, "Brand", 0, 0, null, false, "VehicleBrand" ),
+                        new EntityField( EntityFieldType.SLong,  "Brand"),
                         new EntityField( EntityFieldType.String, "Model", 0, 16 ),
 
                         new EntityField( EntityFieldType.Link2TableOrVirtaulPart, "DriverOwner",

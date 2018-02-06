@@ -66,7 +66,3 @@ CREATE INDEX idxCustomer_PaymentAccountBalance
     ON [tblCustomer]([PaymentAccountBalance]); 
 GO
 
-CREATE INDEX idxCustomer_PaymentAccountAccountState 
-    ON [tblCustomer]([PaymentAccountAccountState]); 
-GO
-

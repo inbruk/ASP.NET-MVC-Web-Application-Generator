@@ -5,18 +5,6 @@
 
     internal class Languages
     {
-        private void CreateTables()
-        {
-            StringFileWriter FileWriter = new StringFileWriter( DataConfiguration.OutputPath, "tblLanguage", OutputFileType.SqlScript );
-            FileWriter.WriteString("CREATE TABLE tblLanguage (");
-            FileWriter.WriteString("    Id BIGINT IDENTITY (1,1) NOT NULL PRIMARY KEY, ");
-            FileWriter.WriteString("    EnumName NVARCHAR(16), ");
-            FileWriter.WriteString("    UIName NVARCHAR(16) ");
-            FileWriter.WriteString(");");
-            FileWriter.WriteString("GO");
-            FileWriter.Close();
-        }
-
         private void FillOneTableRow(LanguageItem currLangItem, StringFileWriter fileWriter)
         {
             fileWriter.WriteString("");
@@ -31,8 +19,6 @@
 
         public void Generate()
         {
-            CreateTables();
-
             StringFileWriter FileWriter = new StringFileWriter(DataConfiguration.OutputPath, "fill_tblLanguage", OutputFileType.SqlScript);
             FileWriter.WriteString("SET IDENTITY_INSERT tblLanguage ON;");
 

@@ -1,7 +1,3 @@
-CREATE INDEX idxEmployee_Position 
-    ON [tblEmployee]([Position]); 
-GO
-
 CREATE INDEX idxEmployee_PersonFirstName 
     ON [tblEmployee]([PersonFirstName]); 
 GO

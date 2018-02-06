@@ -35,6 +35,6 @@ CREATE TABLE tblCustomer (
     PaymentAccountId BIGINT, 
     PaymentAccountComment NVARCHAR(MAX),
     PaymentAccountBalance BIGINT, 
-    PaymentAccountAccountState BIGINT FOREIGN KEY REFERENCES tblDirectoryValue(Id),
+    PaymentAccountAccountState BIGINT, 
  ); 
 GO

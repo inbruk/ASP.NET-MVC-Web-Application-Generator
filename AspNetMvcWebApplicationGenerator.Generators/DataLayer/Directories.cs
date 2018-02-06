@@ -7,18 +7,6 @@
 
     internal class Directories
     {
-        private void CreateTblDirectory()
-        {
-            StringFileWriter FileWriter = new StringFileWriter(DataConfiguration.OutputPath, "tblDirectory", OutputFileType.SqlScript);
-            FileWriter.WriteString("CREATE TABLE tblDirectory (");
-            FileWriter.WriteString("    Id BIGINT IDENTITY (1,1) NOT NULL PRIMARY KEY, ");
-            FileWriter.WriteString("    EnumName NVARCHAR(16), ");
-            FileWriter.WriteString("    IsReadOnly BIT ");
-            FileWriter.WriteString(");");
-            FileWriter.WriteString("GO");
-            FileWriter.Close();
-        }
-
         private void FillOneTblDirectoryRow(Directory dirItem, StringFileWriter fileWriter)
         {
             fileWriter.WriteString("");
@@ -31,28 +19,6 @@
             String IsReadOnlyStr = dirItem.IsReadOnly==true ? "1" : "0"; 
             fileWriter.WriteString("        ( " + dirItem.Id.ToString() + ", \'" + dirItem.EnumName + "\', " + IsReadOnlyStr + " );");
             fileWriter.WriteString("END");
-        }
-
-        private void CreateTblDirectoryValue()
-        {
-            StringFileWriter FileWriter = new StringFileWriter(DataConfiguration.OutputPath, "tblDirectoryValue", OutputFileType.SqlScript);
-            FileWriter.WriteString("CREATE TABLE tblDirectoryValue (");
-            FileWriter.WriteString("    Id BIGINT IDENTITY (1,1) NOT NULL PRIMARY KEY, ");
-            FileWriter.WriteString("    EnumName NVARCHAR(16), ");
-            FileWriter.WriteString("    IsReadOnly BIT, ");
-            FileWriter.WriteString("    DirectoryId BIGINT FOREIGN KEY REFERENCES tblDirectory(Id)");            
-            FileWriter.WriteString(");");
-            FileWriter.WriteString("GO");
-            FileWriter.Close();
-        }
-
-        private void CreateIndexes4TblDirectory()
-        {
-            StringFileWriter FileWriter = new StringFileWriter(DataConfiguration.OutputPath, "idxDirectoryValue", OutputFileType.SqlScript);
-            FileWriter.WriteString("CREATE INDEX idxDirectoryValue_DirectoryId ");
-            FileWriter.WriteString("    ON tblDirectoryValue( DirectoryId ); ");
-            FileWriter.WriteString("GO");
-            FileWriter.Close();
         }
 
         private void FillOneTblDirectoryValue(DirectoryValue dirValue, StringFileWriter fileWriter)
@@ -70,38 +36,6 @@
             fileWriter.WriteString("END");
         }
         
-        private void CreateTblTranslatedString()
-        {
-            StringFileWriter FileWriter = new StringFileWriter(DataConfiguration.OutputPath, "tblTranslatedString", OutputFileType.SqlScript);
-            FileWriter.WriteString("CREATE TABLE tblTranslatedString (");
-            FileWriter.WriteString("    Id BIGINT IDENTITY (1,1) NOT NULL PRIMARY KEY, ");
-            FileWriter.WriteString("    Language BIGINT, ");
-            FileWriter.WriteString("    Type INT, ");
-            FileWriter.WriteString("    ReferencedItemId BIGINT, ");
-            FileWriter.WriteString("    Value NVARCHAR(MAX) ");
-            FileWriter.WriteString(");");
-            FileWriter.WriteString("GO");
-            FileWriter.Close();
-        }
-
-        private void CreateIndexes4TblTranslatedString()
-        {
-            StringFileWriter FileWriter = new StringFileWriter(DataConfiguration.OutputPath, "idxTranslatedString", OutputFileType.SqlScript);
-            FileWriter.WriteString("CREATE INDEX idxTranslatedString_Language ");
-            FileWriter.WriteString("    ON tblTranslatedString( Language ); ");
-            FileWriter.WriteString("GO");
-            FileWriter.WriteString("");
-            FileWriter.WriteString("CREATE INDEX idxTranslatedString_TypeRefId ");
-            FileWriter.WriteString("    ON tblTranslatedString( Type, ReferencedItemId ); ");
-            FileWriter.WriteString("GO");
-            FileWriter.WriteString("");
-            FileWriter.WriteString("CREATE INDEX idxTranslatedString_LangTypeRefId ");
-            FileWriter.WriteString("    ON tblTranslatedString( Language, Type, ReferencedItemId ); ");
-            FileWriter.WriteString("GO");
-            FileWriter.WriteString("");
-            FileWriter.Close();
-        }
-
         private void FillOneTblTranslatedString(TranslatedString transStr, StringFileWriter fileWriter)
         {
             fileWriter.WriteString("");
@@ -119,14 +53,6 @@
 
         public void Generate()
         {
-            CreateTblDirectory();
-
-            CreateTblDirectoryValue();
-            CreateIndexes4TblDirectory();
-
-            CreateTblTranslatedString();
-            CreateIndexes4TblTranslatedString();
-            
             // заполняем словарными данными tblDirectory ------------------------------------------------------------------------------------------------
             StringFileWriter FileWriter_tblDirectory = new StringFileWriter(DataConfiguration.OutputPath, "fill_tblDirectory", OutputFileType.SqlScript);
             FileWriter_tblDirectory.WriteString("");
