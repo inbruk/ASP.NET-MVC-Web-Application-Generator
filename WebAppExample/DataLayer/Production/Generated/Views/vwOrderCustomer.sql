@@ -8,7 +8,6 @@ SELECT
     Ord.CloseDateTime AS OrdCloseDateTime,
     Cust.Id AS CustId,
     Cust.Comment AS CustComment,
-    Cust.PersonId AS CustPersonId,
     Cust.PersonComment AS CustPersonComment,
     Cust.PersonFirstName AS CustPersonFirstName,
     Cust.PersonSurname AS CustPersonSurname,
@@ -18,7 +17,6 @@ SELECT
     Cust.PersonBirthDate AS CustPersonBirthDate,
     Cust.PersonAmountOfChildren AS CustPersonAmountOfChildren,
     Cust.PersonAddressOfCurrLivingPlace AS CustPersonAddressOfCurrLivingPlace,
-    Cust.PersonContactsId AS CustPersonContactsId,
     Cust.PersonContactsActualAddress AS CustPersonContactsActualAddress,
     Cust.PersonContactsFormalAddress AS CustPersonContactsFormalAddress,
     Cust.PersonContactsPersonalMobilePhone AS CustPersonContactsPersonalMobilePhone,
@@ -30,7 +28,6 @@ SELECT
     Cust.PersonContactsMessenger1 AS CustPersonContactsMessenger1,
     Cust.PersonContactsMessenger2 AS CustPersonContactsMessenger2,
     Cust.PersonContactsMessenger3 AS CustPersonContactsMessenger3,
-    Cust.PersonPassportInfoId AS CustPersonPassportInfoId,
     Cust.PersonPassportInfoComment AS CustPersonPassportInfoComment,
     Cust.PersonPassportInfoSeries AS CustPersonPassportInfoSeries,
     Cust.PersonPassportInfoNumber AS CustPersonPassportInfoNumber,
@@ -38,11 +35,7 @@ SELECT
     Cust.PersonPassportInfoWhoIsIssuer AS CustPersonPassportInfoWhoIsIssuer,
     Cust.PersonPassportInfoAddressOfResidence AS CustPersonPassportInfoAddressOfResidence,
     Cust.PersonPassportInfoAddressOfRegistration AS CustPersonPassportInfoAddressOfRegistration,
-    Cust.PersonPassportInfoLastChangeDate AS CustPersonPassportInfoLastChangeDate,
-    Cust.PaymentAccountId AS CustPaymentAccountId,
-    Cust.PaymentAccountComment AS CustPaymentAccountComment,
-    Cust.PaymentAccountBalance AS CustPaymentAccountBalance,
-    Cust.PaymentAccountAccountState AS CustPaymentAccountAccountState
+    Cust.PersonPassportInfoLastChangeDate AS CustPersonPassportInfoLastChangeDate
 FROM [tblOrder] [Ord] 
 INNER JOIN [tblCustomer] [Cust] ON [Ord].[Customer]=[Cust].[Id]
 GO

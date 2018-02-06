@@ -17,7 +17,6 @@
                     "Contacts",
                     new List<EntityField>()
                     {
-                        new EntityField( EntityFieldType.SLong, "Id" ),
                         new EntityField( EntityFieldType.String, "ActualAddress", 0, 32, null, true, null, LinkType.NoLink, "Contacts", "ActualAddress", 250, false, true, false),
                         new EntityField( EntityFieldType.String, "FormalAddress", 0, 32, null, true, null, LinkType.NoLink, "Contacts", "FormalAddress", 100, false, false, true),
 
@@ -60,7 +59,6 @@
                     "PassportInfo",
                     new List<EntityField>()
                     {
-                        new EntityField( EntityFieldType.SLong,    "Id" ),
                         new EntityField( EntityFieldType.String,   "Comment", 0, 0 ),
                         new EntityField( EntityFieldType.String,   "Series", 0, 8 ),
                         new EntityField( EntityFieldType.String,   "Number", 0, 16 ),
@@ -82,13 +80,12 @@
                     "Person",
                     new List<EntityField>()
                     {
-                        new EntityField( EntityFieldType.SLong,  "Id" ),
                         new EntityField( EntityFieldType.String, "Comment", 0, 0 ),
                         new EntityField( EntityFieldType.String, "FirstName", 0, 16, null, false, null, LinkType.NoLink, "Person", "FirstName", 100, true, true, false  ),
                         new EntityField( EntityFieldType.String, "Surname", 0, 16, null, false, null, LinkType.NoLink, "Person", "Surname", 100, true, true, false ),
                         new EntityField( EntityFieldType.String, "PatronymicName", 0, 16, null, false, null, LinkType.NoLink, "Person", "PatronymicName", 100, true, true, false ),
-                        new EntityField( EntityFieldType.DirectoryItem, "Gender", 0, 0, null, false, "Gender" ),
-                        new EntityField( EntityFieldType.DirectoryItem, "MaritalStatus", 0, 0, null, false, "MaritalStatus" ),
+                        new EntityField( EntityFieldType.DirectoryItem, "Gender", 0, 0, null, true, "Gender" ),
+                        new EntityField( EntityFieldType.DirectoryItem, "MaritalStatus", 0, 0, null, true, "MaritalStatus" ),
                         new EntityField( EntityFieldType.DateTime, "BirthDate", 0, 0, null, false, null, LinkType.NoLink, "Person", "BirthDate", 100, true, true, false  ),
                         new EntityField( EntityFieldType.SLong,    "AmountOfChildren" ),
                         new EntityField( EntityFieldType.String, "AddressOfCurrLivingPlace", 0, 32 ),
@@ -133,7 +130,7 @@
                         new EntityField( EntityFieldType.SLong,  "Balance", null, 0, null, false, null,
                             LinkType.NoLink, "Account", "Balance", 100, true, true, true ),
 
-                        new EntityField( EntityFieldType.SLong, "AccountState")
+                        new EntityField( EntityFieldType.DirectoryItem, "AccountState", 0, 0, null, true, "AccountState" )
                     }
                 )
             );
@@ -153,7 +150,7 @@
                             null, 0, null, false, null, LinkType.One2OneVirtualPartOfObject, "Person" ),
 
                         new EntityField( EntityFieldType.Link2TableOrVirtaulPart, "PaymentAccount",
-                            null, 0, null, false, null, LinkType.One2OneVirtualPartOfObject, "Account" )
+                            null, 0, null, false, null, LinkType.One2OneTablePartOfObject, "Account" )
                     }
                 )
             );
@@ -170,7 +167,7 @@
                         new EntityField( EntityFieldType.String, "Comment", 0, 0 ),
 
                         new EntityField( EntityFieldType.Link2TableOrVirtaulPart, "BalanceAccount",
-                            null, 0, null, false, null, LinkType.One2OneVirtualPartOfObject, "Account" ),
+                            null, 0, null, false, null, LinkType.One2OneTablePartOfObject, "Account" ),
 
                         new EntityField( EntityFieldType.Link2TableOrVirtaulPart, "Employee",
                             null, 0, null, false, null, LinkType.One2OneVirtualPartOfObject, "Employee" ),
@@ -191,7 +188,7 @@
                     {
                         new EntityField( EntityFieldType.SLong,  "Id" ),
                         new EntityField( EntityFieldType.String, "Comment", 0, 0 ),
-                        new EntityField( EntityFieldType.SLong,  "Brand"),
+                        new EntityField( EntityFieldType.DirectoryItem, "Brand", 0, 0, null, true, "Brand" ),
                         new EntityField( EntityFieldType.String, "Model", 0, 16 ),
 
                         new EntityField( EntityFieldType.Link2TableOrVirtaulPart, "DriverOwner",

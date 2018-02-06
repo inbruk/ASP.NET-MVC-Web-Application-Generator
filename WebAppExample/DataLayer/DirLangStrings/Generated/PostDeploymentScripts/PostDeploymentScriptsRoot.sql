@@ -11,4 +11,6 @@
 */
 
 :r .\fill_tblLanguage.sql
-
+:r .\fill_tblDirectory.sql
+:r .\fill_tblDirectoryValue.sql
+:r .\fill_tblTranslatedString.sql

@@ -1,5 +1,5 @@
-CREATE INDEX idxDriver_BalanceAccountBalance 
-    ON [tblDriver]([BalanceAccountBalance]); 
+CREATE INDEX idxDriver_BalanceAccount 
+    ON [tblDriver]([BalanceAccount]); 
 GO
 
 CREATE INDEX idxDriver_EmployeePersonFirstName 

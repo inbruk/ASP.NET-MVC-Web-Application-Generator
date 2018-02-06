@@ -62,7 +62,7 @@ CREATE INDEX idxCustomer_PersonContactsMessenger3
     ON [tblCustomer]([PersonContactsMessenger3]); 
 GO
 
-CREATE INDEX idxCustomer_PaymentAccountBalance 
-    ON [tblCustomer]([PaymentAccountBalance]); 
+CREATE INDEX idxCustomer_PaymentAccount 
+    ON [tblCustomer]([PaymentAccount]); 
 GO
 

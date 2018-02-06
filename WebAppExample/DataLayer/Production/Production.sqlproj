@@ -84,11 +84,7 @@
     <Build Include="Generated\Indexes\idxOrder.sql" />
     <Build Include="Generated\Indexes\idxOrderDriver.sql" />
     <Build Include="Generated\Indexes\idxVehicle.sql" />
-    <None Include="Generated\PostDeploymentScripts\fill_tblDirectory.sql" />
-    <None Include="Generated\PostDeploymentScripts\fill_tblDirectoryValue.sql" />
-    <None Include="Generated\PostDeploymentScripts\fill_tblTranslatedString.sql" />
     <Build Include="Generated\Indexes\idxDriver.sql" />
-    <Build Include="Generated\PostDeploymentScripts\fill_tblLanguage.sql" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Production.publish.xml" />

@@ -57,20 +57,25 @@
   <Import Condition="'$(SQLDBExtensionsRefPath)' == ''" Project="$(MSBuildExtensionsPath)\Microsoft\VisualStudio\v$(VisualStudioVersion)\SSDT\Microsoft.Data.Tools.Schema.SqlTasks.targets" />
   <ItemGroup>
     <Folder Include="Properties" />
-    <Folder Include="Tables" />
-    <Folder Include="Indexes" />
-    <Folder Include="Views" />
-    <Folder Include="PostDeploymentScripts" />
+    <Folder Include="Generated" />
+    <Folder Include="Generated\PostDeploymentScripts" />
+    <Folder Include="Manual" />
+    <Folder Include="Manual\Indexes" />
+    <Folder Include="Manual\Tables" />
+    <Folder Include="Manual\Views" />
   </ItemGroup>
   <ItemGroup>
-    <Build Include="Tables\tblLanguage.sql" />
-    <Build Include="Tables\tblDirectory.sql" />
-    <Build Include="Tables\tblDirectoryValue.sql" />
-    <Build Include="Tables\tblTranslatedString.sql" />
-    <Build Include="Indexes\idxDirectoryValue.sql" />
-    <Build Include="Indexes\idxTranslatedString.sql" />
-    <None Include="PostDeploymentScripts\fill_tblLanguage.sql" />
-    <PostDeploy Include="PostDeploymentScripts\PostDeploymentScriptsRoot.sql" />
+    <None Include="Generated\PostDeploymentScripts\fill_tblDirectory.sql" />
+    <None Include="Generated\PostDeploymentScripts\fill_tblDirectoryValue.sql" />
+    <None Include="Generated\PostDeploymentScripts\fill_tblLanguage.sql" />
+    <None Include="Generated\PostDeploymentScripts\fill_tblTranslatedString.sql" />
+    <PostDeploy Include="Generated\PostDeploymentScripts\PostDeploymentScriptsRoot.sql" />
+    <Build Include="Manual\Indexes\idxDirectoryValue.sql" />
+    <Build Include="Manual\Indexes\idxTranslatedString.sql" />
+    <Build Include="Manual\Tables\tblDirectory.sql" />
+    <Build Include="Manual\Tables\tblDirectoryValue.sql" />
+    <Build Include="Manual\Tables\tblLanguage.sql" />
+    <Build Include="Manual\Tables\tblTranslatedString.sql" />
   </ItemGroup>
   <ItemGroup>
     <None Include="DirLangStrings.publish.xml" />
