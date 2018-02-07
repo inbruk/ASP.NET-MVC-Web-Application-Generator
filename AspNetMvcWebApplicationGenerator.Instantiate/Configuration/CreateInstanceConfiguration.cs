@@ -15,6 +15,7 @@
         public static void Create()
         {
             DataConfiguration.OutputPath = "c://temp//Output//DataLayer//";
+
             NDT.CreateLanguages.Create();
             NDT.CreateDirectories.Create();
             NDT.CreateEntities.Create();

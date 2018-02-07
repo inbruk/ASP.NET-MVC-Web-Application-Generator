@@ -50,6 +50,7 @@
     <Compile Include="DataLayer\Helpers\TableCreator.cs" />
     <Compile Include="DataLayer\Helpers\StringFileWriter.cs" />
     <Compile Include="DataLayer\Languages.cs" />
+    <Compile Include="DataLayer\ProjAppSubsLayerIds.cs" />
     <Compile Include="GeneratorsIgnitor.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

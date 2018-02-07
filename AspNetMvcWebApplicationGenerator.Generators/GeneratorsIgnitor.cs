@@ -12,6 +12,8 @@
             CreateInstanceConfiguration.Create();
 
             // Data Layer --------------------------------
+            ProjAppSubsLayerIds appIds = new ProjAppSubsLayerIds();
+            appIds.Generate();
 
             Languages lng = new Languages();
             lng.Generate();
