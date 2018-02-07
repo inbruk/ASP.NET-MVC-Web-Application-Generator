@@ -4,7 +4,7 @@
 
     using AspNetMvcWebApplicationGenerator.Configuration.DataLayer;
 
-    public static class CreateLanguages
+    internal static class CreateLanguages
     {
         public static void Create()
         {

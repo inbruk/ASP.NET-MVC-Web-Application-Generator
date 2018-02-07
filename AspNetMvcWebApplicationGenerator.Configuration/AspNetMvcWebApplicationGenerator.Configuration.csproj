@@ -43,6 +43,7 @@
     <Compile Include="BusinessLogicAndWebServicesLayer\BLWSConfiguration.cs" />
     <Compile Include="BusinessLogicAndWebServicesLayer\ToolItem.cs" />
     <Compile Include="BusinessLogicAndWebServicesLayer\ToolType.cs" />
+    <Compile Include="DataLayer\Application.cs" />
     <Compile Include="DataLayer\ComplexEntity.cs" />
     <Compile Include="DataLayer\ComplexEntityFieldFeatures.cs" />
     <Compile Include="DataLayer\ComplexEntityLink.cs" />
@@ -54,8 +55,11 @@
     <Compile Include="DataLayer\EntityFieldType.cs" />
     <Compile Include="DataLayer\EntityType.cs" />
     <Compile Include="DataLayer\LanguageItem.cs" />
+    <Compile Include="DataLayer\Layer.cs" />
     <Compile Include="DataLayer\LinkType.cs" />
     <Compile Include="DataLayer\DataConfiguration.cs" />
+    <Compile Include="DataLayer\Project.cs" />
+    <Compile Include="DataLayer\Subsystem.cs" />
     <Compile Include="DataLayer\TranslatedString.cs" />
     <Compile Include="DataLayer\TranslatedStringType.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

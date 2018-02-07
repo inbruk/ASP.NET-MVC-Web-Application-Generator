@@ -5,7 +5,7 @@
 
     using AspNetMvcWebApplicationGenerator.Configuration.DataLayer;
 
-    public static class CreateDirectories
+    internal static class CreateDirectories
     {
         public static void Create()
         {

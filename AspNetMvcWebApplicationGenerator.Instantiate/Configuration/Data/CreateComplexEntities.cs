@@ -5,7 +5,7 @@
 
     using AspNetMvcWebApplicationGenerator.Configuration.DataLayer;
 
-    public static class CreateComplexEntities
+    internal static class CreateComplexEntities
     {
         public static void Create()
         {

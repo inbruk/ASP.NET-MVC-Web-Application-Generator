@@ -1,0 +1,962 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="Хранилище WebAppExample_ProductionModel" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="n2mOrderDriver">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Order" Type="bigint" />
+          <Property Name="Driver" Type="bigint" />
+        </EntityType>
+        <EntityType Name="tblAccount">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Comment" Type="nvarchar(max)" />
+          <Property Name="Balance" Type="bigint" />
+          <Property Name="AccountState" Type="bigint" />
+        </EntityType>
+        <EntityType Name="tblCustomer">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Comment" Type="nvarchar(max)" />
+          <Property Name="PersonComment" Type="nvarchar(max)" />
+          <Property Name="PersonFirstName" Type="nvarchar" MaxLength="16" />
+          <Property Name="PersonSurname" Type="nvarchar" MaxLength="16" />
+          <Property Name="PersonPatronymicName" Type="nvarchar" MaxLength="16" />
+          <Property Name="PersonGender" Type="bigint" />
+          <Property Name="PersonMaritalStatus" Type="bigint" />
+          <Property Name="PersonBirthDate" Type="datetimeoffset" Precision="7" />
+          <Property Name="PersonAmountOfChildren" Type="bigint" />
+          <Property Name="PersonAddressOfCurrLivingPlace" Type="nvarchar" MaxLength="32" />
+          <Property Name="PersonContactsActualAddress" Type="nvarchar" MaxLength="32" />
+          <Property Name="PersonContactsFormalAddress" Type="nvarchar" MaxLength="32" />
+          <Property Name="PersonContactsPersonalMobilePhone" Type="nvarchar" MaxLength="11" />
+          <Property Name="PersonContactsWorkMobilePhone" Type="nvarchar" MaxLength="11" />
+          <Property Name="PersonContactsHomePhone" Type="nvarchar" MaxLength="11" />
+          <Property Name="PersonContactsWorkPhone" Type="nvarchar" MaxLength="24" />
+          <Property Name="PersonContactsPersonalEMail" Type="nvarchar" MaxLength="24" />
+          <Property Name="PersonContactsWorkEMail" Type="nvarchar" MaxLength="24" />
+          <Property Name="PersonContactsMessenger1" Type="nvarchar" MaxLength="16" />
+          <Property Name="PersonContactsMessenger2" Type="nvarchar" MaxLength="16" />
+          <Property Name="PersonContactsMessenger3" Type="nvarchar" MaxLength="16" />
+          <Property Name="PersonPassportInfoComment" Type="nvarchar(max)" />
+          <Property Name="PersonPassportInfoSeries" Type="nvarchar" MaxLength="8" />
+          <Property Name="PersonPassportInfoNumber" Type="nvarchar" MaxLength="16" />
+          <Property Name="PersonPassportInfoIssueDate" Type="datetimeoffset" Precision="7" />
+          <Property Name="PersonPassportInfoWhoIsIssuer" Type="nvarchar" MaxLength="512" />
+          <Property Name="PersonPassportInfoAddressOfResidence" Type="nvarchar" MaxLength="32" />
+          <Property Name="PersonPassportInfoAddressOfRegistration" Type="nvarchar" MaxLength="32" />
+          <Property Name="PersonPassportInfoLastChangeDate" Type="datetimeoffset" Precision="7" />
+          <Property Name="PaymentAccount" Type="bigint" />
+        </EntityType>
+        <EntityType Name="tblDriver">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Comment" Type="nvarchar(max)" />
+          <Property Name="BalanceAccount" Type="bigint" />
+          <Property Name="EmployeeId" Type="bigint" />
+          <Property Name="EmployeeComment" Type="nvarchar(max)" />
+          <Property Name="EmployeePosition" Type="bigint" />
+          <Property Name="EmployeePersonComment" Type="nvarchar(max)" />
+          <Property Name="EmployeePersonFirstName" Type="nvarchar" MaxLength="16" />
+          <Property Name="EmployeePersonSurname" Type="nvarchar" MaxLength="16" />
+          <Property Name="EmployeePersonPatronymicName" Type="nvarchar" MaxLength="16" />
+          <Property Name="EmployeePersonGender" Type="bigint" />
+          <Property Name="EmployeePersonMaritalStatus" Type="bigint" />
+          <Property Name="EmployeePersonBirthDate" Type="datetimeoffset" Precision="7" />
+          <Property Name="EmployeePersonAmountOfChildren" Type="bigint" />
+          <Property Name="EmployeePersonAddressOfCurrLivingPlace" Type="nvarchar" MaxLength="32" />
+          <Property Name="EmployeePersonContactsActualAddress" Type="nvarchar" MaxLength="32" />
+          <Property Name="EmployeePersonContactsFormalAddress" Type="nvarchar" MaxLength="32" />
+          <Property Name="EmployeePersonContactsPersonalMobilePhone" Type="nvarchar" MaxLength="11" />
+          <Property Name="EmployeePersonContactsWorkMobilePhone" Type="nvarchar" MaxLength="11" />
+          <Property Name="EmployeePersonContactsHomePhone" Type="nvarchar" MaxLength="11" />
+          <Property Name="EmployeePersonContactsWorkPhone" Type="nvarchar" MaxLength="24" />
+          <Property Name="EmployeePersonContactsPersonalEMail" Type="nvarchar" MaxLength="24" />
+          <Property Name="EmployeePersonContactsWorkEMail" Type="nvarchar" MaxLength="24" />
+          <Property Name="EmployeePersonContactsMessenger1" Type="nvarchar" MaxLength="16" />
+          <Property Name="EmployeePersonContactsMessenger2" Type="nvarchar" MaxLength="16" />
+          <Property Name="EmployeePersonContactsMessenger3" Type="nvarchar" MaxLength="16" />
+          <Property Name="EmployeePersonPassportInfoComment" Type="nvarchar(max)" />
+          <Property Name="EmployeePersonPassportInfoSeries" Type="nvarchar" MaxLength="8" />
+          <Property Name="EmployeePersonPassportInfoNumber" Type="nvarchar" MaxLength="16" />
+          <Property Name="EmployeePersonPassportInfoIssueDate" Type="datetimeoffset" Precision="7" />
+          <Property Name="EmployeePersonPassportInfoWhoIsIssuer" Type="nvarchar" MaxLength="512" />
+          <Property Name="EmployeePersonPassportInfoAddressOfResidence" Type="nvarchar" MaxLength="32" />
+          <Property Name="EmployeePersonPassportInfoAddressOfRegistration" Type="nvarchar" MaxLength="32" />
+          <Property Name="EmployeePersonPassportInfoLastChangeDate" Type="datetimeoffset" Precision="7" />
+          <Property Name="CurrentVehicle" Type="bigint" />
+        </EntityType>
+        <EntityType Name="tblEmployee">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Comment" Type="nvarchar(max)" />
+          <Property Name="Position" Type="bigint" />
+          <Property Name="PersonComment" Type="nvarchar(max)" />
+          <Property Name="PersonFirstName" Type="nvarchar" MaxLength="16" />
+          <Property Name="PersonSurname" Type="nvarchar" MaxLength="16" />
+          <Property Name="PersonPatronymicName" Type="nvarchar" MaxLength="16" />
+          <Property Name="PersonGender" Type="bigint" />
+          <Property Name="PersonMaritalStatus" Type="bigint" />
+          <Property Name="PersonBirthDate" Type="datetimeoffset" Precision="7" />
+          <Property Name="PersonAmountOfChildren" Type="bigint" />
+          <Property Name="PersonAddressOfCurrLivingPlace" Type="nvarchar" MaxLength="32" />
+          <Property Name="PersonContactsActualAddress" Type="nvarchar" MaxLength="32" />
+          <Property Name="PersonContactsFormalAddress" Type="nvarchar" MaxLength="32" />
+          <Property Name="PersonContactsPersonalMobilePhone" Type="nvarchar" MaxLength="11" />
+          <Property Name="PersonContactsWorkMobilePhone" Type="nvarchar" MaxLength="11" />
+          <Property Name="PersonContactsHomePhone" Type="nvarchar" MaxLength="11" />
+          <Property Name="PersonContactsWorkPhone" Type="nvarchar" MaxLength="24" />
+          <Property Name="PersonContactsPersonalEMail" Type="nvarchar" MaxLength="24" />
+          <Property Name="PersonContactsWorkEMail" Type="nvarchar" MaxLength="24" />
+          <Property Name="PersonContactsMessenger1" Type="nvarchar" MaxLength="16" />
+          <Property Name="PersonContactsMessenger2" Type="nvarchar" MaxLength="16" />
+          <Property Name="PersonContactsMessenger3" Type="nvarchar" MaxLength="16" />
+          <Property Name="PersonPassportInfoComment" Type="nvarchar(max)" />
+          <Property Name="PersonPassportInfoSeries" Type="nvarchar" MaxLength="8" />
+          <Property Name="PersonPassportInfoNumber" Type="nvarchar" MaxLength="16" />
+          <Property Name="PersonPassportInfoIssueDate" Type="datetimeoffset" Precision="7" />
+          <Property Name="PersonPassportInfoWhoIsIssuer" Type="nvarchar" MaxLength="512" />
+          <Property Name="PersonPassportInfoAddressOfResidence" Type="nvarchar" MaxLength="32" />
+          <Property Name="PersonPassportInfoAddressOfRegistration" Type="nvarchar" MaxLength="32" />
+          <Property Name="PersonPassportInfoLastChangeDate" Type="datetimeoffset" Precision="7" />
+        </EntityType>
+        <EntityType Name="tblOrder">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Comment" Type="nvarchar(max)" />
+          <Property Name="StartDateTime" Type="datetimeoffset" Precision="7" />
+          <Property Name="ControlDateTime" Type="datetimeoffset" Precision="7" />
+          <Property Name="CloseDateTime" Type="datetimeoffset" Precision="7" />
+          <Property Name="Customer" Type="bigint" />
+        </EntityType>
+        <EntityType Name="tblVehicle">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Comment" Type="nvarchar(max)" />
+          <Property Name="Brand" Type="bigint" />
+          <Property Name="Model" Type="nvarchar" MaxLength="16" />
+          <Property Name="DriverOwner" Type="bigint" />
+        </EntityType>
+        <!--Ошибки, обнаруженные при создании:
+предупреждение 6002: В таблице или представлении "WebAppExample_Production.dbo.vwOrderCustomer" не определен первичный ключ. Ключ был выведен, а определение таблицы или представления было создано в режиме только для чтения.-->
+        <EntityType Name="vwOrderCustomer">
+          <Key>
+            <PropertyRef Name="OrdId" />
+            <PropertyRef Name="CustId" />
+          </Key>
+          <Property Name="OrdId" Type="bigint" Nullable="false" />
+          <Property Name="OrdComment" Type="nvarchar(max)" />
+          <Property Name="OrdStartDateTime" Type="datetimeoffset" Precision="7" />
+          <Property Name="OrdControlDateTime" Type="datetimeoffset" Precision="7" />
+          <Property Name="OrdCloseDateTime" Type="datetimeoffset" Precision="7" />
+          <Property Name="CustId" Type="bigint" Nullable="false" />
+          <Property Name="CustComment" Type="nvarchar(max)" />
+          <Property Name="CustPersonComment" Type="nvarchar(max)" />
+          <Property Name="CustPersonFirstName" Type="nvarchar" MaxLength="16" />
+          <Property Name="CustPersonSurname" Type="nvarchar" MaxLength="16" />
+          <Property Name="CustPersonPatronymicName" Type="nvarchar" MaxLength="16" />
+          <Property Name="CustPersonGender" Type="bigint" />
+          <Property Name="CustPersonMaritalStatus" Type="bigint" />
+          <Property Name="CustPersonBirthDate" Type="datetimeoffset" Precision="7" />
+          <Property Name="CustPersonAmountOfChildren" Type="bigint" />
+          <Property Name="CustPersonAddressOfCurrLivingPlace" Type="nvarchar" MaxLength="32" />
+          <Property Name="CustPersonContactsActualAddress" Type="nvarchar" MaxLength="32" />
+          <Property Name="CustPersonContactsFormalAddress" Type="nvarchar" MaxLength="32" />
+          <Property Name="CustPersonContactsPersonalMobilePhone" Type="nvarchar" MaxLength="11" />
+          <Property Name="CustPersonContactsWorkMobilePhone" Type="nvarchar" MaxLength="11" />
+          <Property Name="CustPersonContactsHomePhone" Type="nvarchar" MaxLength="11" />
+          <Property Name="CustPersonContactsWorkPhone" Type="nvarchar" MaxLength="24" />
+          <Property Name="CustPersonContactsPersonalEMail" Type="nvarchar" MaxLength="24" />
+          <Property Name="CustPersonContactsWorkEMail" Type="nvarchar" MaxLength="24" />
+          <Property Name="CustPersonContactsMessenger1" Type="nvarchar" MaxLength="16" />
+          <Property Name="CustPersonContactsMessenger2" Type="nvarchar" MaxLength="16" />
+          <Property Name="CustPersonContactsMessenger3" Type="nvarchar" MaxLength="16" />
+          <Property Name="CustPersonPassportInfoComment" Type="nvarchar(max)" />
+          <Property Name="CustPersonPassportInfoSeries" Type="nvarchar" MaxLength="8" />
+          <Property Name="CustPersonPassportInfoNumber" Type="nvarchar" MaxLength="16" />
+          <Property Name="CustPersonPassportInfoIssueDate" Type="datetimeoffset" Precision="7" />
+          <Property Name="CustPersonPassportInfoWhoIsIssuer" Type="nvarchar" MaxLength="512" />
+          <Property Name="CustPersonPassportInfoAddressOfResidence" Type="nvarchar" MaxLength="32" />
+          <Property Name="CustPersonPassportInfoAddressOfRegistration" Type="nvarchar" MaxLength="32" />
+          <Property Name="CustPersonPassportInfoLastChangeDate" Type="datetimeoffset" Precision="7" />
+        </EntityType>
+        <!--Ошибки, обнаруженные при создании:
+предупреждение 6013: Первичный ключ в таблице или представлении "WebAppExample_Production.dbo.vwOrderDriver" не определен, его не удалось вывести. Эта таблица или представление исключены. Чтобы использовать сущность, необходимо проверить схему, добавить правильные ключи и раскомментировать ее.
+        <EntityType Name="vwOrderDriver">
+          <Property Name="OrdId" Type="bigint" />
+          <Property Name="OrdComment" Type="nvarchar(max)" />
+          <Property Name="OrdStartDateTime" Type="datetimeoffset" Precision="7" />
+          <Property Name="OrdControlDateTime" Type="datetimeoffset" Precision="7" />
+          <Property Name="OrdCloseDateTime" Type="datetimeoffset" Precision="7" />
+          <Property Name="DrvId" Type="bigint" />
+          <Property Name="DrvComment" Type="nvarchar(max)" />
+          <Property Name="DrvEmployeeId" Type="bigint" />
+          <Property Name="DrvEmployeeComment" Type="nvarchar(max)" />
+          <Property Name="DrvEmployeePosition" Type="bigint" />
+          <Property Name="DrvEmployeePersonComment" Type="nvarchar(max)" />
+          <Property Name="DrvEmployeePersonFirstName" Type="nvarchar" MaxLength="16" />
+          <Property Name="DrvEmployeePersonSurname" Type="nvarchar" MaxLength="16" />
+          <Property Name="DrvEmployeePersonPatronymicName" Type="nvarchar" MaxLength="16" />
+          <Property Name="DrvEmployeePersonGender" Type="bigint" />
+          <Property Name="DrvEmployeePersonMaritalStatus" Type="bigint" />
+          <Property Name="DrvEmployeePersonBirthDate" Type="datetimeoffset" Precision="7" />
+          <Property Name="DrvEmployeePersonAmountOfChildren" Type="bigint" />
+          <Property Name="DrvEmployeePersonAddressOfCurrLivingPlace" Type="nvarchar" MaxLength="32" />
+          <Property Name="DrvEmployeePersonContactsActualAddress" Type="nvarchar" MaxLength="32" />
+          <Property Name="DrvEmployeePersonContactsFormalAddress" Type="nvarchar" MaxLength="32" />
+          <Property Name="DrvEmployeePersonContactsPersonalMobilePhone" Type="nvarchar" MaxLength="11" />
+          <Property Name="DrvEmployeePersonContactsWorkMobilePhone" Type="nvarchar" MaxLength="11" />
+          <Property Name="DrvEmployeePersonContactsHomePhone" Type="nvarchar" MaxLength="11" />
+          <Property Name="DrvEmployeePersonContactsWorkPhone" Type="nvarchar" MaxLength="24" />
+          <Property Name="DrvEmployeePersonContactsPersonalEMail" Type="nvarchar" MaxLength="24" />
+          <Property Name="DrvEmployeePersonContactsWorkEMail" Type="nvarchar" MaxLength="24" />
+          <Property Name="DrvEmployeePersonContactsMessenger1" Type="nvarchar" MaxLength="16" />
+          <Property Name="DrvEmployeePersonContactsMessenger2" Type="nvarchar" MaxLength="16" />
+          <Property Name="DrvEmployeePersonContactsMessenger3" Type="nvarchar" MaxLength="16" />
+          <Property Name="DrvEmployeePersonPassportInfoComment" Type="nvarchar(max)" />
+          <Property Name="DrvEmployeePersonPassportInfoSeries" Type="nvarchar" MaxLength="8" />
+          <Property Name="DrvEmployeePersonPassportInfoNumber" Type="nvarchar" MaxLength="16" />
+          <Property Name="DrvEmployeePersonPassportInfoIssueDate" Type="datetimeoffset" Precision="7" />
+          <Property Name="DrvEmployeePersonPassportInfoWhoIsIssuer" Type="nvarchar" MaxLength="512" />
+          <Property Name="DrvEmployeePersonPassportInfoAddressOfResidence" Type="nvarchar" MaxLength="32" />
+          <Property Name="DrvEmployeePersonPassportInfoAddressOfRegistration" Type="nvarchar" MaxLength="32" />
+          <Property Name="DrvEmployeePersonPassportInfoLastChangeDate" Type="datetimeoffset" Precision="7" />
+        </EntityType>-->
+        <Association Name="FK__n2mOrderD__Drive__1CF15040">
+          <End Role="tblDriver" Type="Self.tblDriver" Multiplicity="0..1" />
+          <End Role="n2mOrderDriver" Type="Self.n2mOrderDriver" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tblDriver">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="n2mOrderDriver">
+              <PropertyRef Name="Driver" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__n2mOrderD__Order__1BFD2C07">
+          <End Role="tblOrder" Type="Self.tblOrder" Multiplicity="0..1" />
+          <End Role="n2mOrderDriver" Type="Self.n2mOrderDriver" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tblOrder">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="n2mOrderDriver">
+              <PropertyRef Name="Order" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__tblCustom__Payme__1DE57479">
+          <End Role="tblAccount" Type="Self.tblAccount" Multiplicity="0..1" />
+          <End Role="tblCustomer" Type="Self.tblCustomer" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tblAccount">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="tblCustomer">
+              <PropertyRef Name="PaymentAccount" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__tblDriver__Balan__1ED998B2">
+          <End Role="tblAccount" Type="Self.tblAccount" Multiplicity="0..1" />
+          <End Role="tblDriver" Type="Self.tblDriver" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tblAccount">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="tblDriver">
+              <PropertyRef Name="BalanceAccount" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__tblDriver__Curre__1FCDBCEB">
+          <End Role="tblVehicle" Type="Self.tblVehicle" Multiplicity="0..1" />
+          <End Role="tblDriver" Type="Self.tblDriver" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tblVehicle">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="tblDriver">
+              <PropertyRef Name="CurrentVehicle" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__tblOrder__Custom__20C1E124">
+          <End Role="tblCustomer" Type="Self.tblCustomer" Multiplicity="0..1" />
+          <End Role="tblOrder" Type="Self.tblOrder" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tblCustomer">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="tblOrder">
+              <PropertyRef Name="Customer" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__tblVehicl__Drive__21B6055D">
+          <End Role="tblDriver" Type="Self.tblDriver" Multiplicity="0..1" />
+          <End Role="tblVehicle" Type="Self.tblVehicle" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tblDriver">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="tblVehicle">
+              <PropertyRef Name="DriverOwner" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="Хранилище WebAppExample_ProductionModelContainer">
+          <EntitySet Name="n2mOrderDriver" EntityType="Self.n2mOrderDriver" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tblAccount" EntityType="Self.tblAccount" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tblCustomer" EntityType="Self.tblCustomer" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tblDriver" EntityType="Self.tblDriver" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tblEmployee" EntityType="Self.tblEmployee" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tblOrder" EntityType="Self.tblOrder" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tblVehicle" EntityType="Self.tblVehicle" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="vwOrderCustomer" EntityType="Self.vwOrderCustomer" store:Type="Views" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [vwOrderCustomer].[OrdId] AS [OrdId], 
+    [vwOrderCustomer].[OrdComment] AS [OrdComment], 
+    [vwOrderCustomer].[OrdStartDateTime] AS [OrdStartDateTime], 
+    [vwOrderCustomer].[OrdControlDateTime] AS [OrdControlDateTime], 
+    [vwOrderCustomer].[OrdCloseDateTime] AS [OrdCloseDateTime], 
+    [vwOrderCustomer].[CustId] AS [CustId], 
+    [vwOrderCustomer].[CustComment] AS [CustComment], 
+    [vwOrderCustomer].[CustPersonComment] AS [CustPersonComment], 
+    [vwOrderCustomer].[CustPersonFirstName] AS [CustPersonFirstName], 
+    [vwOrderCustomer].[CustPersonSurname] AS [CustPersonSurname], 
+    [vwOrderCustomer].[CustPersonPatronymicName] AS [CustPersonPatronymicName], 
+    [vwOrderCustomer].[CustPersonGender] AS [CustPersonGender], 
+    [vwOrderCustomer].[CustPersonMaritalStatus] AS [CustPersonMaritalStatus], 
+    [vwOrderCustomer].[CustPersonBirthDate] AS [CustPersonBirthDate], 
+    [vwOrderCustomer].[CustPersonAmountOfChildren] AS [CustPersonAmountOfChildren], 
+    [vwOrderCustomer].[CustPersonAddressOfCurrLivingPlace] AS [CustPersonAddressOfCurrLivingPlace], 
+    [vwOrderCustomer].[CustPersonContactsActualAddress] AS [CustPersonContactsActualAddress], 
+    [vwOrderCustomer].[CustPersonContactsFormalAddress] AS [CustPersonContactsFormalAddress], 
+    [vwOrderCustomer].[CustPersonContactsPersonalMobilePhone] AS [CustPersonContactsPersonalMobilePhone], 
+    [vwOrderCustomer].[CustPersonContactsWorkMobilePhone] AS [CustPersonContactsWorkMobilePhone], 
+    [vwOrderCustomer].[CustPersonContactsHomePhone] AS [CustPersonContactsHomePhone], 
+    [vwOrderCustomer].[CustPersonContactsWorkPhone] AS [CustPersonContactsWorkPhone], 
+    [vwOrderCustomer].[CustPersonContactsPersonalEMail] AS [CustPersonContactsPersonalEMail], 
+    [vwOrderCustomer].[CustPersonContactsWorkEMail] AS [CustPersonContactsWorkEMail], 
+    [vwOrderCustomer].[CustPersonContactsMessenger1] AS [CustPersonContactsMessenger1], 
+    [vwOrderCustomer].[CustPersonContactsMessenger2] AS [CustPersonContactsMessenger2], 
+    [vwOrderCustomer].[CustPersonContactsMessenger3] AS [CustPersonContactsMessenger3], 
+    [vwOrderCustomer].[CustPersonPassportInfoComment] AS [CustPersonPassportInfoComment], 
+    [vwOrderCustomer].[CustPersonPassportInfoSeries] AS [CustPersonPassportInfoSeries], 
+    [vwOrderCustomer].[CustPersonPassportInfoNumber] AS [CustPersonPassportInfoNumber], 
+    [vwOrderCustomer].[CustPersonPassportInfoIssueDate] AS [CustPersonPassportInfoIssueDate], 
+    [vwOrderCustomer].[CustPersonPassportInfoWhoIsIssuer] AS [CustPersonPassportInfoWhoIsIssuer], 
+    [vwOrderCustomer].[CustPersonPassportInfoAddressOfResidence] AS [CustPersonPassportInfoAddressOfResidence], 
+    [vwOrderCustomer].[CustPersonPassportInfoAddressOfRegistration] AS [CustPersonPassportInfoAddressOfRegistration], 
+    [vwOrderCustomer].[CustPersonPassportInfoLastChangeDate] AS [CustPersonPassportInfoLastChangeDate]
+    FROM [dbo].[vwOrderCustomer] AS [vwOrderCustomer]</DefiningQuery>
+          </EntitySet>
+          <AssociationSet Name="FK__n2mOrderD__Drive__1CF15040" Association="Self.FK__n2mOrderD__Drive__1CF15040">
+            <End Role="tblDriver" EntitySet="tblDriver" />
+            <End Role="n2mOrderDriver" EntitySet="n2mOrderDriver" />
+          </AssociationSet>
+          <AssociationSet Name="FK__n2mOrderD__Order__1BFD2C07" Association="Self.FK__n2mOrderD__Order__1BFD2C07">
+            <End Role="tblOrder" EntitySet="tblOrder" />
+            <End Role="n2mOrderDriver" EntitySet="n2mOrderDriver" />
+          </AssociationSet>
+          <AssociationSet Name="FK__tblCustom__Payme__1DE57479" Association="Self.FK__tblCustom__Payme__1DE57479">
+            <End Role="tblAccount" EntitySet="tblAccount" />
+            <End Role="tblCustomer" EntitySet="tblCustomer" />
+          </AssociationSet>
+          <AssociationSet Name="FK__tblDriver__Balan__1ED998B2" Association="Self.FK__tblDriver__Balan__1ED998B2">
+            <End Role="tblAccount" EntitySet="tblAccount" />
+            <End Role="tblDriver" EntitySet="tblDriver" />
+          </AssociationSet>
+          <AssociationSet Name="FK__tblDriver__Curre__1FCDBCEB" Association="Self.FK__tblDriver__Curre__1FCDBCEB">
+            <End Role="tblVehicle" EntitySet="tblVehicle" />
+            <End Role="tblDriver" EntitySet="tblDriver" />
+          </AssociationSet>
+          <AssociationSet Name="FK__tblOrder__Custom__20C1E124" Association="Self.FK__tblOrder__Custom__20C1E124">
+            <End Role="tblCustomer" EntitySet="tblCustomer" />
+            <End Role="tblOrder" EntitySet="tblOrder" />
+          </AssociationSet>
+          <AssociationSet Name="FK__tblVehicl__Drive__21B6055D" Association="Self.FK__tblVehicl__Drive__21B6055D">
+            <End Role="tblDriver" EntitySet="tblDriver" />
+            <End Role="tblVehicle" EntitySet="tblVehicle" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="WebAppExample_ProductionModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="n2mOrderDriver">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Order" Type="Int64" />
+          <Property Name="Driver" Type="Int64" />
+          <NavigationProperty Name="tblDriver" Relationship="Self.FK__n2mOrderD__Drive__1CF15040" FromRole="n2mOrderDriver" ToRole="tblDriver" />
+          <NavigationProperty Name="tblOrder" Relationship="Self.FK__n2mOrderD__Order__1BFD2C07" FromRole="n2mOrderDriver" ToRole="tblOrder" />
+        </EntityType>
+        <EntityType Name="tblAccount">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Comment" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Balance" Type="Int64" />
+          <Property Name="AccountState" Type="Int64" />
+          <NavigationProperty Name="tblCustomer" Relationship="Self.FK__tblCustom__Payme__1DE57479" FromRole="tblAccount" ToRole="tblCustomer" />
+          <NavigationProperty Name="tblDriver" Relationship="Self.FK__tblDriver__Balan__1ED998B2" FromRole="tblAccount" ToRole="tblDriver" />
+        </EntityType>
+        <EntityType Name="tblCustomer">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Comment" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="PersonComment" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="PersonFirstName" Type="String" MaxLength="16" FixedLength="false" Unicode="true" />
+          <Property Name="PersonSurname" Type="String" MaxLength="16" FixedLength="false" Unicode="true" />
+          <Property Name="PersonPatronymicName" Type="String" MaxLength="16" FixedLength="false" Unicode="true" />
+          <Property Name="PersonGender" Type="Int64" />
+          <Property Name="PersonMaritalStatus" Type="Int64" />
+          <Property Name="PersonBirthDate" Type="DateTimeOffset" Precision="7" />
+          <Property Name="PersonAmountOfChildren" Type="Int64" />
+          <Property Name="PersonAddressOfCurrLivingPlace" Type="String" MaxLength="32" FixedLength="false" Unicode="true" />
+          <Property Name="PersonContactsActualAddress" Type="String" MaxLength="32" FixedLength="false" Unicode="true" />
+          <Property Name="PersonContactsFormalAddress" Type="String" MaxLength="32" FixedLength="false" Unicode="true" />
+          <Property Name="PersonContactsPersonalMobilePhone" Type="String" MaxLength="11" FixedLength="false" Unicode="true" />
+          <Property Name="PersonContactsWorkMobilePhone" Type="String" MaxLength="11" FixedLength="false" Unicode="true" />
+          <Property Name="PersonContactsHomePhone" Type="String" MaxLength="11" FixedLength="false" Unicode="true" />
+          <Property Name="PersonContactsWorkPhone" Type="String" MaxLength="24" FixedLength="false" Unicode="true" />
+          <Property Name="PersonContactsPersonalEMail" Type="String" MaxLength="24" FixedLength="false" Unicode="true" />
+          <Property Name="PersonContactsWorkEMail" Type="String" MaxLength="24" FixedLength="false" Unicode="true" />
+          <Property Name="PersonContactsMessenger1" Type="String" MaxLength="16" FixedLength="false" Unicode="true" />
+          <Property Name="PersonContactsMessenger2" Type="String" MaxLength="16" FixedLength="false" Unicode="true" />
+          <Property Name="PersonContactsMessenger3" Type="String" MaxLength="16" FixedLength="false" Unicode="true" />
+          <Property Name="PersonPassportInfoComment" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="PersonPassportInfoSeries" Type="String" MaxLength="8" FixedLength="false" Unicode="true" />
+          <Property Name="PersonPassportInfoNumber" Type="String" MaxLength="16" FixedLength="false" Unicode="true" />
+          <Property Name="PersonPassportInfoIssueDate" Type="DateTimeOffset" Precision="7" />
+          <Property Name="PersonPassportInfoWhoIsIssuer" Type="String" MaxLength="512" FixedLength="false" Unicode="true" />
+          <Property Name="PersonPassportInfoAddressOfResidence" Type="String" MaxLength="32" FixedLength="false" Unicode="true" />
+          <Property Name="PersonPassportInfoAddressOfRegistration" Type="String" MaxLength="32" FixedLength="false" Unicode="true" />
+          <Property Name="PersonPassportInfoLastChangeDate" Type="DateTimeOffset" Precision="7" />
+          <Property Name="PaymentAccount" Type="Int64" />
+          <NavigationProperty Name="tblAccount" Relationship="Self.FK__tblCustom__Payme__1DE57479" FromRole="tblCustomer" ToRole="tblAccount" />
+          <NavigationProperty Name="tblOrder" Relationship="Self.FK__tblOrder__Custom__20C1E124" FromRole="tblCustomer" ToRole="tblOrder" />
+        </EntityType>
+        <EntityType Name="tblDriver">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Comment" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="BalanceAccount" Type="Int64" />
+          <Property Name="EmployeeId" Type="Int64" />
+          <Property Name="EmployeeComment" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="EmployeePosition" Type="Int64" />
+          <Property Name="EmployeePersonComment" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="EmployeePersonFirstName" Type="String" MaxLength="16" FixedLength="false" Unicode="true" />
+          <Property Name="EmployeePersonSurname" Type="String" MaxLength="16" FixedLength="false" Unicode="true" />
+          <Property Name="EmployeePersonPatronymicName" Type="String" MaxLength="16" FixedLength="false" Unicode="true" />
+          <Property Name="EmployeePersonGender" Type="Int64" />
+          <Property Name="EmployeePersonMaritalStatus" Type="Int64" />
+          <Property Name="EmployeePersonBirthDate" Type="DateTimeOffset" Precision="7" />
+          <Property Name="EmployeePersonAmountOfChildren" Type="Int64" />
+          <Property Name="EmployeePersonAddressOfCurrLivingPlace" Type="String" MaxLength="32" FixedLength="false" Unicode="true" />
+          <Property Name="EmployeePersonContactsActualAddress" Type="String" MaxLength="32" FixedLength="false" Unicode="true" />
+          <Property Name="EmployeePersonContactsFormalAddress" Type="String" MaxLength="32" FixedLength="false" Unicode="true" />
+          <Property Name="EmployeePersonContactsPersonalMobilePhone" Type="String" MaxLength="11" FixedLength="false" Unicode="true" />
+          <Property Name="EmployeePersonContactsWorkMobilePhone" Type="String" MaxLength="11" FixedLength="false" Unicode="true" />
+          <Property Name="EmployeePersonContactsHomePhone" Type="String" MaxLength="11" FixedLength="false" Unicode="true" />
+          <Property Name="EmployeePersonContactsWorkPhone" Type="String" MaxLength="24" FixedLength="false" Unicode="true" />
+          <Property Name="EmployeePersonContactsPersonalEMail" Type="String" MaxLength="24" FixedLength="false" Unicode="true" />
+          <Property Name="EmployeePersonContactsWorkEMail" Type="String" MaxLength="24" FixedLength="false" Unicode="true" />
+          <Property Name="EmployeePersonContactsMessenger1" Type="String" MaxLength="16" FixedLength="false" Unicode="true" />
+          <Property Name="EmployeePersonContactsMessenger2" Type="String" MaxLength="16" FixedLength="false" Unicode="true" />
+          <Property Name="EmployeePersonContactsMessenger3" Type="String" MaxLength="16" FixedLength="false" Unicode="true" />
+          <Property Name="EmployeePersonPassportInfoComment" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="EmployeePersonPassportInfoSeries" Type="String" MaxLength="8" FixedLength="false" Unicode="true" />
+          <Property Name="EmployeePersonPassportInfoNumber" Type="String" MaxLength="16" FixedLength="false" Unicode="true" />
+          <Property Name="EmployeePersonPassportInfoIssueDate" Type="DateTimeOffset" Precision="7" />
+          <Property Name="EmployeePersonPassportInfoWhoIsIssuer" Type="String" MaxLength="512" FixedLength="false" Unicode="true" />
+          <Property Name="EmployeePersonPassportInfoAddressOfResidence" Type="String" MaxLength="32" FixedLength="false" Unicode="true" />
+          <Property Name="EmployeePersonPassportInfoAddressOfRegistration" Type="String" MaxLength="32" FixedLength="false" Unicode="true" />
+          <Property Name="EmployeePersonPassportInfoLastChangeDate" Type="DateTimeOffset" Precision="7" />
+          <Property Name="CurrentVehicle" Type="Int64" />
+          <NavigationProperty Name="n2mOrderDriver" Relationship="Self.FK__n2mOrderD__Drive__1CF15040" FromRole="tblDriver" ToRole="n2mOrderDriver" />
+          <NavigationProperty Name="tblAccount" Relationship="Self.FK__tblDriver__Balan__1ED998B2" FromRole="tblDriver" ToRole="tblAccount" />
+          <NavigationProperty Name="tblVehicle" Relationship="Self.FK__tblDriver__Curre__1FCDBCEB" FromRole="tblDriver" ToRole="tblVehicle" />
+          <NavigationProperty Name="tblVehicle1" Relationship="Self.FK__tblVehicl__Drive__21B6055D" FromRole="tblDriver" ToRole="tblVehicle" />
+        </EntityType>
+        <EntityType Name="tblEmployee">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Comment" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Position" Type="Int64" />
+          <Property Name="PersonComment" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="PersonFirstName" Type="String" MaxLength="16" FixedLength="false" Unicode="true" />
+          <Property Name="PersonSurname" Type="String" MaxLength="16" FixedLength="false" Unicode="true" />
+          <Property Name="PersonPatronymicName" Type="String" MaxLength="16" FixedLength="false" Unicode="true" />
+          <Property Name="PersonGender" Type="Int64" />
+          <Property Name="PersonMaritalStatus" Type="Int64" />
+          <Property Name="PersonBirthDate" Type="DateTimeOffset" Precision="7" />
+          <Property Name="PersonAmountOfChildren" Type="Int64" />
+          <Property Name="PersonAddressOfCurrLivingPlace" Type="String" MaxLength="32" FixedLength="false" Unicode="true" />
+          <Property Name="PersonContactsActualAddress" Type="String" MaxLength="32" FixedLength="false" Unicode="true" />
+          <Property Name="PersonContactsFormalAddress" Type="String" MaxLength="32" FixedLength="false" Unicode="true" />
+          <Property Name="PersonContactsPersonalMobilePhone" Type="String" MaxLength="11" FixedLength="false" Unicode="true" />
+          <Property Name="PersonContactsWorkMobilePhone" Type="String" MaxLength="11" FixedLength="false" Unicode="true" />
+          <Property Name="PersonContactsHomePhone" Type="String" MaxLength="11" FixedLength="false" Unicode="true" />
+          <Property Name="PersonContactsWorkPhone" Type="String" MaxLength="24" FixedLength="false" Unicode="true" />
+          <Property Name="PersonContactsPersonalEMail" Type="String" MaxLength="24" FixedLength="false" Unicode="true" />
+          <Property Name="PersonContactsWorkEMail" Type="String" MaxLength="24" FixedLength="false" Unicode="true" />
+          <Property Name="PersonContactsMessenger1" Type="String" MaxLength="16" FixedLength="false" Unicode="true" />
+          <Property Name="PersonContactsMessenger2" Type="String" MaxLength="16" FixedLength="false" Unicode="true" />
+          <Property Name="PersonContactsMessenger3" Type="String" MaxLength="16" FixedLength="false" Unicode="true" />
+          <Property Name="PersonPassportInfoComment" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="PersonPassportInfoSeries" Type="String" MaxLength="8" FixedLength="false" Unicode="true" />
+          <Property Name="PersonPassportInfoNumber" Type="String" MaxLength="16" FixedLength="false" Unicode="true" />
+          <Property Name="PersonPassportInfoIssueDate" Type="DateTimeOffset" Precision="7" />
+          <Property Name="PersonPassportInfoWhoIsIssuer" Type="String" MaxLength="512" FixedLength="false" Unicode="true" />
+          <Property Name="PersonPassportInfoAddressOfResidence" Type="String" MaxLength="32" FixedLength="false" Unicode="true" />
+          <Property Name="PersonPassportInfoAddressOfRegistration" Type="String" MaxLength="32" FixedLength="false" Unicode="true" />
+          <Property Name="PersonPassportInfoLastChangeDate" Type="DateTimeOffset" Precision="7" />
+        </EntityType>
+        <EntityType Name="tblOrder">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Comment" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="StartDateTime" Type="DateTimeOffset" Precision="7" />
+          <Property Name="ControlDateTime" Type="DateTimeOffset" Precision="7" />
+          <Property Name="CloseDateTime" Type="DateTimeOffset" Precision="7" />
+          <Property Name="Customer" Type="Int64" />
+          <NavigationProperty Name="n2mOrderDriver" Relationship="Self.FK__n2mOrderD__Order__1BFD2C07" FromRole="tblOrder" ToRole="n2mOrderDriver" />
+          <NavigationProperty Name="tblCustomer" Relationship="Self.FK__tblOrder__Custom__20C1E124" FromRole="tblOrder" ToRole="tblCustomer" />
+        </EntityType>
+        <EntityType Name="tblVehicle">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Comment" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Brand" Type="Int64" />
+          <Property Name="Model" Type="String" MaxLength="16" FixedLength="false" Unicode="true" />
+          <Property Name="DriverOwner" Type="Int64" />
+          <NavigationProperty Name="tblDriver" Relationship="Self.FK__tblDriver__Curre__1FCDBCEB" FromRole="tblVehicle" ToRole="tblDriver" />
+          <NavigationProperty Name="tblDriver1" Relationship="Self.FK__tblVehicl__Drive__21B6055D" FromRole="tblVehicle" ToRole="tblDriver" />
+        </EntityType>
+        <EntityType Name="vwOrderCustomer">
+          <Key>
+            <PropertyRef Name="OrdId" />
+            <PropertyRef Name="CustId" />
+          </Key>
+          <Property Name="OrdId" Type="Int64" Nullable="false" />
+          <Property Name="OrdComment" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="OrdStartDateTime" Type="DateTimeOffset" Precision="7" />
+          <Property Name="OrdControlDateTime" Type="DateTimeOffset" Precision="7" />
+          <Property Name="OrdCloseDateTime" Type="DateTimeOffset" Precision="7" />
+          <Property Name="CustId" Type="Int64" Nullable="false" />
+          <Property Name="CustComment" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="CustPersonComment" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="CustPersonFirstName" Type="String" MaxLength="16" FixedLength="false" Unicode="true" />
+          <Property Name="CustPersonSurname" Type="String" MaxLength="16" FixedLength="false" Unicode="true" />
+          <Property Name="CustPersonPatronymicName" Type="String" MaxLength="16" FixedLength="false" Unicode="true" />
+          <Property Name="CustPersonGender" Type="Int64" />
+          <Property Name="CustPersonMaritalStatus" Type="Int64" />
+          <Property Name="CustPersonBirthDate" Type="DateTimeOffset" Precision="7" />
+          <Property Name="CustPersonAmountOfChildren" Type="Int64" />
+          <Property Name="CustPersonAddressOfCurrLivingPlace" Type="String" MaxLength="32" FixedLength="false" Unicode="true" />
+          <Property Name="CustPersonContactsActualAddress" Type="String" MaxLength="32" FixedLength="false" Unicode="true" />
+          <Property Name="CustPersonContactsFormalAddress" Type="String" MaxLength="32" FixedLength="false" Unicode="true" />
+          <Property Name="CustPersonContactsPersonalMobilePhone" Type="String" MaxLength="11" FixedLength="false" Unicode="true" />
+          <Property Name="CustPersonContactsWorkMobilePhone" Type="String" MaxLength="11" FixedLength="false" Unicode="true" />
+          <Property Name="CustPersonContactsHomePhone" Type="String" MaxLength="11" FixedLength="false" Unicode="true" />
+          <Property Name="CustPersonContactsWorkPhone" Type="String" MaxLength="24" FixedLength="false" Unicode="true" />
+          <Property Name="CustPersonContactsPersonalEMail" Type="String" MaxLength="24" FixedLength="false" Unicode="true" />
+          <Property Name="CustPersonContactsWorkEMail" Type="String" MaxLength="24" FixedLength="false" Unicode="true" />
+          <Property Name="CustPersonContactsMessenger1" Type="String" MaxLength="16" FixedLength="false" Unicode="true" />
+          <Property Name="CustPersonContactsMessenger2" Type="String" MaxLength="16" FixedLength="false" Unicode="true" />
+          <Property Name="CustPersonContactsMessenger3" Type="String" MaxLength="16" FixedLength="false" Unicode="true" />
+          <Property Name="CustPersonPassportInfoComment" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="CustPersonPassportInfoSeries" Type="String" MaxLength="8" FixedLength="false" Unicode="true" />
+          <Property Name="CustPersonPassportInfoNumber" Type="String" MaxLength="16" FixedLength="false" Unicode="true" />
+          <Property Name="CustPersonPassportInfoIssueDate" Type="DateTimeOffset" Precision="7" />
+          <Property Name="CustPersonPassportInfoWhoIsIssuer" Type="String" MaxLength="512" FixedLength="false" Unicode="true" />
+          <Property Name="CustPersonPassportInfoAddressOfResidence" Type="String" MaxLength="32" FixedLength="false" Unicode="true" />
+          <Property Name="CustPersonPassportInfoAddressOfRegistration" Type="String" MaxLength="32" FixedLength="false" Unicode="true" />
+          <Property Name="CustPersonPassportInfoLastChangeDate" Type="DateTimeOffset" Precision="7" />
+        </EntityType>
+        <Association Name="FK__n2mOrderD__Drive__1CF15040">
+          <End Role="tblDriver" Type="Self.tblDriver" Multiplicity="0..1" />
+          <End Role="n2mOrderDriver" Type="Self.n2mOrderDriver" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tblDriver">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="n2mOrderDriver">
+              <PropertyRef Name="Driver" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__n2mOrderD__Order__1BFD2C07">
+          <End Role="tblOrder" Type="Self.tblOrder" Multiplicity="0..1" />
+          <End Role="n2mOrderDriver" Type="Self.n2mOrderDriver" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tblOrder">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="n2mOrderDriver">
+              <PropertyRef Name="Order" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__tblCustom__Payme__1DE57479">
+          <End Role="tblAccount" Type="Self.tblAccount" Multiplicity="0..1" />
+          <End Role="tblCustomer" Type="Self.tblCustomer" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tblAccount">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="tblCustomer">
+              <PropertyRef Name="PaymentAccount" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__tblDriver__Balan__1ED998B2">
+          <End Role="tblAccount" Type="Self.tblAccount" Multiplicity="0..1" />
+          <End Role="tblDriver" Type="Self.tblDriver" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tblAccount">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="tblDriver">
+              <PropertyRef Name="BalanceAccount" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__tblOrder__Custom__20C1E124">
+          <End Role="tblCustomer" Type="Self.tblCustomer" Multiplicity="0..1" />
+          <End Role="tblOrder" Type="Self.tblOrder" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tblCustomer">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="tblOrder">
+              <PropertyRef Name="Customer" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__tblDriver__Curre__1FCDBCEB">
+          <End Role="tblVehicle" Type="Self.tblVehicle" Multiplicity="0..1" />
+          <End Role="tblDriver" Type="Self.tblDriver" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tblVehicle">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="tblDriver">
+              <PropertyRef Name="CurrentVehicle" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__tblVehicl__Drive__21B6055D">
+          <End Role="tblDriver" Type="Self.tblDriver" Multiplicity="0..1" />
+          <End Role="tblVehicle" Type="Self.tblVehicle" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tblDriver">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="tblVehicle">
+              <PropertyRef Name="DriverOwner" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="WebAppExample_ProductionEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="n2mOrderDriver" EntityType="Self.n2mOrderDriver" />
+          <EntitySet Name="tblAccount" EntityType="Self.tblAccount" />
+          <EntitySet Name="tblCustomer" EntityType="Self.tblCustomer" />
+          <EntitySet Name="tblDriver" EntityType="Self.tblDriver" />
+          <EntitySet Name="tblEmployee" EntityType="Self.tblEmployee" />
+          <EntitySet Name="tblOrder" EntityType="Self.tblOrder" />
+          <EntitySet Name="tblVehicle" EntityType="Self.tblVehicle" />
+          <EntitySet Name="vwOrderCustomer" EntityType="Self.vwOrderCustomer" />
+          <AssociationSet Name="FK__n2mOrderD__Drive__1CF15040" Association="Self.FK__n2mOrderD__Drive__1CF15040">
+            <End Role="tblDriver" EntitySet="tblDriver" />
+            <End Role="n2mOrderDriver" EntitySet="n2mOrderDriver" />
+          </AssociationSet>
+          <AssociationSet Name="FK__n2mOrderD__Order__1BFD2C07" Association="Self.FK__n2mOrderD__Order__1BFD2C07">
+            <End Role="tblOrder" EntitySet="tblOrder" />
+            <End Role="n2mOrderDriver" EntitySet="n2mOrderDriver" />
+          </AssociationSet>
+          <AssociationSet Name="FK__tblCustom__Payme__1DE57479" Association="Self.FK__tblCustom__Payme__1DE57479">
+            <End Role="tblAccount" EntitySet="tblAccount" />
+            <End Role="tblCustomer" EntitySet="tblCustomer" />
+          </AssociationSet>
+          <AssociationSet Name="FK__tblDriver__Balan__1ED998B2" Association="Self.FK__tblDriver__Balan__1ED998B2">
+            <End Role="tblAccount" EntitySet="tblAccount" />
+            <End Role="tblDriver" EntitySet="tblDriver" />
+          </AssociationSet>
+          <AssociationSet Name="FK__tblOrder__Custom__20C1E124" Association="Self.FK__tblOrder__Custom__20C1E124">
+            <End Role="tblCustomer" EntitySet="tblCustomer" />
+            <End Role="tblOrder" EntitySet="tblOrder" />
+          </AssociationSet>
+          <AssociationSet Name="FK__tblDriver__Curre__1FCDBCEB" Association="Self.FK__tblDriver__Curre__1FCDBCEB">
+            <End Role="tblVehicle" EntitySet="tblVehicle" />
+            <End Role="tblDriver" EntitySet="tblDriver" />
+          </AssociationSet>
+          <AssociationSet Name="FK__tblVehicl__Drive__21B6055D" Association="Self.FK__tblVehicl__Drive__21B6055D">
+            <End Role="tblDriver" EntitySet="tblDriver" />
+            <End Role="tblVehicle" EntitySet="tblVehicle" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="Хранилище WebAppExample_ProductionModelContainer" CdmEntityContainer="WebAppExample_ProductionEntities">
+          <EntitySetMapping Name="n2mOrderDriver">
+            <EntityTypeMapping TypeName="WebAppExample_ProductionModel.n2mOrderDriver">
+              <MappingFragment StoreEntitySet="n2mOrderDriver">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Order" ColumnName="Order" />
+                <ScalarProperty Name="Driver" ColumnName="Driver" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tblAccount">
+            <EntityTypeMapping TypeName="WebAppExample_ProductionModel.tblAccount">
+              <MappingFragment StoreEntitySet="tblAccount">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Comment" ColumnName="Comment" />
+                <ScalarProperty Name="Balance" ColumnName="Balance" />
+                <ScalarProperty Name="AccountState" ColumnName="AccountState" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tblCustomer">
+            <EntityTypeMapping TypeName="WebAppExample_ProductionModel.tblCustomer">
+              <MappingFragment StoreEntitySet="tblCustomer">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Comment" ColumnName="Comment" />
+                <ScalarProperty Name="PersonComment" ColumnName="PersonComment" />
+                <ScalarProperty Name="PersonFirstName" ColumnName="PersonFirstName" />
+                <ScalarProperty Name="PersonSurname" ColumnName="PersonSurname" />
+                <ScalarProperty Name="PersonPatronymicName" ColumnName="PersonPatronymicName" />
+                <ScalarProperty Name="PersonGender" ColumnName="PersonGender" />
+                <ScalarProperty Name="PersonMaritalStatus" ColumnName="PersonMaritalStatus" />
+                <ScalarProperty Name="PersonBirthDate" ColumnName="PersonBirthDate" />
+                <ScalarProperty Name="PersonAmountOfChildren" ColumnName="PersonAmountOfChildren" />
+                <ScalarProperty Name="PersonAddressOfCurrLivingPlace" ColumnName="PersonAddressOfCurrLivingPlace" />
+                <ScalarProperty Name="PersonContactsActualAddress" ColumnName="PersonContactsActualAddress" />
+                <ScalarProperty Name="PersonContactsFormalAddress" ColumnName="PersonContactsFormalAddress" />
+                <ScalarProperty Name="PersonContactsPersonalMobilePhone" ColumnName="PersonContactsPersonalMobilePhone" />
+                <ScalarProperty Name="PersonContactsWorkMobilePhone" ColumnName="PersonContactsWorkMobilePhone" />
+                <ScalarProperty Name="PersonContactsHomePhone" ColumnName="PersonContactsHomePhone" />
+                <ScalarProperty Name="PersonContactsWorkPhone" ColumnName="PersonContactsWorkPhone" />
+                <ScalarProperty Name="PersonContactsPersonalEMail" ColumnName="PersonContactsPersonalEMail" />
+                <ScalarProperty Name="PersonContactsWorkEMail" ColumnName="PersonContactsWorkEMail" />
+                <ScalarProperty Name="PersonContactsMessenger1" ColumnName="PersonContactsMessenger1" />
+                <ScalarProperty Name="PersonContactsMessenger2" ColumnName="PersonContactsMessenger2" />
+                <ScalarProperty Name="PersonContactsMessenger3" ColumnName="PersonContactsMessenger3" />
+                <ScalarProperty Name="PersonPassportInfoComment" ColumnName="PersonPassportInfoComment" />
+                <ScalarProperty Name="PersonPassportInfoSeries" ColumnName="PersonPassportInfoSeries" />
+                <ScalarProperty Name="PersonPassportInfoNumber" ColumnName="PersonPassportInfoNumber" />
+                <ScalarProperty Name="PersonPassportInfoIssueDate" ColumnName="PersonPassportInfoIssueDate" />
+                <ScalarProperty Name="PersonPassportInfoWhoIsIssuer" ColumnName="PersonPassportInfoWhoIsIssuer" />
+                <ScalarProperty Name="PersonPassportInfoAddressOfResidence" ColumnName="PersonPassportInfoAddressOfResidence" />
+                <ScalarProperty Name="PersonPassportInfoAddressOfRegistration" ColumnName="PersonPassportInfoAddressOfRegistration" />
+                <ScalarProperty Name="PersonPassportInfoLastChangeDate" ColumnName="PersonPassportInfoLastChangeDate" />
+                <ScalarProperty Name="PaymentAccount" ColumnName="PaymentAccount" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tblDriver">
+            <EntityTypeMapping TypeName="WebAppExample_ProductionModel.tblDriver">
+              <MappingFragment StoreEntitySet="tblDriver">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Comment" ColumnName="Comment" />
+                <ScalarProperty Name="BalanceAccount" ColumnName="BalanceAccount" />
+                <ScalarProperty Name="EmployeeId" ColumnName="EmployeeId" />
+                <ScalarProperty Name="EmployeeComment" ColumnName="EmployeeComment" />
+                <ScalarProperty Name="EmployeePosition" ColumnName="EmployeePosition" />
+                <ScalarProperty Name="EmployeePersonComment" ColumnName="EmployeePersonComment" />
+                <ScalarProperty Name="EmployeePersonFirstName" ColumnName="EmployeePersonFirstName" />
+                <ScalarProperty Name="EmployeePersonSurname" ColumnName="EmployeePersonSurname" />
+                <ScalarProperty Name="EmployeePersonPatronymicName" ColumnName="EmployeePersonPatronymicName" />
+                <ScalarProperty Name="EmployeePersonGender" ColumnName="EmployeePersonGender" />
+                <ScalarProperty Name="EmployeePersonMaritalStatus" ColumnName="EmployeePersonMaritalStatus" />
+                <ScalarProperty Name="EmployeePersonBirthDate" ColumnName="EmployeePersonBirthDate" />
+                <ScalarProperty Name="EmployeePersonAmountOfChildren" ColumnName="EmployeePersonAmountOfChildren" />
+                <ScalarProperty Name="EmployeePersonAddressOfCurrLivingPlace" ColumnName="EmployeePersonAddressOfCurrLivingPlace" />
+                <ScalarProperty Name="EmployeePersonContactsActualAddress" ColumnName="EmployeePersonContactsActualAddress" />
+                <ScalarProperty Name="EmployeePersonContactsFormalAddress" ColumnName="EmployeePersonContactsFormalAddress" />
+                <ScalarProperty Name="EmployeePersonContactsPersonalMobilePhone" ColumnName="EmployeePersonContactsPersonalMobilePhone" />
+                <ScalarProperty Name="EmployeePersonContactsWorkMobilePhone" ColumnName="EmployeePersonContactsWorkMobilePhone" />
+                <ScalarProperty Name="EmployeePersonContactsHomePhone" ColumnName="EmployeePersonContactsHomePhone" />
+                <ScalarProperty Name="EmployeePersonContactsWorkPhone" ColumnName="EmployeePersonContactsWorkPhone" />
+                <ScalarProperty Name="EmployeePersonContactsPersonalEMail" ColumnName="EmployeePersonContactsPersonalEMail" />
+                <ScalarProperty Name="EmployeePersonContactsWorkEMail" ColumnName="EmployeePersonContactsWorkEMail" />
+                <ScalarProperty Name="EmployeePersonContactsMessenger1" ColumnName="EmployeePersonContactsMessenger1" />
+                <ScalarProperty Name="EmployeePersonContactsMessenger2" ColumnName="EmployeePersonContactsMessenger2" />
+                <ScalarProperty Name="EmployeePersonContactsMessenger3" ColumnName="EmployeePersonContactsMessenger3" />
+                <ScalarProperty Name="EmployeePersonPassportInfoComment" ColumnName="EmployeePersonPassportInfoComment" />
+                <ScalarProperty Name="EmployeePersonPassportInfoSeries" ColumnName="EmployeePersonPassportInfoSeries" />
+                <ScalarProperty Name="EmployeePersonPassportInfoNumber" ColumnName="EmployeePersonPassportInfoNumber" />
+                <ScalarProperty Name="EmployeePersonPassportInfoIssueDate" ColumnName="EmployeePersonPassportInfoIssueDate" />
+                <ScalarProperty Name="EmployeePersonPassportInfoWhoIsIssuer" ColumnName="EmployeePersonPassportInfoWhoIsIssuer" />
+                <ScalarProperty Name="EmployeePersonPassportInfoAddressOfResidence" ColumnName="EmployeePersonPassportInfoAddressOfResidence" />
+                <ScalarProperty Name="EmployeePersonPassportInfoAddressOfRegistration" ColumnName="EmployeePersonPassportInfoAddressOfRegistration" />
+                <ScalarProperty Name="EmployeePersonPassportInfoLastChangeDate" ColumnName="EmployeePersonPassportInfoLastChangeDate" />
+                <ScalarProperty Name="CurrentVehicle" ColumnName="CurrentVehicle" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tblEmployee">
+            <EntityTypeMapping TypeName="WebAppExample_ProductionModel.tblEmployee">
+              <MappingFragment StoreEntitySet="tblEmployee">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Comment" ColumnName="Comment" />
+                <ScalarProperty Name="Position" ColumnName="Position" />
+                <ScalarProperty Name="PersonComment" ColumnName="PersonComment" />
+                <ScalarProperty Name="PersonFirstName" ColumnName="PersonFirstName" />
+                <ScalarProperty Name="PersonSurname" ColumnName="PersonSurname" />
+                <ScalarProperty Name="PersonPatronymicName" ColumnName="PersonPatronymicName" />
+                <ScalarProperty Name="PersonGender" ColumnName="PersonGender" />
+                <ScalarProperty Name="PersonMaritalStatus" ColumnName="PersonMaritalStatus" />
+                <ScalarProperty Name="PersonBirthDate" ColumnName="PersonBirthDate" />
+                <ScalarProperty Name="PersonAmountOfChildren" ColumnName="PersonAmountOfChildren" />
+                <ScalarProperty Name="PersonAddressOfCurrLivingPlace" ColumnName="PersonAddressOfCurrLivingPlace" />
+                <ScalarProperty Name="PersonContactsActualAddress" ColumnName="PersonContactsActualAddress" />
+                <ScalarProperty Name="PersonContactsFormalAddress" ColumnName="PersonContactsFormalAddress" />
+                <ScalarProperty Name="PersonContactsPersonalMobilePhone" ColumnName="PersonContactsPersonalMobilePhone" />
+                <ScalarProperty Name="PersonContactsWorkMobilePhone" ColumnName="PersonContactsWorkMobilePhone" />
+                <ScalarProperty Name="PersonContactsHomePhone" ColumnName="PersonContactsHomePhone" />
+                <ScalarProperty Name="PersonContactsWorkPhone" ColumnName="PersonContactsWorkPhone" />
+                <ScalarProperty Name="PersonContactsPersonalEMail" ColumnName="PersonContactsPersonalEMail" />
+                <ScalarProperty Name="PersonContactsWorkEMail" ColumnName="PersonContactsWorkEMail" />
+                <ScalarProperty Name="PersonContactsMessenger1" ColumnName="PersonContactsMessenger1" />
+                <ScalarProperty Name="PersonContactsMessenger2" ColumnName="PersonContactsMessenger2" />
+                <ScalarProperty Name="PersonContactsMessenger3" ColumnName="PersonContactsMessenger3" />
+                <ScalarProperty Name="PersonPassportInfoComment" ColumnName="PersonPassportInfoComment" />
+                <ScalarProperty Name="PersonPassportInfoSeries" ColumnName="PersonPassportInfoSeries" />
+                <ScalarProperty Name="PersonPassportInfoNumber" ColumnName="PersonPassportInfoNumber" />
+                <ScalarProperty Name="PersonPassportInfoIssueDate" ColumnName="PersonPassportInfoIssueDate" />
+                <ScalarProperty Name="PersonPassportInfoWhoIsIssuer" ColumnName="PersonPassportInfoWhoIsIssuer" />
+                <ScalarProperty Name="PersonPassportInfoAddressOfResidence" ColumnName="PersonPassportInfoAddressOfResidence" />
+                <ScalarProperty Name="PersonPassportInfoAddressOfRegistration" ColumnName="PersonPassportInfoAddressOfRegistration" />
+                <ScalarProperty Name="PersonPassportInfoLastChangeDate" ColumnName="PersonPassportInfoLastChangeDate" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tblOrder">
+            <EntityTypeMapping TypeName="WebAppExample_ProductionModel.tblOrder">
+              <MappingFragment StoreEntitySet="tblOrder">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Comment" ColumnName="Comment" />
+                <ScalarProperty Name="StartDateTime" ColumnName="StartDateTime" />
+                <ScalarProperty Name="ControlDateTime" ColumnName="ControlDateTime" />
+                <ScalarProperty Name="CloseDateTime" ColumnName="CloseDateTime" />
+                <ScalarProperty Name="Customer" ColumnName="Customer" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tblVehicle">
+            <EntityTypeMapping TypeName="WebAppExample_ProductionModel.tblVehicle">
+              <MappingFragment StoreEntitySet="tblVehicle">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Comment" ColumnName="Comment" />
+                <ScalarProperty Name="Brand" ColumnName="Brand" />
+                <ScalarProperty Name="Model" ColumnName="Model" />
+                <ScalarProperty Name="DriverOwner" ColumnName="DriverOwner" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="vwOrderCustomer">
+            <EntityTypeMapping TypeName="WebAppExample_ProductionModel.vwOrderCustomer">
+              <MappingFragment StoreEntitySet="vwOrderCustomer">
+                <ScalarProperty Name="OrdId" ColumnName="OrdId" />
+                <ScalarProperty Name="OrdComment" ColumnName="OrdComment" />
+                <ScalarProperty Name="OrdStartDateTime" ColumnName="OrdStartDateTime" />
+                <ScalarProperty Name="OrdControlDateTime" ColumnName="OrdControlDateTime" />
+                <ScalarProperty Name="OrdCloseDateTime" ColumnName="OrdCloseDateTime" />
+                <ScalarProperty Name="CustId" ColumnName="CustId" />
+                <ScalarProperty Name="CustComment" ColumnName="CustComment" />
+                <ScalarProperty Name="CustPersonComment" ColumnName="CustPersonComment" />
+                <ScalarProperty Name="CustPersonFirstName" ColumnName="CustPersonFirstName" />
+                <ScalarProperty Name="CustPersonSurname" ColumnName="CustPersonSurname" />
+                <ScalarProperty Name="CustPersonPatronymicName" ColumnName="CustPersonPatronymicName" />
+                <ScalarProperty Name="CustPersonGender" ColumnName="CustPersonGender" />
+                <ScalarProperty Name="CustPersonMaritalStatus" ColumnName="CustPersonMaritalStatus" />
+                <ScalarProperty Name="CustPersonBirthDate" ColumnName="CustPersonBirthDate" />
+                <ScalarProperty Name="CustPersonAmountOfChildren" ColumnName="CustPersonAmountOfChildren" />
+                <ScalarProperty Name="CustPersonAddressOfCurrLivingPlace" ColumnName="CustPersonAddressOfCurrLivingPlace" />
+                <ScalarProperty Name="CustPersonContactsActualAddress" ColumnName="CustPersonContactsActualAddress" />
+                <ScalarProperty Name="CustPersonContactsFormalAddress" ColumnName="CustPersonContactsFormalAddress" />
+                <ScalarProperty Name="CustPersonContactsPersonalMobilePhone" ColumnName="CustPersonContactsPersonalMobilePhone" />
+                <ScalarProperty Name="CustPersonContactsWorkMobilePhone" ColumnName="CustPersonContactsWorkMobilePhone" />
+                <ScalarProperty Name="CustPersonContactsHomePhone" ColumnName="CustPersonContactsHomePhone" />
+                <ScalarProperty Name="CustPersonContactsWorkPhone" ColumnName="CustPersonContactsWorkPhone" />
+                <ScalarProperty Name="CustPersonContactsPersonalEMail" ColumnName="CustPersonContactsPersonalEMail" />
+                <ScalarProperty Name="CustPersonContactsWorkEMail" ColumnName="CustPersonContactsWorkEMail" />
+                <ScalarProperty Name="CustPersonContactsMessenger1" ColumnName="CustPersonContactsMessenger1" />
+                <ScalarProperty Name="CustPersonContactsMessenger2" ColumnName="CustPersonContactsMessenger2" />
+                <ScalarProperty Name="CustPersonContactsMessenger3" ColumnName="CustPersonContactsMessenger3" />
+                <ScalarProperty Name="CustPersonPassportInfoComment" ColumnName="CustPersonPassportInfoComment" />
+                <ScalarProperty Name="CustPersonPassportInfoSeries" ColumnName="CustPersonPassportInfoSeries" />
+                <ScalarProperty Name="CustPersonPassportInfoNumber" ColumnName="CustPersonPassportInfoNumber" />
+                <ScalarProperty Name="CustPersonPassportInfoIssueDate" ColumnName="CustPersonPassportInfoIssueDate" />
+                <ScalarProperty Name="CustPersonPassportInfoWhoIsIssuer" ColumnName="CustPersonPassportInfoWhoIsIssuer" />
+                <ScalarProperty Name="CustPersonPassportInfoAddressOfResidence" ColumnName="CustPersonPassportInfoAddressOfResidence" />
+                <ScalarProperty Name="CustPersonPassportInfoAddressOfRegistration" ColumnName="CustPersonPassportInfoAddressOfRegistration" />
+                <ScalarProperty Name="CustPersonPassportInfoLastChangeDate" ColumnName="CustPersonPassportInfoLastChangeDate" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="Нет" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>
