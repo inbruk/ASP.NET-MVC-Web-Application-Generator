@@ -8,13 +8,9 @@
         public static void Ignite()
         {
             // initialize configuration ------------------
-
             CreateInstanceConfiguration.Create();
 
             // Data Layer --------------------------------
-            ProjAppSubsLayerIds appIds = new ProjAppSubsLayerIds();
-            appIds.Generate();
-
             Languages lng = new Languages();
             lng.Generate();
 
@@ -26,8 +22,6 @@
 
             ComplexEntities cEnt = new ComplexEntities();
             cEnt.Generate();
-
-
         }
     }
 }
