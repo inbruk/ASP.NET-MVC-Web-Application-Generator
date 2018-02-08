@@ -65,6 +65,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Engine", "WebAppExample\Dat
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DirLangStrings", "Common\DataAccessLayer\DirLangStrings\DirLangStrings.csproj", "{AD10124D-2E20-42E9-914C-B47D88031B80}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ApplicationId", "Common\BusinessLayer\ApplicationId\ApplicationId.csproj", "{5ED0517B-7536-4F23-BA84-83B6C9FCC333}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -127,6 +129,10 @@ Global
 		{AD10124D-2E20-42E9-914C-B47D88031B80}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{AD10124D-2E20-42E9-914C-B47D88031B80}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{AD10124D-2E20-42E9-914C-B47D88031B80}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5ED0517B-7536-4F23-BA84-83B6C9FCC333}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5ED0517B-7536-4F23-BA84-83B6C9FCC333}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5ED0517B-7536-4F23-BA84-83B6C9FCC333}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5ED0517B-7536-4F23-BA84-83B6C9FCC333}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -157,6 +163,7 @@ Global
 		{58881E15-D701-413C-A086-93D477FE4895} = {EB92780E-AFBC-4274-B692-41577C168BAC}
 		{CDF75816-0AF4-471F-9519-C2089DDA993F} = {BF9FD54A-20BD-485D-BAE8-5032DD4B237A}
 		{AD10124D-2E20-42E9-914C-B47D88031B80} = {52D29DB0-6AF9-438E-B43C-4C2F1F352DD3}
+		{5ED0517B-7536-4F23-BA84-83B6C9FCC333} = {52DD6612-7D34-4ABE-82F7-9F1744D534ED}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {30210D04-884E-4B79-ADAA-6998C63EB5FC}

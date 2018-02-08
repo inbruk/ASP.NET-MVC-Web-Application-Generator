@@ -7,7 +7,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace DirLangStrings
+namespace Common.DataAccessLayer.DirLangStrings
 {
     using System;
     using System.Collections.Generic;

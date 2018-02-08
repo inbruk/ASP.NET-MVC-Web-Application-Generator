@@ -1,15 +1,13 @@
-﻿namespace AspNetMvcWebApplicationGenerator.Configuration.DataLayer
+﻿namespace Common.DataTransferObjects.ApplicationId
 {
     using System;
-    using System.Collections.Generic;
-    using System.Linq;
 
-    public class Project
+    public class Layer
     {
         public long Id { get; }
         public String EnumName { get; }
 
-        public Project
+        public Layer
         (
             long id,
             String enumName

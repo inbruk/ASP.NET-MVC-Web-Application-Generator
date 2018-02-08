@@ -7,8 +7,8 @@
     <ProjectGuid>{AD10124D-2E20-42E9-914C-B47D88031B80}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>DirLangStrings</RootNamespace>
-    <AssemblyName>DirLangStrings</AssemblyName>
+    <RootNamespace>Common.DataAccessLayer.DirLangStrings</RootNamespace>
+    <AssemblyName>Common.DataAccessLayer.DirLangStrings</AssemblyName>
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
