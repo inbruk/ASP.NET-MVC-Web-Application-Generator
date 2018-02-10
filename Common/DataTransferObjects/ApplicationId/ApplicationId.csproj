@@ -41,10 +41,10 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Application.cs" />
+    <Compile Include="BaseItem.cs" />
     <Compile Include="Layer.cs" />
     <Compile Include="Project.cs" />
     <Compile Include="ProjectApplicationSubsystem.cs" />
-    <Compile Include="Enums\Project.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Subsystem.cs" />
   </ItemGroup>

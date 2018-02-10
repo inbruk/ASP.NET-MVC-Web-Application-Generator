@@ -3,22 +3,45 @@
     using System;
     using System.Collections.Generic;
     using System.Linq;
-    using System.Text;
-    using System.Threading.Tasks;
 
     using Common.DataTransferObjects.ApplicationId;
-    using En = Common.DataTransferObjects.ApplicationId.Enums;
+
+    public enum enProject
+    {
+        Common = 1,
+        WebAppExample = 2
+    }
 
     public static class ProjectTools
     {
-        public static Dictionary<En.Project, Project> Projects { get; }
+        private static Project ConvertEnum( enProject en )
+        {
+            Project result = new Project( (long)(en), en.ToString() );
+            return result;
+        }
+
+        private static Dictionary<long, Project> Projects { get; }
         
         static ProjectTools()
         {
-            Projects = new Dictionary<En.Project, Project>();
+            Projects = new Dictionary<long, Project>();
+            foreach (enProject currEn in Enum.GetValues(typeof(enProject)) )
+            {
+                Project currItem = ConvertEnum(currEn);
+                Projects.Add( currItem.Id, currItem );
+            }
+        }
 
-            foreach (var currEnItem in Enum.GetValues(typeof(En.Project)))
-                Projects.Add( (En.Project)currEnItem, new Project((En.Project)currEnItem) ); 
+        public static Project GetOneById(long id)
+        {
+            Project result = Projects[id];
+            return result;
+        }
+        
+        public static List<Project> GetAll()
+        {
+            var list = Projects.Values.ToList();
+            return list;
         }
     }
 }

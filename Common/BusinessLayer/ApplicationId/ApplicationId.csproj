@@ -40,8 +40,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ApplicationTools.cs" />
+    <Compile Include="LayerTools.cs" />
+    <Compile Include="ProjAppSubTools.cs" />
     <Compile Include="ProjectTools.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SubsystemTools.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\..\DataTransferObjects\ApplicationId\ApplicationId.csproj">

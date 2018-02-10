@@ -2,19 +2,8 @@
 {
     using System;
 
-    public class Layer
+    public class Layer : BaseItem
     {
-        public long Id { get; }
-        public String EnumName { get; }
-
-        public Layer
-        (
-            long id,
-            String enumName
-        )
-        {
-            Id = id;
-            EnumName = enumName;
-        }
+        public Layer(long id, String enumName) : base(id, enumName) { }
     }
 }

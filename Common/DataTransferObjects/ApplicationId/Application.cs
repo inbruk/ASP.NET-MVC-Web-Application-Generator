@@ -2,21 +2,13 @@
 {
     using System;
 
-    public class Application
+    public class Application : BaseItem
     {
-        public long Id { get; }
-        public String EnumName { get; }
         public long ProjectId { get; }
 
-        public Application
-        (
-            long id,
-            String enumName,
-            long projectId
-        )
+        public Application(long id, String enumName, long projectId) 
+            : base(id, enumName)
         {
-            Id = id;
-            EnumName = enumName;
             ProjectId = projectId;
         }
     }
