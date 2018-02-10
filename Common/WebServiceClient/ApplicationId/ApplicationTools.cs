@@ -1,4 +1,4 @@
-﻿namespace Common.BusinessLayer.ApplicationId
+﻿namespace Common.WebServiceClient.ApplicationId
 {
     using System;
     using System.Collections.Generic;
