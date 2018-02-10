@@ -18,7 +18,7 @@
             Projects = new Dictionary<En.Project, Project>();
 
             foreach (var currEnItem in Enum.GetValues(typeof(En.Project)))
-                Projects.Add( (En.Project)currEnItem, new Project((En.Project)currEnItem) );
+                Projects.Add( (En.Project)currEnItem, new Project((En.Project)currEnItem) ); 
         }
     }
 }
