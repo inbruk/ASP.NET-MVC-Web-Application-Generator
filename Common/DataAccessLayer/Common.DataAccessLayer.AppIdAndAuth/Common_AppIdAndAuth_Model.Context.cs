@@ -7,16 +7,16 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace WebAppExample.DataAccessLayer.Engine
+namespace Common.DataAccessLayer.AppIdAndAuth
 {
     using System;
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
     
-    public partial class WebAppExample_EngineEntities : DbContext
+    public partial class Common_AppIdAndAuth_Entities : DbContext
     {
-        public WebAppExample_EngineEntities()
-            : base("name=WebAppExample_EngineEntities")
+        public Common_AppIdAndAuth_Entities()
+            : base("name=Common_AppIdAndAuth_Entities")
         {
         }
     
@@ -25,13 +25,7 @@ namespace WebAppExample.DataAccessLayer.Engine
             throw new UnintentionalCodeFirstException();
         }
     
-        public virtual DbSet<n2mOrderDriver> n2mOrderDriver { get; set; }
-        public virtual DbSet<tblAccount> tblAccount { get; set; }
-        public virtual DbSet<tblCustomer> tblCustomer { get; set; }
-        public virtual DbSet<tblDriver> tblDriver { get; set; }
-        public virtual DbSet<tblEmployee> tblEmployee { get; set; }
-        public virtual DbSet<tblOrder> tblOrder { get; set; }
-        public virtual DbSet<tblVehicle> tblVehicle { get; set; }
-        public virtual DbSet<vwOrderCustomer> vwOrderCustomer { get; set; }
+        public virtual DbSet<tblAuthenticationActor> tblAuthenticationActor { get; set; }
+        public virtual DbSet<tblAuthenticationRole> tblAuthenticationRole { get; set; }
     }
 }

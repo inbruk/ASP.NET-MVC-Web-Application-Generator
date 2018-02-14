@@ -7,7 +7,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace Engine
+namespace WebAppExample.DataAccessLayer.Engine
 {
     using System;
     using System.Collections.Generic;

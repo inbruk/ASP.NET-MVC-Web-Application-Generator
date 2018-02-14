@@ -7,18 +7,17 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace WebAppExample.DataAccessLayer.Engine
+namespace Common.DataAccessLayer.AppIdAndAuth
 {
     using System;
     using System.Collections.Generic;
     
-    public partial class n2mOrderDriver
+    public partial class tblAuthenticationActor
     {
         public long Id { get; set; }
-        public Nullable<long> Order { get; set; }
-        public Nullable<long> Driver { get; set; }
-    
-        public virtual tblDriver tblDriver { get; set; }
-        public virtual tblOrder tblOrder { get; set; }
+        public string Login { get; set; }
+        public string PasswordSalt { get; set; }
+        public string PasswordHash { get; set; }
+        public bool IsBanned { get; set; }
     }
 }
