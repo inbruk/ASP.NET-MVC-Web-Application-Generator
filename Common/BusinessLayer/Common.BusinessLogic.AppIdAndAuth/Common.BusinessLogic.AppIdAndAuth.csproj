@@ -53,11 +53,17 @@
     <Compile Include="ApplicationId\ProjAppSubTools.cs" />
     <Compile Include="ApplicationId\ProjectTools.cs" />
     <Compile Include="ApplicationId\SubsystemTools.cs" />
+    <Compile Include="Authentication\ActorRoleTools.cs" />
     <Compile Include="Authentication\ActorTools.cs" />
+    <Compile Include="Authentication\RoleTools.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>
+    <ProjectReference Include="..\..\..\Auxiliary.PatternsAndClasses\Auxiliary.PatternsAndClasses.csproj">
+      <Project>{e270b853-3089-4128-965d-9662fa25bdba}</Project>
+      <Name>Auxiliary.PatternsAndClasses</Name>
+    </ProjectReference>
     <ProjectReference Include="..\..\..\Auxiliary\Auxiliary.CryptoTools\Auxiliary.CryptoTools.csproj">
       <Project>{44ed7e00-9e30-4142-a93e-679863cae716}</Project>
       <Name>Auxiliary.CryptoTools</Name>

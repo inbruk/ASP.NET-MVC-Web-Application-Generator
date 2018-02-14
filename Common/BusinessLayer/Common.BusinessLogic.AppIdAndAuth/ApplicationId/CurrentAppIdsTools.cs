@@ -6,7 +6,8 @@
     using System.Text;
     using System.Threading.Tasks;
 
-    using Common.DataTransferObjects.ApplicationId;
+    using Common.DataTransferObjects.AppIdAndAuth.ApplicationId;
+    using DAL = Common.DataAccessLayer.AppIdAndAuth;
 
     public static class CurrentAppIdsTools
     {

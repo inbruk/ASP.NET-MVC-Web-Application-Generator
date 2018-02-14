@@ -19,5 +19,6 @@ namespace Common.DataAccessLayer.AppIdAndAuth
         public string PasswordSalt { get; set; }
         public string PasswordHash { get; set; }
         public bool IsBanned { get; set; }
+        public long RoleId { get; set; }
     }
 }

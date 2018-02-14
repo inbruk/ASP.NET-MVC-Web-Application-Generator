@@ -64,4 +64,7 @@
     <Build Include="Manual\Tables\tblAuthenticationActor.sql" />
     <Build Include="Manual\Tables\tblAuthenticationRole.sql" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Common.DataLayer.AppIdAndAuth.publish.xml" />
+  </ItemGroup>
 </Project>

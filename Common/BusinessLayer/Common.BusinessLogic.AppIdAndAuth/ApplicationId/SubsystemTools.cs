@@ -4,7 +4,8 @@
     using System.Collections.Generic;
     using System.Linq;
 
-    using Common.DataTransferObjects.ApplicationId;
+    using Common.DataTransferObjects.AppIdAndAuth.ApplicationId;
+    using DAL = Common.DataAccessLayer.AppIdAndAuth;
 
     public enum enSubsystem
     {

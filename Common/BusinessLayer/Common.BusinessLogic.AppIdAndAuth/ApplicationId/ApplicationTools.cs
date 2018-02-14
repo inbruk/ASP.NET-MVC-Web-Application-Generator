@@ -5,6 +5,7 @@
     using System.Linq;
 
     using Common.DataTransferObjects.AppIdAndAuth.ApplicationId;
+    using DAL = Common.DataAccessLayer.AppIdAndAuth;
 
     public enum enApplication
     {

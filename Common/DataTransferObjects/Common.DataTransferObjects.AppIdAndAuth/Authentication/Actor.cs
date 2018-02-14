@@ -10,5 +10,6 @@
         public String PasswordSalt { set; get; }
         public String PasswordHash { set; get; }
         public Boolean IsBanned { set; get; } = false;
+        public long RoleId { set; get; }
     }
 }
