@@ -75,7 +75,9 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Common.DataTransferObjects.
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Common.BusinessLogic.AppIdAndAuth", "Common\BusinessLayer\Common.BusinessLogic.AppIdAndAuth\Common.BusinessLogic.AppIdAndAuth.csproj", "{3D8A97D2-4091-48BB-B0E0-60C7ABC1AD9B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Auxiliary.PatternsAndClasses", "Auxiliary.PatternsAndClasses\Auxiliary.PatternsAndClasses.csproj", "{E270B853-3089-4128-965D-9662FA25BDBA}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Auxiliary.CommonOptions", "Auxiliary\Auxiliary.CommonOptions\Auxiliary.CommonOptions.csproj", "{5E9B54CC-54DC-4097-A7F9-36F737D5E462}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Auxiliary.PatternsAndClasses", "Auxiliary\Auxiliary.PatternsAndClasses\Auxiliary.PatternsAndClasses.csproj", "{E270B853-3089-4128-965D-9662FA25BDBA}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -157,6 +159,10 @@ Global
 		{3D8A97D2-4091-48BB-B0E0-60C7ABC1AD9B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{3D8A97D2-4091-48BB-B0E0-60C7ABC1AD9B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{3D8A97D2-4091-48BB-B0E0-60C7ABC1AD9B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5E9B54CC-54DC-4097-A7F9-36F737D5E462}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5E9B54CC-54DC-4097-A7F9-36F737D5E462}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5E9B54CC-54DC-4097-A7F9-36F737D5E462}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5E9B54CC-54DC-4097-A7F9-36F737D5E462}.Release|Any CPU.Build.0 = Release|Any CPU
 		{E270B853-3089-4128-965D-9662FA25BDBA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{E270B853-3089-4128-965D-9662FA25BDBA}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E270B853-3089-4128-965D-9662FA25BDBA}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -195,6 +201,7 @@ Global
 		{072856EB-3CE6-4F92-8696-EC9EEC7FD462} = {52D29DB0-6AF9-438E-B43C-4C2F1F352DD3}
 		{6D330A84-F74D-4D7A-B52A-C101815A3533} = {AF784ACF-BEB6-4D73-9778-2E715F91BF6A}
 		{3D8A97D2-4091-48BB-B0E0-60C7ABC1AD9B} = {52DD6612-7D34-4ABE-82F7-9F1744D534ED}
+		{5E9B54CC-54DC-4097-A7F9-36F737D5E462} = {5B134A8C-6C92-402C-A59C-E5163EDBB240}
 		{E270B853-3089-4128-965D-9662FA25BDBA} = {5B134A8C-6C92-402C-A59C-E5163EDBB240}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution

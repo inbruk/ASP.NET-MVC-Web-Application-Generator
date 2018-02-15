@@ -6,7 +6,7 @@
 
     public static class SHA1Hasher
     {
-        public static String GetUsefulSalt()
+        private static String GetUsefulSalt()
         {
             var rng = new RNGCryptoServiceProvider();
             var buff = new byte[32];
@@ -14,7 +14,7 @@
             return Convert.ToBase64String(buff);
         }
 
-        public static String EncodePassword(String password, String salt)
+        private static String EncodePassword(String password, String salt)
         {
             byte[] bytes = Encoding.Unicode.GetBytes(password);
             byte[] src = Encoding.Unicode.GetBytes(salt);
@@ -24,6 +24,19 @@
             HashAlgorithm algorithm = HashAlgorithm.Create("SHA1");
             byte[] inarray = algorithm.ComputeHash(dst);
             return Convert.ToBase64String(inarray);
+        }
+
+        public static void CalculatePasswordHash(String password, out String passwordSalt, out String passwordHash)
+        {
+            passwordSalt = SHA1Hasher.GetUsefulSalt();
+            passwordHash = SHA1Hasher.EncodePassword(password, passwordSalt);
+        }
+
+        public static Boolean CheckIsPasswordHashCorrect(String salt, String password, String checkingPasswordHash)
+        {
+            String calculatedPasswordHash = SHA1Hasher.EncodePassword(password, salt);
+            Boolean result = String.Equals(calculatedPasswordHash, checkingPasswordHash);
+            return result;
         }
     }
 }

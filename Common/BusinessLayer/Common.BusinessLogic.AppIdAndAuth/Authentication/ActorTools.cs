@@ -4,6 +4,7 @@
     using System.Linq;
     using System.Collections.Generic;
 
+    using Auxiliary.CommonOptions;
     using Auxiliary.CryptoTools;
     using Auxiliary.PatternsAndClasses;
 
@@ -14,15 +15,9 @@
     {
         private static LazyInitWithoutParams<DAL.Common_AppIdAndAuth_Entities> CurrDBContext;
 
-        private static void CalculatePasswordHash(String password, out String passwordSalt, out String passwordHash)
-        {
-            passwordSalt = SHA1Hasher.GetUsefulSalt();
-            passwordHash = SHA1Hasher.EncodePassword(password, passwordSalt);
-        }
-
         public static long Create(String login, String password, long roleId)
-        {           
-            CalculatePasswordHash(password, out String passwordSalt, out String passwordHash);
+        {
+            SHA1Hasher.CalculatePasswordHash(password, out String passwordSalt, out String passwordHash);
 
             DAL.tblAuthenticationActor currItem = new DAL.tblAuthenticationActor()
             {
@@ -54,14 +49,34 @@
                         IsBanned = false,
                         RoleId = x.RoleId                        
                     }
-                ).Single();
+                ).SingleOrDefault();
+
+            return result;
+        }
+
+        public static Actor Read(String login)
+        {
+            Actor result =
+                CurrDBContext.Get().tblAuthenticationActor.Where(x => x.Login==login ).Select
+                (
+                    x =>
+                    new Actor()
+                    {
+                        Id = x.Id,
+                        Login = x.Login,
+                        PasswordSalt = x.PasswordSalt,
+                        PasswordHash = x.PasswordHash,
+                        IsBanned = false,
+                        RoleId = x.RoleId
+                    }
+                ).SingleOrDefault();
 
             return result;
         }
 
         public static List<Actor> Read(List<long> idList)
         {
-            if( idList.Count > CommonConstants.MaxListSize )
+            if( idList.Count > Constants.MaxListSize )
             {
                 throw new Exception("Maximum list size is exceeded in ActorTools.Read(list) !");
             }
@@ -97,7 +112,7 @@
 
             if (newActor.Password != null)
             {
-                CalculatePasswordHash(newActor.Password, out String passwordSalt, out String passwordHash);
+                SHA1Hasher.CalculatePasswordHash(newActor.Password, out String passwordSalt, out String passwordHash);
                 dataItem.PasswordSalt = passwordSalt;
                 dataItem.PasswordHash = passwordHash;
 

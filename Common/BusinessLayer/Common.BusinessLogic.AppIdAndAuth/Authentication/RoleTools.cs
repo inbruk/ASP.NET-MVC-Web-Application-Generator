@@ -4,7 +4,7 @@
     using System.Linq;
     using System.Collections.Generic;
 
-    using Auxiliary.CryptoTools;
+    using Auxiliary.CommonOptions;
     using Auxiliary.PatternsAndClasses;
 
     using Common.DataTransferObjects.AppIdAndAuth.Authentication;
@@ -49,7 +49,7 @@
 
         public static List<Role> Read(List<long> idList)
         {
-            if (idList.Count > CommonConstants.MaxListSize)
+            if (idList.Count > Constants.MaxListSize)
             {
                 throw new Exception("Maximum list size is exceeded in RoleTools.Read(list) !");
             }
