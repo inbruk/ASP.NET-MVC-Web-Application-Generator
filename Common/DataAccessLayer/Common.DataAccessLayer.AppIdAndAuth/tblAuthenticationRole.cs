@@ -14,9 +14,18 @@ namespace Common.DataAccessLayer.AppIdAndAuth
     
     public partial class tblAuthenticationRole
     {
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
+        public tblAuthenticationRole()
+        {
+            this.tblAuthenticationActor = new HashSet<tblAuthenticationActor>();
+        }
+    
         public long Id { get; set; }
         public string EnumName { get; set; }
         public bool IsReadOnly { get; set; }
         public bool IsDeleted { get; set; }
+    
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<tblAuthenticationActor> tblAuthenticationActor { get; set; }
     }
 }

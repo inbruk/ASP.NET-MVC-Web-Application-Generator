@@ -18,7 +18,9 @@ namespace Common.DataAccessLayer.AppIdAndAuth
         public string Login { get; set; }
         public string PasswordSalt { get; set; }
         public string PasswordHash { get; set; }
-        public bool IsBanned { get; set; }
+        public bool IsDeleted { get; set; }
         public long RoleId { get; set; }
+    
+        public virtual tblAuthenticationRole tblAuthenticationRole { get; set; }
     }
 }

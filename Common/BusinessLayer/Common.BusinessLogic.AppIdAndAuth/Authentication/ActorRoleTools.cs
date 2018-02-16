@@ -24,22 +24,30 @@
             }
         }
 
-        public static ActorRole Read(long id)
+        public static ActorRole Read(long id, Boolean WithActive = true, Boolean WithDeleted = false)
         {
-            Actor act = ActorTools.Read(id);
+            Actor act = ActorTools.Read( id, WithActive, WithDeleted );
             Role rol = RoleTools.Read(act.RoleId);
             ActorRole result = new ActorRole(act, rol);
             return result;
         }
 
-        public static List<ActorRole> Read(List<long> actorsIdsList)
+        public static ActorRole Read(String login, Boolean WithActive = true, Boolean WithDeleted = false)
+        {
+            Actor act = ActorTools.Read(login, WithActive, WithDeleted);
+            Role rol = RoleTools.Read(act.RoleId);
+            ActorRole result = new ActorRole(act, rol);
+            return result;
+        }
+
+        public static List<ActorRole> Read(List<long> actorsIdsList, Boolean WithActive = true, Boolean WithDeleted = false)
         {
             if (actorsIdsList.Count > MaxListSize)
             {
                 throw new Exception("Maximum list size is exceeded in ActorTools.Read(list) !");
             }
 
-            List<Actor> actorsList = ActorTools.Read(actorsIdsList);
+            List<Actor> actorsList = ActorTools.Read(actorsIdsList, WithActive, WithDeleted);
             List<long>  rolesIdsList = actorsList.Select(x => x.RoleId).ToList();
             List<Role>  roles = RoleTools.Read(rolesIdsList);
 

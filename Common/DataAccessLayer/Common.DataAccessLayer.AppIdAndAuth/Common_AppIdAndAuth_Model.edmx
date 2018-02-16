@@ -13,7 +13,7 @@
           <Property Name="Login" Type="nvarchar" MaxLength="32" Nullable="false" />
           <Property Name="PasswordSalt" Type="nvarchar" MaxLength="64" Nullable="false" />
           <Property Name="PasswordHash" Type="nvarchar" MaxLength="64" Nullable="false" />
-          <Property Name="IsBanned" Type="bit" Nullable="false" />
+          <Property Name="IsDeleted" Type="bit" Nullable="false" />
           <Property Name="RoleId" Type="bigint" Nullable="false" />
         </EntityType>
         <EntityType Name="tblAuthenticationRole">
@@ -25,24 +25,49 @@
           <Property Name="IsReadOnly" Type="bit" Nullable="false" />
           <Property Name="IsDeleted" Type="bit" Nullable="false" />
         </EntityType>
+        <Association Name="FK__tblAuthen__RoleI__24927208">
+          <End Role="tblAuthenticationRole" Type="Self.tblAuthenticationRole" Multiplicity="1" />
+          <End Role="tblAuthenticationActor" Type="Self.tblAuthenticationActor" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tblAuthenticationRole">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="tblAuthenticationActor">
+              <PropertyRef Name="RoleId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <EntityContainer Name="Хранилище Common_AppIdAndAuth_ModelContainer">
           <EntitySet Name="tblAuthenticationActor" EntityType="Self.tblAuthenticationActor" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="tblAuthenticationRole" EntityType="Self.tblAuthenticationRole" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK__tblAuthen__RoleI__24927208" Association="Self.FK__tblAuthen__RoleI__24927208">
+            <End Role="tblAuthenticationRole" EntitySet="tblAuthenticationRole" />
+            <End Role="tblAuthenticationActor" EntitySet="tblAuthenticationActor" />
+          </AssociationSet>
         </EntityContainer>
       </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="Common_AppIdAndAuth_Model" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityContainer Name="Common_AppIdAndAuth_Entities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="tblAuthenticationActor" EntityType="Common_AppIdAndAuth_Model.tblAuthenticationActor" />
+          <EntitySet Name="tblAuthenticationRole" EntityType="Common_AppIdAndAuth_Model.tblAuthenticationRole" />
+          <AssociationSet Name="FK__tblAuthen__RoleI__24927208" Association="Common_AppIdAndAuth_Model.FK__tblAuthen__RoleI__24927208">
+            <End Role="tblAuthenticationRole" EntitySet="tblAuthenticationRole" />
+            <End Role="tblAuthenticationActor" EntitySet="tblAuthenticationActor" />
+          </AssociationSet>
+        </EntityContainer>
         <EntityType Name="tblAuthenticationActor">
           <Key>
             <PropertyRef Name="Id" />
           </Key>
           <Property Name="Id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="Login" Type="String" MaxLength="32" FixedLength="false" Unicode="true" Nullable="false" />
-          <Property Name="PasswordSalt" Type="String" MaxLength="64" FixedLength="false" Unicode="true" Nullable="false" />
-          <Property Name="PasswordHash" Type="String" MaxLength="64" FixedLength="false" Unicode="true" Nullable="false" />
-          <Property Name="IsBanned" Type="Boolean" Nullable="false" />
+          <Property Name="Login" Type="String" Nullable="false" MaxLength="32" FixedLength="false" Unicode="true" />
+          <Property Name="PasswordSalt" Type="String" Nullable="false" MaxLength="64" FixedLength="false" Unicode="true" />
+          <Property Name="PasswordHash" Type="String" Nullable="false" MaxLength="64" FixedLength="false" Unicode="true" />
+          <Property Name="IsDeleted" Type="Boolean" Nullable="false" />
           <Property Name="RoleId" Type="Int64" Nullable="false" />
+          <NavigationProperty Name="tblAuthenticationRole" Relationship="Common_AppIdAndAuth_Model.FK__tblAuthen__RoleI__24927208" FromRole="tblAuthenticationActor" ToRole="tblAuthenticationRole" />
         </EntityType>
         <EntityType Name="tblAuthenticationRole">
           <Key>
@@ -52,11 +77,20 @@
           <Property Name="EnumName" Type="String" MaxLength="16" FixedLength="false" Unicode="true" />
           <Property Name="IsReadOnly" Type="Boolean" Nullable="false" />
           <Property Name="IsDeleted" Type="Boolean" Nullable="false" />
+          <NavigationProperty Name="tblAuthenticationActor" Relationship="Common_AppIdAndAuth_Model.FK__tblAuthen__RoleI__24927208" FromRole="tblAuthenticationRole" ToRole="tblAuthenticationActor" />
         </EntityType>
-        <EntityContainer Name="Common_AppIdAndAuth_Entities" annotation:LazyLoadingEnabled="true">
-          <EntitySet Name="tblAuthenticationActor" EntityType="Self.tblAuthenticationActor" />
-          <EntitySet Name="tblAuthenticationRole" EntityType="Self.tblAuthenticationRole" />
-        </EntityContainer>
+        <Association Name="FK__tblAuthen__RoleI__24927208">
+          <End Type="Common_AppIdAndAuth_Model.tblAuthenticationRole" Role="tblAuthenticationRole" Multiplicity="1" />
+          <End Type="Common_AppIdAndAuth_Model.tblAuthenticationActor" Role="tblAuthenticationActor" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tblAuthenticationRole">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="tblAuthenticationActor">
+              <PropertyRef Name="RoleId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -67,21 +101,21 @@
             <EntityTypeMapping TypeName="Common_AppIdAndAuth_Model.tblAuthenticationActor">
               <MappingFragment StoreEntitySet="tblAuthenticationActor">
                 <ScalarProperty Name="RoleId" ColumnName="RoleId" />
-                <ScalarProperty Name="Id" ColumnName="Id" />
-                <ScalarProperty Name="Login" ColumnName="Login" />
-                <ScalarProperty Name="PasswordSalt" ColumnName="PasswordSalt" />
+                <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
                 <ScalarProperty Name="PasswordHash" ColumnName="PasswordHash" />
-                <ScalarProperty Name="IsBanned" ColumnName="IsBanned" />
+                <ScalarProperty Name="PasswordSalt" ColumnName="PasswordSalt" />
+                <ScalarProperty Name="Login" ColumnName="Login" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="tblAuthenticationRole">
             <EntityTypeMapping TypeName="Common_AppIdAndAuth_Model.tblAuthenticationRole">
               <MappingFragment StoreEntitySet="tblAuthenticationRole">
-                <ScalarProperty Name="Id" ColumnName="Id" />
-                <ScalarProperty Name="EnumName" ColumnName="EnumName" />
-                <ScalarProperty Name="IsReadOnly" ColumnName="IsReadOnly" />
                 <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+                <ScalarProperty Name="IsReadOnly" ColumnName="IsReadOnly" />
+                <ScalarProperty Name="EnumName" ColumnName="EnumName" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

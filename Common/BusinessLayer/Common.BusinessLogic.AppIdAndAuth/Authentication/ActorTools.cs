@@ -24,7 +24,7 @@
                 Login = login,
                 PasswordSalt = passwordHash,
                 PasswordHash = passwordHash,
-                IsBanned = false,
+                IsDeleted = false,
                 RoleId = roleId
             };
             CurrDBContext.Get().tblAuthenticationActor.Add(currItem);
@@ -34,11 +34,12 @@
             return id;
         }
 
-        public static Actor Read(long id)
+        public static Actor Read(long id, Boolean WithActive = true, Boolean WithDeleted = false)
         {
             Actor result = 
-                CurrDBContext.Get().tblAuthenticationActor.Where( x => x.Id==id ).Select
-                (
+                CurrDBContext.Get().tblAuthenticationActor.Where( x => x.Id==id && 
+                    ( x.IsDeleted==(!WithActive) || x.IsDeleted == WithDeleted )
+                ).Select (
                     x => 
                     new Actor()
                     {
@@ -46,7 +47,7 @@
                         Login = x.Login,
                         PasswordSalt = x.PasswordSalt,
                         PasswordHash = x.PasswordHash,
-                        IsBanned = false,
+                        IsDeleted = false,
                         RoleId = x.RoleId                        
                     }
                 ).SingleOrDefault();
@@ -54,11 +55,12 @@
             return result;
         }
 
-        public static Actor Read(String login)
+        public static Actor Read(String login, Boolean WithActive = true, Boolean WithDeleted = false)
         {
             Actor result =
-                CurrDBContext.Get().tblAuthenticationActor.Where(x => x.Login==login ).Select
-                (
+                CurrDBContext.Get().tblAuthenticationActor.Where(x => x.Login==login &&
+                    (x.IsDeleted == (!WithActive) || x.IsDeleted == WithDeleted)
+                ).Select (
                     x =>
                     new Actor()
                     {
@@ -66,7 +68,7 @@
                         Login = x.Login,
                         PasswordSalt = x.PasswordSalt,
                         PasswordHash = x.PasswordHash,
-                        IsBanned = false,
+                        IsDeleted = false,
                         RoleId = x.RoleId
                     }
                 ).SingleOrDefault();
@@ -74,7 +76,7 @@
             return result;
         }
 
-        public static List<Actor> Read(List<long> idList)
+        public static List<Actor> Read(List<long> idList, Boolean WithActive = true, Boolean WithDeleted = false)
         {
             if( idList.Count > Constants.MaxListSize )
             {
@@ -82,8 +84,9 @@
             }
 
             List<Actor> result =
-                CurrDBContext.Get().tblAuthenticationActor.Where( x => idList.Contains(x.Id) ).Select
-                (
+                CurrDBContext.Get().tblAuthenticationActor.Where( x => idList.Contains(x.Id) &&
+                    (x.IsDeleted == (!WithActive) || x.IsDeleted == WithDeleted)
+                ).Select (
                     x =>
                     new Actor()
                     {
@@ -91,7 +94,7 @@
                         Login = x.Login,
                         PasswordSalt = x.PasswordSalt,
                         PasswordHash = x.PasswordHash,
-                        IsBanned = false,
+                        IsDeleted = false,
                         RoleId = x.RoleId
                     }
                 ).ToList();
@@ -107,7 +110,7 @@
             DAL.tblAuthenticationActor dataItem = CurrDBContext.Get().tblAuthenticationActor.Where(x => x.Id == newActor.Id).Single();
 
             dataItem.Login = newActor.Login;
-            dataItem.IsBanned = newActor.IsBanned;
+            dataItem.IsDeleted = newActor.IsDeleted;
             dataItem.RoleId = newActor.RoleId;
 
             if (newActor.Password != null)
@@ -123,17 +126,17 @@
             CurrDBContext.Get().SaveChanges();
         }
 
-        public static void Ban(long id)
+        public static void Delete(long id)
         {
             Actor curr = Read(id);
-            curr.IsBanned = true;
+            curr.IsDeleted = true;
             Update(curr);
         }
 
-        public static void UnBan(long id)
+        public static void UnDelete(long id)
         {
             Actor curr = Read(id);
-            curr.IsBanned = false;
+            curr.IsDeleted = false;
             Update(curr);
         }
     }
