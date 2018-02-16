@@ -6,15 +6,17 @@
     public class TokenItem
     {
         public long Id { get; }
+        public long ApplicationId { get; }
         public DateTime StartDateTime { get; }
         public Guid  ActionToken { get; }
         public long  ActionTokenTime { get { return Constants.ActionTokenTime; } }
         public Guid  RefreshToken { get; }
         public long  RefreshTokenTime { get { return Constants.RefreshTokenTime; } }
 
-        public TokenItem(long id, Guid actToken, Guid refToken)
+        public TokenItem(long id, long appId, Guid actToken, Guid refToken)
         {
             Id = id;
+            ApplicationId = appId;
             ActionToken = actToken;
             RefreshToken = refToken;
             StartDateTime = DateTime.Now;
