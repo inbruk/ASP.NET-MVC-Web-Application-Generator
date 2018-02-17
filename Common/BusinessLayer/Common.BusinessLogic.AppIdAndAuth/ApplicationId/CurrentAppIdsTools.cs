@@ -11,8 +11,8 @@
 
     public static class CurrentAppIdsTools
     {
-        private static ProjectApplicationSubsystem _currentProjAppSub;
-        public static ProjectApplicationSubsystem CurrentProjAppSub { get { return _currentProjAppSub; } }
+        private static ProjectApplicationSubsystemMethod _currentProjAppSub;
+        public static ProjectApplicationSubsystemMethod CurrentProjAppSub { get { return _currentProjAppSub; } }
 
         private static Layer _currentLayer;
         public static Layer CurrentLayer { get { return _currentLayer; } }

@@ -9,41 +9,43 @@
 
     public static class ProjAppSubTools
     {
-        private static Dictionary<long, ProjectApplicationSubsystem> _temp; 
+        private static Dictionary<long, ProjectApplicationSubsystemMethod> _temp; 
                 
-        private static ProjectApplicationSubsystem _getBySubsystemId(enSubsystem id) // only for internal use
+        private static ProjectApplicationSubsystemMethod _getBySubsystemId(enSubsystem id) // only for internal use
         {
             Subsystem sub = SubsystemTools.GetOneById(id);
             Application app = ApplicationTools.GetOneById((enApplication)sub.ApplicationId);
             Project prj = ProjectTools.GetOneById((enProject)app.ProjectId);
 
-            ProjectApplicationSubsystem result = new ProjectApplicationSubsystem(prj, app, sub);
+            ProjectApplicationSubsystemMethod result = null; // new ProjectApplicationSubsystemMethod(prj, app, sub, 0);
+
+            // !!!!!!!!!!!!!!!!!!!!!!!!!!!1!!!!!!!!!!!!!!!!!!!!
 
             return result;
         }
 
         static ProjAppSubTools() // fill temprary values 
         {
-            _temp = new Dictionary<long, ProjectApplicationSubsystem>();
+            _temp = new Dictionary<long, ProjectApplicationSubsystemMethod>();
 
             List<Subsystem> list = SubsystemTools.GetAll();
             foreach(Subsystem currItem in list)
             {
                 long subsId = currItem.Id;
-                ProjectApplicationSubsystem value = _getBySubsystemId( (enSubsystem)subsId );
+                ProjectApplicationSubsystemMethod value = _getBySubsystemId( (enSubsystem)subsId );
                 _temp.Add(subsId, value);
             }
         }
 
-        public static ProjectApplicationSubsystem GetBySubsystemId(enSubsystem id)
+        public static ProjectApplicationSubsystemMethod GetBySubsystemId(enSubsystem id)
         {
-            ProjectApplicationSubsystem result = _temp[(long)id];
+            ProjectApplicationSubsystemMethod result = _temp[(long)id];
             return result;
         }
 
-        public static List<ProjectApplicationSubsystem> GetAll()
+        public static List<ProjectApplicationSubsystemMethod> GetAll()
         {
-            List<ProjectApplicationSubsystem> result = _temp.Values.ToList();
+            List<ProjectApplicationSubsystemMethod> result = _temp.Values.ToList();
             return result;
         }
     }

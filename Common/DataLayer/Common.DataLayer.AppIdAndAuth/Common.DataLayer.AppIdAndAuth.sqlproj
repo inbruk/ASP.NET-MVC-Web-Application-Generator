@@ -60,13 +60,25 @@
     <Folder Include="Manual" />
     <Folder Include="Manual\Tables" />
     <Folder Include="Manual\Indexes" />
+    <Folder Include="Manual\PostDeploymentScripts" />
   </ItemGroup>
   <ItemGroup>
     <Build Include="Manual\Tables\tblAuthenticationActor.sql" />
     <Build Include="Manual\Tables\tblAuthenticationRole.sql" />
     <Build Include="Manual\Indexes\idxAuthenticationActor.sql" />
+    <Build Include="Manual\Tables\tblApplicationIdProject.sql" />
+    <Build Include="Manual\Tables\tblApplicationIdLayer.sql" />
+    <Build Include="Manual\Tables\tblApplicationIdApplication.sql" />
+    <Build Include="Manual\Tables\tblApplicationIdSubsystem.sql" />
+    <Build Include="Manual\Tables\tblApplicationIdMethod.sql" />
+    <Build Include="Manual\Indexes\idxApplicationIdApplication.sql" />
+    <Build Include="Manual\Indexes\idxApplicationIdSubsystem.sql" />
+    <Build Include="Manual\Indexes\idxApplicationIdMethod.sql" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Common.DataLayer.AppIdAndAuth.publish.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <PostDeploy Include="Manual\PostDeploymentScripts\PostDeploymentScriptsRoot.sql" />
   </ItemGroup>
 </Project>
