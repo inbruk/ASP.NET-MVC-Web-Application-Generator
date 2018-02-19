@@ -25,6 +25,11 @@ namespace Common.DataAccessLayer.AppIdAndAuth
             throw new UnintentionalCodeFirstException();
         }
     
+        public virtual DbSet<tblApplicationIdApplication> tblApplicationIdApplication { get; set; }
+        public virtual DbSet<tblApplicationIdLayer> tblApplicationIdLayer { get; set; }
+        public virtual DbSet<tblApplicationIdMethod> tblApplicationIdMethod { get; set; }
+        public virtual DbSet<tblApplicationIdProject> tblApplicationIdProject { get; set; }
+        public virtual DbSet<tblApplicationIdSubsystem> tblApplicationIdSubsystem { get; set; }
         public virtual DbSet<tblAuthenticationActor> tblAuthenticationActor { get; set; }
         public virtual DbSet<tblAuthenticationRole> tblAuthenticationRole { get; set; }
     }

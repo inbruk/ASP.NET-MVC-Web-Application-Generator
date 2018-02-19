@@ -9,3 +9,11 @@
                SELECT * FROM [$(TableName)]					
 --------------------------------------------------------------------------------------
 */
+
+:r .\fill_tblApplicationIdProject.sql
+:r .\fill_tblApplicationIdLayer.sql
+:r .\fill_tblApplicationIdApplication.sql
+:r .\fill_tblApplicationIdSubsystem.sql
+:r .\fill_tblApplicationIdMethod.sql
+
+

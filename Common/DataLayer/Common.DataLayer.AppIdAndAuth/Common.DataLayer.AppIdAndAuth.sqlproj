@@ -77,6 +77,11 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Common.DataLayer.AppIdAndAuth.publish.xml" />
+    <None Include="Manual\PostDeploymentScripts\fill_tblApplicationIdProject.sql" />
+    <None Include="Manual\PostDeploymentScripts\fill_tblApplicationIdLayer.sql" />
+    <None Include="Manual\PostDeploymentScripts\fill_tblApplicationIdApplication.sql" />
+    <None Include="Manual\PostDeploymentScripts\fill_tblApplicationIdSubsystem.sql" />
+    <None Include="Manual\PostDeploymentScripts\fill_tblApplicationIdMethod.sql" />
   </ItemGroup>
   <ItemGroup>
     <PostDeploy Include="Manual\PostDeploymentScripts\PostDeploymentScriptsRoot.sql" />

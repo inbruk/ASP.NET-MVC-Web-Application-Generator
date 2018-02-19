@@ -5,6 +5,45 @@
     <!-- SSDL content -->
     <edmx:StorageModels>
     <Schema Namespace="Хранилище Common_AppIdAndAuth_Model" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="tblApplicationIdApplication">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="EnumName" Type="nvarchar" MaxLength="64" Nullable="false" />
+          <Property Name="ProjectId" Type="bigint" Nullable="false" />
+        </EntityType>
+        <EntityType Name="tblApplicationIdLayer">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="EnumName" Type="nvarchar" MaxLength="64" Nullable="false" />
+        </EntityType>
+        <EntityType Name="tblApplicationIdMethod">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="EnumName" Type="nvarchar" MaxLength="64" Nullable="false" />
+          <Property Name="IsSpecial" Type="bit" Nullable="false" />
+          <Property Name="SubsystemId" Type="bigint" Nullable="false" />
+        </EntityType>
+        <EntityType Name="tblApplicationIdProject">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="EnumName" Type="nvarchar" MaxLength="64" Nullable="false" />
+        </EntityType>
+        <EntityType Name="tblApplicationIdSubsystem">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="EnumName" Type="nvarchar" MaxLength="64" Nullable="false" />
+          <Property Name="ApplicationId" Type="bigint" Nullable="false" />
+        </EntityType>
         <EntityType Name="tblAuthenticationActor">
           <Key>
             <PropertyRef Name="Id" />
@@ -25,6 +64,42 @@
           <Property Name="IsReadOnly" Type="bit" Nullable="false" />
           <Property Name="IsDeleted" Type="bit" Nullable="false" />
         </EntityType>
+        <Association Name="FK__tblApplic__Appli__403A8C7D">
+          <End Role="tblApplicationIdApplication" Type="Self.tblApplicationIdApplication" Multiplicity="1" />
+          <End Role="tblApplicationIdSubsystem" Type="Self.tblApplicationIdSubsystem" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tblApplicationIdApplication">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="tblApplicationIdSubsystem">
+              <PropertyRef Name="ApplicationId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__tblApplic__Proje__3E52440B">
+          <End Role="tblApplicationIdProject" Type="Self.tblApplicationIdProject" Multiplicity="1" />
+          <End Role="tblApplicationIdApplication" Type="Self.tblApplicationIdApplication" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tblApplicationIdProject">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="tblApplicationIdApplication">
+              <PropertyRef Name="ProjectId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__tblApplic__Subsy__3F466844">
+          <End Role="tblApplicationIdSubsystem" Type="Self.tblApplicationIdSubsystem" Multiplicity="1" />
+          <End Role="tblApplicationIdMethod" Type="Self.tblApplicationIdMethod" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tblApplicationIdSubsystem">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="tblApplicationIdMethod">
+              <PropertyRef Name="SubsystemId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <Association Name="FK__tblAuthen__RoleI__24927208">
           <End Role="tblAuthenticationRole" Type="Self.tblAuthenticationRole" Multiplicity="1" />
           <End Role="tblAuthenticationActor" Type="Self.tblAuthenticationActor" Multiplicity="*" />
@@ -38,8 +113,25 @@
           </ReferentialConstraint>
         </Association>
         <EntityContainer Name="Хранилище Common_AppIdAndAuth_ModelContainer">
+          <EntitySet Name="tblApplicationIdApplication" EntityType="Self.tblApplicationIdApplication" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tblApplicationIdLayer" EntityType="Self.tblApplicationIdLayer" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tblApplicationIdMethod" EntityType="Self.tblApplicationIdMethod" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tblApplicationIdProject" EntityType="Self.tblApplicationIdProject" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tblApplicationIdSubsystem" EntityType="Self.tblApplicationIdSubsystem" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="tblAuthenticationActor" EntityType="Self.tblAuthenticationActor" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="tblAuthenticationRole" EntityType="Self.tblAuthenticationRole" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK__tblApplic__Appli__403A8C7D" Association="Self.FK__tblApplic__Appli__403A8C7D">
+            <End Role="tblApplicationIdApplication" EntitySet="tblApplicationIdApplication" />
+            <End Role="tblApplicationIdSubsystem" EntitySet="tblApplicationIdSubsystem" />
+          </AssociationSet>
+          <AssociationSet Name="FK__tblApplic__Proje__3E52440B" Association="Self.FK__tblApplic__Proje__3E52440B">
+            <End Role="tblApplicationIdProject" EntitySet="tblApplicationIdProject" />
+            <End Role="tblApplicationIdApplication" EntitySet="tblApplicationIdApplication" />
+          </AssociationSet>
+          <AssociationSet Name="FK__tblApplic__Subsy__3F466844" Association="Self.FK__tblApplic__Subsy__3F466844">
+            <End Role="tblApplicationIdSubsystem" EntitySet="tblApplicationIdSubsystem" />
+            <End Role="tblApplicationIdMethod" EntitySet="tblApplicationIdMethod" />
+          </AssociationSet>
           <AssociationSet Name="FK__tblAuthen__RoleI__24927208" Association="Self.FK__tblAuthen__RoleI__24927208">
             <End Role="tblAuthenticationRole" EntitySet="tblAuthenticationRole" />
             <End Role="tblAuthenticationActor" EntitySet="tblAuthenticationActor" />
@@ -50,13 +142,75 @@
     <edmx:ConceptualModels>
       <Schema Namespace="Common_AppIdAndAuth_Model" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
         <EntityContainer Name="Common_AppIdAndAuth_Entities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="tblApplicationIdApplication" EntityType="Common_AppIdAndAuth_Model.tblApplicationIdApplication" />
+          <EntitySet Name="tblApplicationIdLayer" EntityType="Common_AppIdAndAuth_Model.tblApplicationIdLayer" />
+          <EntitySet Name="tblApplicationIdMethod" EntityType="Common_AppIdAndAuth_Model.tblApplicationIdMethod" />
+          <EntitySet Name="tblApplicationIdProject" EntityType="Common_AppIdAndAuth_Model.tblApplicationIdProject" />
+          <EntitySet Name="tblApplicationIdSubsystem" EntityType="Common_AppIdAndAuth_Model.tblApplicationIdSubsystem" />
           <EntitySet Name="tblAuthenticationActor" EntityType="Common_AppIdAndAuth_Model.tblAuthenticationActor" />
           <EntitySet Name="tblAuthenticationRole" EntityType="Common_AppIdAndAuth_Model.tblAuthenticationRole" />
+          <AssociationSet Name="FK__tblApplic__Appli__403A8C7D" Association="Common_AppIdAndAuth_Model.FK__tblApplic__Appli__403A8C7D">
+            <End Role="tblApplicationIdApplication" EntitySet="tblApplicationIdApplication" />
+            <End Role="tblApplicationIdSubsystem" EntitySet="tblApplicationIdSubsystem" />
+          </AssociationSet>
+          <AssociationSet Name="FK__tblApplic__Proje__3E52440B" Association="Common_AppIdAndAuth_Model.FK__tblApplic__Proje__3E52440B">
+            <End Role="tblApplicationIdProject" EntitySet="tblApplicationIdProject" />
+            <End Role="tblApplicationIdApplication" EntitySet="tblApplicationIdApplication" />
+          </AssociationSet>
+          <AssociationSet Name="FK__tblApplic__Subsy__3F466844" Association="Common_AppIdAndAuth_Model.FK__tblApplic__Subsy__3F466844">
+            <End Role="tblApplicationIdSubsystem" EntitySet="tblApplicationIdSubsystem" />
+            <End Role="tblApplicationIdMethod" EntitySet="tblApplicationIdMethod" />
+          </AssociationSet>
           <AssociationSet Name="FK__tblAuthen__RoleI__24927208" Association="Common_AppIdAndAuth_Model.FK__tblAuthen__RoleI__24927208">
             <End Role="tblAuthenticationRole" EntitySet="tblAuthenticationRole" />
             <End Role="tblAuthenticationActor" EntitySet="tblAuthenticationActor" />
           </AssociationSet>
         </EntityContainer>
+        <EntityType Name="tblApplicationIdApplication">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="EnumName" Type="String" Nullable="false" MaxLength="64" FixedLength="false" Unicode="true" />
+          <Property Name="ProjectId" Type="Int64" Nullable="false" />
+          <NavigationProperty Name="tblApplicationIdSubsystem" Relationship="Common_AppIdAndAuth_Model.FK__tblApplic__Appli__403A8C7D" FromRole="tblApplicationIdApplication" ToRole="tblApplicationIdSubsystem" />
+          <NavigationProperty Name="tblApplicationIdProject" Relationship="Common_AppIdAndAuth_Model.FK__tblApplic__Proje__3E52440B" FromRole="tblApplicationIdApplication" ToRole="tblApplicationIdProject" />
+        </EntityType>
+        <EntityType Name="tblApplicationIdLayer">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="EnumName" Type="String" Nullable="false" MaxLength="64" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="tblApplicationIdMethod">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="EnumName" Type="String" Nullable="false" MaxLength="64" FixedLength="false" Unicode="true" />
+          <Property Name="IsSpecial" Type="Boolean" Nullable="false" />
+          <Property Name="SubsystemId" Type="Int64" Nullable="false" />
+          <NavigationProperty Name="tblApplicationIdSubsystem" Relationship="Common_AppIdAndAuth_Model.FK__tblApplic__Subsy__3F466844" FromRole="tblApplicationIdMethod" ToRole="tblApplicationIdSubsystem" />
+        </EntityType>
+        <EntityType Name="tblApplicationIdProject">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="EnumName" Type="String" Nullable="false" MaxLength="64" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="tblApplicationIdApplication" Relationship="Common_AppIdAndAuth_Model.FK__tblApplic__Proje__3E52440B" FromRole="tblApplicationIdProject" ToRole="tblApplicationIdApplication" />
+        </EntityType>
+        <EntityType Name="tblApplicationIdSubsystem">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="EnumName" Type="String" Nullable="false" MaxLength="64" FixedLength="false" Unicode="true" />
+          <Property Name="ApplicationId" Type="Int64" Nullable="false" />
+          <NavigationProperty Name="tblApplicationIdApplication" Relationship="Common_AppIdAndAuth_Model.FK__tblApplic__Appli__403A8C7D" FromRole="tblApplicationIdSubsystem" ToRole="tblApplicationIdApplication" />
+          <NavigationProperty Name="tblApplicationIdMethod" Relationship="Common_AppIdAndAuth_Model.FK__tblApplic__Subsy__3F466844" FromRole="tblApplicationIdSubsystem" ToRole="tblApplicationIdMethod" />
+        </EntityType>
         <EntityType Name="tblAuthenticationActor">
           <Key>
             <PropertyRef Name="Id" />
@@ -79,6 +233,42 @@
           <Property Name="IsDeleted" Type="Boolean" Nullable="false" />
           <NavigationProperty Name="tblAuthenticationActor" Relationship="Common_AppIdAndAuth_Model.FK__tblAuthen__RoleI__24927208" FromRole="tblAuthenticationRole" ToRole="tblAuthenticationActor" />
         </EntityType>
+        <Association Name="FK__tblApplic__Appli__403A8C7D">
+          <End Type="Common_AppIdAndAuth_Model.tblApplicationIdApplication" Role="tblApplicationIdApplication" Multiplicity="1" />
+          <End Type="Common_AppIdAndAuth_Model.tblApplicationIdSubsystem" Role="tblApplicationIdSubsystem" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tblApplicationIdApplication">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="tblApplicationIdSubsystem">
+              <PropertyRef Name="ApplicationId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__tblApplic__Proje__3E52440B">
+          <End Type="Common_AppIdAndAuth_Model.tblApplicationIdProject" Role="tblApplicationIdProject" Multiplicity="1" />
+          <End Type="Common_AppIdAndAuth_Model.tblApplicationIdApplication" Role="tblApplicationIdApplication" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tblApplicationIdProject">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="tblApplicationIdApplication">
+              <PropertyRef Name="ProjectId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__tblApplic__Subsy__3F466844">
+          <End Type="Common_AppIdAndAuth_Model.tblApplicationIdSubsystem" Role="tblApplicationIdSubsystem" Multiplicity="1" />
+          <End Type="Common_AppIdAndAuth_Model.tblApplicationIdMethod" Role="tblApplicationIdMethod" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tblApplicationIdSubsystem">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="tblApplicationIdMethod">
+              <PropertyRef Name="SubsystemId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <Association Name="FK__tblAuthen__RoleI__24927208">
           <End Type="Common_AppIdAndAuth_Model.tblAuthenticationRole" Role="tblAuthenticationRole" Multiplicity="1" />
           <End Type="Common_AppIdAndAuth_Model.tblAuthenticationActor" Role="tblAuthenticationActor" Multiplicity="*" />
@@ -97,6 +287,50 @@
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
         <EntityContainerMapping StorageEntityContainer="Хранилище Common_AppIdAndAuth_ModelContainer" CdmEntityContainer="Common_AppIdAndAuth_Entities">
+          <EntitySetMapping Name="tblApplicationIdApplication">
+            <EntityTypeMapping TypeName="Common_AppIdAndAuth_Model.tblApplicationIdApplication">
+              <MappingFragment StoreEntitySet="tblApplicationIdApplication">
+                <ScalarProperty Name="ProjectId" ColumnName="ProjectId" />
+                <ScalarProperty Name="EnumName" ColumnName="EnumName" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tblApplicationIdLayer">
+            <EntityTypeMapping TypeName="Common_AppIdAndAuth_Model.tblApplicationIdLayer">
+              <MappingFragment StoreEntitySet="tblApplicationIdLayer">
+                <ScalarProperty Name="EnumName" ColumnName="EnumName" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tblApplicationIdMethod">
+            <EntityTypeMapping TypeName="Common_AppIdAndAuth_Model.tblApplicationIdMethod">
+              <MappingFragment StoreEntitySet="tblApplicationIdMethod">
+                <ScalarProperty Name="SubsystemId" ColumnName="SubsystemId" />
+                <ScalarProperty Name="IsSpecial" ColumnName="IsSpecial" />
+                <ScalarProperty Name="EnumName" ColumnName="EnumName" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tblApplicationIdProject">
+            <EntityTypeMapping TypeName="Common_AppIdAndAuth_Model.tblApplicationIdProject">
+              <MappingFragment StoreEntitySet="tblApplicationIdProject">
+                <ScalarProperty Name="EnumName" ColumnName="EnumName" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tblApplicationIdSubsystem">
+            <EntityTypeMapping TypeName="Common_AppIdAndAuth_Model.tblApplicationIdSubsystem">
+              <MappingFragment StoreEntitySet="tblApplicationIdSubsystem">
+                <ScalarProperty Name="ApplicationId" ColumnName="ApplicationId" />
+                <ScalarProperty Name="EnumName" ColumnName="EnumName" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
           <EntitySetMapping Name="tblAuthenticationActor">
             <EntityTypeMapping TypeName="Common_AppIdAndAuth_Model.tblAuthenticationActor">
               <MappingFragment StoreEntitySet="tblAuthenticationActor">
