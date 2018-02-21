@@ -44,8 +44,10 @@
     <Compile Include="ApplicationId\BaseItem.cs" />
     <Compile Include="ApplicationId\Layer.cs" />
     <Compile Include="ApplicationId\Method.cs" />
+    <Compile Include="ApplicationId\ProjAppSubLay.cs" />
     <Compile Include="ApplicationId\Project.cs" />
-    <Compile Include="ApplicationId\ProjectApplicationSubsystemMethod.cs" />
+    <Compile Include="ApplicationId\ProjAppSubLayMeth.cs" />
+    <Compile Include="ApplicationId\ProjectApplicationSubsystem.cs" />
     <Compile Include="ApplicationId\Subsystem.cs" />
     <Compile Include="Authentication\Actor.cs" />
     <Compile Include="Authentication\ActorRole.cs" />

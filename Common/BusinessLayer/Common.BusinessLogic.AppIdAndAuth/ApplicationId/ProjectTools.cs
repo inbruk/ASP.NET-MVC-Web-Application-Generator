@@ -1,4 +1,4 @@
-﻿namespace Common.WebServiceClient.ApplicationId
+﻿namespace Common.BusinessLogic.AppIdAndAuth.ApplicationId
 {
     using System;
     using System.Collections.Generic;
@@ -7,42 +7,26 @@
     using Common.DataTransferObjects.AppIdAndAuth.ApplicationId;
     using DAL = Common.DataAccessLayer.AppIdAndAuth;
 
-    public enum enProject
+    public class ProjectTools 
+        : BaseTools<DAL.Common_AppIdAndAuth_Entities, Project> // для GetOneById() и GetAll()
     {
-        Common = 1,
-        WebAppExample = 2
-    }
+        protected override String _localStorageName { get { return "ProjectTools_localInMemoryStorage"; } } // для StorageInMemAndPerApp<DT>
 
-    public static class ProjectTools
-    {
-        private static Project ConvertEnum( enProject en )
+        private ProjectTools()
         {
-            Project result = new Project( (long)(en), en.ToString() );
-            return result;
-        }
-
-        private static Dictionary<long, Project> Projects { get; }
-        
-        static ProjectTools()
-        {
-            Projects = new Dictionary<long, Project>();
-            foreach (enProject currEn in Enum.GetValues(typeof(enProject)) )
+            if ( StorageData == null ) // если в хранилище нет данных, то грузим их
             {
-                Project currItem = ConvertEnum(currEn);
-                Projects.Add( currItem.Id, currItem );
+                StorageData = CurrDBContext.Get().tblApplicationIdProject.ToDictionary
+                (
+                    x => x.Id, 
+                    x => new Project(x.Id, x.EnumName)                    
+                );
             }
         }
 
-        public static Project GetOneById(enProject id)
-        {
-            Project result = Projects[(long)id];
-            return result;
-        }
-        
-        public static List<Project> GetAll()
-        {
-            var list = Projects.Values.ToList();
-            return list;
-        }
+#region Singleton
+        private static readonly Lazy<ProjectTools> instanceHolder = new Lazy<ProjectTools>(() => new ProjectTools());
+        public static ProjectTools Instance { get { return instanceHolder.Value; } }
+#endregion Singleton
     }
 }

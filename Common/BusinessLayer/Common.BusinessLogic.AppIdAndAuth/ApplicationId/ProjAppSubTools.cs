@@ -1,4 +1,4 @@
-﻿namespace Common.WebServiceClient.ApplicationId
+﻿namespace Common.BusinessLogic.AppIdAndAuth.ApplicationId
 {
     using System;
     using System.Collections.Generic;
@@ -7,46 +7,50 @@
     using Common.DataTransferObjects.AppIdAndAuth.ApplicationId;
     using DAL = Common.DataAccessLayer.AppIdAndAuth;
 
-    public static class ProjAppSubTools
+    public class ProjAppSubTools
+        : BaseTools<DAL.Common_AppIdAndAuth_Entities, ProjectApplicationSubsystem> // для GetOneById() и GetAll()
     {
-        private static Dictionary<long, ProjectApplicationSubsystemMethod> _temp; 
-                
-        private static ProjectApplicationSubsystemMethod _getBySubsystemId(enSubsystem id) // only for internal use
+        protected override String _localStorageName { get { return "ProjAppSubTools_localInMemoryStorage"; } } // для StorageInMemAndPerApp<DT>
+
+        private ProjectTools projectTools;
+        private ApplicationTools applicationTools;
+        private SubsystemTools subsystemTools;
+        
+        private ProjectApplicationSubsystem _getBySubsystemId(long id) // only for internal use
         {
-            Subsystem sub = SubsystemTools.GetOneById(id);
-            Application app = ApplicationTools.GetOneById((enApplication)sub.ApplicationId);
-            Project prj = ProjectTools.GetOneById((enProject)app.ProjectId);
+            Subsystem sub = subsystemTools.GetOneById(id);
+            Application app = applicationTools.GetOneById(sub.ApplicationId);
+            Project prj = projectTools.GetOneById(app.ProjectId);
 
-            ProjectApplicationSubsystemMethod result = null; // new ProjectApplicationSubsystemMethod(prj, app, sub, 0);
-
-            // !!!!!!!!!!!!!!!!!!!!!!!!!!!1!!!!!!!!!!!!!!!!!!!!
+            ProjectApplicationSubsystem result =  new ProjectApplicationSubsystem(prj, app, sub);
 
             return result;
         }
 
-        static ProjAppSubTools() // fill temprary values 
+        private ProjAppSubTools()  
         {
-            _temp = new Dictionary<long, ProjectApplicationSubsystemMethod>();
+            projectTools     = ProjectTools.Instance;
+            applicationTools = ApplicationTools.Instance;
+            subsystemTools   = SubsystemTools.Instance;
 
-            List<Subsystem> list = SubsystemTools.GetAll();
-            foreach(Subsystem currItem in list)
+            if (StorageData == null)
             {
-                long subsId = currItem.Id;
-                ProjectApplicationSubsystemMethod value = _getBySubsystemId( (enSubsystem)subsId );
-                _temp.Add(subsId, value);
+                List<Subsystem> list = subsystemTools.GetAll();
+                Dictionary<long, ProjectApplicationSubsystem> dataToStore = new Dictionary<long, ProjectApplicationSubsystem>();
+                foreach (Subsystem currItem in list)
+                {
+                    long subsId = currItem.Id;
+                    ProjectApplicationSubsystem value = _getBySubsystemId(subsId);
+                    dataToStore.Add(subsId, value);
+                }
+
+                StorageData = dataToStore;
             }
         }
 
-        public static ProjectApplicationSubsystemMethod GetBySubsystemId(enSubsystem id)
-        {
-            ProjectApplicationSubsystemMethod result = _temp[(long)id];
-            return result;
-        }
-
-        public static List<ProjectApplicationSubsystemMethod> GetAll()
-        {
-            List<ProjectApplicationSubsystemMethod> result = _temp.Values.ToList();
-            return result;
-        }
+#region Singleton
+        private static readonly Lazy<ProjAppSubTools> instanceHolder = new Lazy<ProjAppSubTools>(() => new ProjAppSubTools());
+        public static ProjAppSubTools Instance { get { return instanceHolder.Value; } }
+#endregion Singleton
     }
 }

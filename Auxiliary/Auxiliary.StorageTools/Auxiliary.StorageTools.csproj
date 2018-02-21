@@ -41,6 +41,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="StorageInMemAndPerApp.cs" />
+    <Compile Include="StorageInMemAndPerUser.cs" />
     <Compile Include="StoragePerApplication.cs" />
     <Compile Include="StoragePerUser.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

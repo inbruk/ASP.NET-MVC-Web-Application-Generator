@@ -1,4 +1,4 @@
-﻿namespace Common.WebServiceClient.ApplicationId
+﻿namespace Common.BusinessLogic.AppIdAndAuth.ApplicationId
 {
     using System;
     using System.Collections.Generic;
@@ -7,50 +7,26 @@
     using Common.DataTransferObjects.AppIdAndAuth.ApplicationId;
     using DAL = Common.DataAccessLayer.AppIdAndAuth;
 
-    public enum enLayer
+    public class LayerTools
+        : BaseTools<DAL.Common_AppIdAndAuth_Entities, Layer> // для GetOneById() и GetAll()
     {
-        DataLayer = 1,
-        DataAccessLayer = 2,
-        DataTransferObjects = 3,
-        BusinessLayer = 4,
-        WebServiceLayer = 5,
-        WebServiceClient = 6,
-        WebUserInterface_Model = 7,
-        WebUserInterface_Controller = 8,
-        WebUserInterface_View = 9
-    };
+        protected override String _localStorageName { get { return "LayerTools_localInMemoryStorage"; } } // для StorageInMemAndPerApp<DT>
 
-    public static class LayerTools 
-    {
-        private static Layer ConvertEnum(enLayer en)
+        private LayerTools()
         {
-            Layer result = new Layer((long)(en), en.ToString());
-            return result;
-        }
-
-        private static Dictionary<long, Layer> Layers { get; }
-
-        static LayerTools()
-        {
-            Layers = new Dictionary<long, Layer>();
-            foreach (enLayer currEn in Enum.GetValues(typeof(enLayer)))
+            if (StorageData == null) // если в хранилище нет данных, то грузим их
             {
-                Layer currItem = ConvertEnum(currEn);
-                Layers.Add(currItem.Id, currItem);
+                StorageData = CurrDBContext.Get().tblApplicationIdLayer.ToDictionary
+                (
+                    x => x.Id,
+                    x => new Layer(x.Id, x.EnumName)
+                );
             }
         }
 
-        public static Layer GetOneById(enLayer id)
-        {
-            Layer result = Layers[(long)id];
-            return result;
-        }
-
-        public static List<Layer> GetAll()
-        {
-            var list = Layers.Values.ToList();
-            return list;
-        }
+#region Singleton
+        private static readonly Lazy<LayerTools> instanceHolder = new Lazy<LayerTools>(() => new LayerTools());
+        public static LayerTools Instance { get { return instanceHolder.Value; } }
+#endregion Singleton
     }
 }
-

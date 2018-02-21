@@ -6,9 +6,9 @@
     {
         public long SubsystemId { get; }
         public Boolean IsSpecial { get; }
-
         public Boolean IsOrdinary { get { return !IsSpecial; } }
 
+        public Method() { ; }
         public Method( long id, String enumName, long subsystemId, Boolean isSpec ) 
             : base(id, enumName)
         {

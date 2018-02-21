@@ -48,8 +48,10 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ApplicationId\ApplicationTools.cs" />
+    <Compile Include="ApplicationId\BaseTools.cs" />
     <Compile Include="ApplicationId\CurrentAppIdsTools.cs" />
     <Compile Include="ApplicationId\LayerTools.cs" />
+    <Compile Include="ApplicationId\MethodTools.cs" />
     <Compile Include="ApplicationId\ProjAppSubTools.cs" />
     <Compile Include="ApplicationId\ProjectTools.cs" />
     <Compile Include="ApplicationId\SubsystemTools.cs" />

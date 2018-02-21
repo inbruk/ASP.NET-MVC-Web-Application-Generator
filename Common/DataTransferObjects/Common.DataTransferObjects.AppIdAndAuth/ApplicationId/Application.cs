@@ -6,6 +6,7 @@
     {
         public long ProjectId { get; }
 
+        public Application() { ; }
         public Application(long id, String enumName, long projectId) 
             : base(id, enumName)
         {

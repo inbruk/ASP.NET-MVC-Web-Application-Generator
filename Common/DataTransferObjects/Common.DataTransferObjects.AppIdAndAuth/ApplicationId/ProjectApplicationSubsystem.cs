@@ -1,26 +1,23 @@
 ﻿namespace Common.DataTransferObjects.AppIdAndAuth.ApplicationId
 {
-    using System;
-
-    public class ProjectApplicationSubsystemMethod
+    public class ProjectApplicationSubsystem
     {
         public Project Project { get; }
         public Application Application { get; }
         public Subsystem Subsystem { get; }
-        public Method Method { get; }
 
-        public ProjectApplicationSubsystemMethod
+        public ProjectApplicationSubsystem() { ; }
+
+        public ProjectApplicationSubsystem
         (
             Project proj,
             Application app,
-            Subsystem sub,
-            Method met
+            Subsystem sub
         )
         {
             Project = proj;
             Application = app;
             Subsystem = sub;
-            Method = met;
         }
     }
 }

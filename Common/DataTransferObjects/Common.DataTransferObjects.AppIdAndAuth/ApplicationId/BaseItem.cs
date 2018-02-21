@@ -7,6 +7,7 @@
         public long Id { get; }
         public String EnumName { get; }
 
+        public BaseItem() { ; }
         public BaseItem
         (
             long id,
