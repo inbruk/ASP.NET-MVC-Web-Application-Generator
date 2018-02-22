@@ -1,4 +1,4 @@
-﻿namespace AspNetMvcWebApplicationGenerator.Generators.DataLayer.Helpers
+﻿namespace AuxiliaryTools.FileGeneration
 {
     using System;
     using System.IO;
@@ -7,7 +7,7 @@
     using System.Text;
     using System.Threading.Tasks;
 
-    internal class StringFileWriter
+    public class StringFileWriter
     {
         private StreamWriter writer = null;
 

@@ -58,6 +58,8 @@
     <Compile Include="DataLayer\DataConfiguration.cs" />
     <Compile Include="DataLayer\TranslatedString.cs" />
     <Compile Include="DataLayer\TranslatedStringType.cs" />
+    <Compile Include="DataTransferObjects\DataTransferObjectsConfiguration.cs" />
+    <Compile Include="DataTransferObjects\EnumFromTables.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="WebUserInterfaceLayer\WUIConfiguration.cs" />
     <Compile Include="WebUserInterfaceLayer\WebPage.cs" />

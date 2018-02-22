@@ -45,6 +45,7 @@
     <Compile Include="Configuration\Data\CreateComplexEntities.cs" />
     <Compile Include="Configuration\Data\CreateDirectories.cs" />
     <Compile Include="Configuration\Data\CreateEntities.cs" />
+    <Compile Include="Configuration\DataTransferObjects\CreateEnumsFromTables.cs" />
     <Compile Include="Configuration\Data\CreateLanguages.cs" />
     <Compile Include="Configuration\WebUserInterface\CreateWebPage.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

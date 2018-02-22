@@ -1,5 +1,6 @@
 ﻿namespace AspNetMvcWebApplicationGenerator.Generators.DataLayer
 {
+    using AuxiliaryTools.FileGeneration;
     using AspNetMvcWebApplicationGenerator.Configuration.DataLayer;
     using AspNetMvcWebApplicationGenerator.Generators.DataLayer.Helpers;
 

@@ -88,7 +88,7 @@ BEGIN
         ( 10, 'RoleTools', 3 );
 END
 
-IF NOT EXISTS( SELECT * FROM tblApplicationIdSubsystem WHERE Id=9 )
+IF NOT EXISTS( SELECT * FROM tblApplicationIdSubsystem WHERE Id=11 )
 BEGIN
     INSERT INTO tblApplicationIdSubsystem 
         ( Id, EnumName, ApplicationId )
@@ -96,7 +96,7 @@ BEGIN
         ( 11, 'ActorRoleTools', 3 );
 END
 
-IF NOT EXISTS( SELECT * FROM tblApplicationIdSubsystem WHERE Id=10 )
+IF NOT EXISTS( SELECT * FROM tblApplicationIdSubsystem WHERE Id=12 )
 BEGIN
     INSERT INTO tblApplicationIdSubsystem 
         ( Id, EnumName, ApplicationId )
@@ -104,7 +104,7 @@ BEGIN
         ( 12, 'TokenTools', 3 );
 END
 
-IF NOT EXISTS( SELECT * FROM tblApplicationIdSubsystem WHERE Id=11 )
+IF NOT EXISTS( SELECT * FROM tblApplicationIdSubsystem WHERE Id=13 )
 BEGIN
     INSERT INTO tblApplicationIdSubsystem 
         ( Id, EnumName, ApplicationId )
@@ -112,7 +112,7 @@ BEGIN
         ( 13, 'Authorization', 4 );
 END
 
-IF NOT EXISTS( SELECT * FROM tblApplicationIdSubsystem WHERE Id=12 )
+IF NOT EXISTS( SELECT * FROM tblApplicationIdSubsystem WHERE Id=14 )
 BEGIN
     INSERT INTO tblApplicationIdSubsystem 
         ( Id, EnumName, ApplicationId )
@@ -120,7 +120,7 @@ BEGIN
         ( 14, 'SystemInfo', 5 );
 END
 
-IF NOT EXISTS( SELECT * FROM tblApplicationIdSubsystem WHERE Id=13 )
+IF NOT EXISTS( SELECT * FROM tblApplicationIdSubsystem WHERE Id=15 )
 BEGIN
     INSERT INTO tblApplicationIdSubsystem 
         ( Id, EnumName, ApplicationId )
@@ -128,7 +128,7 @@ BEGIN
         ( 15, 'StartShutdownHalt', 5 );
 END
 
-IF NOT EXISTS( SELECT * FROM tblApplicationIdSubsystem WHERE Id=14 )
+IF NOT EXISTS( SELECT * FROM tblApplicationIdSubsystem WHERE Id=16 )
 BEGIN
     INSERT INTO tblApplicationIdSubsystem 
         ( Id, EnumName, ApplicationId )
@@ -136,7 +136,7 @@ BEGIN
         ( 16, 'Logging', 5 );
 END
 
-IF NOT EXISTS( SELECT * FROM tblApplicationIdSubsystem WHERE Id=15 )
+IF NOT EXISTS( SELECT * FROM tblApplicationIdSubsystem WHERE Id=17 )
 BEGIN
     INSERT INTO tblApplicationIdSubsystem 
         ( Id, EnumName, ApplicationId )
@@ -144,7 +144,7 @@ BEGIN
         ( 17, 'Engine', 6 );
 END
 
-IF NOT EXISTS( SELECT * FROM tblApplicationIdSubsystem WHERE Id=16 )
+IF NOT EXISTS( SELECT * FROM tblApplicationIdSubsystem WHERE Id=18 )
 BEGIN
     INSERT INTO tblApplicationIdSubsystem 
         ( Id, EnumName, ApplicationId )
@@ -152,7 +152,7 @@ BEGIN
         ( 18, 'WebApplication', 7 );
 END
 
-IF NOT EXISTS( SELECT * FROM tblApplicationIdSubsystem WHERE Id=17 )
+IF NOT EXISTS( SELECT * FROM tblApplicationIdSubsystem WHERE Id=19 )
 BEGIN
     INSERT INTO tblApplicationIdSubsystem 
         ( Id, EnumName, ApplicationId )

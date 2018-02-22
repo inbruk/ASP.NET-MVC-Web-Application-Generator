@@ -79,6 +79,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Auxiliary.CommonOptions", "
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Auxiliary.PatternsAndClasses", "Auxiliary\Auxiliary.PatternsAndClasses\Auxiliary.PatternsAndClasses.csproj", "{E270B853-3089-4128-965D-9662FA25BDBA}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AuxiliaryTools.FileGeneration", "Auxiliary\AuxiliaryTools.FileGeneration\AuxiliaryTools.FileGeneration.csproj", "{FAEB2978-09A8-464A-914C-8A777F728B59}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -167,6 +169,10 @@ Global
 		{E270B853-3089-4128-965D-9662FA25BDBA}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E270B853-3089-4128-965D-9662FA25BDBA}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{E270B853-3089-4128-965D-9662FA25BDBA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FAEB2978-09A8-464A-914C-8A777F728B59}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FAEB2978-09A8-464A-914C-8A777F728B59}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FAEB2978-09A8-464A-914C-8A777F728B59}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FAEB2978-09A8-464A-914C-8A777F728B59}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -203,6 +209,7 @@ Global
 		{3D8A97D2-4091-48BB-B0E0-60C7ABC1AD9B} = {52DD6612-7D34-4ABE-82F7-9F1744D534ED}
 		{5E9B54CC-54DC-4097-A7F9-36F737D5E462} = {5B134A8C-6C92-402C-A59C-E5163EDBB240}
 		{E270B853-3089-4128-965D-9662FA25BDBA} = {5B134A8C-6C92-402C-A59C-E5163EDBB240}
+		{FAEB2978-09A8-464A-914C-8A777F728B59} = {5B134A8C-6C92-402C-A59C-E5163EDBB240}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {30210D04-884E-4B79-ADAA-6998C63EB5FC}

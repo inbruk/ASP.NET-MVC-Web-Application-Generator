@@ -1,9 +1,9 @@
-﻿namespace AspNetMvcWebApplicationGenerator.Generators.DataLayer.Helpers
+﻿namespace AuxiliaryTools.FileGeneration
 {
     using System;
     using System.Collections.Generic;
 
-    internal static class OutputFileExtentions
+    public static class OutputFileExtentions
     {
         private static Dictionary<int, String> values = new Dictionary<int, string>()
         {

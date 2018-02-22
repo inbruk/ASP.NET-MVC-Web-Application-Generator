@@ -21,7 +21,7 @@ BEGIN
     INSERT INTO tblApplicationIdMethod 
         ( Id, EnumName, IsSpecial, SubsystemId )
     VALUES
-        ( 2, 'Create', 0, 0 );
+        ( 2, 'CreateOne', 0, 0 );
 END
 
 IF NOT EXISTS( SELECT * FROM tblApplicationIdMethod WHERE Id=3 )
@@ -29,7 +29,7 @@ BEGIN
     INSERT INTO tblApplicationIdMethod 
         ( Id, EnumName, IsSpecial, SubsystemId )
     VALUES
-        ( 3, 'Read', 0, 0 );
+        ( 3, 'ReadOne', 0, 0 );
 END
 
 IF NOT EXISTS( SELECT * FROM tblApplicationIdMethod WHERE Id=4 )
@@ -37,7 +37,7 @@ BEGIN
     INSERT INTO tblApplicationIdMethod 
         ( Id, EnumName, IsSpecial, SubsystemId )
     VALUES
-        ( 4, 'Update', 0, 0 );
+        ( 4, 'UpdateOne', 0, 0 );
 END
 
 IF NOT EXISTS( SELECT * FROM tblApplicationIdMethod WHERE Id=5 )
@@ -45,7 +45,7 @@ BEGIN
     INSERT INTO tblApplicationIdMethod 
         ( Id, EnumName, IsSpecial, SubsystemId )
     VALUES
-        ( 5, 'Delete', 0, 0 );
+        ( 5, 'DeleteOne', 0, 0 );
 END
 
 IF NOT EXISTS( SELECT * FROM tblApplicationIdMethod WHERE Id=6 )
@@ -53,7 +53,7 @@ BEGIN
     INSERT INTO tblApplicationIdMethod 
         ( Id, EnumName, IsSpecial, SubsystemId )
     VALUES
-        ( 6, 'CreateLink', 0, 0 );
+        ( 6, 'CreateMultiple', 0, 0 );
 END
 
 IF NOT EXISTS( SELECT * FROM tblApplicationIdMethod WHERE Id=7 )
@@ -61,7 +61,7 @@ BEGIN
     INSERT INTO tblApplicationIdMethod 
         ( Id, EnumName, IsSpecial, SubsystemId )
     VALUES
-        ( 7, 'ReadLink', 0, 0 );
+        ( 7, 'ReadMultiple', 0, 0 );
 END
 
 IF NOT EXISTS( SELECT * FROM tblApplicationIdMethod WHERE Id=8 )
@@ -69,7 +69,7 @@ BEGIN
     INSERT INTO tblApplicationIdMethod 
         ( Id, EnumName, IsSpecial, SubsystemId )
     VALUES
-        ( 8, 'UpdateLink', 0, 0 );
+        ( 8, 'UpdateMultiple', 0, 0 );
 END
 
 IF NOT EXISTS( SELECT * FROM tblApplicationIdMethod WHERE Id=9 )
@@ -77,7 +77,39 @@ BEGIN
     INSERT INTO tblApplicationIdMethod 
         ( Id, EnumName, IsSpecial, SubsystemId )
     VALUES
-        ( 9, 'DeleteLink', 0, 0 );
+        ( 9, 'DeleteMultiple', 0, 0 );
+END
+
+IF NOT EXISTS( SELECT * FROM tblApplicationIdMethod WHERE Id=10 )
+BEGIN
+    INSERT INTO tblApplicationIdMethod 
+        ( Id, EnumName, IsSpecial, SubsystemId )
+    VALUES
+        ( 10, 'CreateLink', 0, 0 );
+END
+
+IF NOT EXISTS( SELECT * FROM tblApplicationIdMethod WHERE Id=11 )
+BEGIN
+    INSERT INTO tblApplicationIdMethod 
+        ( Id, EnumName, IsSpecial, SubsystemId )
+    VALUES
+        ( 11, 'ReadLink', 0, 0 );
+END
+
+IF NOT EXISTS( SELECT * FROM tblApplicationIdMethod WHERE Id=12 )
+BEGIN
+    INSERT INTO tblApplicationIdMethod 
+        ( Id, EnumName, IsSpecial, SubsystemId )
+    VALUES
+        ( 12, 'UpdateLink', 0, 0 );
+END
+
+IF NOT EXISTS( SELECT * FROM tblApplicationIdMethod WHERE Id=13 )
+BEGIN
+    INSERT INTO tblApplicationIdMethod 
+        ( Id, EnumName, IsSpecial, SubsystemId )
+    VALUES
+        ( 13, 'DeleteLink', 0, 0 );
 END
 
 SET IDENTITY_INSERT tblApplicationIdMethod OFF;

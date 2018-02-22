@@ -4,11 +4,11 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{BA81F411-AC4A-411C-8A38-1C506457FC0C}</ProjectGuid>
+    <ProjectGuid>{FAEB2978-09A8-464A-914C-8A777F728B59}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>AspNetMvcWebApplicationGenerator.Generators</RootNamespace>
-    <AssemblyName>AspNetMvcWebApplicationGenerator.Generators</AssemblyName>
+    <RootNamespace>AuxiliaryTools.FileGeneration</RootNamespace>
+    <AssemblyName>AuxiliaryTools.FileGeneration</AssemblyName>
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
@@ -40,35 +40,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="DataLayer\ComplexEntities.cs" />
-    <Compile Include="DataLayer\Directories.cs" />
-    <Compile Include="DataLayer\Entities.cs" />
-    <Compile Include="DataLayer\Helpers\Indexes4TableCreator.cs" />
-    <Compile Include="DataLayer\Helpers\RecursiveFromEntityFieldsExtractor.cs" />
-    <Compile Include="DataLayer\Helpers\TableCreator.cs" />
-    <Compile Include="DataLayer\Languages.cs" />
-    <Compile Include="DataTransferObjects\EnumsFromTables.cs" />
-    <Compile Include="GeneratorsIgnitor.cs" />
+    <Compile Include="OutputFileExtentions.cs" />
+    <Compile Include="OutputFileType.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-  </ItemGroup>
-  <ItemGroup>
-    <Folder Include="BusinessLogicLayer\" />
-    <Folder Include="PresentationLayer\" />
-    <Folder Include="ServicesLayer\" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\AspNetMvcWebApplicationGenerator.Configuration\AspNetMvcWebApplicationGenerator.Configuration.csproj">
-      <Project>{ee55fb45-abd2-4d68-936b-abccdbd23312}</Project>
-      <Name>AspNetMvcWebApplicationGenerator.Configuration</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\AspNetMvcWebApplicationGenerator.Instantiate\AspNetMvcWebApplicationGenerator.Instance.csproj">
-      <Project>{75659108-d832-402d-933d-cf13b905b0ab}</Project>
-      <Name>AspNetMvcWebApplicationGenerator.Instance</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\Auxiliary\AuxiliaryTools.FileGeneration\AuxiliaryTools.FileGeneration.csproj">
-      <Project>{faeb2978-09a8-464a-914c-8a777f728b59}</Project>
-      <Name>AuxiliaryTools.FileGeneration</Name>
-    </ProjectReference>
+    <Compile Include="StringFileWriter.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
