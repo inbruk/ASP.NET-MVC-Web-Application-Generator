@@ -2,6 +2,7 @@
 {
     using AspNetMvcWebApplicationGenerator.Instantiate.Configuration;
     using AspNetMvcWebApplicationGenerator.Generators.DataLayer;
+    using AspNetMvcWebApplicationGenerator.Generators.DataTransferObjects;
 
     public static class GeneratorsIgnitor
     {
@@ -22,6 +23,10 @@
 
             ComplexEntities cEnt = new ComplexEntities();
             cEnt.Generate();
+
+            // Data Transfer Objects --------------------------------
+            EnumsFromTables tab = new EnumsFromTables();
+            tab.Generate();
         }
     }
 }

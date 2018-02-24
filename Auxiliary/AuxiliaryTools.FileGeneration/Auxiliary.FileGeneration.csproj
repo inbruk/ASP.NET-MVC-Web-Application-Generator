@@ -7,8 +7,8 @@
     <ProjectGuid>{FAEB2978-09A8-464A-914C-8A777F728B59}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>AuxiliaryTools.FileGeneration</RootNamespace>
-    <AssemblyName>AuxiliaryTools.FileGeneration</AssemblyName>
+    <RootNamespace>Auxiliary.FileGeneration</RootNamespace>
+    <AssemblyName>Auxiliary.FileGeneration</AssemblyName>
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>

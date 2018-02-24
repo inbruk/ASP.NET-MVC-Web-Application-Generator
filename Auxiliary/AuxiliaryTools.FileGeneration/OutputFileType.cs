@@ -1,4 +1,4 @@
-﻿namespace AuxiliaryTools.FileGeneration
+﻿namespace Auxiliary.FileGeneration
 {
     public enum OutputFileType
     {

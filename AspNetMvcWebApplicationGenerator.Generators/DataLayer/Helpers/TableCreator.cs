@@ -3,7 +3,7 @@
     using System;
     using System.Collections.Generic;
 
-    using AuxiliaryTools.FileGeneration;
+    using Auxiliary.FileGeneration;
     using AspNetMvcWebApplicationGenerator.Configuration.DataLayer;
 
     internal class TableCreator

@@ -30,7 +30,14 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -47,6 +54,7 @@
     <Compile Include="DataLayer\Helpers\RecursiveFromEntityFieldsExtractor.cs" />
     <Compile Include="DataLayer\Helpers\TableCreator.cs" />
     <Compile Include="DataLayer\Languages.cs" />
+    <Compile Include="DataTransferObjects\EnumItem.cs" />
     <Compile Include="DataTransferObjects\EnumsFromTables.cs" />
     <Compile Include="GeneratorsIgnitor.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -65,10 +73,22 @@
       <Project>{75659108-d832-402d-933d-cf13b905b0ab}</Project>
       <Name>AspNetMvcWebApplicationGenerator.Instance</Name>
     </ProjectReference>
-    <ProjectReference Include="..\Auxiliary\AuxiliaryTools.FileGeneration\AuxiliaryTools.FileGeneration.csproj">
-      <Project>{faeb2978-09a8-464a-914c-8a777f728b59}</Project>
-      <Name>AuxiliaryTools.FileGeneration</Name>
+    <ProjectReference Include="..\Auxiliary\Auxiliary.PatternsAndClasses\Auxiliary.PatternsAndClasses.csproj">
+      <Project>{e270b853-3089-4128-965d-9662fa25bdba}</Project>
+      <Name>Auxiliary.PatternsAndClasses</Name>
     </ProjectReference>
+    <ProjectReference Include="..\Auxiliary\AuxiliaryTools.FileGeneration\Auxiliary.FileGeneration.csproj">
+      <Project>{faeb2978-09a8-464a-914c-8a777f728b59}</Project>
+      <Name>Auxiliary.FileGeneration</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Common\DataAccessLayer\Common.DataAccessLayer.AppIdAndAuth\Common.DataAccessLayer.AppIdAndAuth.csproj">
+      <Project>{072856eb-3ce6-4f92-8696-ec9eec7fd462}</Project>
+      <Name>Common.DataAccessLayer.AppIdAndAuth</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+    <None Include="packages.config" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

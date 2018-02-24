@@ -1,4 +1,4 @@
-﻿namespace AuxiliaryTools.FileGeneration
+﻿namespace Auxiliary.FileGeneration
 {
     using System;
     using System.Collections.Generic;

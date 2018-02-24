@@ -2,7 +2,7 @@
 {
     using System;
 
-    using AuxiliaryTools.FileGeneration;
+    using Auxiliary.FileGeneration;
     using AspNetMvcWebApplicationGenerator.Configuration.DataLayer;
     using AspNetMvcWebApplicationGenerator.Generators.DataLayer.Helpers;
 

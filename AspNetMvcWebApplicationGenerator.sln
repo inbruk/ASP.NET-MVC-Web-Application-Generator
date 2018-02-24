@@ -79,7 +79,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Auxiliary.CommonOptions", "
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Auxiliary.PatternsAndClasses", "Auxiliary\Auxiliary.PatternsAndClasses\Auxiliary.PatternsAndClasses.csproj", "{E270B853-3089-4128-965D-9662FA25BDBA}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AuxiliaryTools.FileGeneration", "Auxiliary\AuxiliaryTools.FileGeneration\AuxiliaryTools.FileGeneration.csproj", "{FAEB2978-09A8-464A-914C-8A777F728B59}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Auxiliary.FileGeneration", "Auxiliary\AuxiliaryTools.FileGeneration\Auxiliary.FileGeneration.csproj", "{FAEB2978-09A8-464A-914C-8A777F728B59}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
