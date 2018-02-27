@@ -11,7 +11,7 @@
         where CTX : class, new()
         where DTO : class, new()
     {
-        protected LazyInitWithoutParams<CTX> CurrDBContext;
+        protected LazyInitWithoutParams<CTX> CurrDBContext = new LazyInitWithoutParams<CTX>();
 
         public DTO GetOneById(long id)
         {

@@ -5,7 +5,7 @@ BEGIN
     INSERT INTO tblApplicationIdLayer 
         ( Id, EnumName )
     VALUES
-        ( 0, 'Any possible layer' );
+        ( 0, 'AnyLayer' );
 END
 
 IF NOT EXISTS( SELECT * FROM tblApplicationIdLayer WHERE Id=1 )

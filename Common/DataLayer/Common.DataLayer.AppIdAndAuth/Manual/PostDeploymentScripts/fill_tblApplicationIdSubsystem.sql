@@ -5,7 +5,7 @@ BEGIN
     INSERT INTO tblApplicationIdSubsystem 
         ( Id, EnumName, ApplicationId )
     VALUES
-        ( 0, 'Any possible subsystem', 0 );
+        ( 0, 'AnySubsystem', 0 );
 END
 
 IF NOT EXISTS( SELECT * FROM tblApplicationIdSubsystem WHERE Id=1 )
@@ -77,7 +77,7 @@ BEGIN
     INSERT INTO tblApplicationIdSubsystem 
         ( Id, EnumName, ApplicationId )
     VALUES
-        ( 9, 'ActorTools', 3 );
+        ( 9, 'ActorTools', 2 );
 END
 
 IF NOT EXISTS( SELECT * FROM tblApplicationIdSubsystem WHERE Id=9 )
@@ -85,7 +85,7 @@ BEGIN
     INSERT INTO tblApplicationIdSubsystem 
         ( Id, EnumName, ApplicationId )
     VALUES
-        ( 10, 'RoleTools', 3 );
+        ( 10, 'RoleTools', 2 );
 END
 
 IF NOT EXISTS( SELECT * FROM tblApplicationIdSubsystem WHERE Id=11 )
@@ -93,7 +93,7 @@ BEGIN
     INSERT INTO tblApplicationIdSubsystem 
         ( Id, EnumName, ApplicationId )
     VALUES
-        ( 11, 'ActorRoleTools', 3 );
+        ( 11, 'ActorRoleTools', 2 );
 END
 
 IF NOT EXISTS( SELECT * FROM tblApplicationIdSubsystem WHERE Id=12 )
@@ -101,7 +101,7 @@ BEGIN
     INSERT INTO tblApplicationIdSubsystem 
         ( Id, EnumName, ApplicationId )
     VALUES
-        ( 12, 'TokenTools', 3 );
+        ( 12, 'TokenTools', 2 );
 END
 
 IF NOT EXISTS( SELECT * FROM tblApplicationIdSubsystem WHERE Id=13 )
@@ -109,7 +109,7 @@ BEGIN
     INSERT INTO tblApplicationIdSubsystem 
         ( Id, EnumName, ApplicationId )
     VALUES
-        ( 13, 'Authorization', 4 );
+        ( 13, 'Authorization', 2 );
 END
 
 IF NOT EXISTS( SELECT * FROM tblApplicationIdSubsystem WHERE Id=14 )

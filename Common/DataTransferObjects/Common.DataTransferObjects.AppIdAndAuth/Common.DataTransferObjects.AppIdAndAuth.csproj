@@ -42,6 +42,11 @@
   <ItemGroup>
     <Compile Include="ApplicationId\Application.cs" />
     <Compile Include="ApplicationId\BaseItem.cs" />
+    <Compile Include="ApplicationId\Enums\enApplication.cs" />
+    <Compile Include="ApplicationId\Enums\enLayer.cs" />
+    <Compile Include="ApplicationId\Enums\enMethod.cs" />
+    <Compile Include="ApplicationId\Enums\enProject.cs" />
+    <Compile Include="ApplicationId\Enums\enSubsystem.cs" />
     <Compile Include="ApplicationId\Layer.cs" />
     <Compile Include="ApplicationId\Method.cs" />
     <Compile Include="ApplicationId\ProjAppSubLay.cs" />

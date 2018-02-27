@@ -5,7 +5,7 @@ BEGIN
     INSERT INTO tblApplicationIdMethod 
         ( Id, EnumName, IsSpecial, SubsystemId )
     VALUES
-        ( 0, 'Any possible subsystem', 0, 0 );
+        ( 0, 'AnyMethod', 0, 0 );
 END
 
 IF NOT EXISTS( SELECT * FROM tblApplicationIdMethod WHERE Id=1 )

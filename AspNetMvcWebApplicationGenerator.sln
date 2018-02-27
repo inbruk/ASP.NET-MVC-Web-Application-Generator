@@ -28,6 +28,9 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "WebUserInterfaceLayer", "WebUserInterfaceLayer", "{32A533C1-BB78-42A2-98B9-9FC14CF742A6}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Common", "Common", "{7D66375A-0CE2-4DB3-BE6F-87E951E2F3BF}"
+	ProjectSection(SolutionItems) = preProject
+		Auxiliary\Auxiliary.StorageTools\StorageInMemAndPerUser.cs = Auxiliary\Auxiliary.StorageTools\StorageInMemAndPerUser.cs
+	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "DataLayer", "DataLayer", "{AD227A27-240A-4C5C-95DB-052FEA2E7405}"
 EndProject

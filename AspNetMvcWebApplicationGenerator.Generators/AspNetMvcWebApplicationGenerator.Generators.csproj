@@ -77,13 +77,25 @@
       <Project>{e270b853-3089-4128-965d-9662fa25bdba}</Project>
       <Name>Auxiliary.PatternsAndClasses</Name>
     </ProjectReference>
+    <ProjectReference Include="..\Auxiliary\Auxiliary.StorageTools\Auxiliary.StorageTools.csproj">
+      <Project>{9ee72b73-4e45-4460-b7bf-7607c20b95f8}</Project>
+      <Name>Auxiliary.StorageTools</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Auxiliary\AuxiliaryTools.FileGeneration\Auxiliary.FileGeneration.csproj">
       <Project>{faeb2978-09a8-464a-914c-8a777f728b59}</Project>
       <Name>Auxiliary.FileGeneration</Name>
     </ProjectReference>
+    <ProjectReference Include="..\Common\BusinessLayer\Common.BusinessLogic.AppIdAndAuth\Common.BusinessLogic.AppIdAndAuth.csproj">
+      <Project>{3d8a97d2-4091-48bb-b0e0-60c7abc1ad9b}</Project>
+      <Name>Common.BusinessLogic.AppIdAndAuth</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Common\DataAccessLayer\Common.DataAccessLayer.AppIdAndAuth\Common.DataAccessLayer.AppIdAndAuth.csproj">
       <Project>{072856eb-3ce6-4f92-8696-ec9eec7fd462}</Project>
       <Name>Common.DataAccessLayer.AppIdAndAuth</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Common\DataTransferObjects\Common.DataTransferObjects.AppIdAndAuth\Common.DataTransferObjects.AppIdAndAuth.csproj">
+      <Project>{6d330a84-f74d-4d7a-b52a-c101815a3533}</Project>
+      <Name>Common.DataTransferObjects.AppIdAndAuth</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>

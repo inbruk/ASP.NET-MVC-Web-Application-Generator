@@ -5,7 +5,7 @@ BEGIN
     INSERT INTO tblApplicationIdApplication 
         ( Id, EnumName, ProjectId )
     VALUES
-        ( 0, 'Any possible layer', 0 );
+        ( 0, 'AnyApplication', 0 );
 END
 
 IF NOT EXISTS( SELECT * FROM tblApplicationIdApplication WHERE Id=1 )
@@ -20,24 +20,8 @@ IF NOT EXISTS( SELECT * FROM tblApplicationIdApplication WHERE Id=2 )
 BEGIN
     INSERT INTO tblApplicationIdApplication 
         ( Id, EnumName, ProjectId )
-    VALUES
-        ( 2, 'ApplicationId', 1 );
-END
-
-IF NOT EXISTS( SELECT * FROM tblApplicationIdApplication WHERE Id=3 )
-BEGIN
-    INSERT INTO tblApplicationIdApplication 
-        ( Id, EnumName, ProjectId )
-    VALUES
-        ( 3, 'Authentication', 1 );
-END
-
-IF NOT EXISTS( SELECT * FROM tblApplicationIdApplication WHERE Id=4 )
-BEGIN
-    INSERT INTO tblApplicationIdApplication 
-        ( Id, EnumName, ProjectId )
-    VALUES
-        ( 4, 'Authorization', 1 );
+    VALUES                                                                      
+        ( 2, 'AppIdAndAuth', 1 );
 END
 
 IF NOT EXISTS( SELECT * FROM tblApplicationIdApplication WHERE Id=5 )

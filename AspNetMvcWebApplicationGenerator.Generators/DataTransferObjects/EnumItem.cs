@@ -10,18 +10,15 @@ namespace AspNetMvcWebApplicationGenerator.Generators.DataTransferObjects
 
     public class EnumItem
     {
-        private String _name;
-        private long _number;
-
-        public EnumItem(String nam, long num)
-        {
-            _name = nam;
-            _number = num;
-        }
+        public long   Id { set; get; }
+        public String EnumName { set; get; }
 
         public String GetEnumRow()
         {
-            String result = "    " + _name.ToString() + "=" + _number.ToString() + ", ";
+            String usefulEName = EnumName.Replace(" ", "");
+            usefulEName = usefulEName.Replace(" ", "");
+
+            String result = "        " + usefulEName.ToString() + "=" + Id.ToString() + ", ";
             return result;
         }
     }

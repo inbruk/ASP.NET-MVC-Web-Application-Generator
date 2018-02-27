@@ -16,7 +16,8 @@
         {
             if ( StorageData == null ) // если в хранилище нет данных, то грузим их
             {
-                StorageData = CurrDBContext.Get().tblApplicationIdProject.ToDictionary
+                var entities = CurrDBContext.Get();
+                StorageData = entities.tblApplicationIdProject.ToDictionary
                 (
                     x => x.Id, 
                     x => new Project(x.Id, x.EnumName)                    

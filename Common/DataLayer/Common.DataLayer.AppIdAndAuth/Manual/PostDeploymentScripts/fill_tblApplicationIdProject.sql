@@ -5,7 +5,7 @@ BEGIN
     INSERT INTO tblApplicationIdProject 
         ( Id, EnumName )
     VALUES
-        ( 0, 'Any possible project' );
+        ( 0, 'AnyProject' );
 END
 
 IF NOT EXISTS( SELECT * FROM tblApplicationIdProject WHERE Id=1 )
