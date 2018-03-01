@@ -32,5 +32,8 @@ namespace Common.DataAccessLayer.AppIdAndAuth
         public virtual DbSet<tblApplicationIdSubsystem> tblApplicationIdSubsystem { get; set; }
         public virtual DbSet<tblAuthenticationActor> tblAuthenticationActor { get; set; }
         public virtual DbSet<tblAuthenticationRole> tblAuthenticationRole { get; set; }
+        public virtual DbSet<tblAuthorizationApplication> tblAuthorizationApplication { get; set; }
+        public virtual DbSet<tblAuthorizationComplexEntities> tblAuthorizationComplexEntities { get; set; }
+        public virtual DbSet<tblAuthorizationSimpleEntities> tblAuthorizationSimpleEntities { get; set; }
     }
 }

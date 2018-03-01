@@ -86,6 +86,15 @@
     <Compile Include="tblAuthenticationRole.cs">
       <DependentUpon>Common_AppIdAndAuth_Model.tt</DependentUpon>
     </Compile>
+    <Compile Include="tblAuthorizationApplication.cs">
+      <DependentUpon>Common_AppIdAndAuth_Model.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tblAuthorizationComplexEntities.cs">
+      <DependentUpon>Common_AppIdAndAuth_Model.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tblAuthorizationSimpleEntities.cs">
+      <DependentUpon>Common_AppIdAndAuth_Model.tt</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <EntityDeploy Include="Common_AppIdAndAuth_Model.edmx">

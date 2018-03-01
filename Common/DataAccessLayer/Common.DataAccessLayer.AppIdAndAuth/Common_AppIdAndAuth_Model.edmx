@@ -64,7 +64,67 @@
           <Property Name="IsReadOnly" Type="bit" Nullable="false" />
           <Property Name="IsDeleted" Type="bit" Nullable="false" />
         </EntityType>
-        <Association Name="FK__tblApplic__Appli__403A8C7D">
+        <!--Ошибки, обнаруженные при создании:
+предупреждение 6002: В таблице или представлении "Common_AppIdAndAuth.dbo.tblAuthorizationApplication" не определен первичный ключ. Ключ был выведен, а определение таблицы или представления было создано в режиме только для чтения.-->
+        <EntityType Name="tblAuthorizationApplication">
+          <Key>
+            <PropertyRef Name="RoleId" />
+            <PropertyRef Name="ApplicationId" />
+            <PropertyRef Name="AllowLogIn" />
+          </Key>
+          <Property Name="RoleId" Type="bigint" Nullable="false" />
+          <Property Name="ApplicationId" Type="bigint" Nullable="false" />
+          <Property Name="AllowLogIn" Type="bit" Nullable="false" />
+        </EntityType>
+        <!--Ошибки, обнаруженные при создании:
+предупреждение 6002: В таблице или представлении "Common_AppIdAndAuth.dbo.tblAuthorizationComplexEntities" не определен первичный ключ. Ключ был выведен, а определение таблицы или представления было создано в режиме только для чтения.-->
+        <EntityType Name="tblAuthorizationComplexEntities">
+          <Key>
+            <PropertyRef Name="RoleId" />
+            <PropertyRef Name="ComplexEntityName" />
+            <PropertyRef Name="AllowMethodReadWithFilters" />
+          </Key>
+          <Property Name="RoleId" Type="bigint" Nullable="false" />
+          <Property Name="ComplexEntityName" Type="nvarchar" MaxLength="128" Nullable="false" />
+          <Property Name="AllowMethodReadWithFilters" Type="bit" Nullable="false" />
+        </EntityType>
+        <!--Ошибки, обнаруженные при создании:
+предупреждение 6002: В таблице или представлении "Common_AppIdAndAuth.dbo.tblAuthorizationSimpleEntities" не определен первичный ключ. Ключ был выведен, а определение таблицы или представления было создано в режиме только для чтения.-->
+        <EntityType Name="tblAuthorizationSimpleEntities">
+          <Key>
+            <PropertyRef Name="RoleId" />
+            <PropertyRef Name="EntityId" />
+            <PropertyRef Name="AllowMethodReadWithFilters" />
+            <PropertyRef Name="AllowMethodCreateOne" />
+            <PropertyRef Name="AllowMethodReadOne" />
+            <PropertyRef Name="AllowMethodUpdateOne" />
+            <PropertyRef Name="AllowMethodDeleteOne" />
+            <PropertyRef Name="AllowMethodCreateMultiple" />
+            <PropertyRef Name="AllowMethodReadMultiple" />
+            <PropertyRef Name="AllowMethodUpdateMultiple" />
+            <PropertyRef Name="AllowMethodDeleteMultiple" />
+            <PropertyRef Name="AllowMethodCreateLink" />
+            <PropertyRef Name="AllowMethodReadLink" />
+            <PropertyRef Name="AllowMethodUpdateLink" />
+            <PropertyRef Name="AllowMethodDeleteLink" />
+          </Key>
+          <Property Name="RoleId" Type="bigint" Nullable="false" />
+          <Property Name="EntityId" Type="bigint" Nullable="false" />
+          <Property Name="AllowMethodReadWithFilters" Type="bit" Nullable="false" />
+          <Property Name="AllowMethodCreateOne" Type="bit" Nullable="false" />
+          <Property Name="AllowMethodReadOne" Type="bit" Nullable="false" />
+          <Property Name="AllowMethodUpdateOne" Type="bit" Nullable="false" />
+          <Property Name="AllowMethodDeleteOne" Type="bit" Nullable="false" />
+          <Property Name="AllowMethodCreateMultiple" Type="bit" Nullable="false" />
+          <Property Name="AllowMethodReadMultiple" Type="bit" Nullable="false" />
+          <Property Name="AllowMethodUpdateMultiple" Type="bit" Nullable="false" />
+          <Property Name="AllowMethodDeleteMultiple" Type="bit" Nullable="false" />
+          <Property Name="AllowMethodCreateLink" Type="bit" Nullable="false" />
+          <Property Name="AllowMethodReadLink" Type="bit" Nullable="false" />
+          <Property Name="AllowMethodUpdateLink" Type="bit" Nullable="false" />
+          <Property Name="AllowMethodDeleteLink" Type="bit" Nullable="false" />
+        </EntityType>
+        <Association Name="FK__tblApplic__Appli__6E01572D">
           <End Role="tblApplicationIdApplication" Type="Self.tblApplicationIdApplication" Multiplicity="1" />
           <End Role="tblApplicationIdSubsystem" Type="Self.tblApplicationIdSubsystem" Multiplicity="*" />
           <ReferentialConstraint>
@@ -76,7 +136,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__tblApplic__Proje__3E52440B">
+        <Association Name="FK__tblApplic__Proje__6C190EBB">
           <End Role="tblApplicationIdProject" Type="Self.tblApplicationIdProject" Multiplicity="1" />
           <End Role="tblApplicationIdApplication" Type="Self.tblApplicationIdApplication" Multiplicity="*" />
           <ReferentialConstraint>
@@ -88,7 +148,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__tblApplic__Subsy__3F466844">
+        <Association Name="FK__tblApplic__Subsy__6D0D32F4">
           <End Role="tblApplicationIdSubsystem" Type="Self.tblApplicationIdSubsystem" Multiplicity="1" />
           <End Role="tblApplicationIdMethod" Type="Self.tblApplicationIdMethod" Multiplicity="*" />
           <ReferentialConstraint>
@@ -100,7 +160,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__tblAuthen__RoleI__24927208">
+        <Association Name="FK__tblAuthen__RoleI__6EF57B66">
           <End Role="tblAuthenticationRole" Type="Self.tblAuthenticationRole" Multiplicity="1" />
           <End Role="tblAuthenticationActor" Type="Self.tblAuthenticationActor" Multiplicity="*" />
           <ReferentialConstraint>
@@ -108,6 +168,66 @@
               <PropertyRef Name="Id" />
             </Principal>
             <Dependent Role="tblAuthenticationActor">
+              <PropertyRef Name="RoleId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__tblAuthor__Appli__160F4887">
+          <End Role="tblApplicationIdApplication" Type="Self.tblApplicationIdApplication" Multiplicity="1" />
+          <End Role="tblAuthorizationApplication" Type="Self.tblAuthorizationApplication" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tblApplicationIdApplication">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="tblAuthorizationApplication">
+              <PropertyRef Name="ApplicationId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__tblAuthor__Entit__18EBB532">
+          <End Role="tblApplicationIdSubsystem" Type="Self.tblApplicationIdSubsystem" Multiplicity="1" />
+          <End Role="tblAuthorizationSimpleEntities" Type="Self.tblAuthorizationSimpleEntities" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tblApplicationIdSubsystem">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="tblAuthorizationSimpleEntities">
+              <PropertyRef Name="EntityId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__tblAuthor__RoleI__151B244E">
+          <End Role="tblAuthenticationRole" Type="Self.tblAuthenticationRole" Multiplicity="1" />
+          <End Role="tblAuthorizationApplication" Type="Self.tblAuthorizationApplication" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tblAuthenticationRole">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="tblAuthorizationApplication">
+              <PropertyRef Name="RoleId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__tblAuthor__RoleI__17036CC0">
+          <End Role="tblAuthenticationRole" Type="Self.tblAuthenticationRole" Multiplicity="1" />
+          <End Role="tblAuthorizationComplexEntities" Type="Self.tblAuthorizationComplexEntities" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tblAuthenticationRole">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="tblAuthorizationComplexEntities">
+              <PropertyRef Name="RoleId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__tblAuthor__RoleI__17F790F9">
+          <End Role="tblAuthenticationRole" Type="Self.tblAuthenticationRole" Multiplicity="1" />
+          <End Role="tblAuthorizationSimpleEntities" Type="Self.tblAuthorizationSimpleEntities" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tblAuthenticationRole">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="tblAuthorizationSimpleEntities">
               <PropertyRef Name="RoleId" />
             </Dependent>
           </ReferentialConstraint>
@@ -120,21 +240,74 @@
           <EntitySet Name="tblApplicationIdSubsystem" EntityType="Self.tblApplicationIdSubsystem" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="tblAuthenticationActor" EntityType="Self.tblAuthenticationActor" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="tblAuthenticationRole" EntityType="Self.tblAuthenticationRole" Schema="dbo" store:Type="Tables" />
-          <AssociationSet Name="FK__tblApplic__Appli__403A8C7D" Association="Self.FK__tblApplic__Appli__403A8C7D">
+          <EntitySet Name="tblAuthorizationApplication" EntityType="Self.tblAuthorizationApplication" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [tblAuthorizationApplication].[RoleId] AS [RoleId], 
+    [tblAuthorizationApplication].[ApplicationId] AS [ApplicationId], 
+    [tblAuthorizationApplication].[AllowLogIn] AS [AllowLogIn]
+    FROM [dbo].[tblAuthorizationApplication] AS [tblAuthorizationApplication]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="tblAuthorizationComplexEntities" EntityType="Self.tblAuthorizationComplexEntities" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [tblAuthorizationComplexEntities].[RoleId] AS [RoleId], 
+    [tblAuthorizationComplexEntities].[ComplexEntityName] AS [ComplexEntityName], 
+    [tblAuthorizationComplexEntities].[AllowMethodReadWithFilters] AS [AllowMethodReadWithFilters]
+    FROM [dbo].[tblAuthorizationComplexEntities] AS [tblAuthorizationComplexEntities]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="tblAuthorizationSimpleEntities" EntityType="Self.tblAuthorizationSimpleEntities" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [tblAuthorizationSimpleEntities].[RoleId] AS [RoleId], 
+    [tblAuthorizationSimpleEntities].[EntityId] AS [EntityId], 
+    [tblAuthorizationSimpleEntities].[AllowMethodReadWithFilters] AS [AllowMethodReadWithFilters], 
+    [tblAuthorizationSimpleEntities].[AllowMethodCreateOne] AS [AllowMethodCreateOne], 
+    [tblAuthorizationSimpleEntities].[AllowMethodReadOne] AS [AllowMethodReadOne], 
+    [tblAuthorizationSimpleEntities].[AllowMethodUpdateOne] AS [AllowMethodUpdateOne], 
+    [tblAuthorizationSimpleEntities].[AllowMethodDeleteOne] AS [AllowMethodDeleteOne], 
+    [tblAuthorizationSimpleEntities].[AllowMethodCreateMultiple] AS [AllowMethodCreateMultiple], 
+    [tblAuthorizationSimpleEntities].[AllowMethodReadMultiple] AS [AllowMethodReadMultiple], 
+    [tblAuthorizationSimpleEntities].[AllowMethodUpdateMultiple] AS [AllowMethodUpdateMultiple], 
+    [tblAuthorizationSimpleEntities].[AllowMethodDeleteMultiple] AS [AllowMethodDeleteMultiple], 
+    [tblAuthorizationSimpleEntities].[AllowMethodCreateLink] AS [AllowMethodCreateLink], 
+    [tblAuthorizationSimpleEntities].[AllowMethodReadLink] AS [AllowMethodReadLink], 
+    [tblAuthorizationSimpleEntities].[AllowMethodUpdateLink] AS [AllowMethodUpdateLink], 
+    [tblAuthorizationSimpleEntities].[AllowMethodDeleteLink] AS [AllowMethodDeleteLink]
+    FROM [dbo].[tblAuthorizationSimpleEntities] AS [tblAuthorizationSimpleEntities]</DefiningQuery>
+          </EntitySet>
+          <AssociationSet Name="FK__tblApplic__Appli__6E01572D" Association="Self.FK__tblApplic__Appli__6E01572D">
             <End Role="tblApplicationIdApplication" EntitySet="tblApplicationIdApplication" />
             <End Role="tblApplicationIdSubsystem" EntitySet="tblApplicationIdSubsystem" />
           </AssociationSet>
-          <AssociationSet Name="FK__tblApplic__Proje__3E52440B" Association="Self.FK__tblApplic__Proje__3E52440B">
+          <AssociationSet Name="FK__tblApplic__Proje__6C190EBB" Association="Self.FK__tblApplic__Proje__6C190EBB">
             <End Role="tblApplicationIdProject" EntitySet="tblApplicationIdProject" />
             <End Role="tblApplicationIdApplication" EntitySet="tblApplicationIdApplication" />
           </AssociationSet>
-          <AssociationSet Name="FK__tblApplic__Subsy__3F466844" Association="Self.FK__tblApplic__Subsy__3F466844">
+          <AssociationSet Name="FK__tblApplic__Subsy__6D0D32F4" Association="Self.FK__tblApplic__Subsy__6D0D32F4">
             <End Role="tblApplicationIdSubsystem" EntitySet="tblApplicationIdSubsystem" />
             <End Role="tblApplicationIdMethod" EntitySet="tblApplicationIdMethod" />
           </AssociationSet>
-          <AssociationSet Name="FK__tblAuthen__RoleI__24927208" Association="Self.FK__tblAuthen__RoleI__24927208">
+          <AssociationSet Name="FK__tblAuthen__RoleI__6EF57B66" Association="Self.FK__tblAuthen__RoleI__6EF57B66">
             <End Role="tblAuthenticationRole" EntitySet="tblAuthenticationRole" />
             <End Role="tblAuthenticationActor" EntitySet="tblAuthenticationActor" />
+          </AssociationSet>
+          <AssociationSet Name="FK__tblAuthor__Appli__160F4887" Association="Self.FK__tblAuthor__Appli__160F4887">
+            <End Role="tblApplicationIdApplication" EntitySet="tblApplicationIdApplication" />
+            <End Role="tblAuthorizationApplication" EntitySet="tblAuthorizationApplication" />
+          </AssociationSet>
+          <AssociationSet Name="FK__tblAuthor__Entit__18EBB532" Association="Self.FK__tblAuthor__Entit__18EBB532">
+            <End Role="tblApplicationIdSubsystem" EntitySet="tblApplicationIdSubsystem" />
+            <End Role="tblAuthorizationSimpleEntities" EntitySet="tblAuthorizationSimpleEntities" />
+          </AssociationSet>
+          <AssociationSet Name="FK__tblAuthor__RoleI__151B244E" Association="Self.FK__tblAuthor__RoleI__151B244E">
+            <End Role="tblAuthenticationRole" EntitySet="tblAuthenticationRole" />
+            <End Role="tblAuthorizationApplication" EntitySet="tblAuthorizationApplication" />
+          </AssociationSet>
+          <AssociationSet Name="FK__tblAuthor__RoleI__17036CC0" Association="Self.FK__tblAuthor__RoleI__17036CC0">
+            <End Role="tblAuthenticationRole" EntitySet="tblAuthenticationRole" />
+            <End Role="tblAuthorizationComplexEntities" EntitySet="tblAuthorizationComplexEntities" />
+          </AssociationSet>
+          <AssociationSet Name="FK__tblAuthor__RoleI__17F790F9" Association="Self.FK__tblAuthor__RoleI__17F790F9">
+            <End Role="tblAuthenticationRole" EntitySet="tblAuthenticationRole" />
+            <End Role="tblAuthorizationSimpleEntities" EntitySet="tblAuthorizationSimpleEntities" />
           </AssociationSet>
         </EntityContainer>
       </Schema></edmx:StorageModels>
@@ -165,6 +338,29 @@
             <End Role="tblAuthenticationRole" EntitySet="tblAuthenticationRole" />
             <End Role="tblAuthenticationActor" EntitySet="tblAuthenticationActor" />
           </AssociationSet>
+          <EntitySet Name="tblAuthorizationApplication" EntityType="Common_AppIdAndAuth_Model.tblAuthorizationApplication" />
+          <EntitySet Name="tblAuthorizationComplexEntities" EntityType="Common_AppIdAndAuth_Model.tblAuthorizationComplexEntities" />
+          <EntitySet Name="tblAuthorizationSimpleEntities" EntityType="Common_AppIdAndAuth_Model.tblAuthorizationSimpleEntities" />
+          <AssociationSet Name="FK__tblAuthor__Appli__160F4887" Association="Common_AppIdAndAuth_Model.FK__tblAuthor__Appli__160F4887">
+            <End Role="tblApplicationIdApplication" EntitySet="tblApplicationIdApplication" />
+            <End Role="tblAuthorizationApplication" EntitySet="tblAuthorizationApplication" />
+          </AssociationSet>
+          <AssociationSet Name="FK__tblAuthor__Entit__18EBB532" Association="Common_AppIdAndAuth_Model.FK__tblAuthor__Entit__18EBB532">
+            <End Role="tblApplicationIdSubsystem" EntitySet="tblApplicationIdSubsystem" />
+            <End Role="tblAuthorizationSimpleEntities" EntitySet="tblAuthorizationSimpleEntities" />
+          </AssociationSet>
+          <AssociationSet Name="FK__tblAuthor__RoleI__151B244E" Association="Common_AppIdAndAuth_Model.FK__tblAuthor__RoleI__151B244E">
+            <End Role="tblAuthenticationRole" EntitySet="tblAuthenticationRole" />
+            <End Role="tblAuthorizationApplication" EntitySet="tblAuthorizationApplication" />
+          </AssociationSet>
+          <AssociationSet Name="FK__tblAuthor__RoleI__17036CC0" Association="Common_AppIdAndAuth_Model.FK__tblAuthor__RoleI__17036CC0">
+            <End Role="tblAuthenticationRole" EntitySet="tblAuthenticationRole" />
+            <End Role="tblAuthorizationComplexEntities" EntitySet="tblAuthorizationComplexEntities" />
+          </AssociationSet>
+          <AssociationSet Name="FK__tblAuthor__RoleI__17F790F9" Association="Common_AppIdAndAuth_Model.FK__tblAuthor__RoleI__17F790F9">
+            <End Role="tblAuthenticationRole" EntitySet="tblAuthenticationRole" />
+            <End Role="tblAuthorizationSimpleEntities" EntitySet="tblAuthorizationSimpleEntities" />
+          </AssociationSet>
         </EntityContainer>
         <EntityType Name="tblApplicationIdApplication">
           <Key>
@@ -175,6 +371,7 @@
           <Property Name="ProjectId" Type="Int64" Nullable="false" />
           <NavigationProperty Name="tblApplicationIdSubsystem" Relationship="Common_AppIdAndAuth_Model.FK__tblApplic__Appli__403A8C7D" FromRole="tblApplicationIdApplication" ToRole="tblApplicationIdSubsystem" />
           <NavigationProperty Name="tblApplicationIdProject" Relationship="Common_AppIdAndAuth_Model.FK__tblApplic__Proje__3E52440B" FromRole="tblApplicationIdApplication" ToRole="tblApplicationIdProject" />
+          <NavigationProperty Name="tblAuthorizationApplication" Relationship="Common_AppIdAndAuth_Model.FK__tblAuthor__Appli__160F4887" FromRole="tblApplicationIdApplication" ToRole="tblAuthorizationApplication" />
         </EntityType>
         <EntityType Name="tblApplicationIdLayer">
           <Key>
@@ -210,6 +407,7 @@
           <Property Name="ApplicationId" Type="Int64" Nullable="false" />
           <NavigationProperty Name="tblApplicationIdApplication" Relationship="Common_AppIdAndAuth_Model.FK__tblApplic__Appli__403A8C7D" FromRole="tblApplicationIdSubsystem" ToRole="tblApplicationIdApplication" />
           <NavigationProperty Name="tblApplicationIdMethod" Relationship="Common_AppIdAndAuth_Model.FK__tblApplic__Subsy__3F466844" FromRole="tblApplicationIdSubsystem" ToRole="tblApplicationIdMethod" />
+          <NavigationProperty Name="tblAuthorizationSimpleEntities" Relationship="Common_AppIdAndAuth_Model.FK__tblAuthor__Entit__18EBB532" FromRole="tblApplicationIdSubsystem" ToRole="tblAuthorizationSimpleEntities" />
         </EntityType>
         <EntityType Name="tblAuthenticationActor">
           <Key>
@@ -232,6 +430,9 @@
           <Property Name="IsReadOnly" Type="Boolean" Nullable="false" />
           <Property Name="IsDeleted" Type="Boolean" Nullable="false" />
           <NavigationProperty Name="tblAuthenticationActor" Relationship="Common_AppIdAndAuth_Model.FK__tblAuthen__RoleI__24927208" FromRole="tblAuthenticationRole" ToRole="tblAuthenticationActor" />
+          <NavigationProperty Name="tblAuthorizationApplication" Relationship="Common_AppIdAndAuth_Model.FK__tblAuthor__RoleI__151B244E" FromRole="tblAuthenticationRole" ToRole="tblAuthorizationApplication" />
+          <NavigationProperty Name="tblAuthorizationComplexEntities" Relationship="Common_AppIdAndAuth_Model.FK__tblAuthor__RoleI__17036CC0" FromRole="tblAuthenticationRole" ToRole="tblAuthorizationComplexEntities" />
+          <NavigationProperty Name="tblAuthorizationSimpleEntities" Relationship="Common_AppIdAndAuth_Model.FK__tblAuthor__RoleI__17F790F9" FromRole="tblAuthenticationRole" ToRole="tblAuthorizationSimpleEntities" />
         </EntityType>
         <Association Name="FK__tblApplic__Appli__403A8C7D">
           <End Type="Common_AppIdAndAuth_Model.tblApplicationIdApplication" Role="tblApplicationIdApplication" Multiplicity="1" />
@@ -277,6 +478,125 @@
               <PropertyRef Name="Id" />
             </Principal>
             <Dependent Role="tblAuthenticationActor">
+              <PropertyRef Name="RoleId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="tblAuthorizationApplication">
+          <Key>
+            <PropertyRef Name="RoleId" />
+            <PropertyRef Name="ApplicationId" />
+            <PropertyRef Name="AllowLogIn" />
+          </Key>
+          <Property Name="RoleId" Type="Int64" Nullable="false" />
+          <Property Name="ApplicationId" Type="Int64" Nullable="false" />
+          <Property Name="AllowLogIn" Type="Boolean" Nullable="false" />
+          <NavigationProperty Name="tblApplicationIdApplication" Relationship="Common_AppIdAndAuth_Model.FK__tblAuthor__Appli__160F4887" FromRole="tblAuthorizationApplication" ToRole="tblApplicationIdApplication" />
+          <NavigationProperty Name="tblAuthenticationRole" Relationship="Common_AppIdAndAuth_Model.FK__tblAuthor__RoleI__151B244E" FromRole="tblAuthorizationApplication" ToRole="tblAuthenticationRole" />
+        </EntityType>
+        <EntityType Name="tblAuthorizationComplexEntities">
+          <Key>
+            <PropertyRef Name="RoleId" />
+            <PropertyRef Name="ComplexEntityName" />
+            <PropertyRef Name="AllowMethodReadWithFilters" />
+          </Key>
+          <Property Name="RoleId" Type="Int64" Nullable="false" />
+          <Property Name="ComplexEntityName" Type="String" Nullable="false" MaxLength="128" FixedLength="false" Unicode="true" />
+          <Property Name="AllowMethodReadWithFilters" Type="Boolean" Nullable="false" />
+          <NavigationProperty Name="tblAuthenticationRole" Relationship="Common_AppIdAndAuth_Model.FK__tblAuthor__RoleI__17036CC0" FromRole="tblAuthorizationComplexEntities" ToRole="tblAuthenticationRole" />
+        </EntityType>
+        <EntityType Name="tblAuthorizationSimpleEntities">
+          <Key>
+            <PropertyRef Name="RoleId" />
+            <PropertyRef Name="EntityId" />
+            <PropertyRef Name="AllowMethodReadWithFilters" />
+            <PropertyRef Name="AllowMethodCreateOne" />
+            <PropertyRef Name="AllowMethodReadOne" />
+            <PropertyRef Name="AllowMethodUpdateOne" />
+            <PropertyRef Name="AllowMethodDeleteOne" />
+            <PropertyRef Name="AllowMethodCreateMultiple" />
+            <PropertyRef Name="AllowMethodReadMultiple" />
+            <PropertyRef Name="AllowMethodUpdateMultiple" />
+            <PropertyRef Name="AllowMethodDeleteMultiple" />
+            <PropertyRef Name="AllowMethodCreateLink" />
+            <PropertyRef Name="AllowMethodReadLink" />
+            <PropertyRef Name="AllowMethodUpdateLink" />
+            <PropertyRef Name="AllowMethodDeleteLink" />
+          </Key>
+          <Property Name="RoleId" Type="Int64" Nullable="false" />
+          <Property Name="EntityId" Type="Int64" Nullable="false" />
+          <Property Name="AllowMethodReadWithFilters" Type="Boolean" Nullable="false" />
+          <Property Name="AllowMethodCreateOne" Type="Boolean" Nullable="false" />
+          <Property Name="AllowMethodReadOne" Type="Boolean" Nullable="false" />
+          <Property Name="AllowMethodUpdateOne" Type="Boolean" Nullable="false" />
+          <Property Name="AllowMethodDeleteOne" Type="Boolean" Nullable="false" />
+          <Property Name="AllowMethodCreateMultiple" Type="Boolean" Nullable="false" />
+          <Property Name="AllowMethodReadMultiple" Type="Boolean" Nullable="false" />
+          <Property Name="AllowMethodUpdateMultiple" Type="Boolean" Nullable="false" />
+          <Property Name="AllowMethodDeleteMultiple" Type="Boolean" Nullable="false" />
+          <Property Name="AllowMethodCreateLink" Type="Boolean" Nullable="false" />
+          <Property Name="AllowMethodReadLink" Type="Boolean" Nullable="false" />
+          <Property Name="AllowMethodUpdateLink" Type="Boolean" Nullable="false" />
+          <Property Name="AllowMethodDeleteLink" Type="Boolean" Nullable="false" />
+          <NavigationProperty Name="tblApplicationIdSubsystem" Relationship="Common_AppIdAndAuth_Model.FK__tblAuthor__Entit__18EBB532" FromRole="tblAuthorizationSimpleEntities" ToRole="tblApplicationIdSubsystem" />
+          <NavigationProperty Name="tblAuthenticationRole" Relationship="Common_AppIdAndAuth_Model.FK__tblAuthor__RoleI__17F790F9" FromRole="tblAuthorizationSimpleEntities" ToRole="tblAuthenticationRole" />
+        </EntityType>
+        <Association Name="FK__tblAuthor__Appli__160F4887">
+          <End Type="Common_AppIdAndAuth_Model.tblApplicationIdApplication" Role="tblApplicationIdApplication" Multiplicity="1" />
+          <End Type="Common_AppIdAndAuth_Model.tblAuthorizationApplication" Role="tblAuthorizationApplication" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tblApplicationIdApplication">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="tblAuthorizationApplication">
+              <PropertyRef Name="ApplicationId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__tblAuthor__Entit__18EBB532">
+          <End Type="Common_AppIdAndAuth_Model.tblApplicationIdSubsystem" Role="tblApplicationIdSubsystem" Multiplicity="1" />
+          <End Type="Common_AppIdAndAuth_Model.tblAuthorizationSimpleEntities" Role="tblAuthorizationSimpleEntities" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tblApplicationIdSubsystem">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="tblAuthorizationSimpleEntities">
+              <PropertyRef Name="EntityId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__tblAuthor__RoleI__151B244E">
+          <End Type="Common_AppIdAndAuth_Model.tblAuthenticationRole" Role="tblAuthenticationRole" Multiplicity="1" />
+          <End Type="Common_AppIdAndAuth_Model.tblAuthorizationApplication" Role="tblAuthorizationApplication" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tblAuthenticationRole">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="tblAuthorizationApplication">
+              <PropertyRef Name="RoleId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__tblAuthor__RoleI__17036CC0">
+          <End Type="Common_AppIdAndAuth_Model.tblAuthenticationRole" Role="tblAuthenticationRole" Multiplicity="1" />
+          <End Type="Common_AppIdAndAuth_Model.tblAuthorizationComplexEntities" Role="tblAuthorizationComplexEntities" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tblAuthenticationRole">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="tblAuthorizationComplexEntities">
+              <PropertyRef Name="RoleId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__tblAuthor__RoleI__17F790F9">
+          <End Type="Common_AppIdAndAuth_Model.tblAuthenticationRole" Role="tblAuthenticationRole" Multiplicity="1" />
+          <End Type="Common_AppIdAndAuth_Model.tblAuthorizationSimpleEntities" Role="tblAuthorizationSimpleEntities" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tblAuthenticationRole">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="tblAuthorizationSimpleEntities">
               <PropertyRef Name="RoleId" />
             </Dependent>
           </ReferentialConstraint>
@@ -350,6 +670,45 @@
                 <ScalarProperty Name="IsReadOnly" ColumnName="IsReadOnly" />
                 <ScalarProperty Name="EnumName" ColumnName="EnumName" />
                 <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tblAuthorizationApplication">
+            <EntityTypeMapping TypeName="Common_AppIdAndAuth_Model.tblAuthorizationApplication">
+              <MappingFragment StoreEntitySet="tblAuthorizationApplication">
+                <ScalarProperty Name="AllowLogIn" ColumnName="AllowLogIn" />
+                <ScalarProperty Name="ApplicationId" ColumnName="ApplicationId" />
+                <ScalarProperty Name="RoleId" ColumnName="RoleId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tblAuthorizationComplexEntities">
+            <EntityTypeMapping TypeName="Common_AppIdAndAuth_Model.tblAuthorizationComplexEntities">
+              <MappingFragment StoreEntitySet="tblAuthorizationComplexEntities">
+                <ScalarProperty Name="AllowMethodReadWithFilters" ColumnName="AllowMethodReadWithFilters" />
+                <ScalarProperty Name="ComplexEntityName" ColumnName="ComplexEntityName" />
+                <ScalarProperty Name="RoleId" ColumnName="RoleId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tblAuthorizationSimpleEntities">
+            <EntityTypeMapping TypeName="Common_AppIdAndAuth_Model.tblAuthorizationSimpleEntities">
+              <MappingFragment StoreEntitySet="tblAuthorizationSimpleEntities">
+                <ScalarProperty Name="AllowMethodDeleteLink" ColumnName="AllowMethodDeleteLink" />
+                <ScalarProperty Name="AllowMethodUpdateLink" ColumnName="AllowMethodUpdateLink" />
+                <ScalarProperty Name="AllowMethodReadLink" ColumnName="AllowMethodReadLink" />
+                <ScalarProperty Name="AllowMethodCreateLink" ColumnName="AllowMethodCreateLink" />
+                <ScalarProperty Name="AllowMethodDeleteMultiple" ColumnName="AllowMethodDeleteMultiple" />
+                <ScalarProperty Name="AllowMethodUpdateMultiple" ColumnName="AllowMethodUpdateMultiple" />
+                <ScalarProperty Name="AllowMethodReadMultiple" ColumnName="AllowMethodReadMultiple" />
+                <ScalarProperty Name="AllowMethodCreateMultiple" ColumnName="AllowMethodCreateMultiple" />
+                <ScalarProperty Name="AllowMethodDeleteOne" ColumnName="AllowMethodDeleteOne" />
+                <ScalarProperty Name="AllowMethodUpdateOne" ColumnName="AllowMethodUpdateOne" />
+                <ScalarProperty Name="AllowMethodReadOne" ColumnName="AllowMethodReadOne" />
+                <ScalarProperty Name="AllowMethodCreateOne" ColumnName="AllowMethodCreateOne" />
+                <ScalarProperty Name="AllowMethodReadWithFilters" ColumnName="AllowMethodReadWithFilters" />
+                <ScalarProperty Name="EntityId" ColumnName="EntityId" />
+                <ScalarProperty Name="RoleId" ColumnName="RoleId" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

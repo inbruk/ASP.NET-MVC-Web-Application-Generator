@@ -18,6 +18,9 @@ namespace Common.DataAccessLayer.AppIdAndAuth
         public tblAuthenticationRole()
         {
             this.tblAuthenticationActor = new HashSet<tblAuthenticationActor>();
+            this.tblAuthorizationApplication = new HashSet<tblAuthorizationApplication>();
+            this.tblAuthorizationComplexEntities = new HashSet<tblAuthorizationComplexEntities>();
+            this.tblAuthorizationSimpleEntities = new HashSet<tblAuthorizationSimpleEntities>();
         }
     
         public long Id { get; set; }
@@ -27,5 +30,11 @@ namespace Common.DataAccessLayer.AppIdAndAuth
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<tblAuthenticationActor> tblAuthenticationActor { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<tblAuthorizationApplication> tblAuthorizationApplication { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<tblAuthorizationComplexEntities> tblAuthorizationComplexEntities { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<tblAuthorizationSimpleEntities> tblAuthorizationSimpleEntities { get; set; }
     }
 }
