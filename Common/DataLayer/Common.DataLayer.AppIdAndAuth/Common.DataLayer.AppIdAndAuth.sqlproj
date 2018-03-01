@@ -74,6 +74,12 @@
     <Build Include="Manual\Indexes\idxApplicationIdApplication.sql" />
     <Build Include="Manual\Indexes\idxApplicationIdSubsystem.sql" />
     <Build Include="Manual\Indexes\idxApplicationIdMethod.sql" />
+    <Build Include="Manual\Tables\tblAuthorizationSimpleEntities.sql" />
+    <Build Include="Manual\Indexes\idxAuthorizationSimpleEntities.sql" />
+    <Build Include="Manual\Tables\tblAuthorizationComplexEntities.sql" />
+    <Build Include="Manual\Indexes\idxAuthorizationComplexEntities.sql" />
+    <Build Include="Manual\Tables\tblAuthorizationApplication.sql" />
+    <Build Include="Manual\Indexes\idxAuthorizationApplication.sql" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Common.DataLayer.AppIdAndAuth.publish.xml" />

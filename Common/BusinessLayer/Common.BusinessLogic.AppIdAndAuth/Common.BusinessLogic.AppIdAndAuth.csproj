@@ -61,7 +61,9 @@
     <Compile Include="Authentication\TokenTools.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="Authorization\" />
+  </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\..\..\Auxiliary\Auxiliary.CommonOptions\Auxiliary.CommonOptions.csproj">
       <Project>{5e9b54cc-54dc-4097-a7f9-36f737d5e462}</Project>

@@ -58,6 +58,9 @@
     <Compile Include="Authentication\ActorRole.cs" />
     <Compile Include="Authentication\Role.cs" />
     <Compile Include="Authentication\TokenItem.cs" />
+    <Compile Include="Authorization\Application.cs" />
+    <Compile Include="Authorization\ComplexEntities.cs" />
+    <Compile Include="Authorization\SimpleEntities.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -70,5 +73,6 @@
       <Name>Auxiliary.CryptoTools</Name>
     </ProjectReference>
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
