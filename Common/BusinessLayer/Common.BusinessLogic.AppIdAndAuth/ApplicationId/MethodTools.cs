@@ -16,7 +16,7 @@
         {
             if (StorageData == null) // если в хранилище нет данных, то грузим их
             {
-                StorageData = CurrDBContext.Get().tblApplicationIdMethod.ToDictionary
+                StorageData = DAL.CurrDBContext.Get().tblApplicationIdMethod.ToDictionary
                 (
                     x => x.Id,
                     x => new Method( x.Id, x.EnumName, x.SubsystemId, x.IsSpecial )

@@ -16,7 +16,7 @@
         {
             if (StorageData == null) // если в хранилище нет данных, то грузим их
             {
-                StorageData = CurrDBContext.Get().tblApplicationIdLayer.ToDictionary
+                StorageData = DAL.CurrDBContext.Get().tblApplicationIdLayer.ToDictionary
                 (
                     x => x.Id,
                     x => new Layer(x.Id, x.EnumName)

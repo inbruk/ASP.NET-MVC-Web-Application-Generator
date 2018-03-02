@@ -11,7 +11,7 @@
 
     using DAL = Common.DataAccessLayer.AppIdAndAuth;
 
-    public static class SimpleEntitiesTools
+    public static class SimpleEntityTools
     {
         public static SimpleEntity Read(long roleId, long entityId)
         {

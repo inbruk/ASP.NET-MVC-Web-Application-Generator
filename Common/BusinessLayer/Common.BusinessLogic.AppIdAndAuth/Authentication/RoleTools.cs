@@ -22,8 +22,8 @@
                 IsReadOnly = isReadOnly,
                 IsDeleted = isDeleted                
             };
-            CurrDBContext.Get().tblAuthenticationRole.Add(currItem);
-            CurrDBContext.Get().SaveChanges();
+            DAL.CurrDBContext.Get().tblAuthenticationRole.Add(currItem);
+            DAL.CurrDBContext.Get().SaveChanges();
 
             long id = currItem.Id;
             return id;
@@ -32,7 +32,7 @@
         public static Role Read(long id)
         {
             Role result =
-                CurrDBContext.Get().tblAuthenticationRole.Where(x => x.Id == id).Select
+                DAL.CurrDBContext.Get().tblAuthenticationRole.Where(x => x.Id == id).Select
                 (
                     x =>
                     new Role()
@@ -55,7 +55,7 @@
             }
 
             List<Role> result =
-                CurrDBContext.Get().tblAuthenticationRole.Where(x => idList.Contains(x.Id)).Select
+                DAL.CurrDBContext.Get().tblAuthenticationRole.Where(x => idList.Contains(x.Id)).Select
                 (
                     x =>
                     new Role()
@@ -74,13 +74,13 @@
         // if PasswordSalt and PasswordHash recalculated to new values. It must changed in newActor too
         public static void Update(Role newRole)
         {
-            DAL.tblAuthenticationRole dataItem = CurrDBContext.Get().tblAuthenticationRole.Where(x => x.Id == newRole.Id).Single();
+            DAL.tblAuthenticationRole dataItem = DAL.CurrDBContext.Get().tblAuthenticationRole.Where(x => x.Id == newRole.Id).Single();
 
             dataItem.EnumName = newRole.EnumName;
             dataItem.IsReadOnly = newRole.IsReadOnly;
             dataItem.IsDeleted = newRole.IsDeleted;
 
-            CurrDBContext.Get().SaveChanges();
+            DAL.CurrDBContext.Get().SaveChanges();
         }
 
         public static void Delete(long id)

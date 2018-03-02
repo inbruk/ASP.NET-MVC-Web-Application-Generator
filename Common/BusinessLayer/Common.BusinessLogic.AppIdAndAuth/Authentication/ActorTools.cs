@@ -13,8 +13,6 @@
 
     public static class ActorTools 
     {
-        private static LazyInitWithoutParams<DAL.Common_AppIdAndAuth_Entities> CurrDBContext;
-
         public static long Create(String login, String password, long roleId)
         {
             SHA1Hasher.CalculatePasswordHash(password, out String passwordSalt, out String passwordHash);
@@ -27,8 +25,8 @@
                 IsDeleted = false,
                 RoleId = roleId
             };
-            CurrDBContext.Get().tblAuthenticationActor.Add(currItem);
-            CurrDBContext.Get().SaveChanges();
+            DAL.CurrDBContext.Get().tblAuthenticationActor.Add(currItem);
+            DAL.CurrDBContext.Get().SaveChanges();
 
             long id = currItem.Id;
             return id;
@@ -37,7 +35,7 @@
         public static Actor Read(long id, Boolean WithActive = true, Boolean WithDeleted = false)
         {
             Actor result = 
-                CurrDBContext.Get().tblAuthenticationActor.Where( x => x.Id==id && 
+                  DAL.CurrDBContext.Get().tblAuthenticationActor.Where( x => x.Id==id && 
                     ( x.IsDeleted==(!WithActive) || x.IsDeleted == WithDeleted )
                 ).Select (
                     x => 
@@ -58,7 +56,7 @@
         public static Actor Read(String login, Boolean WithActive = true, Boolean WithDeleted = false)
         {
             Actor result =
-                CurrDBContext.Get().tblAuthenticationActor.Where(x => x.Login==login &&
+                DAL.CurrDBContext.Get().tblAuthenticationActor.Where(x => x.Login==login &&
                     (x.IsDeleted == (!WithActive) || x.IsDeleted == WithDeleted)
                 ).Select (
                     x =>
@@ -84,7 +82,7 @@
             }
 
             List<Actor> result =
-                CurrDBContext.Get().tblAuthenticationActor.Where( x => idList.Contains(x.Id) &&
+                DAL.CurrDBContext.Get().tblAuthenticationActor.Where( x => idList.Contains(x.Id) &&
                     (x.IsDeleted == (!WithActive) || x.IsDeleted == WithDeleted)
                 ).Select (
                     x =>
@@ -107,7 +105,7 @@
         // if PasswordSalt and PasswordHash recalculated to new values. It must changed in newActor too
         public static void Update(Actor newActor) 
         {
-            DAL.tblAuthenticationActor dataItem = CurrDBContext.Get().tblAuthenticationActor.Where(x => x.Id == newActor.Id).Single();
+            DAL.tblAuthenticationActor dataItem = DAL.CurrDBContext.Get().tblAuthenticationActor.Where(x => x.Id == newActor.Id).Single();
 
             dataItem.Login = newActor.Login;
             dataItem.IsDeleted = newActor.IsDeleted;
@@ -123,7 +121,7 @@
                 newActor.PasswordHash = passwordHash;
             }
 
-            CurrDBContext.Get().SaveChanges();
+            DAL.CurrDBContext.Get().SaveChanges();
         }
 
         public static void Delete(long id)
