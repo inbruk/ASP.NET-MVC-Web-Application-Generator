@@ -1,11 +1,11 @@
-﻿CREATE INDEX [idxAuthorizationSimpleEntities_Role] 
-	ON [dbo].[tblAuthorizationSimpleEntities](RoleId);
+﻿CREATE INDEX [idxAuthorizationSimpleEntity_Role] 
+	ON [dbo].[tblAuthorizationSimpleEntity](RoleId);
 GO
 
-CREATE INDEX [idxAuthorizationSimpleEntities_Subsystem] 
-	ON [dbo].[tblAuthorizationSimpleEntities](EntityId);
+CREATE INDEX [idxAuthorizationSimpleEntity_Subsystem] 
+	ON [dbo].[tblAuthorizationSimpleEntity](EntityId);
 GO
 
-CREATE INDEX [idxAuthorizationSimpleEntities_RoleSubsystem] 
-	ON [dbo].[tblAuthorizationSimpleEntities]( RoleId, EntityId );
+CREATE INDEX [idxAuthorizationSimpleEntity_RoleSubsystem] 
+	ON [dbo].[tblAuthorizationSimpleEntity]( RoleId, EntityId );
 GO

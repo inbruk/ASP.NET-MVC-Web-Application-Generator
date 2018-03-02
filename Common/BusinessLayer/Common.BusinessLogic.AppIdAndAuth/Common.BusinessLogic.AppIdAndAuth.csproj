@@ -60,6 +60,7 @@
     <Compile Include="Authentication\RoleTools.cs" />
     <Compile Include="Authentication\TokenTools.cs" />
     <Compile Include="Authorization\ApplicationTools.cs" />
+    <Compile Include="Authorization\SimpleEntitiesTools.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup />

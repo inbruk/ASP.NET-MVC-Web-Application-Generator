@@ -18,7 +18,7 @@ namespace Common.DataAccessLayer.AppIdAndAuth
         public tblApplicationIdSubsystem()
         {
             this.tblApplicationIdMethod = new HashSet<tblApplicationIdMethod>();
-            this.tblAuthorizationSimpleEntities = new HashSet<tblAuthorizationSimpleEntities>();
+            this.tblAuthorizationSimpleEntity = new HashSet<tblAuthorizationSimpleEntity>();
         }
     
         public long Id { get; set; }
@@ -29,6 +29,6 @@ namespace Common.DataAccessLayer.AppIdAndAuth
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<tblApplicationIdMethod> tblApplicationIdMethod { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<tblAuthorizationSimpleEntities> tblAuthorizationSimpleEntities { get; set; }
+        public virtual ICollection<tblAuthorizationSimpleEntity> tblAuthorizationSimpleEntity { get; set; }
     }
 }

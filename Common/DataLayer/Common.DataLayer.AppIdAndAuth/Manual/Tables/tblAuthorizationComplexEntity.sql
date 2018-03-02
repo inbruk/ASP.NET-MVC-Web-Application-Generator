@@ -1,4 +1,4 @@
-﻿CREATE TABLE [dbo].[tblAuthorizationComplexEntities]
+﻿CREATE TABLE [dbo].[tblAuthorizationComplexEntity]
 (
 	[RoleId] BIGINT NOT NULL FOREIGN KEY REFERENCES tblAuthenticationRole(Id),
     [ComplexEntityName] NVARCHAR(128) NOT NULL, 

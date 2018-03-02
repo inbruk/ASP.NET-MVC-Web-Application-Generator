@@ -1,4 +1,4 @@
-﻿CREATE TABLE [dbo].[tblAuthorizationSimpleEntities]
+﻿CREATE TABLE [dbo].[tblAuthorizationSimpleEntity]
 (
 	[RoleId] BIGINT NOT NULL FOREIGN KEY REFERENCES tblAuthenticationRole(Id),
     [EntityId] BIGINT NOT NULL FOREIGN KEY REFERENCES tblApplicationIdSubsystem(Id), 

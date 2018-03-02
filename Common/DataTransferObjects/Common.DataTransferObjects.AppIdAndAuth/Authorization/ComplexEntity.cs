@@ -2,7 +2,7 @@
 {
     using System;
 
-    public class ComplexEntities
+    public class ComplexEntity
     {
         public long RoleId { set; get; }
         public String ComplexEntityName { set; get; }

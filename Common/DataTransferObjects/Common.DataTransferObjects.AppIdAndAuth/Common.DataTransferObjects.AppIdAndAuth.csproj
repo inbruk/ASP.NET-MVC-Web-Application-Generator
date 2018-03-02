@@ -59,8 +59,8 @@
     <Compile Include="Authentication\Role.cs" />
     <Compile Include="Authentication\TokenItem.cs" />
     <Compile Include="Authorization\Application.cs" />
-    <Compile Include="Authorization\ComplexEntities.cs" />
-    <Compile Include="Authorization\SimpleEntities.cs" />
+    <Compile Include="Authorization\ComplexEntity.cs" />
+    <Compile Include="Authorization\SimpleEntity.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

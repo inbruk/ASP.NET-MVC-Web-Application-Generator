@@ -11,14 +11,12 @@
 
     using DAL = Common.DataAccessLayer.AppIdAndAuth;
 
-    public class ApplicationTools
+    public static class ApplicationTools
     {
-        private static LazyInitWithoutParams<DAL.Common_AppIdAndAuth_Entities> CurrDBContext;
-
         public static Application Read(long roleId, long applicationId)
         {
             Application result =
-                CurrDBContext.Get().tblAuthorizationApplication.Where( x => x.RoleId==roleId && x.ApplicationId==applicationId ).Select
+                DAL.CurrDBContext.Get().tblAuthorizationApplication.Where( x => x.RoleId==roleId && x.ApplicationId==applicationId ).Select
                 (
                     x =>
                     new Application()
@@ -35,7 +33,7 @@
         public static List<Application> Read(long roleId)
         {
             List<Application> result =
-                CurrDBContext.Get().tblAuthorizationApplication.Where( x => x.RoleId == roleId ).Select
+                DAL.CurrDBContext.Get().tblAuthorizationApplication.Where( x => x.RoleId == roleId ).Select
                 (
                     x =>
                     new Application()
@@ -51,18 +49,18 @@
 
         public static void Update(Application app)
         {
-            DAL.tblAuthorizationApplication dataItem = CurrDBContext.Get().tblAuthorizationApplication.
+            DAL.tblAuthorizationApplication dataItem = DAL.CurrDBContext.Get().tblAuthorizationApplication.
                 Where( x => x.RoleId == app.RoleId && x.ApplicationId == app.ApplicationId ).Single();
 
             dataItem.AllowLogIn = app.AllowLogIn;
-            CurrDBContext.Get().SaveChanges();
+            DAL.CurrDBContext.Get().SaveChanges();
         }
 
 
         public static void Update(long roleId, List<Application> appList)
         {
-            List<DAL.tblAuthorizationApplication> tableData = 
-                CurrDBContext.Get().tblAuthorizationApplication.Where(x => x.RoleId == roleId).ToList();
+            List<DAL.tblAuthorizationApplication> tableData =
+                DAL.CurrDBContext.Get().tblAuthorizationApplication.Where(x => x.RoleId == roleId).ToList();
 
             foreach(Application currItem in appList)
             {
@@ -78,7 +76,7 @@
                         AllowLogIn = currItem.AllowLogIn                         
                     };
 
-                    CurrDBContext.Get().tblAuthorizationApplication.Add(currTableItem);
+                    DAL.CurrDBContext.Get().tblAuthorizationApplication.Add(currTableItem);
                 }
                 else
                 {
@@ -88,7 +86,7 @@
                 }
             }
 
-            CurrDBContext.Get().SaveChanges();
+            DAL.CurrDBContext.Get().SaveChanges();
         }
     }
 }

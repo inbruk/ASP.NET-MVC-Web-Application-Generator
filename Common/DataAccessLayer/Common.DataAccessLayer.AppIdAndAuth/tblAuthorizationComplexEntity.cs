@@ -12,7 +12,7 @@ namespace Common.DataAccessLayer.AppIdAndAuth
     using System;
     using System.Collections.Generic;
     
-    public partial class tblAuthorizationComplexEntities
+    public partial class tblAuthorizationComplexEntity
     {
         public long RoleId { get; set; }
         public string ComplexEntityName { get; set; }

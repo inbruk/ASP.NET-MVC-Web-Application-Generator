@@ -2,7 +2,7 @@
 {
     using System;
 
-    public class SimpleEntities
+    public class SimpleEntity
     {
         public long RoleId { set; get; }
         public long EntityId { set; get; }
