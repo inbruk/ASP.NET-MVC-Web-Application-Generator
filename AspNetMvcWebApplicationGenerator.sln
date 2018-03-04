@@ -84,6 +84,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Auxiliary.PatternsAndClasse
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Auxiliary.FileGeneration", "Auxiliary\AuxiliaryTools.FileGeneration\Auxiliary.FileGeneration.csproj", "{FAEB2978-09A8-464A-914C-8A777F728B59}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Common.BusinessLogicLayer.DirLangStrings", "Common\BusinessLayer\Common.BusinessLogicLayer.DirLangStrings\Common.BusinessLogicLayer.DirLangStrings.csproj", "{EB9CB5FD-B39F-4BA8-8F4F-5F3899E3EE1B}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -176,6 +178,10 @@ Global
 		{FAEB2978-09A8-464A-914C-8A777F728B59}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{FAEB2978-09A8-464A-914C-8A777F728B59}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{FAEB2978-09A8-464A-914C-8A777F728B59}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EB9CB5FD-B39F-4BA8-8F4F-5F3899E3EE1B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EB9CB5FD-B39F-4BA8-8F4F-5F3899E3EE1B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EB9CB5FD-B39F-4BA8-8F4F-5F3899E3EE1B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EB9CB5FD-B39F-4BA8-8F4F-5F3899E3EE1B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -213,6 +219,7 @@ Global
 		{5E9B54CC-54DC-4097-A7F9-36F737D5E462} = {5B134A8C-6C92-402C-A59C-E5163EDBB240}
 		{E270B853-3089-4128-965D-9662FA25BDBA} = {5B134A8C-6C92-402C-A59C-E5163EDBB240}
 		{FAEB2978-09A8-464A-914C-8A777F728B59} = {5B134A8C-6C92-402C-A59C-E5163EDBB240}
+		{EB9CB5FD-B39F-4BA8-8F4F-5F3899E3EE1B} = {52DD6612-7D34-4ABE-82F7-9F1744D534ED}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {30210D04-884E-4B79-ADAA-6998C63EB5FC}
