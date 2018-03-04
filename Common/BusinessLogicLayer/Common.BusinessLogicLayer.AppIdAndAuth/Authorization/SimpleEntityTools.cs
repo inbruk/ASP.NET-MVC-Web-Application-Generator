@@ -1,14 +1,8 @@
 ﻿namespace Common.BusinessLogicLayer.AppIdAndAuth.Authorization
 {
-    using System;
-    using System.Linq;
-    using System.Collections.Generic;
-
-    using Auxiliary.CommonOptions;
-    using Auxiliary.PatternsAndClasses;
-
     using Common.DataTransferObjects.AppIdAndAuth.Authorization;
-
+    using System.Collections.Generic;
+    using System.Linq;
     using DAL = Common.DataAccessLayer.AppIdAndAuth;
 
     public static class SimpleEntityTools

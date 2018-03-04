@@ -62,6 +62,7 @@
     <Compile Include="Authorization\ApplicationTools.cs" />
     <Compile Include="Authorization\ComplexEntityTools.cs" />
     <Compile Include="Authorization\SimpleEntityTools.cs" />
+    <Compile Include="Authorization\UIFormTools.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup />

@@ -61,6 +61,7 @@
     <Compile Include="Authorization\Application.cs" />
     <Compile Include="Authorization\ComplexEntity.cs" />
     <Compile Include="Authorization\SimpleEntity.cs" />
+    <Compile Include="Authorization\UIForm.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
