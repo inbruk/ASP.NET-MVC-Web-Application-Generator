@@ -15,7 +15,7 @@
     using AspNetMvcWebApplicationGenerator.Generators.DataTransferObjects;
 
     using Common.DataTransferObjects.AppIdAndAuth.ApplicationId;
-    using Common.BusinessLogic.AppIdAndAuth.ApplicationId;
+    using Common.BusinessLogicLayer.AppIdAndAuth.ApplicationId;
     using DAL = Common.DataAccessLayer.AppIdAndAuth;
 
     internal class EnumsFromTables

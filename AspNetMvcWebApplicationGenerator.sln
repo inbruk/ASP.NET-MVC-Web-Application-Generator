@@ -36,7 +36,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "DataLayer", "DataLayer", "{
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "DataAccessLayer", "DataAccessLayer", "{52D29DB0-6AF9-438E-B43C-4C2F1F352DD3}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "BusinessLayer", "BusinessLayer", "{52DD6612-7D34-4ABE-82F7-9F1744D534ED}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "BusinessLogicLayer", "BusinessLogicLayer", "{52DD6612-7D34-4ABE-82F7-9F1744D534ED}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "DataTransferObjects", "DataTransferObjects", "{AF784ACF-BEB6-4D73-9778-2E715F91BF6A}"
 EndProject
@@ -76,15 +76,15 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Common.DataAccessLayer.AppI
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Common.DataTransferObjects.AppIdAndAuth", "Common\DataTransferObjects\Common.DataTransferObjects.AppIdAndAuth\Common.DataTransferObjects.AppIdAndAuth.csproj", "{6D330A84-F74D-4D7A-B52A-C101815A3533}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Common.BusinessLogic.AppIdAndAuth", "Common\BusinessLayer\Common.BusinessLogic.AppIdAndAuth\Common.BusinessLogic.AppIdAndAuth.csproj", "{3D8A97D2-4091-48BB-B0E0-60C7ABC1AD9B}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Auxiliary.CommonOptions", "Auxiliary\Auxiliary.CommonOptions\Auxiliary.CommonOptions.csproj", "{5E9B54CC-54DC-4097-A7F9-36F737D5E462}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Auxiliary.PatternsAndClasses", "Auxiliary\Auxiliary.PatternsAndClasses\Auxiliary.PatternsAndClasses.csproj", "{E270B853-3089-4128-965D-9662FA25BDBA}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Auxiliary.FileGeneration", "Auxiliary\AuxiliaryTools.FileGeneration\Auxiliary.FileGeneration.csproj", "{FAEB2978-09A8-464A-914C-8A777F728B59}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Common.BusinessLogicLayer.DirLangStrings", "Common\BusinessLayer\Common.BusinessLogicLayer.DirLangStrings\Common.BusinessLogicLayer.DirLangStrings.csproj", "{EB9CB5FD-B39F-4BA8-8F4F-5F3899E3EE1B}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Common.BusinessLogicLayer.DirLangStrings", "Common\BusinessLogicLayer\Common.BusinessLogicLayer.DirLangStrings\Common.BusinessLogicLayer.DirLangStrings.csproj", "{EB9CB5FD-B39F-4BA8-8F4F-5F3899E3EE1B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Common.BusinessLogicLayer.AppIdAndAuth", "Common\BusinessLogicLayer\Common.BusinessLogicLayer.AppIdAndAuth\Common.BusinessLogicLayer.AppIdAndAuth.csproj", "{3D8A97D2-4091-48BB-B0E0-60C7ABC1AD9B}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -162,10 +162,6 @@ Global
 		{6D330A84-F74D-4D7A-B52A-C101815A3533}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{6D330A84-F74D-4D7A-B52A-C101815A3533}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{6D330A84-F74D-4D7A-B52A-C101815A3533}.Release|Any CPU.Build.0 = Release|Any CPU
-		{3D8A97D2-4091-48BB-B0E0-60C7ABC1AD9B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{3D8A97D2-4091-48BB-B0E0-60C7ABC1AD9B}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{3D8A97D2-4091-48BB-B0E0-60C7ABC1AD9B}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{3D8A97D2-4091-48BB-B0E0-60C7ABC1AD9B}.Release|Any CPU.Build.0 = Release|Any CPU
 		{5E9B54CC-54DC-4097-A7F9-36F737D5E462}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{5E9B54CC-54DC-4097-A7F9-36F737D5E462}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{5E9B54CC-54DC-4097-A7F9-36F737D5E462}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -182,6 +178,10 @@ Global
 		{EB9CB5FD-B39F-4BA8-8F4F-5F3899E3EE1B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{EB9CB5FD-B39F-4BA8-8F4F-5F3899E3EE1B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{EB9CB5FD-B39F-4BA8-8F4F-5F3899E3EE1B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3D8A97D2-4091-48BB-B0E0-60C7ABC1AD9B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3D8A97D2-4091-48BB-B0E0-60C7ABC1AD9B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3D8A97D2-4091-48BB-B0E0-60C7ABC1AD9B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3D8A97D2-4091-48BB-B0E0-60C7ABC1AD9B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -215,11 +215,11 @@ Global
 		{865FA6E8-E434-4BB6-BAE6-76A58FA1A199} = {AD227A27-240A-4C5C-95DB-052FEA2E7405}
 		{072856EB-3CE6-4F92-8696-EC9EEC7FD462} = {52D29DB0-6AF9-438E-B43C-4C2F1F352DD3}
 		{6D330A84-F74D-4D7A-B52A-C101815A3533} = {AF784ACF-BEB6-4D73-9778-2E715F91BF6A}
-		{3D8A97D2-4091-48BB-B0E0-60C7ABC1AD9B} = {52DD6612-7D34-4ABE-82F7-9F1744D534ED}
 		{5E9B54CC-54DC-4097-A7F9-36F737D5E462} = {5B134A8C-6C92-402C-A59C-E5163EDBB240}
 		{E270B853-3089-4128-965D-9662FA25BDBA} = {5B134A8C-6C92-402C-A59C-E5163EDBB240}
 		{FAEB2978-09A8-464A-914C-8A777F728B59} = {5B134A8C-6C92-402C-A59C-E5163EDBB240}
 		{EB9CB5FD-B39F-4BA8-8F4F-5F3899E3EE1B} = {52DD6612-7D34-4ABE-82F7-9F1744D534ED}
+		{3D8A97D2-4091-48BB-B0E0-60C7ABC1AD9B} = {52DD6612-7D34-4ABE-82F7-9F1744D534ED}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {30210D04-884E-4B79-ADAA-6998C63EB5FC}

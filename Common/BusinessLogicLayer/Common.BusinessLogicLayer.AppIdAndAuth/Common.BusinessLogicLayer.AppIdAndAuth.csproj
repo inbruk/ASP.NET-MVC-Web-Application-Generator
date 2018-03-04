@@ -7,8 +7,8 @@
     <ProjectGuid>{3D8A97D2-4091-48BB-B0E0-60C7ABC1AD9B}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Common.BusinessLogic.AppIdAndAuth</RootNamespace>
-    <AssemblyName>Common.BusinessLogic.AppIdAndAuth</AssemblyName>
+    <RootNamespace>Common.BusinessLogicLayer.AppIdAndAuth</RootNamespace>
+    <AssemblyName>Common.BusinessLogicLayer.AppIdAndAuth</AssemblyName>
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>

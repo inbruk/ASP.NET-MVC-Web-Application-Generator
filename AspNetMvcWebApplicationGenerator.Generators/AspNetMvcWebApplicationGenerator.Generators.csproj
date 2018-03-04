@@ -85,9 +85,9 @@
       <Project>{faeb2978-09a8-464a-914c-8a777f728b59}</Project>
       <Name>Auxiliary.FileGeneration</Name>
     </ProjectReference>
-    <ProjectReference Include="..\Common\BusinessLayer\Common.BusinessLogic.AppIdAndAuth\Common.BusinessLogic.AppIdAndAuth.csproj">
+    <ProjectReference Include="..\Common\BusinessLogicLayer\Common.BusinessLogicLayer.AppIdAndAuth\Common.BusinessLogicLayer.AppIdAndAuth.csproj">
       <Project>{3d8a97d2-4091-48bb-b0e0-60c7abc1ad9b}</Project>
-      <Name>Common.BusinessLogic.AppIdAndAuth</Name>
+      <Name>Common.BusinessLogicLayer.AppIdAndAuth</Name>
     </ProjectReference>
     <ProjectReference Include="..\Common\DataAccessLayer\Common.DataAccessLayer.AppIdAndAuth\Common.DataAccessLayer.AppIdAndAuth.csproj">
       <Project>{072856eb-3ce6-4f92-8696-ec9eec7fd462}</Project>

@@ -1,4 +1,4 @@
-﻿namespace Common.BusinessLogic.AppIdAndAuth.ApplicationId
+﻿namespace Common.BusinessLogicLayer.AppIdAndAuth.ApplicationId
 {
     using System;
     using System.Collections.Generic;

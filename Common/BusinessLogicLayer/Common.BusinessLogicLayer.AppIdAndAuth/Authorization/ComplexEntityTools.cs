@@ -1,4 +1,4 @@
-﻿namespace Common.BusinessLogic.AppIdAndAuth.Authorization
+﻿namespace Common.BusinessLogicLayer.AppIdAndAuth.Authorization
 {
     using System;
     using System.Linq;
