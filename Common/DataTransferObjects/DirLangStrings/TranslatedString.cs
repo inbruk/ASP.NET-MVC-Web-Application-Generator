@@ -1,4 +1,4 @@
-﻿namespace AspNetMvcWebApplicationGenerator.Configuration.DataLayer
+﻿namespace Common.DataTransferObjects.DirLangStrings
 {
     using System;
 
