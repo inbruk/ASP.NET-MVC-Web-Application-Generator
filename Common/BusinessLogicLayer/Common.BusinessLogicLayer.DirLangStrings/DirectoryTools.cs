@@ -26,7 +26,7 @@
         public static Directory Read(long id)
         {
             Directory result = CurrDBContext.Get().tblDirectory.Where(x => x.Id == id).
-                Select(x => new Directory( id, x.EnumName, !!!!!!!!!!!!!!!!!!!!!! ).SingleOrDefault();
+                Select(x => new Directory( x.Id, x.EnumName, x.IsReadOnly ) ).SingleOrDefault();
 
             return result;
         }
@@ -34,7 +34,8 @@
         public static List<Directory> Read(List<long> idList)
         {
             List<Directory> result = CurrDBContext.Get().tblDirectory.Where(x => idList.Contains(x.Id)).
-                Select(x => new Directory((long)x.Language, (DirectoryType)x.Type, x.ReferencedItemId, x.Value)).ToList();
+                Select(x => new Directory(x.Id, x.EnumName, x.IsReadOnly) ).ToList();
+
             return result;
         }
 
@@ -42,10 +43,9 @@
         {
             tblDirectory dataItem = CurrDBContext.Get().tblDirectory.Where(x => x.Id == item.Id).Single();
 
-            dataItem.Language = item.Language;
-            dataItem.ReferencedItemId = item.ReferencedItemId;
-            dataItem.Type = (int?)item.Type;
-            dataItem.Value = item.Value;
+            dataItem.EnumName = item.EnumName;
+            dataItem.IsReadOnly = item.IsReadOnly;
+            dataItem.IsDeleted = item.IsDeleted;
 
             CurrDBContext.Get().SaveChanges();
         }

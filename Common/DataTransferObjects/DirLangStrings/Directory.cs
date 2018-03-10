@@ -11,24 +11,16 @@
         public Boolean IsReadOnly { get; }
         public Boolean IsDeleted { set; get; } = false;
 
-        public List<TranslatedString> TranslatedUINames { get; }
-        public Dictionary<String, DirectoryValue> Items { get; }
-
         public Directory
         (
             long id,
             String enumName,
-            Boolean isReadOnly,
-            List<TranslatedString> transUINames,
-            List<DirectoryValue> items
+            Boolean isReadOnly
         )
         {
             Id = id;
             EnumName = enumName;
             IsReadOnly = isReadOnly;
-            TranslatedUINames = transUINames;
-
-            Items = items.ToDictionary(x => x.EnumName, y => y);
         }
     }
 }

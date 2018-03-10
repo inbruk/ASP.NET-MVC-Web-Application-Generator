@@ -68,7 +68,7 @@
 
         public static void Update1(TranslatedString item)
         {
-            tblTranslatedString dataItem = CurrDBContext.Get().tblTranslatedString.Where(x => x.Id == item.).Single();
+            tblTranslatedString dataItem = CurrDBContext.Get().tblTranslatedString.Where( x => x.Id == item.Id ).Single();
 
             dataItem.Language = item.Language;
             dataItem.ReferencedItemId = item.ReferencedItemId;
