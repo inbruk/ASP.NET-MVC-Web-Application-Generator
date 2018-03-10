@@ -16,8 +16,9 @@ namespace Common.DataAccessLayer.DirLangStrings
     {
         public long Id { get; set; }
         public string EnumName { get; set; }
-        public Nullable<bool> IsReadOnly { get; set; }
-        public Nullable<long> DirectoryId { get; set; }
+        public long DirectoryId { get; set; }
+        public bool IsReadOnly { get; set; }
+        public bool IsDeleted { get; set; }
     
         public virtual tblDirectory tblDirectory { get; set; }
     }

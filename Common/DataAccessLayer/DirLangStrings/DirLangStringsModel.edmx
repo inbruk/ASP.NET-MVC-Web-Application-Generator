@@ -11,7 +11,8 @@
           </Key>
           <Property Name="Id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="EnumName" Type="nvarchar" MaxLength="16" />
-          <Property Name="IsReadOnly" Type="bit" />
+          <Property Name="IsReadOnly" Type="bit" Nullable="false" />
+          <Property Name="IsDeleted" Type="bit" Nullable="false" />
         </EntityType>
         <EntityType Name="tblDirectoryValue">
           <Key>
@@ -19,8 +20,9 @@
           </Key>
           <Property Name="Id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="EnumName" Type="nvarchar" MaxLength="16" />
-          <Property Name="IsReadOnly" Type="bit" />
-          <Property Name="DirectoryId" Type="bigint" />
+          <Property Name="DirectoryId" Type="bigint" Nullable="false" />
+          <Property Name="IsReadOnly" Type="bit" Nullable="false" />
+          <Property Name="IsDeleted" Type="bit" Nullable="false" />
         </EntityType>
         <EntityType Name="tblLanguage">
           <Key>
@@ -29,19 +31,21 @@
           <Property Name="Id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="EnumName" Type="nvarchar" MaxLength="16" />
           <Property Name="UIName" Type="nvarchar" MaxLength="16" />
+          <Property Name="IsDeleted" Type="bit" Nullable="false" />
         </EntityType>
         <EntityType Name="tblTranslatedString">
           <Key>
             <PropertyRef Name="Id" />
           </Key>
           <Property Name="Id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="Language" Type="bigint" />
-          <Property Name="Type" Type="int" />
+          <Property Name="Language" Type="bigint" Nullable="false" />
+          <Property Name="Type" Type="int" Nullable="false" />
           <Property Name="ReferencedItemId" Type="bigint" />
           <Property Name="Value" Type="nvarchar(max)" />
+          <Property Name="IsDeleted" Type="bit" Nullable="false" />
         </EntityType>
-        <Association Name="FK__tblDirect__Direc__164452B1">
-          <End Role="tblDirectory" Type="Self.tblDirectory" Multiplicity="0..1" />
+        <Association Name="FK__tblDirect__Direc__5070F446">
+          <End Role="tblDirectory" Type="Self.tblDirectory" Multiplicity="1" />
           <End Role="tblDirectoryValue" Type="Self.tblDirectoryValue" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="tblDirectory">
@@ -57,7 +61,7 @@
           <EntitySet Name="tblDirectoryValue" EntityType="Self.tblDirectoryValue" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="tblLanguage" EntityType="Self.tblLanguage" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="tblTranslatedString" EntityType="Self.tblTranslatedString" Schema="dbo" store:Type="Tables" />
-          <AssociationSet Name="FK__tblDirect__Direc__164452B1" Association="Self.FK__tblDirect__Direc__164452B1">
+          <AssociationSet Name="FK__tblDirect__Direc__5070F446" Association="Self.FK__tblDirect__Direc__5070F446">
             <End Role="tblDirectory" EntitySet="tblDirectory" />
             <End Role="tblDirectoryValue" EntitySet="tblDirectoryValue" />
           </AssociationSet>
@@ -71,7 +75,7 @@
           <EntitySet Name="tblDirectoryValue" EntityType="Common_DirLangStringsModel.tblDirectoryValue" />
           <EntitySet Name="tblLanguage" EntityType="Common_DirLangStringsModel.tblLanguage" />
           <EntitySet Name="tblTranslatedString" EntityType="Common_DirLangStringsModel.tblTranslatedString" />
-          <AssociationSet Name="FK__tblDirect__Direc__164452B1" Association="Common_DirLangStringsModel.FK__tblDirect__Direc__164452B1">
+          <AssociationSet Name="FK__tblDirect__Direc__5070F446" Association="Common_DirLangStringsModel.FK__tblDirect__Direc__5070F446">
             <End Role="tblDirectory" EntitySet="tblDirectory" />
             <End Role="tblDirectoryValue" EntitySet="tblDirectoryValue" />
           </AssociationSet>
@@ -82,8 +86,9 @@
           </Key>
           <Property Name="Id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="EnumName" Type="String" MaxLength="16" FixedLength="false" Unicode="true" />
-          <Property Name="IsReadOnly" Type="Boolean" />
-          <NavigationProperty Name="tblDirectoryValue" Relationship="Common_DirLangStringsModel.FK__tblDirect__Direc__164452B1" FromRole="tblDirectory" ToRole="tblDirectoryValue" />
+          <Property Name="IsReadOnly" Type="Boolean" Nullable="false" />
+          <Property Name="IsDeleted" Type="Boolean" Nullable="false" />
+          <NavigationProperty Name="tblDirectoryValue" Relationship="Common_DirLangStringsModel.FK__tblDirect__Direc__5070F446" FromRole="tblDirectory" ToRole="tblDirectoryValue" />
         </EntityType>
         <EntityType Name="tblDirectoryValue">
           <Key>
@@ -91,9 +96,10 @@
           </Key>
           <Property Name="Id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="EnumName" Type="String" MaxLength="16" FixedLength="false" Unicode="true" />
-          <Property Name="IsReadOnly" Type="Boolean" />
-          <Property Name="DirectoryId" Type="Int64" />
-          <NavigationProperty Name="tblDirectory" Relationship="Common_DirLangStringsModel.FK__tblDirect__Direc__164452B1" FromRole="tblDirectoryValue" ToRole="tblDirectory" />
+          <Property Name="DirectoryId" Type="Int64" Nullable="false" />
+          <Property Name="IsReadOnly" Type="Boolean" Nullable="false" />
+          <Property Name="IsDeleted" Type="Boolean" Nullable="false" />
+          <NavigationProperty Name="tblDirectory" Relationship="Common_DirLangStringsModel.FK__tblDirect__Direc__5070F446" FromRole="tblDirectoryValue" ToRole="tblDirectory" />
         </EntityType>
         <EntityType Name="tblLanguage">
           <Key>
@@ -102,19 +108,21 @@
           <Property Name="Id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="EnumName" Type="String" MaxLength="16" FixedLength="false" Unicode="true" />
           <Property Name="UIName" Type="String" MaxLength="16" FixedLength="false" Unicode="true" />
+          <Property Name="IsDeleted" Type="Boolean" Nullable="false" />
         </EntityType>
         <EntityType Name="tblTranslatedString">
           <Key>
             <PropertyRef Name="Id" />
           </Key>
           <Property Name="Id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="Language" Type="Int64" />
-          <Property Name="Type" Type="Int32" />
+          <Property Name="Language" Type="Int64" Nullable="false" />
+          <Property Name="Type" Type="Int32" Nullable="false" />
           <Property Name="ReferencedItemId" Type="Int64" />
           <Property Name="Value" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="IsDeleted" Type="Boolean" Nullable="false" />
         </EntityType>
-        <Association Name="FK__tblDirect__Direc__164452B1">
-          <End Type="Common_DirLangStringsModel.tblDirectory" Role="tblDirectory" Multiplicity="0..1" />
+        <Association Name="FK__tblDirect__Direc__5070F446">
+          <End Type="Common_DirLangStringsModel.tblDirectory" Role="tblDirectory" Multiplicity="1" />
           <End Type="Common_DirLangStringsModel.tblDirectoryValue" Role="tblDirectoryValue" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="tblDirectory">
@@ -134,6 +142,7 @@
           <EntitySetMapping Name="tblDirectory">
             <EntityTypeMapping TypeName="Common_DirLangStringsModel.tblDirectory">
               <MappingFragment StoreEntitySet="tblDirectory">
+                <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
                 <ScalarProperty Name="IsReadOnly" ColumnName="IsReadOnly" />
                 <ScalarProperty Name="EnumName" ColumnName="EnumName" />
                 <ScalarProperty Name="Id" ColumnName="Id" />
@@ -143,8 +152,9 @@
           <EntitySetMapping Name="tblDirectoryValue">
             <EntityTypeMapping TypeName="Common_DirLangStringsModel.tblDirectoryValue">
               <MappingFragment StoreEntitySet="tblDirectoryValue">
-                <ScalarProperty Name="DirectoryId" ColumnName="DirectoryId" />
+                <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
                 <ScalarProperty Name="IsReadOnly" ColumnName="IsReadOnly" />
+                <ScalarProperty Name="DirectoryId" ColumnName="DirectoryId" />
                 <ScalarProperty Name="EnumName" ColumnName="EnumName" />
                 <ScalarProperty Name="Id" ColumnName="Id" />
               </MappingFragment>
@@ -153,6 +163,7 @@
           <EntitySetMapping Name="tblLanguage">
             <EntityTypeMapping TypeName="Common_DirLangStringsModel.tblLanguage">
               <MappingFragment StoreEntitySet="tblLanguage">
+                <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
                 <ScalarProperty Name="UIName" ColumnName="UIName" />
                 <ScalarProperty Name="EnumName" ColumnName="EnumName" />
                 <ScalarProperty Name="Id" ColumnName="Id" />
@@ -162,6 +173,7 @@
           <EntitySetMapping Name="tblTranslatedString">
             <EntityTypeMapping TypeName="Common_DirLangStringsModel.tblTranslatedString">
               <MappingFragment StoreEntitySet="tblTranslatedString">
+                <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
                 <ScalarProperty Name="Value" ColumnName="Value" />
                 <ScalarProperty Name="ReferencedItemId" ColumnName="ReferencedItemId" />
                 <ScalarProperty Name="Type" ColumnName="Type" />

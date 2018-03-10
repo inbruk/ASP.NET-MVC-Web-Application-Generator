@@ -22,7 +22,8 @@ namespace Common.DataAccessLayer.DirLangStrings
     
         public long Id { get; set; }
         public string EnumName { get; set; }
-        public Nullable<bool> IsReadOnly { get; set; }
+        public bool IsReadOnly { get; set; }
+        public bool IsDeleted { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<tblDirectoryValue> tblDirectoryValue { get; set; }

@@ -15,9 +15,10 @@ namespace Common.DataAccessLayer.DirLangStrings
     public partial class tblTranslatedString
     {
         public long Id { get; set; }
-        public Nullable<long> Language { get; set; }
-        public Nullable<int> Type { get; set; }
+        public long Language { get; set; }
+        public int Type { get; set; }
         public Nullable<long> ReferencedItemId { get; set; }
         public string Value { get; set; }
+        public bool IsDeleted { get; set; }
     }
 }

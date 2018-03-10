@@ -9,6 +9,7 @@
         public long Id { get; }
         public String EnumName { get; }
         public Boolean IsReadOnly { get; }
+        public Boolean IsDeleted { set; get; } = false;
 
         public List<TranslatedString> TranslatedUINames { get; }
         public Dictionary<String, DirectoryValue> Items { get; }

@@ -17,5 +17,6 @@ namespace Common.DataAccessLayer.DirLangStrings
         public long Id { get; set; }
         public string EnumName { get; set; }
         public string UIName { get; set; }
+        public bool IsDeleted { get; set; }
     }
 }
