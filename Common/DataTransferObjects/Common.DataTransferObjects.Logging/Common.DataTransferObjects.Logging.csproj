@@ -40,7 +40,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Enums\enLogItemTypes.cs" />
+    <Compile Include="Enums\enSystemMessageTypes.cs" />
+    <Compile Include="ExceptionInfo.cs" />
+    <Compile Include="LogItem.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SystemInfo.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
