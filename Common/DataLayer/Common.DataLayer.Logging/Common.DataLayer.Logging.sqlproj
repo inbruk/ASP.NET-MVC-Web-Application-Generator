@@ -64,5 +64,11 @@
   </ItemGroup>
   <ItemGroup>
     <Build Include="Manual\Tables\tblLogItem.sql" />
+    <Build Include="Manual\Tables\tblSystemInfo.sql" />
+    <Build Include="Manual\Tables\tblExceptionInfo.sql" />
+    <Build Include="Manual\Indexes\idxLogItem.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Common.DataLayer.Logging.publish.xml" />
   </ItemGroup>
 </Project>

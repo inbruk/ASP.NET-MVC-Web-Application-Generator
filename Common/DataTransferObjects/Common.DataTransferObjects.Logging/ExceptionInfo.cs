@@ -10,7 +10,6 @@
         public DateTime DateTime { get; }
         public string Levels { get; }
         public string Value { get; }
-        public string Comment { get; }
         public string Data { get; }
         public string TargetSite { get; }
         public string Message { get; }
@@ -25,7 +24,6 @@
             DateTime dateTime,
             string levels, 
             string value, 
-            string comment, 
             string data, 
             string targetSite, 
             string message,
@@ -39,7 +37,6 @@
             DateTime = dateTime;
             Levels = levels;
             Value = value;
-            Comment = comment;
             Data = data;
             TargetSite = targetSite;
             Message = message;

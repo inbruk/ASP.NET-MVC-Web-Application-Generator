@@ -4,6 +4,7 @@
 
     public class LogItem
     {
+        public long Id { get; }
         public DateTime DateAndTime { get; }
         public String Value { get; }
         public String Comment { get; }
@@ -18,6 +19,7 @@
 
         public LogItem
         (
+            long id,
             DateTime dateAndTime,
             String value,
             String comment,
@@ -31,6 +33,7 @@
             long exceptionInfoId
         )
         {
+            Id = Id;
             DateAndTime = dateAndTime;
             Value = value;
             Comment = comment;
