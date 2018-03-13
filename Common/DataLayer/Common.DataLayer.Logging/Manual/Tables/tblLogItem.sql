@@ -10,6 +10,6 @@
     [MethodId] BIGINT NOT NULL, 
     [MethodName] NVARCHAR(128) NULL,
     [StringNumber] BIGINT NULL,  
-    [SystemInfoId] BIGINT NULL, 
-    [ExceptionInfoId] BIGINT NULL
+    [SystemInfoId] BIGINT NULL FOREIGN KEY REFERENCES tblSystemInfo(Id), 
+    [ExceptionInfoId] BIGINT NULL FOREIGN KEY REFERENCES tblExceptionInfo(Id)
 )

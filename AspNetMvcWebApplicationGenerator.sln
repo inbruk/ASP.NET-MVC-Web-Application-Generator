@@ -88,6 +88,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Common.DataTransferObjects.
 EndProject
 Project("{00D1A9C2-B5F0-4AF3-8072-F6C62B433612}") = "Common.DataLayer.Logging", "Common\DataLayer\Common.DataLayer.Logging\Common.DataLayer.Logging.sqlproj", "{1A528EAD-3493-407C-9DE5-DA4A9E237EC5}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Common.DataAccessLayer.Logging", "Common\DataAccessLayer\Common.DataAccessLayer.Logging\Common.DataAccessLayer.Logging.csproj", "{567DD19E-0609-4628-B4BD-1FFC546CD36E}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -190,6 +192,10 @@ Global
 		{1A528EAD-3493-407C-9DE5-DA4A9E237EC5}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{1A528EAD-3493-407C-9DE5-DA4A9E237EC5}.Release|Any CPU.Build.0 = Release|Any CPU
 		{1A528EAD-3493-407C-9DE5-DA4A9E237EC5}.Release|Any CPU.Deploy.0 = Release|Any CPU
+		{567DD19E-0609-4628-B4BD-1FFC546CD36E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{567DD19E-0609-4628-B4BD-1FFC546CD36E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{567DD19E-0609-4628-B4BD-1FFC546CD36E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{567DD19E-0609-4628-B4BD-1FFC546CD36E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -229,6 +235,7 @@ Global
 		{82824B19-053E-4436-B548-0D1FD1105C28} = {AF784ACF-BEB6-4D73-9778-2E715F91BF6A}
 		{11286873-8CA2-45C6-B75F-04C150ADBF08} = {AF784ACF-BEB6-4D73-9778-2E715F91BF6A}
 		{1A528EAD-3493-407C-9DE5-DA4A9E237EC5} = {AD227A27-240A-4C5C-95DB-052FEA2E7405}
+		{567DD19E-0609-4628-B4BD-1FFC546CD36E} = {52D29DB0-6AF9-438E-B43C-4C2F1F352DD3}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {30210D04-884E-4B79-ADAA-6998C63EB5FC}

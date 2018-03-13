@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="4f6234370af44f938c0f69e2dd18d68e" Name="Diagram1">
+        <EntityTypeShape EntityType="Common.DataAccessLayer.Logging.tblConfiguration" Width="2.5" PointX="5.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Common.DataAccessLayer.Logging.tblExceptionInfo" Width="1.5" PointX="0.75" PointY="1.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="Common.DataAccessLayer.Logging.tblLogItem" Width="1.5" PointX="3" PointY="1" IsExpanded="true" />
+        <EntityTypeShape EntityType="Common.DataAccessLayer.Logging.tblSystemInfo" Width="1.5" PointX="0.75" PointY="6" IsExpanded="true" />
+        <AssociationConnector Association="Common.DataAccessLayer.Logging.FK__tblExcept__Inner__1FCDBCEB" ManuallyRouted="false" />
+        <AssociationConnector Association="Common.DataAccessLayer.Logging.FK__tblLogIte__Excep__21B6055D" ManuallyRouted="false" />
+        <AssociationConnector Association="Common.DataAccessLayer.Logging.FK__tblLogIte__Syste__20C1E124" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

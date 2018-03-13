@@ -8,7 +8,7 @@
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectVersion>4.1</ProjectVersion>
     <ProjectGuid>{1a528ead-3493-407c-9de5-da4a9e237ec5}</ProjectGuid>
-    <DSP>Microsoft.Data.Tools.Schema.Sql.Sql130DatabaseSchemaProvider</DSP>
+    <DSP>Microsoft.Data.Tools.Schema.Sql.Sql110DatabaseSchemaProvider</DSP>
     <OutputType>Database</OutputType>
     <RootPath>
     </RootPath>
@@ -67,6 +67,8 @@
     <Build Include="Manual\Tables\tblSystemInfo.sql" />
     <Build Include="Manual\Tables\tblExceptionInfo.sql" />
     <Build Include="Manual\Indexes\idxLogItem.sql" />
+    <Build Include="Manual\Tables\tblConfiguration.sql" />
+    <Build Include="Manual\Indexes\idxExceptionInfo.sql" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Common.DataLayer.Logging.publish.xml" />

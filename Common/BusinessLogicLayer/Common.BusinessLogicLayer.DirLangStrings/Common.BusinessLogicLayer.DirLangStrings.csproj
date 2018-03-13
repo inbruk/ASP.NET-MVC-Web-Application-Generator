@@ -66,6 +66,10 @@
       <Project>{ad10124d-2e20-42e9-914c-b47d88031b80}</Project>
       <Name>Common.DataAccessLayer.DirLangStrings</Name>
     </ProjectReference>
+    <ProjectReference Include="..\..\DataTransferObjects\Common.DataTransferObjects.DirLangStrings\Common.DataTransferObjects.DirLangStrings.csproj">
+      <Project>{11286873-8ca2-45c6-b75f-04c150adbf08}</Project>
+      <Name>Common.DataTransferObjects.DirLangStrings</Name>
+    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
