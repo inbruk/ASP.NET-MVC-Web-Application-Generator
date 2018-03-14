@@ -49,6 +49,7 @@
   <ItemGroup>
     <Compile Include="ConfigurationTools.cs" />
     <Compile Include="ExceptionInfoTools.cs" />
+    <Compile Include="LogItemTools.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SystemInfoTools.cs" />
   </ItemGroup>

@@ -5,7 +5,7 @@
     public class LogItem
     {
         public long Id { get; }
-        public DateTime DateAndTime { get; }
+        public DateTimeOffset DateTime { get; }
         public String Value { get; }
         public String Comment { get; }
         public long ApplicationId { get; }
@@ -13,14 +13,14 @@
         public long SubsystemId { get; }
         public long MethodId { get; }
         public String MethodName { get; }
-        public long StringNumber { get; }
-        public long SystemInfoId { get; }
-        public long ExceptionInfoId { get; }
+        public long? StringNumber { get; }
+        public long? SystemInfoId { get; }
+        public long? ExceptionInfoId { get; }
 
         public LogItem
         (
             long id,
-            DateTime dateAndTime,
+            DateTimeOffset dateTime,
             String value,
             String comment,
             long applicationId,
@@ -28,13 +28,13 @@
             long subsystemId,
             long methodId,
             String methodName,
-            long stringNumber,
-            long systemInfoId,
-            long exceptionInfoId
+            long? stringNumber,
+            long? systemInfoId,
+            long? exceptionInfoId
         )
         {
             Id = Id;
-            DateAndTime = dateAndTime;
+            DateTime = dateTime;
             Value = value;
             Comment = comment;
             ApplicationId = applicationId;
