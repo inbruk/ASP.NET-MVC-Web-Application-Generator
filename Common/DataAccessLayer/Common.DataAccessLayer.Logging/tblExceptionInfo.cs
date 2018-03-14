@@ -23,8 +23,8 @@ namespace Common.DataAccessLayer.Logging
     
         public long Id { get; set; }
         public Nullable<long> InnerExceptionId { get; set; }
-        public bool IsParentException { get; set; }
         public System.DateTimeOffset DateTime { get; set; }
+        public string Levels { get; set; }
         public string Value { get; set; }
         public string Data { get; set; }
         public string TargetSite { get; set; }

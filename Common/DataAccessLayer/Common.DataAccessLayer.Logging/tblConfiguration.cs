@@ -14,7 +14,7 @@ namespace Common.DataAccessLayer.Logging
     
     public partial class tblConfiguration
     {
-        public int Id { get; set; }
+        public long Id { get; set; }
         public bool DisableSavingToFile { get; set; }
         public bool DisableSavingToWebService { get; set; }
         public bool DisableSystemMessage { get; set; }

@@ -4,12 +4,12 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="Хранилище Common.DataAccessLayer.Logging" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+    <Schema Namespace="Хранилище Common.DataAccessLayer.Logging" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="tblConfiguration">
           <Key>
             <PropertyRef Name="Id" />
           </Key>
-          <Property Name="Id" Type="int" Nullable="false" />
+          <Property Name="Id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="DisableSavingToFile" Type="bit" Nullable="false" />
           <Property Name="DisableSavingToWebService" Type="bit" Nullable="false" />
           <Property Name="DisableSystemMessage" Type="bit" Nullable="false" />
@@ -24,10 +24,10 @@
           <Key>
             <PropertyRef Name="Id" />
           </Key>
-          <Property Name="Id" Type="bigint" Nullable="false" />
+          <Property Name="Id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="InnerExceptionId" Type="bigint" />
-          <Property Name="IsParentException" Type="bit" Nullable="false" />
           <Property Name="DateTime" Type="datetimeoffset" Precision="7" Nullable="false" />
+          <Property Name="Levels" Type="nvarchar" MaxLength="128" />
           <Property Name="Value" Type="nvarchar" MaxLength="128" />
           <Property Name="Data" Type="nvarchar(max)" />
           <Property Name="TargetSite" Type="nvarchar(max)" />
@@ -61,7 +61,7 @@
           <Property Name="CurrentDirectory" Type="nvarchar(max)" />
           <Property Name="MachineName" Type="nvarchar" MaxLength="128" />
           <Property Name="OSVersion" Type="nvarchar" MaxLength="128" />
-          <Property Name="Is64BitOperatingSystem" Type="bit" />
+          <Property Name="Is64BitOperatingSystem" Type="bit" Nullable="false" />
           <Property Name="ProcessorCount" Type="nvarchar" MaxLength="128" />
           <Property Name="StackTrace" Type="nvarchar(max)" />
           <Property Name="SystemDirectory" Type="nvarchar(max)" />
@@ -70,7 +70,7 @@
           <Property Name="UserDomainName" Type="nvarchar" MaxLength="128" />
           <Property Name="GetLogicalDrives" Type="nvarchar" MaxLength="128" />
         </EntityType>
-        <Association Name="FK__tblExcept__Inner__1FCDBCEB">
+        <Association Name="FK__tblExcept__Inner__09A971A2">
           <End Role="tblExceptionInfo" Type="Self.tblExceptionInfo" Multiplicity="0..1" />
           <End Role="tblExceptionInfo1" Type="Self.tblExceptionInfo" Multiplicity="*" />
           <ReferentialConstraint>
@@ -82,7 +82,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__tblLogIte__Excep__21B6055D">
+        <Association Name="FK__tblLogIte__Excep__0B91BA14">
           <End Role="tblExceptionInfo" Type="Self.tblExceptionInfo" Multiplicity="0..1" />
           <End Role="tblLogItem" Type="Self.tblLogItem" Multiplicity="*" />
           <ReferentialConstraint>
@@ -94,7 +94,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__tblLogIte__Syste__20C1E124">
+        <Association Name="FK__tblLogIte__Syste__0A9D95DB">
           <End Role="tblSystemInfo" Type="Self.tblSystemInfo" Multiplicity="0..1" />
           <End Role="tblLogItem" Type="Self.tblLogItem" Multiplicity="*" />
           <ReferentialConstraint>
@@ -111,29 +111,46 @@
           <EntitySet Name="tblExceptionInfo" EntityType="Self.tblExceptionInfo" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="tblLogItem" EntityType="Self.tblLogItem" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="tblSystemInfo" EntityType="Self.tblSystemInfo" Schema="dbo" store:Type="Tables" />
-          <AssociationSet Name="FK__tblExcept__Inner__1FCDBCEB" Association="Self.FK__tblExcept__Inner__1FCDBCEB">
+          <AssociationSet Name="FK__tblExcept__Inner__09A971A2" Association="Self.FK__tblExcept__Inner__09A971A2">
             <End Role="tblExceptionInfo" EntitySet="tblExceptionInfo" />
             <End Role="tblExceptionInfo1" EntitySet="tblExceptionInfo" />
           </AssociationSet>
-          <AssociationSet Name="FK__tblLogIte__Excep__21B6055D" Association="Self.FK__tblLogIte__Excep__21B6055D">
+          <AssociationSet Name="FK__tblLogIte__Excep__0B91BA14" Association="Self.FK__tblLogIte__Excep__0B91BA14">
             <End Role="tblExceptionInfo" EntitySet="tblExceptionInfo" />
             <End Role="tblLogItem" EntitySet="tblLogItem" />
           </AssociationSet>
-          <AssociationSet Name="FK__tblLogIte__Syste__20C1E124" Association="Self.FK__tblLogIte__Syste__20C1E124">
+          <AssociationSet Name="FK__tblLogIte__Syste__0A9D95DB" Association="Self.FK__tblLogIte__Syste__0A9D95DB">
             <End Role="tblSystemInfo" EntitySet="tblSystemInfo" />
             <End Role="tblLogItem" EntitySet="tblLogItem" />
           </AssociationSet>
         </EntityContainer>
-      </Schema>
-    </edmx:StorageModels>
+      </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="Common.DataAccessLayer.Logging" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityContainer Name="Cmn_DAL_Logging_Entities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="tblConfiguration" EntityType="Common.DataAccessLayer.Logging.tblConfiguration" />
+          <EntitySet Name="tblExceptionInfo" EntityType="Common.DataAccessLayer.Logging.tblExceptionInfo" />
+          <EntitySet Name="tblLogItem" EntityType="Common.DataAccessLayer.Logging.tblLogItem" />
+          <EntitySet Name="tblSystemInfo" EntityType="Common.DataAccessLayer.Logging.tblSystemInfo" />
+          <AssociationSet Name="FK__tblExcept__Inner__09A971A2" Association="Common.DataAccessLayer.Logging.FK__tblExcept__Inner__09A971A2">
+            <End Role="tblExceptionInfo" EntitySet="tblExceptionInfo" />
+            <End Role="tblExceptionInfo1" EntitySet="tblExceptionInfo" />
+          </AssociationSet>
+          <AssociationSet Name="FK__tblLogIte__Excep__0B91BA14" Association="Common.DataAccessLayer.Logging.FK__tblLogIte__Excep__0B91BA14">
+            <End Role="tblExceptionInfo" EntitySet="tblExceptionInfo" />
+            <End Role="tblLogItem" EntitySet="tblLogItem" />
+          </AssociationSet>
+          <AssociationSet Name="FK__tblLogIte__Syste__0A9D95DB" Association="Common.DataAccessLayer.Logging.FK__tblLogIte__Syste__0A9D95DB">
+            <End Role="tblSystemInfo" EntitySet="tblSystemInfo" />
+            <End Role="tblLogItem" EntitySet="tblLogItem" />
+          </AssociationSet>
+        </EntityContainer>
         <EntityType Name="tblConfiguration">
           <Key>
             <PropertyRef Name="Id" />
           </Key>
-          <Property Name="Id" Type="Int32" Nullable="false" />
+          <Property Name="Id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="DisableSavingToFile" Type="Boolean" Nullable="false" />
           <Property Name="DisableSavingToWebService" Type="Boolean" Nullable="false" />
           <Property Name="DisableSystemMessage" Type="Boolean" Nullable="false" />
@@ -148,19 +165,19 @@
           <Key>
             <PropertyRef Name="Id" />
           </Key>
-          <Property Name="Id" Type="Int64" Nullable="false" />
+          <Property Name="Id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="InnerExceptionId" Type="Int64" />
-          <Property Name="IsParentException" Type="Boolean" Nullable="false" />
           <Property Name="DateTime" Type="DateTimeOffset" Nullable="false" Precision="7" />
+          <Property Name="Levels" Type="String" MaxLength="128" FixedLength="false" Unicode="true" />
           <Property Name="Value" Type="String" MaxLength="128" FixedLength="false" Unicode="true" />
           <Property Name="Data" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
           <Property Name="TargetSite" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
-          <Property Name="Message" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Message" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
           <Property Name="StackTrace" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
           <Property Name="Sources" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
-          <NavigationProperty Name="tblExceptionInfo1" Relationship="Self.FK__tblExcept__Inner__1FCDBCEB" FromRole="tblExceptionInfo" ToRole="tblExceptionInfo1" />
-          <NavigationProperty Name="tblExceptionInfo2" Relationship="Self.FK__tblExcept__Inner__1FCDBCEB" FromRole="tblExceptionInfo1" ToRole="tblExceptionInfo" />
-          <NavigationProperty Name="tblLogItem" Relationship="Self.FK__tblLogIte__Excep__21B6055D" FromRole="tblExceptionInfo" ToRole="tblLogItem" />
+          <NavigationProperty Name="tblExceptionInfo1" Relationship="Common.DataAccessLayer.Logging.FK__tblExcept__Inner__09A971A2" FromRole="tblExceptionInfo" ToRole="tblExceptionInfo1" />
+          <NavigationProperty Name="tblExceptionInfo2" Relationship="Common.DataAccessLayer.Logging.FK__tblExcept__Inner__09A971A2" FromRole="tblExceptionInfo1" ToRole="tblExceptionInfo" />
+          <NavigationProperty Name="tblLogItem" Relationship="Common.DataAccessLayer.Logging.FK__tblLogIte__Excep__0B91BA14" FromRole="tblExceptionInfo" ToRole="tblLogItem" />
         </EntityType>
         <EntityType Name="tblLogItem">
           <Key>
@@ -178,8 +195,8 @@
           <Property Name="StringNumber" Type="Int64" />
           <Property Name="SystemInfoId" Type="Int64" />
           <Property Name="ExceptionInfoId" Type="Int64" />
-          <NavigationProperty Name="tblExceptionInfo" Relationship="Self.FK__tblLogIte__Excep__21B6055D" FromRole="tblLogItem" ToRole="tblExceptionInfo" />
-          <NavigationProperty Name="tblSystemInfo" Relationship="Self.FK__tblLogIte__Syste__20C1E124" FromRole="tblLogItem" ToRole="tblSystemInfo" />
+          <NavigationProperty Name="tblExceptionInfo" Relationship="Common.DataAccessLayer.Logging.FK__tblLogIte__Excep__0B91BA14" FromRole="tblLogItem" ToRole="tblExceptionInfo" />
+          <NavigationProperty Name="tblSystemInfo" Relationship="Common.DataAccessLayer.Logging.FK__tblLogIte__Syste__0A9D95DB" FromRole="tblLogItem" ToRole="tblSystemInfo" />
         </EntityType>
         <EntityType Name="tblSystemInfo">
           <Key>
@@ -190,7 +207,7 @@
           <Property Name="CurrentDirectory" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
           <Property Name="MachineName" Type="String" MaxLength="128" FixedLength="false" Unicode="true" />
           <Property Name="OSVersion" Type="String" MaxLength="128" FixedLength="false" Unicode="true" />
-          <Property Name="Is64BitOperatingSystem" Type="Boolean" />
+          <Property Name="Is64BitOperatingSystem" Type="Boolean" Nullable="false" />
           <Property Name="ProcessorCount" Type="String" MaxLength="128" FixedLength="false" Unicode="true" />
           <Property Name="StackTrace" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
           <Property Name="SystemDirectory" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
@@ -198,11 +215,11 @@
           <Property Name="UserName" Type="String" MaxLength="128" FixedLength="false" Unicode="true" />
           <Property Name="UserDomainName" Type="String" MaxLength="128" FixedLength="false" Unicode="true" />
           <Property Name="GetLogicalDrives" Type="String" MaxLength="128" FixedLength="false" Unicode="true" />
-          <NavigationProperty Name="tblLogItem" Relationship="Self.FK__tblLogIte__Syste__20C1E124" FromRole="tblSystemInfo" ToRole="tblLogItem" />
+          <NavigationProperty Name="tblLogItem" Relationship="Common.DataAccessLayer.Logging.FK__tblLogIte__Syste__0A9D95DB" FromRole="tblSystemInfo" ToRole="tblLogItem" />
         </EntityType>
-        <Association Name="FK__tblExcept__Inner__1FCDBCEB">
-          <End Role="tblExceptionInfo" Type="Self.tblExceptionInfo" Multiplicity="0..1" />
-          <End Role="tblExceptionInfo1" Type="Self.tblExceptionInfo" Multiplicity="*" />
+        <Association Name="FK__tblExcept__Inner__09A971A2">
+          <End Type="Common.DataAccessLayer.Logging.tblExceptionInfo" Role="tblExceptionInfo" Multiplicity="0..1" />
+          <End Type="Common.DataAccessLayer.Logging.tblExceptionInfo" Role="tblExceptionInfo1" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="tblExceptionInfo">
               <PropertyRef Name="Id" />
@@ -212,9 +229,9 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__tblLogIte__Excep__21B6055D">
-          <End Role="tblExceptionInfo" Type="Self.tblExceptionInfo" Multiplicity="0..1" />
-          <End Role="tblLogItem" Type="Self.tblLogItem" Multiplicity="*" />
+        <Association Name="FK__tblLogIte__Excep__0B91BA14">
+          <End Type="Common.DataAccessLayer.Logging.tblExceptionInfo" Role="tblExceptionInfo" Multiplicity="0..1" />
+          <End Type="Common.DataAccessLayer.Logging.tblLogItem" Role="tblLogItem" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="tblExceptionInfo">
               <PropertyRef Name="Id" />
@@ -224,9 +241,9 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__tblLogIte__Syste__20C1E124">
-          <End Role="tblSystemInfo" Type="Self.tblSystemInfo" Multiplicity="0..1" />
-          <End Role="tblLogItem" Type="Self.tblLogItem" Multiplicity="*" />
+        <Association Name="FK__tblLogIte__Syste__0A9D95DB">
+          <End Type="Common.DataAccessLayer.Logging.tblSystemInfo" Role="tblSystemInfo" Multiplicity="0..1" />
+          <End Type="Common.DataAccessLayer.Logging.tblLogItem" Role="tblLogItem" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="tblSystemInfo">
               <PropertyRef Name="Id" />
@@ -236,25 +253,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <EntityContainer Name="Cmn_DAL_Logging_Entities" annotation:LazyLoadingEnabled="true">
-          <EntitySet Name="tblConfiguration" EntityType="Self.tblConfiguration" />
-          <EntitySet Name="tblExceptionInfo" EntityType="Self.tblExceptionInfo" />
-          <EntitySet Name="tblLogItem" EntityType="Self.tblLogItem" />
-          <EntitySet Name="tblSystemInfo" EntityType="Self.tblSystemInfo" />
-          <AssociationSet Name="FK__tblExcept__Inner__1FCDBCEB" Association="Self.FK__tblExcept__Inner__1FCDBCEB">
-            <End Role="tblExceptionInfo" EntitySet="tblExceptionInfo" />
-            <End Role="tblExceptionInfo1" EntitySet="tblExceptionInfo" />
-          </AssociationSet>
-          <AssociationSet Name="FK__tblLogIte__Excep__21B6055D" Association="Self.FK__tblLogIte__Excep__21B6055D">
-            <End Role="tblExceptionInfo" EntitySet="tblExceptionInfo" />
-            <End Role="tblLogItem" EntitySet="tblLogItem" />
-          </AssociationSet>
-          <AssociationSet Name="FK__tblLogIte__Syste__20C1E124" Association="Self.FK__tblLogIte__Syste__20C1E124">
-            <End Role="tblSystemInfo" EntitySet="tblSystemInfo" />
-            <End Role="tblLogItem" EntitySet="tblLogItem" />
-          </AssociationSet>
-        </EntityContainer>
-      </Schema>
+        </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
     <edmx:Mappings>
@@ -263,69 +262,69 @@
           <EntitySetMapping Name="tblConfiguration">
             <EntityTypeMapping TypeName="Common.DataAccessLayer.Logging.tblConfiguration">
               <MappingFragment StoreEntitySet="tblConfiguration">
-                <ScalarProperty Name="Id" ColumnName="Id" />
-                <ScalarProperty Name="DisableSavingToFile" ColumnName="DisableSavingToFile" />
-                <ScalarProperty Name="DisableSavingToWebService" ColumnName="DisableSavingToWebService" />
-                <ScalarProperty Name="DisableSystemMessage" ColumnName="DisableSystemMessage" />
-                <ScalarProperty Name="DisableMessageForUser" ColumnName="DisableMessageForUser" />
-                <ScalarProperty Name="DisableInformation" ColumnName="DisableInformation" />
-                <ScalarProperty Name="DisableWarning" ColumnName="DisableWarning" />
-                <ScalarProperty Name="DisableError" ColumnName="DisableError" />
-                <ScalarProperty Name="DisableFatalError" ColumnName="DisableFatalError" />
                 <ScalarProperty Name="DisableDebugMessage" ColumnName="DisableDebugMessage" />
+                <ScalarProperty Name="DisableFatalError" ColumnName="DisableFatalError" />
+                <ScalarProperty Name="DisableError" ColumnName="DisableError" />
+                <ScalarProperty Name="DisableWarning" ColumnName="DisableWarning" />
+                <ScalarProperty Name="DisableInformation" ColumnName="DisableInformation" />
+                <ScalarProperty Name="DisableMessageForUser" ColumnName="DisableMessageForUser" />
+                <ScalarProperty Name="DisableSystemMessage" ColumnName="DisableSystemMessage" />
+                <ScalarProperty Name="DisableSavingToWebService" ColumnName="DisableSavingToWebService" />
+                <ScalarProperty Name="DisableSavingToFile" ColumnName="DisableSavingToFile" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="tblExceptionInfo">
             <EntityTypeMapping TypeName="Common.DataAccessLayer.Logging.tblExceptionInfo">
               <MappingFragment StoreEntitySet="tblExceptionInfo">
-                <ScalarProperty Name="Id" ColumnName="Id" />
-                <ScalarProperty Name="InnerExceptionId" ColumnName="InnerExceptionId" />
-                <ScalarProperty Name="IsParentException" ColumnName="IsParentException" />
-                <ScalarProperty Name="DateTime" ColumnName="DateTime" />
-                <ScalarProperty Name="Value" ColumnName="Value" />
-                <ScalarProperty Name="Data" ColumnName="Data" />
-                <ScalarProperty Name="TargetSite" ColumnName="TargetSite" />
-                <ScalarProperty Name="Message" ColumnName="Message" />
-                <ScalarProperty Name="StackTrace" ColumnName="StackTrace" />
                 <ScalarProperty Name="Sources" ColumnName="Sources" />
+                <ScalarProperty Name="StackTrace" ColumnName="StackTrace" />
+                <ScalarProperty Name="Message" ColumnName="Message" />
+                <ScalarProperty Name="TargetSite" ColumnName="TargetSite" />
+                <ScalarProperty Name="Data" ColumnName="Data" />
+                <ScalarProperty Name="Value" ColumnName="Value" />
+                <ScalarProperty Name="Levels" ColumnName="Levels" />
+                <ScalarProperty Name="DateTime" ColumnName="DateTime" />
+                <ScalarProperty Name="InnerExceptionId" ColumnName="InnerExceptionId" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="tblLogItem">
             <EntityTypeMapping TypeName="Common.DataAccessLayer.Logging.tblLogItem">
               <MappingFragment StoreEntitySet="tblLogItem">
-                <ScalarProperty Name="Id" ColumnName="Id" />
-                <ScalarProperty Name="DateTime" ColumnName="DateTime" />
-                <ScalarProperty Name="Value" ColumnName="Value" />
-                <ScalarProperty Name="Comment" ColumnName="Comment" />
-                <ScalarProperty Name="ApplicationId" ColumnName="ApplicationId" />
-                <ScalarProperty Name="LayerId" ColumnName="LayerId" />
-                <ScalarProperty Name="SubsystemId" ColumnName="SubsystemId" />
-                <ScalarProperty Name="MethodId" ColumnName="MethodId" />
-                <ScalarProperty Name="MethodName" ColumnName="MethodName" />
-                <ScalarProperty Name="StringNumber" ColumnName="StringNumber" />
-                <ScalarProperty Name="SystemInfoId" ColumnName="SystemInfoId" />
                 <ScalarProperty Name="ExceptionInfoId" ColumnName="ExceptionInfoId" />
+                <ScalarProperty Name="SystemInfoId" ColumnName="SystemInfoId" />
+                <ScalarProperty Name="StringNumber" ColumnName="StringNumber" />
+                <ScalarProperty Name="MethodName" ColumnName="MethodName" />
+                <ScalarProperty Name="MethodId" ColumnName="MethodId" />
+                <ScalarProperty Name="SubsystemId" ColumnName="SubsystemId" />
+                <ScalarProperty Name="LayerId" ColumnName="LayerId" />
+                <ScalarProperty Name="ApplicationId" ColumnName="ApplicationId" />
+                <ScalarProperty Name="Comment" ColumnName="Comment" />
+                <ScalarProperty Name="Value" ColumnName="Value" />
+                <ScalarProperty Name="DateTime" ColumnName="DateTime" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="tblSystemInfo">
             <EntityTypeMapping TypeName="Common.DataAccessLayer.Logging.tblSystemInfo">
               <MappingFragment StoreEntitySet="tblSystemInfo">
-                <ScalarProperty Name="Id" ColumnName="Id" />
-                <ScalarProperty Name="CommandLine" ColumnName="CommandLine" />
-                <ScalarProperty Name="CurrentDirectory" ColumnName="CurrentDirectory" />
-                <ScalarProperty Name="MachineName" ColumnName="MachineName" />
-                <ScalarProperty Name="OSVersion" ColumnName="OSVersion" />
-                <ScalarProperty Name="Is64BitOperatingSystem" ColumnName="Is64BitOperatingSystem" />
-                <ScalarProperty Name="ProcessorCount" ColumnName="ProcessorCount" />
-                <ScalarProperty Name="StackTrace" ColumnName="StackTrace" />
-                <ScalarProperty Name="SystemDirectory" ColumnName="SystemDirectory" />
-                <ScalarProperty Name="SystemPageSize" ColumnName="SystemPageSize" />
-                <ScalarProperty Name="UserName" ColumnName="UserName" />
-                <ScalarProperty Name="UserDomainName" ColumnName="UserDomainName" />
                 <ScalarProperty Name="GetLogicalDrives" ColumnName="GetLogicalDrives" />
+                <ScalarProperty Name="UserDomainName" ColumnName="UserDomainName" />
+                <ScalarProperty Name="UserName" ColumnName="UserName" />
+                <ScalarProperty Name="SystemPageSize" ColumnName="SystemPageSize" />
+                <ScalarProperty Name="SystemDirectory" ColumnName="SystemDirectory" />
+                <ScalarProperty Name="StackTrace" ColumnName="StackTrace" />
+                <ScalarProperty Name="ProcessorCount" ColumnName="ProcessorCount" />
+                <ScalarProperty Name="Is64BitOperatingSystem" ColumnName="Is64BitOperatingSystem" />
+                <ScalarProperty Name="OSVersion" ColumnName="OSVersion" />
+                <ScalarProperty Name="MachineName" ColumnName="MachineName" />
+                <ScalarProperty Name="CurrentDirectory" ColumnName="CurrentDirectory" />
+                <ScalarProperty Name="CommandLine" ColumnName="CommandLine" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

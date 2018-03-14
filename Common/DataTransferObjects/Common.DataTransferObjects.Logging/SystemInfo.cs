@@ -4,6 +4,7 @@
 
     public class SystemInfo
     {
+        public long   Id { get; }
         public string CommandLine { get; }
         public string CurrentDirectory { get; }
         public string MachineName { get; }
@@ -19,6 +20,7 @@
 
         public SystemInfo
         (
+            long id,
             string commandLine,
             string currentDirectory,
             string machineName,
@@ -33,6 +35,7 @@
             string getLogicalDrives
         )
         {
+            Id = id;
             CommandLine = commandLine;
             CurrentDirectory = currentDirectory;
             MachineName = machineName;

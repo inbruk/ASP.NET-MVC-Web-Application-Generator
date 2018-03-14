@@ -1,9 +1,9 @@
 ﻿CREATE TABLE [dbo].[tblExceptionInfo]
 (
-	[Id] BIGINT NOT NULL PRIMARY KEY,
+	[Id] BIGINT IDENTITY(1,1) NOT NULL PRIMARY KEY,
     [InnerExceptionId] BIGINT NULL FOREIGN KEY REFERENCES tblExceptionInfo(Id),
-    [IsParentException] BIT NOT NULL,     
     [DateTime]   DATETIMEOFFSET NOT NULL,
+	[Levels]     NVARCHAR(128) NULL, 
     [Value]      NVARCHAR(128) NULL, 
     [Data]       NVARCHAR(MAX) NULL,
     [TargetSite] NVARCHAR(MAX) NULL,

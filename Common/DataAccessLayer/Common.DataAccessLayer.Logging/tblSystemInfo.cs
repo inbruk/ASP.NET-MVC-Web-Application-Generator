@@ -25,7 +25,7 @@ namespace Common.DataAccessLayer.Logging
         public string CurrentDirectory { get; set; }
         public string MachineName { get; set; }
         public string OSVersion { get; set; }
-        public Nullable<bool> Is64BitOperatingSystem { get; set; }
+        public bool Is64BitOperatingSystem { get; set; }
         public string ProcessorCount { get; set; }
         public string StackTrace { get; set; }
         public string SystemDirectory { get; set; }

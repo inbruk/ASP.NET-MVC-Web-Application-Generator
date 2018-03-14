@@ -1,6 +1,6 @@
 ﻿CREATE TABLE [dbo].[tblConfiguration]
 (
-	[Id] INT NOT NULL PRIMARY KEY,
+	[Id] BIGINT IDENTITY(1,1) NOT NULL PRIMARY KEY,
     DisableSavingToFile  BIT NOT NULL DEFAULT(0),
     DisableSavingToWebService  BIT NOT NULL DEFAULT(0),
     DisableSystemMessage  BIT NOT NULL DEFAULT(0),

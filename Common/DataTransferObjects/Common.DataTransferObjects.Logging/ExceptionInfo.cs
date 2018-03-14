@@ -6,8 +6,7 @@
     {
         public long  Id { get; }
         public long? InnerExceptionId { get; }
-        public bool IsParentException { get; }
-        public DateTime DateTime { get; }
+        public DateTimeOffset DateTime { get; }
         public string Levels { get; }
         public string Value { get; }
         public string Data { get; }
@@ -20,8 +19,7 @@
         (
             long id,
             long? innerExceptionId,
-            bool  isParentException, 
-            DateTime dateTime,
+            DateTimeOffset dateTime,
             string levels, 
             string value, 
             string data, 
@@ -33,7 +31,6 @@
         {
             Id = id;
             InnerExceptionId = innerExceptionId;
-            IsParentException = isParentException;
             DateTime = dateTime;
             Levels = levels;
             Value = value;

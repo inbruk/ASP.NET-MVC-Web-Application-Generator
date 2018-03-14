@@ -72,5 +72,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Common.DataLayer.Logging.publish.xml" />
+    <None Include="Manual\PostDeploymentScripts\fill_tblConfiguration.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <PostDeploy Include="Manual\PostDeploymentScripts\PostDeploymentScriptsRoot.sql" />
   </ItemGroup>
 </Project>

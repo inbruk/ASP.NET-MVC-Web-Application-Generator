@@ -5,7 +5,7 @@
     [CurrentDirectory] NVARCHAR(MAX) NULL,
     [MachineName] NVARCHAR(128) NULL,
     [OSVersion] NVARCHAR(128) NULL,
-    [Is64BitOperatingSystem] BIT NULL,
+    [Is64BitOperatingSystem] BIT NOT NULL DEFAULT(1),
     [ProcessorCount] NVARCHAR(128) NULL,
     [StackTrace] NVARCHAR(MAX) NULL,
     [SystemDirectory] NVARCHAR(MAX) NULL,
