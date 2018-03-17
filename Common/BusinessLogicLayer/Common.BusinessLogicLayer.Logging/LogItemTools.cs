@@ -2,10 +2,11 @@
 {
     using System;
     using System.Linq;
+    using System.Collections;
     using System.Collections.Generic;
 
     using Auxiliary.CommonOptions;
-    using Auxiliary.PatternsAndClasses;
+    using Auxiliary.CRUD;
 
     using Common.DataTransferObjects.Logging;
     using Common.DataAccessLayer.Logging;
@@ -89,6 +90,79 @@
 
             return result;
         }
+
+        //private static IQueryable<tblLogItem> HasID(this IQueryable<tblLogItem> query, IFilterItem fi)
+        //{
+        //    switch (fi.ItemType)
+        //    {
+        //        case enFilterItemTypes.SingleValue:
+        //            var query1 = query.Where( x => x.)
+        //                break;
+        //        case enFilterItemTypes.RangeOfValues:
+
+        //            break;
+        //        case enFilterItemTypes.ListOfValues:
+
+        //            break;
+        //        default:
+        //            throw new Exception("Wrong enFilterItemTypes value in LogItemTools.ReadWithFilterAndSort() !");
+        //    }
+
+        //    return id.HasValue ? query.Where(o => i.ID.Equals(id.Value)) : query;
+        //}
+
+        //public static ResponseRowsRange<LogItem> ReadWithFilterAndSort(
+        //    List<IFilterItem> filterItemsList, List<String> sortingFields, RequestRowsRange range )
+        //{
+        //    if (range.RowsCount > Constants.MaxListSize)
+        //    {
+        //        throw new Exception("Maximum list size is exceeded in LogItemTools.ReadWithFilter() !");
+        //    }
+
+        //    IQueryable<tblLogItem> query = CurrDBContext.Get().tblLogItem;
+        //    foreach (IFilterItem currItem in filterItemsList)
+        //    {
+        //        switch( currItem.ItemType )
+        //        {
+        //            case enFilterItemTypes.SingleValue:
+        //                var query1 = query.
+        //                break;
+        //            case enFilterItemTypes.RangeOfValues:
+
+        //                break;
+        //            case enFilterItemTypes.ListOfValues:
+
+        //                break;
+        //            default:
+        //                throw new Exception("Wrong enFilterItemTypes value in LogItemTools.ReadWithFilterAndSort() !");
+        //        }
+        //        var query = query.Where 
+        //    }
+
+
+        //    List<LogItem> result = CurrDBContext.Get().tblLogItem.Where(x => idList.Contains(x.Id)).
+        //        Select
+        //        (
+        //            x =>
+        //            new LogItem
+        //            (
+        //                x.Id,
+        //                x.DateTime,
+        //                x.Value,
+        //                x.Comment,
+        //                x.ApplicationId,
+        //                x.LayerId,
+        //                x.SubsystemId,
+        //                x.MethodId,
+        //                x.MethodName,
+        //                x.StringNumber,
+        //                x.SystemInfoId,
+        //                x.ExceptionInfoId
+        //            )
+        //        ).ToList();
+
+        //    return result;
+        //}
 
         public static void Update1(LogItem item)
         {

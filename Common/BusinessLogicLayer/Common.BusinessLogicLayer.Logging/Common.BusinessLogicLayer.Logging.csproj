@@ -58,6 +58,10 @@
       <Project>{5e9b54cc-54dc-4097-a7f9-36f737d5e462}</Project>
       <Name>Auxiliary.CommonOptions</Name>
     </ProjectReference>
+    <ProjectReference Include="..\..\..\Auxiliary\Auxiliary.CRUD\Auxiliary.CRUD.csproj">
+      <Project>{1a4014dd-0637-490f-9461-78d9d6cd8c4d}</Project>
+      <Name>Auxiliary.CRUD</Name>
+    </ProjectReference>
     <ProjectReference Include="..\..\..\Auxiliary\Auxiliary.PatternsAndClasses\Auxiliary.PatternsAndClasses.csproj">
       <Project>{e270b853-3089-4128-965d-9662fa25bdba}</Project>
       <Name>Auxiliary.PatternsAndClasses</Name>

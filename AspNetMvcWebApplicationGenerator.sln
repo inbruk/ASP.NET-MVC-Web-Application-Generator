@@ -92,6 +92,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Common.DataAccessLayer.Logg
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Common.BusinessLogicLayer.Logging", "Common\BusinessLogicLayer\Common.BusinessLogicLayer.Logging\Common.BusinessLogicLayer.Logging.csproj", "{36036B61-93A4-4D9B-986D-8EC27AEAE6EA}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Auxiliary.CRUD", "Auxiliary\Auxiliary.CRUD\Auxiliary.CRUD.csproj", "{1A4014DD-0637-490F-9461-78D9D6CD8C4D}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -202,6 +204,10 @@ Global
 		{36036B61-93A4-4D9B-986D-8EC27AEAE6EA}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{36036B61-93A4-4D9B-986D-8EC27AEAE6EA}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{36036B61-93A4-4D9B-986D-8EC27AEAE6EA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1A4014DD-0637-490F-9461-78D9D6CD8C4D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1A4014DD-0637-490F-9461-78D9D6CD8C4D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1A4014DD-0637-490F-9461-78D9D6CD8C4D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1A4014DD-0637-490F-9461-78D9D6CD8C4D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -243,6 +249,7 @@ Global
 		{1A528EAD-3493-407C-9DE5-DA4A9E237EC5} = {AD227A27-240A-4C5C-95DB-052FEA2E7405}
 		{567DD19E-0609-4628-B4BD-1FFC546CD36E} = {52D29DB0-6AF9-438E-B43C-4C2F1F352DD3}
 		{36036B61-93A4-4D9B-986D-8EC27AEAE6EA} = {52DD6612-7D34-4ABE-82F7-9F1744D534ED}
+		{1A4014DD-0637-490F-9461-78D9D6CD8C4D} = {5B134A8C-6C92-402C-A59C-E5163EDBB240}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {30210D04-884E-4B79-ADAA-6998C63EB5FC}
