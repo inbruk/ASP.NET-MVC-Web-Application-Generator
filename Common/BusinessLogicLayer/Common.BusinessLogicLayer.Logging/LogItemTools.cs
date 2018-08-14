@@ -15,7 +15,7 @@
     {
         public static void Create1(LogItem item)
         {
-            tblLogItem currItem = new tblLogItem
+            tblLogItem currItem = new tblLogItem 
             {
                 DateTime = item.DateTime,
                 Value  = item.Value,
