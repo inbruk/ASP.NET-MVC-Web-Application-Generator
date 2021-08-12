@@ -3,7 +3,7 @@
     using System;
 
     using Auxiliary.FileGeneration;
-    using AspNetMvcWebApplicationGenerator.Configuration.DataLayer;
+    using AspNetMvcWebApplicationGenerator.Generators.Configuration.DataLayer;
     using AspNetMvcWebApplicationGenerator.Generators.DataLayer.Helpers;
 
     internal class Directories

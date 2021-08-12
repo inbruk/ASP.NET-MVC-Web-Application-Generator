@@ -1,4 +1,4 @@
-﻿namespace AspNetMvcWebApplicationGenerator.Configuration.DataLayer
+﻿namespace AspNetMvcWebApplicationGenerator.GeneratorsConfiguration.DataLayer
 {
     public enum EntityType
     {

@@ -1,4 +1,4 @@
-﻿namespace AspNetMvcWebApplicationGenerator.Configuration.WebUserInterfaceLayer
+﻿namespace AspNetMvcWebApplicationGenerator.GeneratorsConfiguration.WebUserInterfaceLayer
 {
     using System;
     using System.Collections.Generic;

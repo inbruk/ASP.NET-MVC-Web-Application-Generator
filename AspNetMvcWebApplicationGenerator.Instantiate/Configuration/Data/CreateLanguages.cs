@@ -2,7 +2,7 @@
 {
     using System;
 
-    using AspNetMvcWebApplicationGenerator.Configuration.DataLayer;
+    using AspNetMvcWebApplicationGenerator.Generators.Configuration.DataLayer;
 
     internal static class CreateLanguages
     {

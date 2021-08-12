@@ -1,4 +1,4 @@
-﻿namespace AspNetMvcWebApplicationGenerator.Configuration.WebUserInterfaceLayer
+﻿namespace AspNetMvcWebApplicationGenerator.GeneratorsConfiguration.WebUserInterfaceLayer
 {
     public enum WebPageType
     {

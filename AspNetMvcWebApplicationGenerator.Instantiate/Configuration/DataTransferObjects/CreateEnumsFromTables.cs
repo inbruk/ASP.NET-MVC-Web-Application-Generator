@@ -2,7 +2,7 @@
 {
     using System;
 
-    using AspNetMvcWebApplicationGenerator.Configuration.DataTransferObjects;
+    using AspNetMvcWebApplicationGenerator.Generators.Configuration.DataTransferObjects;
 
     internal static class CreateEnumsFromTables
     {

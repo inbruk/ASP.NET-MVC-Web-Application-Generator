@@ -47,6 +47,29 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Configuration\BusinessLogicAndWebServicesLayer\BLWSConfiguration.cs" />
+    <Compile Include="Configuration\BusinessLogicAndWebServicesLayer\ToolItem.cs" />
+    <Compile Include="Configuration\BusinessLogicAndWebServicesLayer\ToolType.cs" />
+    <Compile Include="Configuration\DataLayer\ComplexEntity.cs" />
+    <Compile Include="Configuration\DataLayer\ComplexEntityFieldFeatures.cs" />
+    <Compile Include="Configuration\DataLayer\ComplexEntityLink.cs" />
+    <Compile Include="Configuration\DataLayer\ComplexEntityLinkType.cs" />
+    <Compile Include="Configuration\DataLayer\DataConfiguration.cs" />
+    <Compile Include="Configuration\DataLayer\Directory.cs" />
+    <Compile Include="Configuration\DataLayer\DirectoryValue.cs" />
+    <Compile Include="Configuration\DataLayer\Entity.cs" />
+    <Compile Include="Configuration\DataLayer\EntityField.cs" />
+    <Compile Include="Configuration\DataLayer\EntityFieldType.cs" />
+    <Compile Include="Configuration\DataLayer\EntityType.cs" />
+    <Compile Include="Configuration\DataLayer\LanguageItem.cs" />
+    <Compile Include="Configuration\DataLayer\LinkType.cs" />
+    <Compile Include="Configuration\DataLayer\TranslatedString.cs" />
+    <Compile Include="Configuration\DataLayer\TranslatedStringType.cs" />
+    <Compile Include="Configuration\DataTransferObjects\DataTransferObjectsConfiguration.cs" />
+    <Compile Include="Configuration\DataTransferObjects\EnumFromTables.cs" />
+    <Compile Include="Configuration\WebUserInterfaceLayer\WebPage.cs" />
+    <Compile Include="Configuration\WebUserInterfaceLayer\WebPageType.cs" />
+    <Compile Include="Configuration\WebUserInterfaceLayer\WUIConfiguration.cs" />
     <Compile Include="DataLayer\ComplexEntities.cs" />
     <Compile Include="DataLayer\Directories.cs" />
     <Compile Include="DataLayer\Entities.cs" />
@@ -65,10 +88,6 @@
     <Folder Include="ServicesLayer\" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\AspNetMvcWebApplicationGenerator.Configuration\AspNetMvcWebApplicationGenerator.Configuration.csproj">
-      <Project>{ee55fb45-abd2-4d68-936b-abccdbd23312}</Project>
-      <Name>AspNetMvcWebApplicationGenerator.Configuration</Name>
-    </ProjectReference>
     <ProjectReference Include="..\AspNetMvcWebApplicationGenerator.Instantiate\AspNetMvcWebApplicationGenerator.Instance.csproj">
       <Project>{75659108-d832-402d-933d-cf13b905b0ab}</Project>
       <Name>AspNetMvcWebApplicationGenerator.Instance</Name>

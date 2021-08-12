@@ -1,4 +1,4 @@
-﻿namespace AspNetMvcWebApplicationGenerator.Configuration.DataTransferObjects
+﻿namespace AspNetMvcWebApplicationGenerator.GeneratorsConfiguration.DataTransferObjects
 {
     using System;
     using System.Collections.Generic;

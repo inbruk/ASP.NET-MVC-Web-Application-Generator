@@ -3,7 +3,7 @@
     using System;
     using System.Collections.Generic;
 
-    using AspNetMvcWebApplicationGenerator.Configuration.BusinessLogicAndWebServicesLayer;
+    using AspNetMvcWebApplicationGenerator.Generators.Configuration.BusinessLogicAndWebServicesLayer;
 
     public static class CreateTools
     {

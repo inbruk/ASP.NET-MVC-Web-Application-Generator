@@ -11,7 +11,7 @@
     using Auxiliary.PatternsAndClasses;
     using Auxiliary.StorageTools;
 
-    using AspNetMvcWebApplicationGenerator.Configuration.DataTransferObjects;
+    using AspNetMvcWebApplicationGenerator.Generators.Configuration.DataTransferObjects;
     using AspNetMvcWebApplicationGenerator.Generators.DataTransferObjects;
 
     using Common.DataTransferObjects.AppIdAndAuth.ApplicationId;

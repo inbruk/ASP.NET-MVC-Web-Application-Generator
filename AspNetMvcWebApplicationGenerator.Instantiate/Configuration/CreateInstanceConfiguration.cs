@@ -2,10 +2,10 @@
 {
     using System;
 
-    using AspNetMvcWebApplicationGenerator.Configuration.DataLayer;
-    using AspNetMvcWebApplicationGenerator.Configuration.DataTransferObjects;
-    using AspNetMvcWebApplicationGenerator.Configuration.BusinessLogicAndWebServicesLayer;
-    using AspNetMvcWebApplicationGenerator.Configuration.WebUserInterfaceLayer;
+    using AspNetMvcWebApplicationGenerator.Generators.Configuration.DataLayer;
+    using AspNetMvcWebApplicationGenerator.Generators.Configuration.DataTransferObjects;
+    using AspNetMvcWebApplicationGenerator.Generators.Configuration.BusinessLogicAndWebServicesLayer;
+    using AspNetMvcWebApplicationGenerator.Generators.Configuration.WebUserInterfaceLayer;
 
     using NDT  = AspNetMvcWebApplicationGenerator.Instance.Configuration.Data;
     using DTO  = AspNetMvcWebApplicationGenerator.Instance.Configuration.DataTransferObjects;

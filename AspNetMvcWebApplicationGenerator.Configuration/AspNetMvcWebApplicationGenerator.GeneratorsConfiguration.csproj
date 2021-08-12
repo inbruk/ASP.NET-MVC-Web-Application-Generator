@@ -7,8 +7,8 @@
     <ProjectGuid>{EE55FB45-ABD2-4D68-936B-ABCCDBD23312}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>AspNetMvcWebApplicationGenerator.Configuration</RootNamespace>
-    <AssemblyName>AspNetMvcWebApplicationGenerator.Configuration</AssemblyName>
+    <RootNamespace>AspNetMvcWebApplicationGenerator.GeneratorsConfiguration</RootNamespace>
+    <AssemblyName>AspNetMvcWebApplicationGenerator.GeneratorsConfiguration</AssemblyName>
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>

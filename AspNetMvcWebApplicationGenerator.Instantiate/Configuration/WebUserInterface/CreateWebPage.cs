@@ -3,7 +3,7 @@
     using System;
     using System.Collections.Generic;
 
-    using AspNetMvcWebApplicationGenerator.Configuration.WebUserInterfaceLayer;
+    using AspNetMvcWebApplicationGenerator.Generators.Configuration.WebUserInterfaceLayer;
 
     public static class CreateWebPage
     {
